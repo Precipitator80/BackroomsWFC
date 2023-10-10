@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1923b6bdd0a346ecafb5d8f590b6ab38, type: 3}
+  m_Name: Symmetries-Backrooms-Like
+  m_EditorClassIdentifier: 
+  SymmetryX:
+  - {fileID: 3973206267231913410, guid: c4b73969b2151b2458315f2e1b257185, type: 3}
+  SymmetryL:
+  - {fileID: 7647646674958753419, guid: 5920c507bdb452d439fc0ec6e804826f, type: 3}
+  SymmetryT: []
+  SymmetryI:
+  - {fileID: 4431378179620011228, guid: cdbe5db68ce0aee41b83a7eae76f41f0, type: 3}
+  SymmetrySlash: []

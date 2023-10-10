@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1923b6bdd0a346ecafb5d8f590b6ab38, type: 3}
+  m_Name: Symmetries-SimpleShapes
+  m_EditorClassIdentifier: 
+  SymmetryX:
+  - {fileID: 3121568432732342966, guid: f42fca428f721a9408cd43b70f6475a0, type: 3}
+  - {fileID: 6391712011164723970, guid: 8f91ce348ec770d4cb09b55908cda929, type: 3}
+  SymmetryL:
+  - {fileID: 4942781127555051926, guid: 65ddca000a2996a4d9a1f05c8439f456, type: 3}
+  SymmetryT: []
+  SymmetryI:
+  - {fileID: 1710184063430872790, guid: 7f6278475f0b1f74ca50bfbebaa7dd60, type: 3}
+  SymmetrySlash: []
