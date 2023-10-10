@@ -29,7 +29,7 @@ namespace Core
 
         public void UpdateStates()
         {
-            Debug.Log("Update states");
+            Debug.Log("Updating states");
             for (var x = 0; x < width; x++)
                 for (var y = 0; y < height; y++)
                     for (var z = 0; z < depth; z++)
@@ -62,6 +62,7 @@ namespace Core
                             tiles[x, y, z] = CreateTile(x, y, z, cellState);
                         }
                     }
+            Debug.Log("Finished updating states");
         }
 
         public void Clear()
@@ -94,7 +95,7 @@ namespace Core
                 }
                 tileObject = Instantiate(tile.Config.Prefab, transform);
                 tileObject.transform.localPosition = position;
-                Debug.Log("Rotation " + tile.Rotation);
+                Debug.Log("Collapsed tile: " + cellState.Tile + ". Rotation " + tile.Rotation);
                 var oldRot = tileObject.transform.localEulerAngles;
                 oldRot.y = tile.Rotation * 90;
                 tileObject.transform.localEulerAngles = oldRot;

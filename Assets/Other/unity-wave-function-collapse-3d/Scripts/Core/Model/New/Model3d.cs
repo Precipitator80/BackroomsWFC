@@ -17,7 +17,7 @@ using Random = System.Random;
 public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollapseModelParams
 {
 	public const int DIRECTIONS_AMOUNT = 6;
-	
+
 	protected bool[][] wave;
 
 	protected int[][][] propagator;
@@ -40,18 +40,18 @@ public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollap
 	int[] sumsOfOnes;
 	double sumOfWeights, sumOfWeightLogWeights, startingEntropy;
 	double[] sumsOfWeights, sumsOfWeightLogWeights, entropies;
-	
+
 	public WaveFunctionCollapseModelParams ModelParam { get; private set; }
 
 	protected Model3d(PARAM modelParam)
 	{
 		this.ModelParam = modelParam;
-		
+
 		FMX = modelParam.Width;
 		FMY = modelParam.Height;
 		FMZ = modelParam.Depth;
 	}
-	
+
 	public bool Run(int seed, int limit)
 	{
 		if (wave == null) Init();
@@ -68,9 +68,10 @@ public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollap
 
 		return true;
 	}
-	
+
 	public IEnumerator RunViaEnumerator(int seed, int limit, Action<bool> resultCallback, Action<bool[][]> iterationCallback)
 	{
+		Debug.Log("Running WFC via enumerator");
 		if (wave == null) Init();
 
 		Clear();
@@ -82,25 +83,31 @@ public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollap
 		{
 			random = new Random();
 		}
-		
+
 
 		for (int l = 0; l < limit || limit == 0; l++)
 		{
+			Debug.Log("Starting iteration step.");
 			bool? result = Observe();
 			if (result != null)
 			{
+				Debug.Log("Found result. Doing resultCallback.");
 				resultCallback(result.Value);
 				break;
 			}
-			Debug.Log("Propagate, iteration: " + l);
+			Debug.Log("Did not find result. Propagating with iterationCallnack. Iteration number: " + l);
 			Propagate();
 			iterationCallback(wave);
-			yield return null;
+			Debug.Log("Finished iteration callback");
+			yield return null; // Seems to cause this to take ages in the editor.
 		}
+
+		resultCallback(false);
 	}
 
 	private void Init()
 	{
+		Debug.Log("Initialising wave function");
 		wave = new bool[FMX * FMY * FMZ][];
 		compatible = new int[wave.Length][][];
 		for (int i = 0; i < wave.Length; i++)
@@ -109,7 +116,7 @@ public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollap
 			compatible[i] = new int[T][];
 			for (int t = 0; t < T; t++) compatible[i][t] = new int[DIRECTIONS_AMOUNT];
 		}
-		
+
 		weightLogWeights = new double[T];
 		sumOfWeights = 0;
 		sumOfWeightLogWeights = 0;
@@ -134,6 +141,7 @@ public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollap
 
 	bool? Observe()
 	{
+		Debug.Log("Observing");
 		double min = 1E+3;
 		int argmin = -1;
 
@@ -179,7 +187,7 @@ public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollap
 		int r = distribution.Random(random.NextDouble());
 
 		bool[] w = wave[argmin];
-		for (int t = 0; t < T; t++)	if (w[t] != (t == r)) Ban(argmin, t);
+		for (int t = 0; t < T; t++) if (w[t] != (t == r)) Ban(argmin, t);
 
 		return null;
 	}
@@ -264,7 +272,7 @@ public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollap
 			entropies[i] = startingEntropy;
 		}
 	}
-	
+
 	protected void CalculateEntropyAndPatternIdAt(int x, int y, int z, out double entropy, out int? patternId)
 	{
 		int indexInWave = To1D(x, y, z);
@@ -284,15 +292,17 @@ public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollap
 		{
 			patternId = null;
 		}
-			
+
 		entropy = entropies[indexInWave] / startingEntropy;
 	}
 
-	protected int To1D( int x, int y, int z ) {
+	protected int To1D(int x, int y, int z)
+	{
 		return z * FMX * FMY + y * FMX + x;
 	}
 
-	protected void To3D(int index, out int x, out int y, out int z) {
+	protected void To3D(int index, out int x, out int y, out int z)
+	{
 		z = index / (FMX * FMY);
 		index -= z * FMX * FMY;
 		y = index / FMX;
@@ -300,12 +310,12 @@ public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollap
 	}
 
 	protected abstract bool OnBoundary(int x, int y, int z);
-	
+
 	public abstract CellState GetCellStateAt(int x, int y, int z);
 
-	protected static int[] DX = { -1, 0, 1,  0,  0, 0 };
-	protected static int[] DY = {  0, 0, 0,  0, -1, 1 };
-	protected static int[] DZ = {  0, 1, 0, -1,  0, 0 };
+	protected static int[] DX = { -1, 0, 1, 0, 0, 0 };
+	protected static int[] DY = { 0, 0, 0, 0, -1, 1 };
+	protected static int[] DZ = { 0, 1, 0, -1, 0, 0 };
 	static int[] opposite = { 2, 3, 0, 1, 5, 4 };
 
 }

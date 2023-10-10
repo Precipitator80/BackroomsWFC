@@ -9,105 +9,119 @@ using UnityEngine;
 
 namespace Core
 {
-    public class WaveFunctionCollapseGenerator : MonoBehaviour
-    {
-	    [SerializeField] 
-	    private InputDataProvider dataProvider;
+	public class WaveFunctionCollapseGenerator : MonoBehaviour
+	{
+		[SerializeField]
+		private InputDataProvider dataProvider;
 
-	    [SerializeField] 
-	    private WaveFunctionCollapseRenderer renderer;
-	    
-	    [SerializeField] 
-	    private int width;
-	    
-	    [SerializeField] 
-	    private int height;
-	    
-	    [SerializeField] 
-	    private int depth;
-	    
-	    [SerializeField] 
-	    private int patternSize;
-	    
-	    [SerializeField] 
-	    private bool periodicInput = false;
+		[SerializeField]
+		private WaveFunctionCollapseRenderer renderer;
 
-	    [SerializeField] 
-	    private bool periodicOutput = false;
-	    
-	    [SerializeField] 
-	    private int symmetry = 1;
-	    
-	    [SerializeField] 
-	    private int foundation = 0;
-	    
-	    [SerializeField] 
-	    private int iterations = 0;
+		[SerializeField]
+		private int width;
 
-	    private OvelappingModel2dWrapper overlappingModel;
-	    private SimpleTiledMode3d simpleTiledModel;
-	    private InputOverlappingData inputOverlappingData;
-	    private Coroutine runningCoroutine;
+		[SerializeField]
+		private int height;
 
-	    public void GenerateOverlappingOutput()
-	    {
-		    inputOverlappingData = dataProvider.GetInputOverlappingData();
-		    var modelParams = new OverlappingModelParams(width, height, depth, patternSize);
-		    modelParams.PeriodicInput = periodicInput;
-		    modelParams.PeriodicOutput = periodicOutput;
-		    modelParams.Symmetry = symmetry;
-		    modelParams.Ground = foundation;
-		    
-		    overlappingModel = new OvelappingModel2dWrapper(inputOverlappingData, modelParams);
-		    renderer.Init(overlappingModel);
-		    
-		    runningCoroutine = StartCoroutine(overlappingModel.Model.RunViaEnumerator(0, iterations, OnResult, OnIteration));
-	    }
+		[SerializeField]
+		private int depth;
 
-	    public void GenerateSimpleTiledOutput()
-	    {
-		    var inputData = dataProvider.GetInputSimpleTiledData();
-		    var modelParams = new SimpleTiledModelParams(width, height, depth, periodicOutput);
-		    
-		    simpleTiledModel = new SimpleTiledMode3d(inputData, modelParams);
-		    renderer.Init(simpleTiledModel);
-		    
-		    runningCoroutine = StartCoroutine(simpleTiledModel.RunViaEnumerator(0, iterations, OnResult, OnIteration));
-	    }
-	    
-	    private void OnIteration(bool[][] wave)
-	    {
-		    renderer.UpdateStates();
-	    }
+		[SerializeField]
+		private int patternSize;
 
-	    private void OnResult(bool result)
-	    {
-		    Debug.Log("Result is : " + result);
-	    }
+		[SerializeField]
+		private bool periodicInput = false;
 
-	    public void Abort()
-	    {
-		    StopCoroutine(runningCoroutine);
-		    renderer.Clear();
-	    }
-    }
-    
-	#if UNITY_EDITOR
-	[CustomEditor (typeof(WaveFunctionCollapseGenerator))]
-	public class WaveFunctionCollapseGeneratorEditor : Editor {
-		public override void OnInspectorGUI () {
-			WaveFunctionCollapseGenerator generator = (WaveFunctionCollapseGenerator)target;
-			if(GUILayout.Button("Generate Overlapping output")){
-				generator.GenerateOverlappingOutput();
+		[SerializeField]
+		private bool periodicOutput = false;
+
+		[SerializeField]
+		private int symmetry = 1;
+
+		[SerializeField]
+		private int foundation = 0;
+
+		[SerializeField]
+		private int iterations = 0;
+
+		private OvelappingModel2dWrapper overlappingModel;
+		private SimpleTiledMode3d simpleTiledModel;
+		private InputOverlappingData inputOverlappingData;
+		private Coroutine runningCoroutine;
+
+		public void GenerateOverlappingOutput()
+		{
+			Abort();
+
+			inputOverlappingData = dataProvider.GetInputOverlappingData();
+			var modelParams = new OverlappingModelParams(width, height, depth, patternSize);
+			modelParams.PeriodicInput = periodicInput;
+			modelParams.PeriodicOutput = periodicOutput;
+			modelParams.Symmetry = symmetry;
+			modelParams.Ground = foundation;
+
+			overlappingModel = new OvelappingModel2dWrapper(inputOverlappingData, modelParams);
+			renderer.Init(overlappingModel);
+
+			runningCoroutine = StartCoroutine(overlappingModel.Model.RunViaEnumerator(0, iterations, OnResult, OnIteration));
+		}
+
+		public void GenerateSimpleTiledOutput()
+		{
+			Abort();
+
+			var inputData = dataProvider.GetInputSimpleTiledData();
+			var modelParams = new SimpleTiledModelParams(width, height, depth, periodicOutput);
+
+			simpleTiledModel = new SimpleTiledMode3d(inputData, modelParams);
+			renderer.Init(simpleTiledModel);
+
+			runningCoroutine = StartCoroutine(simpleTiledModel.RunViaEnumerator(0, iterations, OnResult, OnIteration));
+		}
+
+		private void OnIteration(bool[][] wave)
+		{
+			Debug.Log("Intermediate iteration step.");
+			renderer.UpdateStates();
+			Debug.Log("Finished interation step.");
+		}
+
+		private void OnResult(bool result)
+		{
+			Debug.Log("Generation " + (result ? "Succeeded" : "Failed!"));
+		}
+
+		public void Abort()
+		{
+			if (runningCoroutine != null)
+			{
+				StopCoroutine(runningCoroutine);
 			}
-			if(GUILayout.Button("Generate Simple tiled output")){
-				generator.GenerateSimpleTiledOutput();
-			}
-			if(GUILayout.Button("Abort and Clear")){
-				generator.Abort();
-			}
-			DrawDefaultInspector ();
+			renderer.Clear();
 		}
 	}
-	#endif
+
+#if UNITY_EDITOR
+	[CustomEditor(typeof(WaveFunctionCollapseGenerator))]
+	public class WaveFunctionCollapseGeneratorEditor : Editor
+	{
+		public override void OnInspectorGUI()
+		{
+			WaveFunctionCollapseGenerator generator = (WaveFunctionCollapseGenerator)target;
+			if (GUILayout.Button("Generate Overlapping output"))
+			{
+				generator.GenerateOverlappingOutput();
+			}
+			if (GUILayout.Button("Generate Simple tiled output"))
+			{
+				generator.GenerateSimpleTiledOutput();
+			}
+			if (GUILayout.Button("Abort and Clear"))
+			{
+				generator.Abort();
+			}
+			DrawDefaultInspector();
+		}
+	}
+#endif
 }
