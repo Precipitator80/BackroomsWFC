@@ -11,21 +11,27 @@ namespace Core
 {
 	public class WaveFunctionCollapseGenerator : MonoBehaviour
 	{
+		// Provides tile and symmetry data to the generator.
 		[SerializeField]
 		private InputDataProvider dataProvider;
 
+		// Renders the output of the generator.
 		[SerializeField]
 		private WaveFunctionCollapseRenderer renderer;
 
+		// The width of the output area.
 		[SerializeField]
 		private int width;
 
+		// The height of the output area.
 		[SerializeField]
 		private int height;
 
+		// The depth of the output area. Only works for tiled models.
 		[SerializeField]
 		private int depth;
 
+		// The width of the tiles.
 		[SerializeField]
 		private int patternSize;
 
@@ -41,14 +47,22 @@ namespace Core
 		[SerializeField]
 		private int foundation = 0;
 
+		// The number of times to run a single collapse and propagation step.
+		// 0 will run infinitely.
 		[SerializeField]
 		private int iterations = 0;
 
-		private OvelappingModel2dWrapper overlappingModel;
-		private SimpleTiledMode3d simpleTiledModel;
+		// Variables to reference the overlapping model and its input data used in overlapping generation.
 		private InputOverlappingData inputOverlappingData;
+		private OvelappingModel2dWrapper overlappingModel;
+
+		// Variable to reference the tiled model used in tiled generation.
+		private SimpleTiledMode3d simpleTiledModel;
+
+		// Variable to reference the generation coroutine.
 		private Coroutine runningCoroutine;
 
+		// Run the generator using an overlapping model.
 		public void GenerateOverlappingOutput()
 		{
 			Abort();
@@ -66,19 +80,22 @@ namespace Core
 			runningCoroutine = StartCoroutine(overlappingModel.Model.RunViaEnumerator(0, iterations, OnResult, OnIteration));
 		}
 
+		// Run the generator using a tiled model.
 		public void GenerateSimpleTiledOutput()
 		{
 			Abort();
 
+			// Get the input data and build a model for the generator.
 			var inputData = dataProvider.GetInputSimpleTiledData();
 			var modelParams = new SimpleTiledModelParams(width, height, depth, periodicOutput);
-
 			simpleTiledModel = new SimpleTiledMode3d(inputData, modelParams);
-			renderer.Init(simpleTiledModel);
 
+			// Initialise the renderer and start the generator.
+			renderer.Init(simpleTiledModel);
 			runningCoroutine = StartCoroutine(simpleTiledModel.RunViaEnumerator(0, iterations, OnResult, OnIteration));
 		}
 
+		// Code called after each iteration of the generator.
 		private void OnIteration(bool[][] wave)
 		{
 			Debug.Log("Intermediate iteration step.");
@@ -86,11 +103,14 @@ namespace Core
 			Debug.Log("Finished interation step.");
 		}
 
+		// Code called after the generator has finished.
+		// result: Whether the generator managed to build an output satisfying all constraints or not.
 		private void OnResult(bool result)
 		{
 			Debug.Log("Generation " + (result ? "Succeeded" : "Failed!"));
 		}
 
+		// Method to cancel the current generation and clear the renderer.
 		public void Abort()
 		{
 			if (runningCoroutine != null)

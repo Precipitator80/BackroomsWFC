@@ -9,26 +9,22 @@ using UnityEngine;
 namespace Core.InputProviders
 {
     public class TilePainterInputDataProvider : InputDataProvider
-    {   
-        [SerializeField] 
-        private int width;
-        
-        [SerializeField] 
-        private int height;
-        
-        [SerializeField] 
-        private int depth;
-        
-        [SerializeField] 
+    {
+        // The height of the TilePainter? Locked at 1.
+        [SerializeField]
+        private readonly int height = 1;
+
+        // The Tile Painter used to build data.
+        [SerializeField]
         private TilePainter tilePainter;
-        
-        [SerializeField] 
+
+        [SerializeField]
         private GameObject tilesParent;
-        
-        [SerializeField] 
+
+        [SerializeField]
         private GameObject[] tilesPrefabs;
 
-        [SerializeField] 
+        [SerializeField]
         private SymmetrySetsScriptableObject symmetrySets;
 
         private Dictionary<string, GameObject> tilesPrefabMap;
@@ -44,10 +40,10 @@ namespace Core.InputProviders
             {
                 FillPrefabMap();
             }
-            
+
             var tileConfigData = CreateTileConfigData(tilePrefab => new TileConfig(tilePrefab));
 
-            var inputData = new InputOverlappingData(tileConfigData, width, depth);
+            var inputData = new InputOverlappingData(tileConfigData, tilePainter.width, tilePainter.depth);
 
             ExecuteForEachTile((tile, pos, rotation) =>
             {
@@ -63,19 +59,19 @@ namespace Core.InputProviders
             {
                 FillPrefabMap();
             }
-            
+
             var tileConfigsData = CreateTileConfigData(tilePrefab =>
             {
                 var symmetry = symmetrySets.GetSymmetryByTileName(tilePrefab.name);
                 Debug.Log(tilePrefab.name + " " + symmetry);
                 var config = new SimpleTiledModelTileConfig(tilePrefab, symmetry);
-                
+
                 return config;
             });
-            
+
             var inputData = new InputSimpleTiledModelData(tileConfigsData);
-            var tiles = new SimpleTiledModelTile[width, height, depth];
-            
+            var tiles = new SimpleTiledModelTile[tilePainter.width, height, tilePainter.depth];
+
             ExecuteForEachTile((tileGo, pos, rotation) =>
             {
                 tiles[(int)pos.x, (int)pos.y, (int)pos.z] = new SimpleTiledModelTile(tileConfigsData.GetConfig(tileGo.name), rotation);
@@ -83,57 +79,61 @@ namespace Core.InputProviders
 
             var neighbors = new Dictionary<string, NeighborData>();
 
-            for (int x = 0; x < width; x++)
-            for (int y = 0; y < height; y++)
-            for (int z = 0; z < depth; z++)
-            {
-                var currentTile = tiles[x, y, z];
-                if (currentTile == null) continue;
+            for (int x = 0; x < tilePainter.width; x++)
+                for (int y = 0; y < height; y++)
+                    for (int z = 0; z < tilePainter.depth; z++)
+                    {
+                        var currentTile = tiles[x, y, z];
+                        if (currentTile == null) continue;
 
-                SimpleTiledModelTile nextTile;
-                string key;
-                
-                for (var offset = 0; offset < 2; offset++){
-                    var rx = x + 1 - offset;
-                    var rz = z + offset;
-                    if (rx >= width || rz >= depth) continue;
+                        SimpleTiledModelTile nextTile;
+                        string key;
 
-                    var currentTileRotation = Card(currentTile.Rotation + offset);
-                    nextTile = tiles[rx, y, rz];
-                    
-                    if (nextTile == null) continue;
-                    
-                    var nextTileRotation = Card(nextTile.Rotation + offset);
-                    
-                    key = currentTile.Config.Id + "." + currentTileRotation + " | " + nextTile.Config.Id + "." + nextTileRotation ;
-                    
-                    if (neighbors.ContainsKey(key)) continue;
-                    Debug.Log(key);
-                    
-                    neighbors.Add(key, new NeighborData(currentTile.Config, nextTile.Config, currentTileRotation, nextTileRotation));
-                    DrawDebugLine(new Vector3(x, y - 0.5f, z), new Vector3(rx, y - 0.5f, rz));
-                }
-                
-                if(y == 0) continue;
-                nextTile = tiles[x, y - 1, z];
-                if (nextTile == null) continue;
-                    
-                key = currentTile.Config.Id + "." + currentTile.Rotation + " | " + nextTile.Config.Id + "." + nextTile.Rotation + " |vertical" ;
-                if (neighbors.ContainsKey(key)) continue;
-                Debug.Log(key);
-                
-                neighbors.Add(key, new NeighborData(currentTile.Config, nextTile.Config, currentTile.Rotation, nextTile.Rotation, false));
-                DrawDebugLine(new Vector3(x, y, z), new Vector3(x, y - 1, z ));
-            }
-            
-            
+                        for (var offset = 0; offset < 2; offset++)
+                        {
+                            var rx = x + 1 - offset;
+                            var rz = z + offset;
+                            if (rx >= tilePainter.width || rz >= tilePainter.depth) continue;
+
+                            var currentTileRotation = Card(currentTile.Rotation + offset);
+                            nextTile = tiles[rx, y, rz];
+
+                            if (nextTile == null) continue;
+
+                            var nextTileRotation = Card(nextTile.Rotation + offset);
+
+                            key = currentTile.Config.Id + "." + currentTileRotation + " | " + nextTile.Config.Id + "." + nextTileRotation;
+
+                            if (neighbors.ContainsKey(key)) continue;
+                            Debug.Log(key);
+
+                            neighbors.Add(key, new NeighborData(currentTile.Config, nextTile.Config, currentTileRotation, nextTileRotation));
+                            DrawDebugLine(new Vector3(x * tilePainter.gridsize, y - 0.5f, z * tilePainter.gridsize), new Vector3(rx * tilePainter.gridsize, y - 0.5f, rz * tilePainter.gridsize));
+                        }
+
+                        if (y == 0) continue;
+                        nextTile = tiles[x, y - 1, z];
+                        if (nextTile == null) continue;
+
+                        key = currentTile.Config.Id + "." + currentTile.Rotation + " | " + nextTile.Config.Id + "." + nextTile.Rotation + " |vertical";
+                        if (neighbors.ContainsKey(key)) continue;
+                        Debug.Log(key);
+
+                        neighbors.Add(key, new NeighborData(currentTile.Config, nextTile.Config, currentTile.Rotation, nextTile.Rotation, false));
+                        DrawDebugLine(new Vector3(x * tilePainter.gridsize, y, z * tilePainter.gridsize), new Vector3(x * tilePainter.gridsize, y - 1, z * tilePainter.gridsize));
+                    }
+
+
             inputData.SetNeighbors(neighbors.Values.ToList());
 
             return inputData;
         }
-        
-        public int Card(int n){
-            return (n%4 + 4)%4;
+
+        // Clamps integers representing rotation in 90 degree steps.
+        // First doing n % 4 + 4 means negative numbers are converted into a positive representation.
+        public int Card(int n)
+        {
+            return (n % 4 + 4) % 4;
         }
 
         private void DrawDebugLine(Vector3 start, Vector3 target)
@@ -162,11 +162,11 @@ namespace Core.InputProviders
                 var x = Mathf.RoundToInt(child.localPosition.x);
                 var y = Mathf.RoundToInt(child.localPosition.y);
                 var z = Mathf.RoundToInt(child.localPosition.z);
-                int rotation = (int)((360 + Mathf.Round(child.localEulerAngles.y))/90);
+                int rotation = (int)((360 + Mathf.Round(child.localEulerAngles.y)) / 90);
                 rotation = rotation % 4;
 
                 action(child.gameObject, new Vector3(x, y, z), rotation);
-            } 
+            }
         }
 
         private GameObject GetPrefab(string name)
@@ -189,12 +189,14 @@ namespace Core.InputProviders
                 tilesPrefabMap.Add(tilePrefab.name, tilePrefab);
             }
         }
-        
-        private void OnDrawGizmos(){
+
+        // Draws a cyan bounding box in the editor.
+        private void OnDrawGizmos()
+        {
             Gizmos.color = Color.cyan;
             Gizmos.matrix = transform.localToWorldMatrix;
-            Gizmos.DrawWireCube(new Vector3(-0.5f + width/2, 0f, -0.5f + depth/2),
-                new Vector3(width, 1, depth));
+            Gizmos.DrawWireCube(new Vector3((-0.5f + tilePainter.width / 2) * tilePainter.gridsize, 0f, (-0.5f + tilePainter.depth / 2) * tilePainter.gridsize),
+                new Vector3(tilePainter.width * tilePainter.gridsize, height /*Used to be magic number 1?*/, tilePainter.depth * tilePainter.gridsize));
         }
     }
 }

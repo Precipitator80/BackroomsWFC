@@ -3,8 +3,10 @@ using UnityEngine;
 
 namespace Core
 {
+    // Class to add generator buttons to the editor UI.
     [InitializeOnLoad]
-    public static class GeneratorSceneViewButtons {
+    public static class GeneratorSceneViewButtons
+    {
 
         static GeneratorSceneViewButtons()
         {
@@ -19,23 +21,26 @@ namespace Core
             {
                 return;
             }
-		
+
             Handles.BeginGUI();
-		
+
             GUILayout.BeginArea(new Rect(sceneView.position.width - 190, sceneView.position.height - 110, 180, 100));
-		
-            if(GUILayout.Button("Generate Overlapping output")){
+
+            if (GUILayout.Button("Generate Overlapping output"))
+            {
                 generator.GenerateOverlappingOutput();
             }
-            if(GUILayout.Button("Generate Simple tiled output")){
+            if (GUILayout.Button("Generate Simple tiled output"))
+            {
                 generator.GenerateSimpleTiledOutput();
             }
-            if(GUILayout.Button("Abort and Clear")){
+            if (GUILayout.Button("Abort and Clear"))
+            {
                 generator.Abort();
             }
-		
+
             GUILayout.EndArea();
-		
+
             Handles.EndGUI();
         }
     }
