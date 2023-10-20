@@ -18,8 +18,8 @@ namespace Core.Model.New
 		int N;
 		byte[][] patterns;
 		int ground;
-		
-		public InputOverlappingData InputData { get; private set; }
+
+		public readonly InputOverlappingData InputData;
 
 		public OverlappingModel2d(InputOverlappingData inputData, OverlappingModelParams modelParams)
 			: base(modelParams)
@@ -33,7 +33,7 @@ namespace Core.Model.New
 			int ground = modelParams.Ground;
 
 			int SMX = inputData.Width, SMY = inputData.Depth;
-			
+
 			var sample = inputData.GetSampleMatrix();
 
 			int C = inputData.TilesSortedByIds.Count;
@@ -94,7 +94,7 @@ namespace Core.Model.New
 						count++;
 					}
 
-					result[i] = (byte) count;
+					result[i] = (byte)count;
 				}
 
 				return result;
@@ -103,31 +103,31 @@ namespace Core.Model.New
 			Dictionary<long, int> weights = new Dictionary<long, int>();
 			List<long> ordering = new List<long>();
 
-			for (int y = 0; y < (periodicInput ? SMY : SMY - N + 1); y++) 
-			for (int x = 0; x < (periodicInput ? SMX : SMX - N + 1); x++)
-			{
-				byte[][] ps = new byte[8][];
-
-				ps[0] = patternFromSample(x, y);
-				ps[1] = reflect(ps[0]);
-				ps[2] = rotate(ps[0]);
-				ps[3] = reflect(ps[2]);
-				ps[4] = rotate(ps[2]);
-				ps[5] = reflect(ps[4]);
-				ps[6] = rotate(ps[4]);
-				ps[7] = reflect(ps[6]);
-
-				for (int k = 0; k < symmetry; k++)
+			for (int y = 0; y < (periodicInput ? SMY : SMY - N + 1); y++)
+				for (int x = 0; x < (periodicInput ? SMX : SMX - N + 1); x++)
 				{
-					long ind = GenerateUniqueIndex(ps[k]);
-					if (weights.ContainsKey(ind)) weights[ind]++;
-					else
+					byte[][] ps = new byte[8][];
+
+					ps[0] = patternFromSample(x, y);
+					ps[1] = reflect(ps[0]);
+					ps[2] = rotate(ps[0]);
+					ps[3] = reflect(ps[2]);
+					ps[4] = rotate(ps[2]);
+					ps[5] = reflect(ps[4]);
+					ps[6] = rotate(ps[4]);
+					ps[7] = reflect(ps[6]);
+
+					for (int k = 0; k < symmetry; k++)
 					{
-						weights.Add(ind, 1);
-						ordering.Add(ind);
+						long ind = GenerateUniqueIndex(ps[k]);
+						if (weights.ContainsKey(ind)) weights[ind]++;
+						else
+						{
+							weights.Add(ind, 1);
+							ordering.Add(ind);
+						}
 					}
 				}
-			}
 
 			T = weights.Count;
 			this.ground = (ground + T) % T;
@@ -160,7 +160,7 @@ namespace Core.Model.New
 		{
 			return !periodic && (x + N > FMX || y + N > FMY || x < 0 || y < 0);
 		}
-		
+
 		public override CellState GetCellStateAt(int x, int y)
 		{
 			int dy = y < FMY - N + 1 ? 0 : N - 1;
@@ -178,19 +178,19 @@ namespace Core.Model.New
 
 			return new CellState(entropy, tile);
 		}
-		
+
 		private bool Agrees(byte[] p1, byte[] p2, int dx, int dy)
 		{
 			int xmin = dx < 0 ? 0 : dx;
 			int xmax = dx < 0 ? dx + N : N;
 			int ymin = dy < 0 ? 0 : dy;
 			int ymax = dy < 0 ? dy + N : N;
-			
+
 			for (int y = ymin; y < ymax; y++)
-			for (int x = xmin; x < xmax; x++)
-			{
-				if (p1[x + N * y] != p2[x - dx + N * (y - dy)]) return false;
-			}
+				for (int x = xmin; x < xmax; x++)
+				{
+					if (p1[x + N * y] != p2[x - dx + N * (y - dy)]) return false;
+				}
 			return true;
 		}
 

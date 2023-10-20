@@ -4,7 +4,7 @@
     {
         public static OverlappingModelTile Empty = new OverlappingModelTile(new TileConfig(null), 0);
 
-        public string Id { get; private set; }
+        public readonly string Id;
 
         public OverlappingModelTile(TileConfig tileConfig, int rotation) : base(tileConfig, rotation)
         {

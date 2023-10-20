@@ -5,7 +5,7 @@ namespace Core.Model.New
 {
     public class OvelappingModel2dWrapper : IModel3d
     {
-        public OverlappingModel2d Model { get; private set; }
+        public readonly OverlappingModel2d Model;
         public WaveFunctionCollapseModelParams ModelParam { get; private set; }
 
         public OvelappingModel2dWrapper(InputOverlappingData inputData, OverlappingModelParams modelParam)
@@ -13,7 +13,7 @@ namespace Core.Model.New
             ModelParam = modelParam;
             Model = new OverlappingModel2d(inputData, modelParam);
         }
-        
+
         public CellState GetCellStateAt(int x, int y, int z)
         {
             return Model.GetCellStateAt(x, z);

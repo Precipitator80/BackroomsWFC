@@ -10,7 +10,6 @@ using System;
 using System.Collections;
 using Core.Data;
 using Core.Model;
-using Eppy;
 using UnityEngine;
 using Random = System.Random;
 
@@ -35,17 +34,17 @@ public abstract class Model2d<PARAM> : IModel where PARAM : WaveFunctionCollapse
 	int[] sumsOfOnes;
 	double sumOfWeights, sumOfWeightLogWeights, startingEntropy;
 	double[] sumsOfWeights, sumsOfWeightLogWeights, entropies;
-	
+
 	public WaveFunctionCollapseModelParams ModelParam { get; private set; }
 
 	protected Model2d(PARAM modelParam)
 	{
 		this.ModelParam = modelParam;
-		
+
 		FMX = modelParam.Width;
 		FMY = modelParam.Depth;
 	}
-	
+
 	public bool Run(int seed, int limit)
 	{
 		if (wave == null) Init();
@@ -62,7 +61,7 @@ public abstract class Model2d<PARAM> : IModel where PARAM : WaveFunctionCollapse
 
 		return true;
 	}
-	
+
 	public IEnumerator RunViaEnumerator(int seed, int limit, Action<bool> resultCallback, Action<bool[][]> iterationCallback)
 	{
 		if (wave == null) Init();
@@ -161,7 +160,7 @@ public abstract class Model2d<PARAM> : IModel where PARAM : WaveFunctionCollapse
 		int r = distribution.Random(random.NextDouble());
 
 		bool[] w = wave[argmin];
-		for (int t = 0; t < T; t++)	if (w[t] != (t == r)) Ban(argmin, t);
+		for (int t = 0; t < T; t++) if (w[t] != (t == r)) Ban(argmin, t);
 
 		return null;
 	}
@@ -240,7 +239,7 @@ public abstract class Model2d<PARAM> : IModel where PARAM : WaveFunctionCollapse
 			entropies[i] = startingEntropy;
 		}
 	}
-	
+
 	protected void CalculateEntropyAndPatternIdAt(int x, int y, out double entropy, out int? patternId)
 	{
 		int indexInWave = x + y * FMX;
@@ -260,12 +259,12 @@ public abstract class Model2d<PARAM> : IModel where PARAM : WaveFunctionCollapse
 		{
 			patternId = null;
 		}
-			
+
 		entropy = entropies[indexInWave] / startingEntropy;
 	}
 
 	protected abstract bool OnBoundary(int x, int y);
-	
+
 	public abstract CellState GetCellStateAt(int x, int y);
 
 	protected static int[] DX = { -1, 0, 1, 0 };

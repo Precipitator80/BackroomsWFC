@@ -7,8 +7,6 @@ The software is provided "as is", without warranty of any kind, express or impli
 */
 
 using System;
-using System.Linq;
-using System.Xml.Linq;
 using System.Collections.Generic;
 using Core.Data;
 using Core.Data.SimpleTiledModel;
@@ -18,18 +16,13 @@ public class SimpleTiledMode3d : Model3d<SimpleTiledModelParams>
 {
 	List<SimpleTiledModelTile> tiles;
 	List<string> tilenames;
-	int tilesize;
-	bool black;
 
 	public SimpleTiledMode3d(InputSimpleTiledModelData inputData, SimpleTiledModelParams modelParams) : base(modelParams)
 	{
 		this.periodic = modelParams.Periodic;
-		this.black = modelParams.Black;
-
-		tilesize = 1;
 
 		List<string> subset = null;
-		
+
 		tiles = new List<SimpleTiledModelTile>();
 		tilenames = new List<string>();
 		var tempStationary = new List<double>();
@@ -78,7 +71,7 @@ public class SimpleTiledMode3d : Model3d<SimpleTiledModelParams>
 
 			T = action.Count;
 			firstOccurrence.Add(tileConfig.Id, T);
-			
+
 			int[][] map = new int[cardinality][];
 			for (int t = 0; t < cardinality; t++)
 			{
@@ -98,7 +91,7 @@ public class SimpleTiledMode3d : Model3d<SimpleTiledModelParams>
 				action.Add(map[t]);
 			}
 
-			
+
 			tiles.Add(new SimpleTiledModelTile(tileConfig, 0));
 			tilenames.Add(tileConfig.Id + " 0");
 
@@ -163,8 +156,8 @@ public class SimpleTiledMode3d : Model3d<SimpleTiledModelParams>
 			}
 		}
 
-		for (int t2 = 0; t2 < T; t2++) 
-		for (int t1 = 0; t1 < T; t1++)
+		for (int t2 = 0; t2 < T; t2++)
+			for (int t1 = 0; t1 < T; t1++)
 			{
 				tempPropagator[2][t2][t1] = tempPropagator[0][t1][t2];
 				tempPropagator[3][t2][t1] = tempPropagator[1][t1][t2];
@@ -210,8 +203,9 @@ public class SimpleTiledMode3d : Model3d<SimpleTiledModelParams>
 
 	public override CellState GetCellStateAt(int x, int y, int z)
 	{
-		bool[] a = wave[To1D(x,y,z)];
-			
+		Debug.Log("Getting simple tiled cell state at " + x + y + z);
+		bool[] a = wave[To1D(x, y, z)];
+
 		double entropy;
 		int? collapsedPatternId;
 		CalculateEntropyAndPatternIdAt(x, y, z, out entropy, out collapsedPatternId);

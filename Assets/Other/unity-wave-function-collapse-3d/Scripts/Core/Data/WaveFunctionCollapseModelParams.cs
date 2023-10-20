@@ -12,16 +12,16 @@
         /// <summary>
         /// X dimension of the output data
         /// </summary>
-        public int Width { get; private set; } 
-        
+        public readonly int Width;
+
         /// <summary>
         /// Y dimension of the output data
         /// </summary>
-        public int Height { get; private set; }
-        
+        public readonly int Height;
+
         /// <summary>
         /// Z dimension of the output data
         /// </summary>
-        public int Depth { get; private set; }
+        public readonly int Depth;
     }
 }

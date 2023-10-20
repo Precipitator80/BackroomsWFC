@@ -11,7 +11,7 @@ namespace Core.Data
             ConfigsList = new List<T>();
         }
 
-        public List<T> ConfigsList { get; private set; }
+        public readonly List<T> ConfigsList;
 
         public T GetConfig(string configId)
         {

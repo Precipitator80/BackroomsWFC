@@ -1,8 +1,6 @@
-﻿using Core.Data;
-using Core.Data.OverlappingModel;
+﻿using Core.Data.OverlappingModel;
 using Core.Data.SimpleTiledModel;
 using Core.InputProviders;
-using Core.Model;
 using Core.Model.New;
 using UnityEditor;
 using UnityEngine;
@@ -17,7 +15,7 @@ namespace Core
 
 		// Renders the output of the generator.
 		[SerializeField]
-		private WaveFunctionCollapseRenderer renderer;
+		private WaveFunctionCollapseRenderer WFCRenderer;
 
 		// The width of the output area.
 		[SerializeField]
@@ -31,26 +29,31 @@ namespace Core
 		[SerializeField]
 		private int depth;
 
-		// The width of the tiles.
+		// Whether the output should be tilable or not.
 		[SerializeField]
-		private int patternSize;
-
-		[SerializeField]
-		private bool periodicInput = false;
-
-		[SerializeField]
-		private bool periodicOutput = false;
-
-		[SerializeField]
-		private int symmetry = 1;
-
-		[SerializeField]
-		private int foundation = 0;
+		private bool tilableOutput = false;
 
 		// The number of times to run a single collapse and propagation step.
 		// 0 will run infinitely.
 		[SerializeField]
 		private int iterations = 0;
+
+		// Size of the overlap for the overlapping model.
+		[SerializeField]
+		private int overlapPatternSize;
+
+		// Whether the input for the overlapping model is tilable or not.
+		[SerializeField]
+		private bool overlapTiledInput = false;
+
+		// Number of extra symmetries to add? 1-8 adds symmetries, 0 preserves original.
+		[SerializeField]
+		private int overlapSymmetry = 1;
+
+		// Assigns a pattern to the bottom row of overlapping output.
+		// Useful when using vertical 2D patterns.
+		[SerializeField]
+		private int overlapFoundation = 0;
 
 		// Variables to reference the overlapping model and its input data used in overlapping generation.
 		private InputOverlappingData inputOverlappingData;
@@ -68,14 +71,14 @@ namespace Core
 			Abort();
 
 			inputOverlappingData = dataProvider.GetInputOverlappingData();
-			var modelParams = new OverlappingModelParams(width, height, depth, patternSize);
-			modelParams.PeriodicInput = periodicInput;
-			modelParams.PeriodicOutput = periodicOutput;
-			modelParams.Symmetry = symmetry;
-			modelParams.Ground = foundation;
+			var modelParams = new OverlappingModelParams(width, height, depth, overlapPatternSize);
+			modelParams.PeriodicInput = overlapTiledInput;
+			modelParams.PeriodicOutput = tilableOutput;
+			modelParams.Symmetry = overlapSymmetry;
+			modelParams.Ground = overlapFoundation;
 
 			overlappingModel = new OvelappingModel2dWrapper(inputOverlappingData, modelParams);
-			renderer.Init(overlappingModel);
+			WFCRenderer.Init(overlappingModel);
 
 			runningCoroutine = StartCoroutine(overlappingModel.Model.RunViaEnumerator(0, iterations, OnResult, OnIteration));
 		}
@@ -87,11 +90,11 @@ namespace Core
 
 			// Get the input data and build a model for the generator.
 			var inputData = dataProvider.GetInputSimpleTiledData();
-			var modelParams = new SimpleTiledModelParams(width, height, depth, periodicOutput);
+			var modelParams = new SimpleTiledModelParams(width, height, depth, tilableOutput);
 			simpleTiledModel = new SimpleTiledMode3d(inputData, modelParams);
 
 			// Initialise the renderer and start the generator.
-			renderer.Init(simpleTiledModel);
+			WFCRenderer.Init(simpleTiledModel);
 			runningCoroutine = StartCoroutine(simpleTiledModel.RunViaEnumerator(0, iterations, OnResult, OnIteration));
 		}
 
@@ -99,7 +102,7 @@ namespace Core
 		private void OnIteration(bool[][] wave)
 		{
 			Debug.Log("Intermediate iteration step.");
-			renderer.UpdateStates();
+			WFCRenderer.UpdateStates();
 			Debug.Log("Finished interation step.");
 		}
 
@@ -113,11 +116,13 @@ namespace Core
 		// Method to cancel the current generation and clear the renderer.
 		public void Abort()
 		{
+			Debug.Log("Aborting! Clearing renderer " + WFCRenderer.GetInstanceID());
 			if (runningCoroutine != null)
 			{
+				Debug.Log("Stopping coroutine " + runningCoroutine);
 				StopCoroutine(runningCoroutine);
 			}
-			renderer.Clear();
+			WFCRenderer.Clear();
 		}
 	}
 

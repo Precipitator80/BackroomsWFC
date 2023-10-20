@@ -65,9 +65,10 @@ namespace Core
             Debug.Log("Finished updating states");
         }
 
+        // Run in reverse order so that indexing stays consistent.
         public void Clear()
         {
-            for (int i = 0; i < transform.childCount; i++)
+            for (int i = transform.childCount - 1; i >= 0; i--)
             {
                 GameObject go = transform.GetChild(i).gameObject;
                 if (Application.isPlaying)

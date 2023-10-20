@@ -10,7 +10,6 @@ using System;
 using System.Collections;
 using Core.Data;
 using Core.Model;
-using Eppy;
 using UnityEngine;
 using Random = System.Random;
 
@@ -93,13 +92,13 @@ public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollap
 			{
 				Debug.Log("Found result. Doing resultCallback.");
 				resultCallback(result.Value);
-				break;
+				yield break;
 			}
-			Debug.Log("Did not find result. Propagating with iterationCallnack. Iteration number: " + l);
+			Debug.Log("Did not find result. Propagating with iterationCallback. Iteration number: " + l);
 			Propagate();
 			iterationCallback(wave);
 			Debug.Log("Finished iteration callback");
-			yield return null; // Seems to cause this to take ages in the editor.
+			//yield return null; // Seems to cause this to take ages in the editor.
 		}
 
 		resultCallback(false);
@@ -296,11 +295,13 @@ public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollap
 		entropy = entropies[indexInWave] / startingEntropy;
 	}
 
+	// Converts a vector into an index for a 1D representation of a 3D space.
 	protected int To1D(int x, int y, int z)
 	{
 		return z * FMX * FMY + y * FMX + x;
 	}
 
+	// Converts an index for a 1D representation of a 3D space into a vector.
 	protected void To3D(int index, out int x, out int y, out int z)
 	{
 		z = index / (FMX * FMY);

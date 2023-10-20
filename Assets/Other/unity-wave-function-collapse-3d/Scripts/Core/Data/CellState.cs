@@ -2,12 +2,12 @@
 {
     public class CellState
     {
-        public double EntropyLevel { get; private set; }
-        
+        public readonly double EntropyLevel;
+
         /// <summary>
         /// Going to be null if Entropy level is more than 0
         /// </summary>
-        public ITile Tile { get; private set; }
+        public readonly ITile Tile;
 
         public CellState(double entropyLevel, ITile tileIndex)
         {

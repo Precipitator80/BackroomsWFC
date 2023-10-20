@@ -2,13 +2,12 @@
 {
     public class NeighborData
     {
-        public TileConfig LeftNeighborConfig { get; private set; }
-        public TileConfig RightNeighborConfig { get; private set; }
-        public int LeftRotation { get; private set; }
-        public int RightRotation { get; private set; }
-        
-        public bool Horizontal { get; private set; }
-        
+        public readonly TileConfig LeftNeighborConfig;
+        public readonly TileConfig RightNeighborConfig;
+        public readonly int LeftRotation;
+        public readonly int RightRotation;
+        public readonly bool Horizontal;
+
         public NeighborData(TileConfig leftNeighborConfig, TileConfig rightNeighborConfig, int leftRotation, int rightRotation, bool horizontal = true)
         {
             LeftNeighborConfig = leftNeighborConfig;

@@ -4,8 +4,8 @@ namespace Core.Data
 {
     public class TileConfig
     {
-        public string Id { get; private set; }
-        public GameObject Prefab { get; private set; }
+        public readonly string Id;
+        public readonly GameObject Prefab;
 
         public TileConfig(GameObject prefab)
         {
