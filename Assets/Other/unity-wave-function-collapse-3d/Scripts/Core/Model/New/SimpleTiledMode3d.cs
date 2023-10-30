@@ -210,7 +210,7 @@ public class SimpleTiledMode3d : Model3d<SimpleTiledModelParams>
 		int? collapsedPatternId;
 		CalculateEntropyAndPatternIdAt(x, y, z, out entropy, out collapsedPatternId);
 
-		ITile tile = null;
+		Core.Data.ITile tile = null;
 		if (collapsedPatternId != null)
 		{
 			tile = tiles[collapsedPatternId.Value];

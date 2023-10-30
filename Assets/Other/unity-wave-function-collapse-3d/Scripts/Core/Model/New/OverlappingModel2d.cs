@@ -170,7 +170,7 @@ namespace Core.Model.New
 			double entropy;
 			CalculateEntropyAndPatternIdAt(x - dx, y - dy, out entropy, out collapsedPatternId);
 
-			ITile tile = null;
+			Data.ITile tile = null;
 			if (collapsedPatternId != null)
 			{
 				tile = InputData.GetTileById(patterns[collapsedPatternId.Value][dx + dy * N]);
