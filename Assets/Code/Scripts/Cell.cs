@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace PrecipitatorWFC
     [ExecuteInEditMode]
     public class Cell : MonoBehaviour
     {
-        protected HashSet<Tile> tileOptions;
+        public HashSet<Tile> tileOptions;
         protected GameObject collapsedCell;
         public int y;
         public int x;
@@ -40,13 +41,46 @@ namespace PrecipitatorWFC
             {
                 tileOptions = new HashSet<Tile>(TileManager.Instance.allTiles);
                 Tile[] tileOptionsArray = tileOptions.ToArray();
-                Tile randomTileOption = tileOptionsArray[Random.Range(0, tileOptionsArray.Length)];
+                Tile randomTileOption = tileOptionsArray[UnityEngine.Random.Range(0, tileOptionsArray.Length)];
                 tileOptions.Add(randomTileOption);
                 Collapse();
                 return true;
             }
             return false;
         }
+
+        public void assign(Tile tile)
+        {
+            collapsedCell = Instantiate(tile.gameObject, new Vector3(2 * x, 0f, 2 * y), Quaternion.identity);
+        }
+
+        public bool unassign(Tile tile)
+        {
+            Destroy(collapsedCell);
+            bool removed = tileOptions.Remove(tile);
+            if (removed)
+            {
+                LevelGenerationManager.Instance.CurrentState.addDomainChange(this, tile);
+            }
+            return removed;
+        }
+
+        public bool restoreDomain(Tile tile)
+        {
+            return tileOptions.Add(tile);
+        }
+
+        public bool emptyDomain()
+        {
+            return tileOptions.Count == 0;
+        }
+
+        public Tile selectTile()
+        {
+            Tile[] tileOptionsArray = tileOptions.ToArray();
+            return tileOptionsArray[UnityEngine.Random.Range(0, tileOptionsArray.Length)];
+        }
+
 
         private void Collapse()
         {
