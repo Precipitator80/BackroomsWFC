@@ -22,5 +22,15 @@ namespace PrecipitatorWFC
             }
             return backNeighbours;
         }
+
+        public override Tile[] PossibleNeighbours(CellArc cellArc)
+        {
+            int cardinality = Cardinality(cellArc);
+            if (cardinality < 2)
+            {
+                return frontNeighbours;
+            }
+            return backNeighbours;
+        }
     }
 }

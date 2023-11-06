@@ -33,6 +33,8 @@ namespace PrecipitatorWFC
          */
         public abstract Tile[] PossibleNeighbours(Cell collapsedCell, int cardinalityToNeighbour);
 
+        public abstract Tile[] PossibleNeighbours(CellArc cellArc);
+
         /**
          * Cardinal rotation: 0-3 in steps of 90 degrees.
          * cellCardinalRotation: The cardinal rotation of the collapsed cell relative to the grid.
@@ -49,6 +51,27 @@ namespace PrecipitatorWFC
                 }
             }
             return Math.Abs(cellCardinalRotation - cardinalityToNeighbour - 4) % 4;
+        }
+
+        protected int Cardinality(CellArc cellArc)
+        {
+            if (cellArc.cell2.y - cellArc.cell1.y == 1)
+            {
+                return 0;
+            }
+            if (cellArc.cell2.x - cellArc.cell1.x == 1)
+            {
+                return 1;
+            }
+            if (cellArc.cell2.y - cellArc.cell1.y == -1)
+            {
+                return 2;
+            }
+            if (cellArc.cell2.y - cellArc.cell1.y == 1)
+            {
+                return 3;
+            }
+            throw new ArgumentException("Could not calculate cardinality of cell arc due to poor positioning.");
         }
     }
 }

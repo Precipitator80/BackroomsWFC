@@ -38,6 +38,9 @@ namespace PrecipitatorWFC
 
         public void Begin()
         {
+            stateChanges = new Stack<StateChange>();
+            enterNewState();
+
             // Set up a grid of cells.
             grid = new Cell[ySize, xSize];
             for (int y = 0; y < ySize; y++)
@@ -48,8 +51,6 @@ namespace PrecipitatorWFC
                 }
             }
 
-            stateChanges = new Stack<StateChange>();
-            enterNewState();
             // run macAC3 once? Only if using preset tiles.
 
             cellsCollapsed = 0;
@@ -162,7 +163,8 @@ namespace PrecipitatorWFC
 
         private void enterNewState()
         {
-            stateChanges.Append(new StateChange());
+            stateChanges.Push(new StateChange());
+            Debug.Log("Entered new state. Stack size is now " + stateChanges.Count);
         }
 
         public StateChange CurrentState
@@ -175,8 +177,16 @@ namespace PrecipitatorWFC
 
         private void revertState()
         {
-            StateChange currentState = stateChanges.Pop();
-            currentState.revert();
+            Debug.Log("Reverting state!");
+            if (stateChanges.Count > 1)
+            {
+                StateChange currentState = stateChanges.Pop();
+                currentState.revert();
+            }
+            else
+            {
+                Debug.Log("State changes is at starting size!");
+            }
         }
 
         private bool macAC3(Cell cell)
@@ -287,11 +297,31 @@ namespace PrecipitatorWFC
                 bool supported = false;
                 // EITHER
                 // Check that the other cell has this tile as a possible neighbour.
+                foreach (Tile neighbourTile in arc.cell2.tileOptions)
+                {
+                    supported = neighbourTile.PossibleNeighbours(new CellArc(arc.cell2, arc.cell1)).Contains(tile);
+                    if (supported)
+                    {
+                        break;
+                    }
+                }
                 // OR
                 // Check that this tile has a possible neighbour that is an option in the other cell.
 
-                // CONSIDERATIONS FOR COLLAPSED VS NOT COLLAPSED?
-                throw new NotImplementedException();
+                // CONSIDERATIONS FOR COLLAPSED VS NOT COLLAPSED? Add this into the Cardinality calculation using a CellArc?
+
+                // Remove if not supported.
+                if (!supported)
+                {
+                    changed = true;
+                    arc.cell1.tileOptions.Remove(tile);
+                    CurrentState.addDomainChange(arc.cell1, tile);
+                    // Check if domain is empty.
+                    if (arc.cell1.tileOptions.Count == 0)
+                    {
+                        throw new EmptyDomainException("Domain wipeout!");
+                    }
+                }
             }
             return changed;
         }

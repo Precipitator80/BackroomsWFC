@@ -51,12 +51,22 @@ namespace PrecipitatorWFC
 
         public void assign(Tile tile)
         {
+            HashSet<Tile> tilesToRemove = new HashSet<Tile>(tileOptions.Where(otherTile => otherTile != tile));
+            foreach (Tile otherTile in tilesToRemove)
+            {
+                pruneDomain(otherTile);
+            }
             collapsedCell = Instantiate(tile.gameObject, new Vector3(2 * x, 0f, 2 * y), Quaternion.identity);
         }
 
         public bool unassign(Tile tile)
         {
-            Destroy(collapsedCell);
+            DestroyImmediate(collapsedCell);
+            return pruneDomain(tile);
+        }
+
+        public bool pruneDomain(Tile tile)
+        {
             bool removed = tileOptions.Remove(tile);
             if (removed)
             {

@@ -15,5 +15,10 @@ namespace PrecipitatorWFC
         {
             return neighbours;
         }
+
+        public override Tile[] PossibleNeighbours(CellArc cellArc)
+        {
+            return neighbours;
+        }
     }
 }
