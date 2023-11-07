@@ -8,8 +8,14 @@ namespace PrecipitatorWFC
         public Tile[] outsideNeighbours;
         public Tile[] backNeighbours;
 
-        public ThreeWayTile(GameObject prefab) : base(prefab)
+        public ThreeWayTile(GameObject prefab) : base(prefab, "ThreeWay")
         {
+        }
+
+        public void Start()
+        {
+            Id = "ThreeWay";
+            name = Id;
         }
 
         public override Tile[] PossibleNeighbours(Cell collapsedCell, int cardinalityToNeighbour)

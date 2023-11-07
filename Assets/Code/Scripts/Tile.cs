@@ -1,31 +1,50 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace PrecipitatorWFC
 {
     public abstract class Tile : MonoBehaviour
     {
-        public readonly string Id;
+        private int id = -1;
+        public string Id;
         public readonly GameObject Prefab;
 
-        public Tile(GameObject prefab)
+        public Tile(GameObject prefab, string Id = "Empty")
         {
             Prefab = prefab;
-            if (prefab == null)
+            if (prefab != null && !prefab.name.Equals(string.Empty))
             {
-                Id = "Empty";
+                this.Id = prefab.name;
             }
             else
             {
-                Id = prefab.name;
+                this.Id = Id;
+            }
+            id = Array.IndexOf(TileManager.Instance.allTiles, Prefab);
+            Debug.Log("Id is " + this.Id + " / " + this.id);
+        }
+
+        public int TileID
+        {
+            get
+            {
+                if (id == -1)
+                {
+                    id = Array.IndexOf(TileManager.Instance.allTiles, Prefab);
+                    Debug.Log("id is " + id);
+                }
+                return id;
             }
         }
 
+        /*
         public override string ToString()
         {
             return Id;
         }
+        */
 
         /**
          * collapsedCell: The cell that was collapsed.
@@ -55,6 +74,7 @@ namespace PrecipitatorWFC
 
         protected int Cardinality(CellArc cellArc)
         {
+            Debug.Log("Checking cardinality: y: " + (cellArc.cell2.y - cellArc.cell1.y) + ", x: " + (cellArc.cell2.x - cellArc.cell1.x));
             if (cellArc.cell2.y - cellArc.cell1.y == 1)
             {
                 return 0;
@@ -67,11 +87,38 @@ namespace PrecipitatorWFC
             {
                 return 2;
             }
-            if (cellArc.cell2.y - cellArc.cell1.y == 1)
+            if (cellArc.cell2.x - cellArc.cell1.x == -1)
             {
                 return 3;
             }
             throw new ArgumentException("Could not calculate cardinality of cell arc due to poor positioning.");
+        }
+
+        public bool supported(CellArc arc)
+        {
+            // EITHER
+            // Check that the other cell has this tile as a possible neighbour.
+            Debug.Log("Checking support of " + arc);
+            foreach (Tile neighbourTile in arc.cell2.tileOptions)
+            {
+                Tile[] possibleNeighbours = neighbourTile.PossibleNeighbours(new CellArc(arc.cell2, arc.cell1));
+                foreach (Tile tile in possibleNeighbours)
+                {
+                    Debug.Log("Possible neighbour: " + tile);
+                }
+                if (possibleNeighbours.Contains(this))
+                {
+                    Debug.Log(arc + " is supported");
+                    return true;
+                }
+            }
+            // OR
+            // Check that this tile has a possible neighbour that is an option in the other cell.
+
+            // CONSIDERATIONS FOR COLLAPSED VS NOT COLLAPSED? Add this into the Cardinality calculation using a CellArc?
+
+            Debug.Log(this + " is NOT supported on " + arc);
+            return false;
         }
     }
 }

@@ -56,12 +56,16 @@ namespace PrecipitatorWFC
             {
                 pruneDomain(otherTile);
             }
-            collapsedCell = Instantiate(tile.gameObject, new Vector3(2 * x, 0f, 2 * y), Quaternion.identity);
+            Debug.Log("Assigned tile " + tile + ": " + this);
+        }
+
+        private void collapseCell(Tile tile)
+        {
+            //collapsedCell = Instantiate(tile.gameObject, new Vector3(2 * x, 0f, 2 * y), Quaternion.identity);
         }
 
         public bool unassign(Tile tile)
         {
-            DestroyImmediate(collapsedCell);
             return pruneDomain(tile);
         }
 
@@ -102,7 +106,7 @@ namespace PrecipitatorWFC
 
             // Instantiate the tile prefab in the cell.
             Tile tileOption = tileOptions.ToArray()[0];
-            collapsedCell = Instantiate(tileOption.gameObject, new Vector3(2 * x, 0f, 2 * y), Quaternion.identity);
+            //collapsedCell = Instantiate(tileOption.gameObject, new Vector3(2 * x, 0f, 2 * y), Quaternion.identity);
 
             // Use one of the possible rotations.
             //float randomRotation = 90f * tileOption.possibleCardinalities[Random.Range(0, tileOption.possibleCardinalities.Count)];
@@ -132,6 +136,11 @@ namespace PrecipitatorWFC
             {
                 propagationQueue.Enqueue(this);
             }
+        }
+
+        public override string ToString()
+        {
+            return "(" + x + "," + y + ")";
         }
     }
 }

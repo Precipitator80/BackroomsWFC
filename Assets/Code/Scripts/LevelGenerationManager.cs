@@ -56,6 +56,8 @@ namespace PrecipitatorWFC
             cellsCollapsed = 0;
 
             MAC3();
+
+            Debug.Log("Finished MAC3 level generation.");
             // while (cellsCollapsed < xSize * ySize)
             // {
             //     int randomY = UnityEngine.Random.Range(0, ySize);
@@ -113,7 +115,6 @@ namespace PrecipitatorWFC
             Tile tile = cell.selectTile();
             cell.assign(tile);
 
-
             if (finished())
             {
                 return;
@@ -141,7 +142,15 @@ namespace PrecipitatorWFC
 
         private bool finished()
         {
-            return cellsCollapsed == (xSize * ySize);
+            //return cellsCollapsed == (xSize * ySize);
+            foreach (Cell cell in grid)
+            {
+                if (cell.tileOptions.Count != 1)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         private Cell selectCell()
         {
@@ -223,21 +232,24 @@ namespace PrecipitatorWFC
 
         private void generateArcPair(Cell cell1, Cell cell2, ref Queue<CellArc> queue)
         {
-            queue.Append(new CellArc(cell1, cell2));
-            queue.Append(new CellArc(cell2, cell1));
+            queue.Enqueue(new CellArc(cell1, cell2));
+            queue.Enqueue(new CellArc(cell2, cell1));
         }
 
         private bool macAC3(Queue<CellArc> queue)
         {
             bool changed = false;
+            Debug.Log("Running macAC3 with a propagation queue of size " + queue.Count);
             while (queue.Count > 0)
             {
                 CellArc arc = queue.Dequeue();
+                Debug.Log("Revising arc: " + arc);
                 if (revise(arc))
                 {
-                    foreach (CellArc targetedArc in getArcs(arc.cell1))
+                    Debug.Log("Getting targeted arcs for arc: " + arc);
+                    foreach (CellArc targetedArc in getTargetedArcs(arc))
                     {
-                        queue.Append(targetedArc);
+                        queue.Enqueue(targetedArc);
                     }
                 }
             }
@@ -255,7 +267,7 @@ namespace PrecipitatorWFC
                 Cell otherCell = grid[cell.y + 1, cell.x];
                 if (otherCell != arc.cell2)
                 {
-                    queue.Append(new CellArc(otherCell, cell));
+                    queue.Enqueue(new CellArc(otherCell, cell));
                 }
             }
             // Right neighbour.
@@ -264,7 +276,7 @@ namespace PrecipitatorWFC
                 Cell otherCell = grid[cell.y, cell.x + 1];
                 if (otherCell != arc.cell2)
                 {
-                    queue.Append(new CellArc(otherCell, cell));
+                    queue.Enqueue(new CellArc(otherCell, cell));
                 }
             }
             // Bottom neighbour.
@@ -273,7 +285,7 @@ namespace PrecipitatorWFC
                 Cell otherCell = grid[cell.y - 1, cell.x];
                 if (otherCell != arc.cell2)
                 {
-                    queue.Append(new CellArc(otherCell, cell));
+                    queue.Enqueue(new CellArc(otherCell, cell));
                 }
             }
             // Left neighbour.
@@ -282,7 +294,7 @@ namespace PrecipitatorWFC
                 Cell otherCell = grid[cell.y, cell.x - 1];
                 if (otherCell != arc.cell2)
                 {
-                    queue.Append(new CellArc(otherCell, cell));
+                    queue.Enqueue(new CellArc(otherCell, cell));
                 }
             }
             return queue;
@@ -292,37 +304,21 @@ namespace PrecipitatorWFC
         private bool revise(CellArc arc)
         {
             bool changed = false;
-            foreach (Tile tile in arc.cell1.tileOptions)
+            // Remove any tiles not supported.
+            HashSet<Tile> tilesToRemove = new HashSet<Tile>(arc.cell1.tileOptions.Where(otherTile => !otherTile.supported(arc)));
+            foreach (Tile unsupportedTile in tilesToRemove)
             {
-                bool supported = false;
-                // EITHER
-                // Check that the other cell has this tile as a possible neighbour.
-                foreach (Tile neighbourTile in arc.cell2.tileOptions)
-                {
-                    supported = neighbourTile.PossibleNeighbours(new CellArc(arc.cell2, arc.cell1)).Contains(tile);
-                    if (supported)
-                    {
-                        break;
-                    }
-                }
-                // OR
-                // Check that this tile has a possible neighbour that is an option in the other cell.
-
-                // CONSIDERATIONS FOR COLLAPSED VS NOT COLLAPSED? Add this into the Cardinality calculation using a CellArc?
-
-                // Remove if not supported.
-                if (!supported)
-                {
-                    changed = true;
-                    arc.cell1.tileOptions.Remove(tile);
-                    CurrentState.addDomainChange(arc.cell1, tile);
-                    // Check if domain is empty.
-                    if (arc.cell1.tileOptions.Count == 0)
-                    {
-                        throw new EmptyDomainException("Domain wipeout!");
-                    }
-                }
+                changed = true;
+                arc.cell1.tileOptions.Remove(unsupportedTile);
+                CurrentState.addDomainChange(arc.cell1, unsupportedTile);
             }
+
+            // Check if domain is empty.
+            if (arc.cell1.tileOptions.Count == 0)
+            {
+                throw new EmptyDomainException("Domain wipeout!");
+            }
+
             return changed;
         }
 

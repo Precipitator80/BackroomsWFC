@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace PrecipitatorWFC
 {
@@ -13,6 +14,7 @@ namespace PrecipitatorWFC
             {
                 domainChanges.Add(cell, new HashSet<Tile>());
             }
+            Debug.Log("Removed " + tile + " from domain of " + cell);
             return domainChanges[cell].Add(tile);
         }
 
