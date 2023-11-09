@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -7,13 +5,14 @@ using UnityEngine;
 
 namespace PrecipitatorWFC
 {
+    // TODO: Comment and clean!
     [ExecuteInEditMode]
     public class Cell : MonoBehaviour
     {
         public HashSet<Tile> tileOptions;
-        protected GameObject collapsedCell;
-        public int y;
-        public int x;
+        protected GameObject tilePrefab;
+        public int y; // The y coordinate of the cell in the grid.
+        public int x; // The x coordinate of the cell in the grid.
 
         public Cell(int y, int x)
         {
@@ -22,83 +21,71 @@ namespace PrecipitatorWFC
             this.x = x;
         }
 
-        public bool Collapsed()
+        public void Awake()
         {
-            return collapsedCell != null;
+            transform.localPosition = new Vector3(TileManager.tileSize * x, 0f, TileManager.tileSize * y);
         }
 
-        private void CollapseCheck()
+        public bool Collapsed
         {
-            if (tileOptions.Count < 2)
+            get
             {
-                Collapse();
+                return tilePrefab != null;
             }
         }
 
-        public bool ForceCollapse()
+        public bool EmptyDomain
         {
-            if (!Collapsed())
+            get
             {
-                tileOptions = new HashSet<Tile>(TileManager.Instance.allTiles);
-                Tile[] tileOptionsArray = tileOptions.ToArray();
-                Tile randomTileOption = tileOptionsArray[UnityEngine.Random.Range(0, tileOptionsArray.Length)];
-                tileOptions.Add(randomTileOption);
-                Collapse();
-                return true;
+                return tileOptions.Count == 0;
             }
-            return false;
         }
 
-        public void assign(Tile tile)
+        public bool Assign(Tile tile)
         {
+            bool changed = false;
             HashSet<Tile> tilesToRemove = new HashSet<Tile>(tileOptions.Where(otherTile => otherTile != tile));
             foreach (Tile otherTile in tilesToRemove)
             {
-                pruneDomain(otherTile);
+                if (PruneDomain(otherTile))
+                {
+                    changed = true;
+                }
             }
             Debug.Log("Assigned tile " + tile + ": " + this);
+            return changed;
         }
 
-        private void collapseCell(Tile tile)
+        public bool Unassign(Tile tile)
         {
-            //collapsedCell = Instantiate(tile.gameObject, new Vector3(2 * x, 0f, 2 * y), Quaternion.identity);
+            return PruneDomain(tile);
         }
 
-        public bool unassign(Tile tile)
-        {
-            return pruneDomain(tile);
-        }
-
-        public bool pruneDomain(Tile tile)
+        public bool PruneDomain(Tile tile)
         {
             bool removed = tileOptions.Remove(tile);
             if (removed)
             {
-                LevelGenerationManager.Instance.CurrentState.addDomainChange(this, tile);
+                LevelGenerationManager.Instance.CurrentStateChanges.addDomainChange(this, tile);
             }
             return removed;
         }
 
-        public bool restoreDomain(Tile tile)
+        public bool RestoreDomain(Tile tile)
         {
             return tileOptions.Add(tile);
         }
 
-        public bool emptyDomain()
-        {
-            return tileOptions.Count == 0;
-        }
-
-        public Tile selectTile()
+        public Tile SelectTile()
         {
             Tile[] tileOptionsArray = tileOptions.ToArray();
             return tileOptionsArray[UnityEngine.Random.Range(0, tileOptionsArray.Length)];
         }
 
-
         private void Collapse()
         {
-            // Check for a contradiction.
+            // Check for a contradiction. Should never happen if this is called only after successful level generation.
             if (tileOptions.Count == 0)
             {
                 throw new System.Exception("Contradiction! Cell has no choices left!");
@@ -106,14 +93,11 @@ namespace PrecipitatorWFC
 
             // Instantiate the tile prefab in the cell.
             Tile tileOption = tileOptions.ToArray()[0];
-            //collapsedCell = Instantiate(tileOption.gameObject, new Vector3(2 * x, 0f, 2 * y), Quaternion.identity);
+            tilePrefab = Instantiate(tileOption.Prefab, this.transform);
 
-            // Use one of the possible rotations.
-            //float randomRotation = 90f * tileOption.possibleCardinalities[Random.Range(0, tileOption.possibleCardinalities.Count)];
-            //collapsedCell.transform.Rotate(0f, randomRotation, 0f);
-
-            // Propagate the choice made to other cells.
-            //LevelGenerationManager.Instance.Propagate(this);
+            // // Use one of the possible rotations.
+            // float randomRotation = 90f * tileOption.possibleCardinalities[Random.Range(0, tileOption.possibleCardinalities.Count)];
+            // collapsedCell.transform.Rotate(0f, randomRotation, 0f);
         }
 
         public void PruneDomain(Cell adjacentCell, int cardinalityToThis, ref Queue<Cell> propagationQueue)

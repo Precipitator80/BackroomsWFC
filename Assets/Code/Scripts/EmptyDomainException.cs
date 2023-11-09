@@ -1,5 +1,6 @@
 using System;
 
+// TODO: Comment!
 public class EmptyDomainException : Exception
 {
     public EmptyDomainException()

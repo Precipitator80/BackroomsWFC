@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace PrecipitatorWFC
 {
+    // TODO: Comment / Delete / Rework into LG.
     public class TileOption : MonoBehaviour
     {
         public TileOption(Tile tile)

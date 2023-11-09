@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Comment!
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {

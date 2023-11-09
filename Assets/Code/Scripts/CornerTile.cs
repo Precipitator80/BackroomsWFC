@@ -1,22 +1,15 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PrecipitatorWFC
 {
+    // TODO: Comment!
     public class CornerTile : Tile
     {
         public Tile[] frontNeighbours;
         public Tile[] backNeighbours;
 
-        public CornerTile(GameObject prefab) : base(prefab, "Corner")
+        public CornerTile(GameObject prefab) : base(prefab)
         {
-        }
-
-        public void Start()
-        {
-            Id = "Corner";
-            name = Id;
         }
 
         public override Tile[] PossibleNeighbours(Cell collapsedCell, int cardinalityToNeighbour)
