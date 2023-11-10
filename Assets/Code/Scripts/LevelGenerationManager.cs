@@ -105,10 +105,14 @@ namespace PrecipitatorWFC
 
             // Propagate any changes and, if there were any, run the algorithm again to assign further cells.
             // If no changes were made by AC3 (returns false) after checking for a solution, then a dead end was reached.
-            if (macAC3(cell) || changed)
+            try
             {
-                MAC3();
-            }
+                if (macAC3(cell) || changed)
+                {
+                    MAC3();
+                }
+            } // Exception to let AC3 cancel early in the case of a domain wipeout.
+            catch (EmptyDomainException) { }
 
             // If recursion finished, this code is reached.
             // Revert the state and remove the tile value that was checked from the cell's domain.
@@ -119,10 +123,14 @@ namespace PrecipitatorWFC
             // If this resulted in changes, run the algorithm again.
             if (!cell.EmptyDomain)
             {
-                if (macAC3(cell) || changed)
+                try
                 {
-                    MAC3();
-                }
+                    if (macAC3(cell) || changed)
+                    {
+                        MAC3();
+                    }
+                } // Exception to let AC3 cancel early in the case of a domain wipeout.
+                catch (EmptyDomainException) { }
             }
 
             // Restore the cell's domain with the chosen tile to be a potential option when making a previous choice differently.
@@ -213,6 +221,7 @@ namespace PrecipitatorWFC
                 Debug.Log("Revising arc: " + arc);
                 if (Revise(arc))
                 {
+                    changed = true;
                     Debug.Log("Getting targeted arcs for arc: " + arc);
                     foreach (CellArc targetedArc in getTargetedArcs(arc))
                     {
