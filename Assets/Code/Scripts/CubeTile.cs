@@ -2,21 +2,16 @@ using UnityEngine;
 
 namespace PrecipitatorWFC
 {
-    // TODO: Comment!
+    /// <summary>
+    /// Cube tile with equal neighbours on all sides.
+    /// </summary>
     public class CubeTile : Tile
     {
-        public Tile[] neighbours;
+        public Tile[] neighbours; // Neighbours connecting to any side of the cube.
 
-        public CubeTile(GameObject prefab) : base(prefab)
-        {
-        }
+        public CubeTile(GameObject prefab) : base(prefab) { }
 
-        public override Tile[] PossibleNeighbours(Cell collapsedCell, int cardinalityToNeighbour)
-        {
-            return neighbours;
-        }
-
-        public override Tile[] PossibleNeighbours(CellArc cellArc)
+        protected override Tile[] PossibleNeighbours(int relativeCardinality)
         {
             return neighbours;
         }

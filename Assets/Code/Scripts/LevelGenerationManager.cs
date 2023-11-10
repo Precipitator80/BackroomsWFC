@@ -41,6 +41,8 @@ namespace PrecipitatorWFC
 
         public int ySize = 10; // The depth of the level.
         public int xSize = 10; // The width of the level.
+        public int tileSize = 2; // The size of all tiles in the tile set.
+        public Tile[] tileSet; // A tile set of all possible tiles to place in the grid.
         private Cell[,] grid; // A grid of cells to run MAC3 / WFC on.
         private Stack<StateChange> stateChanges; // A stack of state changes for each recursive step / depth of search.
 
@@ -186,7 +188,7 @@ namespace PrecipitatorWFC
             {
                 for (int y = 0; y < ySize; y++)
                 {
-                    if (!grid[y, x].Collapsed)
+                    if (!grid[y, x].Assigned)
                     {
                         return grid[y, x];
                     }
@@ -366,7 +368,7 @@ namespace PrecipitatorWFC
             // Check if domain is empty.
             if (arc.cell1.tileOptions.Count == 0)
             {
-                throw new EmptyDomainException("Domain wipeout!");
+                throw new EmptyDomainException();
             }
 
             return changed;

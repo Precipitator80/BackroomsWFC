@@ -2,30 +2,19 @@ using UnityEngine;
 
 namespace PrecipitatorWFC
 {
-    // TODO: Comment!
+    /// <summary>
+    /// Three-way tile with three outsides and one back side.
+    /// </summary>
     public class ThreeWayTile : Tile
     {
-        public Tile[] outsideNeighbours;
-        public Tile[] backNeighbours;
+        public Tile[] outsideNeighbours; // Neighbours connecting to the open / front / outside of the three-way.
+        public Tile[] backNeighbours; // Neighbours connecting behind the three-way.
 
-        public ThreeWayTile(GameObject prefab) : base(prefab)
-        {
-        }
+        public ThreeWayTile(GameObject prefab) : base(prefab) { }
 
-        public override Tile[] PossibleNeighbours(Cell collapsedCell, int cardinalityToNeighbour)
+        protected override Tile[] PossibleNeighbours(int relativeCardinality)
         {
-            int relativeCardinality = RelativeCardinality(collapsedCell, cardinalityToNeighbour);
             if (relativeCardinality == 0)
-            {
-                return backNeighbours;
-            }
-            return outsideNeighbours;
-        }
-
-        public override Tile[] PossibleNeighbours(CellArc cellArc)
-        {
-            int cardinality = Cardinality(cellArc);
-            if (cardinality == 0)
             {
                 return backNeighbours;
             }

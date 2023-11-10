@@ -2,35 +2,20 @@ using UnityEngine;
 
 namespace PrecipitatorWFC
 {
-    // TODO: Comment!
+    /// <summary>
+    /// Wall tile with a front and back side as well as two equal intermediate sides.
+    /// </summary>
     public class WallTile : Tile
     {
-        public Tile[] frontNeighbours;
-        public Tile[] sideNeighbours;
-        public Tile[] backNeighbours;
+        public Tile[] frontNeighbours; // Neighbours connecting to the open / front of the wall.
+        public Tile[] sideNeighbours; // Neighbours connecting to the side of the wall to continue it.
+        public Tile[] backNeighbours; // Neighbours connecting behind the wall.
 
-        public WallTile(GameObject prefab) : base(prefab)
-        {
-        }
+        public WallTile(GameObject prefab) : base(prefab) { }
 
-        public override Tile[] PossibleNeighbours(Cell collapsedCell, int cardinalityToNeighbour)
+        protected override Tile[] PossibleNeighbours(int relativeCardinality)
         {
-            int relativeCardinality = RelativeCardinality(collapsedCell, cardinalityToNeighbour);
             switch (relativeCardinality)
-            {
-                case 0:
-                    return backNeighbours;
-                case 2:
-                    return frontNeighbours;
-                default:
-                    return sideNeighbours;
-            }
-        }
-
-        public override Tile[] PossibleNeighbours(CellArc cellArc)
-        {
-            int cardinality = Cardinality(cellArc);
-            switch (cardinality)
             {
                 case 0:
                     return backNeighbours;

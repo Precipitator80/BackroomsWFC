@@ -20,7 +20,7 @@ namespace PrecipitatorWFC
         public Tile(GameObject prefab)
         {
             Prefab = prefab;
-            id = Array.IndexOf(TileManager.Instance.allTiles, Prefab);
+            id = Array.IndexOf(LevelGenerationManager.Instance.tileSet, Prefab);
             Debug.Log("Id is " + id);
         }
 
@@ -31,14 +31,29 @@ namespace PrecipitatorWFC
         /// <param name="collapsedCell">The cell that was collapsed.</param>
         /// <param name="cardinalityToNeighbour">The direction to the neighbour in the grid from a bird's eye view. (0 = Above, 1 = Right, 2 = Below, 3 = Left)</param>
         /// <returns>The possible neighbour tiles of the collapsed cell.</returns>
-        public abstract Tile[] PossibleNeighbours(Cell collapsedCell, int cardinalityToNeighbour);
+        public Tile[] PossibleNeighbours(Cell collapsedCell, int cardinalityToNeighbour)
+        {
+            int relativeCardinality = RelativeCardinality(collapsedCell, cardinalityToNeighbour);
+            return PossibleNeighbours(relativeCardinality);
+        }
 
         /// <summary>
         /// Returns the possible neighbour tiles of one cell to another cell on an arc.
         /// </summary>
         /// <param name="cellArc">The arc of cells to get the neighbours along.</param>
         /// <returns>The possible neighbour tiles of the first cell in the arc.</returns>
-        public abstract Tile[] PossibleNeighbours(CellArc cellArc);
+        public Tile[] PossibleNeighbours(CellArc cellArc)
+        {
+            int cardinality = Cardinality(cellArc);
+            return PossibleNeighbours(cardinality);
+        }
+
+        /// <summary>
+        /// Returns the possible neighbour tiles of this tile given a relative cardinality to another cell.
+        /// </summary>
+        /// <param name="relativeCardinality">The cardinality towards the neighbouring cell.</param>
+        /// <returns>The possible neighbour tiles of the tile.</returns>
+        protected abstract Tile[] PossibleNeighbours(int relativeCardinality);
 
         /// <summary>
         /// Calculates the relative direction from a collapsed cell to one of its neighbours, specified by the actual cardinality from a bird's eye view of the grid.

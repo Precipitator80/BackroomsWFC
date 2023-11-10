@@ -1,6 +1,12 @@
 using UnityEngine;
 
-// TODO: Comment!
+/// <summary>
+/// Class to serve as a simple FPS controller.
+/// From source:
+/// FPS Controller Code - Dustin Morman
+/// https://www.youtube.com/watch?v=qQLvcS9FxnY - Accessed 05.10.2023
+/// https://github.com/dustinmorman/FPSControllerTutorial/blob/main/Assets/Scripts/FPSController.cs - Accessed 10.11.2023
+/// </summary>
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
