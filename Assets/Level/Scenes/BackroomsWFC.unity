@@ -2126,32 +2126,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1071668108}
-  - component: {fileID: 1071668107}
   - component: {fileID: 1071668109}
   m_Layer: 0
-  m_Name: TileManager
+  m_Name: LevelGenerationManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1071668107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071668106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b946a0f19d138174f9030dc1b8310ef2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allTiles:
-  - {fileID: 115815417}
-  - {fileID: 1679589644}
-  - {fileID: 1279606411}
-  - {fileID: 1798945640}
 --- !u!4 &1071668108
 Transform:
   m_ObjectHideFlags: 0
@@ -2181,6 +2163,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ySize: 10
   xSize: 10
+  tileSize: 2
+  tileSet:
+  - {fileID: 115815417}
+  - {fileID: 1679589644}
+  - {fileID: 1279606411}
+  - {fileID: 1798945640}
 --- !u!1001 &1150826482
 PrefabInstance:
   m_ObjectHideFlags: 0

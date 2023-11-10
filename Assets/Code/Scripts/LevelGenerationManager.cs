@@ -73,7 +73,18 @@ namespace PrecipitatorWFC
             // Run the MAC3 search algorithm.
             MAC3();
 
-            Debug.Log("Finished MAC3 level generation.");
+            if (finished())
+            {
+                Debug.Log("Level generation successful! Collapsing all cells!");
+                foreach (Cell cell in grid)
+                {
+                    cell.Collapse();
+                }
+            }
+            else
+            {
+                Debug.LogError("Level generation failed!");
+            }
         }
 
         /// <summary>

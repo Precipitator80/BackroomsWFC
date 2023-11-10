@@ -10,7 +10,7 @@ namespace PrecipitatorWFC
     /// </summary>
     public abstract class Tile : MonoBehaviour, IEquatable<Tile>
     {
-        public readonly int id; // The ID of the tile. Represents all different subclasses of tiles in the tile manager.
+        private readonly int id; // The ID of the tile. Represents all different subclasses of tiles in the tile manager.
         public readonly GameObject Prefab; // The prefab to instantiate for this tile.
 
         /// <summary>
@@ -20,7 +20,7 @@ namespace PrecipitatorWFC
         public Tile(GameObject prefab)
         {
             Prefab = prefab;
-            id = Array.IndexOf(LevelGenerationManager.Instance.tileSet, Prefab);
+            id = Array.IndexOf(LevelGenerationManager.Instance.tileSet, this);
             Debug.Log("Id is " + id);
         }
 
@@ -144,8 +144,9 @@ namespace PrecipitatorWFC
         /// <returns>True if both tiles have the same id. This represents the same type.</returns>
         public bool Equals(Tile other)
         {
-            Debug.Log("Does " + this.id + " equal " + other.id + "? " + (this.id == other.id));
-            return this.id == other.id;
+            bool equality = this.id == other.id;
+            Debug.Log("Does " + this.id + " equal " + other.id + "? " + equality);
+            return equality;
         }
     }
 }

@@ -145,12 +145,16 @@ namespace PrecipitatorWFC
         /// Collapses the cell, instantiating the remaining tile option as the tile prefab.
         /// </summary>
         /// <exception cref="System.Exception">Thrown when there is no tile option to use. Should never be thrown when collapsed after successful level generation.</exception>
-        private void Collapse()
+        public void Collapse()
         {
             // Check for a contradiction. Should never happen if this is called only after successful level generation.
-            if (tileOptions.Count == 0)
+            if (EmptyDomain)
             {
                 throw new EmptyDomainException("Domain was empty when attempting to collapse a cell!");
+            }
+            else if (!Assigned)
+            {
+                throw new System.Exception("Cell collapse was called when there was more than one tile option left!");
             }
 
             // Instantiate the tile prefab in the cell.
