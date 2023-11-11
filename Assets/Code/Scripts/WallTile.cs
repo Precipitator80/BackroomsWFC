@@ -11,8 +11,6 @@ namespace PrecipitatorWFC
         public Tile[] sideNeighbours; // Neighbours connecting to the side of the wall to continue it.
         public Tile[] backNeighbours; // Neighbours connecting behind the wall.
 
-        public WallTile(GameObject prefab) : base(prefab) { }
-
         protected override Tile[] PossibleNeighbours(int relativeCardinality)
         {
             switch (relativeCardinality)

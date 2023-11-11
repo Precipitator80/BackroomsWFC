@@ -6,7 +6,7 @@ namespace PrecipitatorWFC
     /// <summary>
     /// Class to represent an arc of two adjacents cells in the MAC3 algorithm.
     /// </summary>
-    public class CellArc : MonoBehaviour, IEquatable<CellArc>
+    public class CellArc : IEquatable<CellArc>
     {
         public Cell cell1, cell2; // The adjacent cells in the arc.
 

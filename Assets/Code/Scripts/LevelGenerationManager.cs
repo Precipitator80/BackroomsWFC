@@ -43,7 +43,7 @@ namespace PrecipitatorWFC
         public int xSize = 10; // The width of the level.
         public int tileSize = 2; // The size of all tiles in the tile set.
         public Tile[] tileSet; // A tile set of all possible tiles to place in the grid.
-        private Cell[,] grid; // A grid of cells to run MAC3 / WFC on.
+        public Cell[,] grid; // A grid of cells to run MAC3 / WFC on.
         private Stack<StateChange> stateChanges; // A stack of state changes for each recursive step / depth of search.
 
         /// <summary>
@@ -51,6 +51,19 @@ namespace PrecipitatorWFC
         /// </summary>
         public void GenerateLevel()
         {
+            // Delete the previous level if one was generated.
+            for (int i = transform.childCount - 1; i >= 0; i--)
+            {
+                DestroyImmediate(transform.GetChild(i).gameObject);
+            }
+
+            // Initialise the tileset with IDs.
+            for (int i = 0; i < tileSet.Length; i++)
+            {
+                tileSet[i].id = i;
+                Debug.Log("Id of " + tileSet[i] + " is " + i);
+            }
+
             // Initialise the state changes stack and add an initial state.
             stateChanges = new Stack<StateChange>();
             enterNewState();
@@ -127,6 +140,12 @@ namespace PrecipitatorWFC
             } // Exception to let AC3 cancel early in the case of a domain wipeout.
             catch (EmptyDomainException) { }
 
+            if (finished())
+            {
+                Debug.Log("Finished! (3)");
+                return;
+            }
+
             // If recursion finished, this code is reached.
             // Revert the state and remove the tile value that was checked from the cell's domain.
             revertState();
@@ -144,6 +163,12 @@ namespace PrecipitatorWFC
                     }
                 } // Exception to let AC3 cancel early in the case of a domain wipeout.
                 catch (EmptyDomainException) { }
+            }
+
+            if (finished())
+            {
+                Debug.Log("Finished! (4)");
+                return;
             }
 
             // Restore the cell's domain with the chosen tile to be a potential option when making a previous choice differently.
@@ -369,6 +394,12 @@ namespace PrecipitatorWFC
             bool changed = false;
             // Remove any tiles not supported.
             HashSet<Tile> tilesToRemove = new HashSet<Tile>(arc.cell1.tileOptions.Where(otherTile => !otherTile.Supported(arc)));
+            Debug.Log("Tiles to remove in revision:");
+            foreach (Tile tileToRemove in tilesToRemove)
+            {
+                Debug.Log("Tile " + tileToRemove + " with ID " + tileToRemove.id);
+            }
+
             foreach (Tile unsupportedTile in tilesToRemove)
             {
                 changed = true;

@@ -9,10 +9,10 @@ namespace PrecipitatorWFC
     /// Starts with all possible tile options, which are gradually removed during search.
     /// </summary>
     [ExecuteInEditMode]
-    public class Cell : MonoBehaviour
+    public class Cell
     {
         public HashSet<Tile> tileOptions; // A set of possible tile options for the cell at any given point. Reduced to one option before collapse.
-        protected GameObject tilePrefab; // A GameObject to hold the tile prefab once the cell has been collapsed.
+        public GameObject tilePrefab; // A GameObject to hold the tile prefab once the cell has been collapsed.
         public int y; // The y coordinate of the cell in the grid.
         public int x; // The x coordinate of the cell in the grid.
 
@@ -24,16 +24,14 @@ namespace PrecipitatorWFC
         public Cell(int y, int x)
         {
             tileOptions = new HashSet<Tile>(LevelGenerationManager.Instance.tileSet);
+            Debug.Log("Created cell with tile options:");
+            foreach (Tile tile in tileOptions)
+            {
+                Debug.Log("Tile " + tile + " with ID " + tile.id);
+            }
+
             this.y = y;
             this.x = x;
-        }
-
-        /// <summary>
-        /// Awake method that moves the cell to the right position in the grid.
-        /// </summary>
-        public void Awake()
-        {
-            transform.localPosition = new Vector3(LevelGenerationManager.Instance.tileSize * x, 0f, LevelGenerationManager.Instance.tileSize * y);
         }
 
         /// <summary>
@@ -79,7 +77,12 @@ namespace PrecipitatorWFC
         public bool Assign(Tile tile)
         {
             // Create a copy of the tile options set that only includes tiles that are not the tile to assign.
-            HashSet<Tile> tilesToRemove = new HashSet<Tile>(tileOptions.Where(otherTile => otherTile != tile));
+            HashSet<Tile> tilesToRemove = new HashSet<Tile>(tileOptions.Where(otherTile => !otherTile.Equals(tile)));
+            Debug.Log("Tiles to remove in assignment:");
+            foreach (Tile tileToRemove in tilesToRemove)
+            {
+                Debug.Log("Tile " + tileToRemove + " with ID " + tileToRemove.id);
+            }
 
             // Remove all the other tiles from the tile option set.
             bool changed = false;
@@ -159,7 +162,7 @@ namespace PrecipitatorWFC
 
             // Instantiate the tile prefab in the cell.
             Tile tileOption = tileOptions.ToArray()[0];
-            tilePrefab = Instantiate(tileOption.Prefab, this.transform);
+            tileOption.CollapseIntoCell(this);
 
             // // Use one of the possible rotations.
             // float randomRotation = 90f * tileOption.possibleCardinalities[Random.Range(0, tileOption.possibleCardinalities.Count)];

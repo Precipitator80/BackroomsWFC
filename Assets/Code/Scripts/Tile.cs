@@ -10,19 +10,7 @@ namespace PrecipitatorWFC
     /// </summary>
     public abstract class Tile : MonoBehaviour, IEquatable<Tile>
     {
-        private readonly int id; // The ID of the tile. Represents all different subclasses of tiles in the tile manager.
-        public readonly GameObject Prefab; // The prefab to instantiate for this tile.
-
-        /// <summary>
-        /// Constructor to initialise the tile.
-        /// </summary>
-        /// <param name="prefab">The prefab to instantiate for this tile.</param>
-        public Tile(GameObject prefab)
-        {
-            Prefab = prefab;
-            id = Array.IndexOf(LevelGenerationManager.Instance.tileSet, this);
-            Debug.Log("Id is " + id);
-        }
+        public int id = -2; // The ID of the tile. Represents all different subclasses of tiles in the tile set. Should be set by LG manager when generating the level.
 
         /// <summary>
         /// Returns the possible neighbour tiles of a collapsed cell in the bird's eye direction to a neighbour.
@@ -68,9 +56,9 @@ namespace PrecipitatorWFC
             int cellCardinalRotation = 0; // The cardinal rotation of the collapsed cell relative to the grid.
             if (collapsedCell.Collapsed)
             {
-                if (collapsedCell != null && collapsedCell.transform != null && collapsedCell.transform.localEulerAngles != null)
+                if (collapsedCell.tilePrefab.transform != null && collapsedCell.tilePrefab.transform.localEulerAngles != null)
                 {
-                    cellCardinalRotation = ((int)((360 + Mathf.Round(collapsedCell.transform.localEulerAngles.y)) / 90)) % 4;
+                    cellCardinalRotation = ((int)((360 + Mathf.Round(collapsedCell.tilePrefab.transform.localEulerAngles.y)) / 90)) % 4;
                 }
             }
             return Math.Abs(cellCardinalRotation - cardinalityToNeighbour - 4) % 4;
@@ -85,21 +73,25 @@ namespace PrecipitatorWFC
         /// <exception cref="ArgumentException">Thrown if the cells are not adjacent. Should be impossible.</exception>
         protected int Cardinality(CellArc cellArc)
         {
-            Debug.Log("Checking cardinality: y: " + (cellArc.cell2.y - cellArc.cell1.y) + ", x: " + (cellArc.cell2.x - cellArc.cell1.x));
+            string debugMessage = "Checking cardinality: y: " + (cellArc.cell2.y - cellArc.cell1.y) + ", x: " + (cellArc.cell2.x - cellArc.cell1.x);
             if (cellArc.cell2.y - cellArc.cell1.y == 1)
             {
+                Debug.Log(debugMessage + ". Cardinality = 0.");
                 return 0;
             }
             if (cellArc.cell2.x - cellArc.cell1.x == 1)
             {
+                Debug.Log(debugMessage + ". Cardinality = 1.");
                 return 1;
             }
             if (cellArc.cell2.y - cellArc.cell1.y == -1)
             {
+                Debug.Log(debugMessage + ". Cardinality = 2.");
                 return 2;
             }
             if (cellArc.cell2.x - cellArc.cell1.x == -1)
             {
+                Debug.Log(debugMessage + ". Cardinality = 3.");
                 return 3;
             }
             throw new ArgumentException("Could not calculate cardinality of cell arc due to poor positioning.");
@@ -120,13 +112,18 @@ namespace PrecipitatorWFC
             foreach (Tile neighbourTile in arc.cell2.tileOptions)
             {
                 Tile[] possibleNeighbours = neighbourTile.PossibleNeighbours(new CellArc(arc.cell2, arc.cell1));
-                // foreach (Tile tile in possibleNeighbours)
-                // {
-                //     Debug.Log("Possible neighbour: " + tile);
-                // }
-                if (possibleNeighbours.Contains(this))
+                foreach (Tile tile in possibleNeighbours)
                 {
-                    Debug.Log(arc + " is supported");
+                    Debug.Log("Possible neighbour: " + tile + ". Is this the same as " + this + "? " + (tile == this) + " / " + (tile.Equals(this)));
+                    if (tile.Equals(this))
+                    {
+                        Debug.Log(this + " is supported on " + arc + "(1)");
+                        return true;
+                    }
+                }
+                if (possibleNeighbours.ToList().Contains(this))
+                {
+                    Debug.Log(this + " is supported on " + arc + "(2)");
                     return true;
                 }
             }
@@ -145,8 +142,19 @@ namespace PrecipitatorWFC
         public bool Equals(Tile other)
         {
             bool equality = this.id == other.id;
-            Debug.Log("Does " + this.id + " equal " + other.id + "? " + equality);
+            Debug.Log("Does tile " + this + " / " + this.id + " equal tile " + other + " / " + other.id + "? " + (this == other) + " / " + equality);
             return equality;
+        }
+
+        /// <summary>
+        /// Creates a copy of this tile and places it into a given cell.
+        /// </summary>
+        /// <param name="cell">The cell to place the tile prefab in.</param>
+        public void CollapseIntoCell(Cell cell)
+        {
+            cell.tilePrefab = Instantiate(this.gameObject, LevelGenerationManager.Instance.transform);
+            cell.tilePrefab.transform.localPosition = new Vector3(LevelGenerationManager.Instance.tileSize * cell.x, 0f, LevelGenerationManager.Instance.tileSize * cell.y);
+            cell.tilePrefab.SetActive(true);
         }
     }
 }

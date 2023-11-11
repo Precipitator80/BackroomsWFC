@@ -10,8 +10,6 @@ namespace PrecipitatorWFC
         public Tile[] outsideNeighbours; // Neighbours connecting to the open / front / outside of the three-way.
         public Tile[] backNeighbours; // Neighbours connecting behind the three-way.
 
-        public ThreeWayTile(GameObject prefab) : base(prefab) { }
-
         protected override Tile[] PossibleNeighbours(int relativeCardinality)
         {
             if (relativeCardinality == 0)

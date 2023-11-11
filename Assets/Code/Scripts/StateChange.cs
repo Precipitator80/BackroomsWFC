@@ -26,6 +26,22 @@ namespace PrecipitatorWFC
                 domainChanges.Add(cell, new HashSet<Tile>());
             }
             Debug.Log("Removed " + tile + " from domain of " + cell);
+
+            Debug.Log("All domains:");
+            Debug.Log("LG Manager TileSet:");
+            foreach (Tile tileInDomain in LevelGenerationManager.Instance.tileSet)
+            {
+                Debug.Log(tileInDomain + " / " + tileInDomain.id);
+            }
+            foreach (Cell cellInGrid in LevelGenerationManager.Instance.grid)
+            {
+                Debug.Log("Cell " + cellInGrid + ":");
+                foreach (Tile tileInDomain in cellInGrid.tileOptions)
+                {
+                    Debug.Log(tileInDomain + " / " + tileInDomain.id);
+                }
+            }
+
             return domainChanges[cell].Add(tile);
         }
 
