@@ -24,12 +24,6 @@ namespace PrecipitatorWFC
         public Cell(int y, int x)
         {
             tileOptions = new HashSet<Tile>(LevelGenerationManager.Instance.tileSet);
-            Debug.Log("Created cell with tile options:");
-            foreach (Tile tile in tileOptions)
-            {
-                Debug.Log("Tile " + tile + " with ID " + tile.id);
-            }
-
             this.y = y;
             this.x = x;
         }
@@ -78,11 +72,6 @@ namespace PrecipitatorWFC
         {
             // Create a copy of the tile options set that only includes tiles that are not the tile to assign.
             HashSet<Tile> tilesToRemove = new HashSet<Tile>(tileOptions.Where(otherTile => !otherTile.Equals(tile)));
-            Debug.Log("Tiles to remove in assignment:");
-            foreach (Tile tileToRemove in tilesToRemove)
-            {
-                Debug.Log("Tile " + tileToRemove + " with ID " + tileToRemove.id);
-            }
 
             // Remove all the other tiles from the tile option set.
             bool changed = false;
@@ -93,7 +82,10 @@ namespace PrecipitatorWFC
                     changed = true;
                 }
             }
-            Debug.Log("Assigned tile " + tile + ": " + this);
+            if (LevelGenerationManager.Instance.debugMode)
+            {
+                Debug.Log("Assigned tile " + tile + ": " + this);
+            }
             return changed;
         }
 
@@ -135,13 +127,14 @@ namespace PrecipitatorWFC
 
         /// <summary>
         /// Selects a tile in the domain of the cell.
-        /// Currently the first tile is chosen, but in the future weighting could be used.
+        /// Currently a random tile is chosen, but in the future weighting could be used.
         /// </summary>
         /// <returns>The chosen tile.</returns>
         public Tile SelectTile()
         {
             Tile[] tileOptionsArray = tileOptions.ToArray();
             return tileOptionsArray[UnityEngine.Random.Range(0, tileOptionsArray.Length)];
+            //return tileOptionsArray[0];
         }
 
         /// <summary>

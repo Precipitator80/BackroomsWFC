@@ -44,6 +44,7 @@ namespace PrecipitatorWFC
         public int tileSize = 2; // The size of all tiles in the tile set.
         public Tile[] tileSet; // A tile set of all possible tiles to place in the grid.
         public Cell[,] grid; // A grid of cells to run MAC3 / WFC on.
+        public bool debugMode = false; // Logs each step of the algorithm to the console.
         private Stack<StateChange> stateChanges; // A stack of state changes for each recursive step / depth of search.
 
         /// <summary>
@@ -51,17 +52,17 @@ namespace PrecipitatorWFC
         /// </summary>
         public void GenerateLevel()
         {
+            // Ensure that the tile set is filled.
+            if (tileSet.Length == 0)
+            {
+                Debug.LogError("Tileset for level generation cannot be empty!");
+                return;
+            }
+
             // Delete the previous level if one was generated.
             for (int i = transform.childCount - 1; i >= 0; i--)
             {
                 DestroyImmediate(transform.GetChild(i).gameObject);
-            }
-
-            // Initialise the tileset with IDs.
-            for (int i = 0; i < tileSet.Length; i++)
-            {
-                tileSet[i].id = i;
-                Debug.Log("Id of " + tileSet[i] + " is " + i);
             }
 
             // Initialise the state changes stack and add an initial state.
@@ -108,7 +109,10 @@ namespace PrecipitatorWFC
             // Check whether all cells have been assigned.
             if (finished())
             {
-                Debug.Log("Finished! (1)");
+                if (debugMode)
+                {
+                    Debug.Log("Finished! (1)");
+                }
                 return;
             }
 
@@ -121,13 +125,6 @@ namespace PrecipitatorWFC
 
             // Assign the tile to the cell, removing all other tile from the cell's domain.
             bool changed = cell.Assign(tile);
-
-            // Check whether all cells have been assigned.
-            if (finished())
-            {
-                Debug.Log("Finished! (2)");
-                return;
-            }
 
             // Propagate any changes and, if there were any, run the algorithm again to assign further cells.
             // If no changes were made by AC3 (returns false) after checking for a solution, then a dead end was reached.
@@ -142,7 +139,10 @@ namespace PrecipitatorWFC
 
             if (finished())
             {
-                Debug.Log("Finished! (3)");
+                if (debugMode)
+                {
+                    Debug.Log("Finished! (2)");
+                }
                 return;
             }
 
@@ -167,7 +167,10 @@ namespace PrecipitatorWFC
 
             if (finished())
             {
-                Debug.Log("Finished! (4)");
+                if (debugMode)
+                {
+                    Debug.Log("Finished! (3)");
+                }
                 return;
             }
 
@@ -192,7 +195,10 @@ namespace PrecipitatorWFC
         private void enterNewState()
         {
             stateChanges.Push(new StateChange());
-            Debug.Log("Entered new state. Stack size is now " + stateChanges.Count);
+            if (debugMode)
+            {
+                Debug.Log("Entered new state. Stack size is now " + stateChanges.Count);
+            }
         }
 
         /// <summary>
@@ -201,13 +207,16 @@ namespace PrecipitatorWFC
         /// </summary>
         private void revertState()
         {
-            Debug.Log("Reverting state!");
+            if (debugMode)
+            {
+                Debug.Log("Reverting state!");
+            }
             if (stateChanges.Count > 1)
             {
                 StateChange currentState = stateChanges.Pop();
                 currentState.revert();
             }
-            else
+            else if (debugMode)
             {
                 Debug.Log("State changes is at starting size!");
             }
@@ -252,15 +261,24 @@ namespace PrecipitatorWFC
         private bool macAC3(Queue<CellArc> queue)
         {
             bool changed = false;
-            Debug.Log("Running macAC3 with a propagation queue of size " + queue.Count);
+            if (debugMode)
+            {
+                Debug.Log("Running macAC3 with a propagation queue of size " + queue.Count);
+            }
             while (queue.Count > 0)
             {
                 CellArc arc = queue.Dequeue();
-                Debug.Log("Revising arc: " + arc);
+                if (debugMode)
+                {
+                    Debug.Log("Revising arc: " + arc);
+                }
                 if (Revise(arc))
                 {
                     changed = true;
-                    Debug.Log("Getting targeted arcs for arc: " + arc);
+                    if (debugMode)
+                    {
+                        Debug.Log("Getting targeted arcs for arc: " + arc);
+                    }
                     foreach (CellArc targetedArc in getTargetedArcs(arc))
                     {
                         if (!queue.Contains(arc))
@@ -393,18 +411,12 @@ namespace PrecipitatorWFC
         {
             bool changed = false;
             // Remove any tiles not supported.
-            HashSet<Tile> tilesToRemove = new HashSet<Tile>(arc.cell1.tileOptions.Where(otherTile => !otherTile.Supported(arc)));
-            Debug.Log("Tiles to remove in revision:");
+            HashSet<Tile> tilesToRemove = new HashSet<Tile>(arc.cell1.tileOptions.Where(tile => !tile.Supported(arc)));
             foreach (Tile tileToRemove in tilesToRemove)
             {
-                Debug.Log("Tile " + tileToRemove + " with ID " + tileToRemove.id);
-            }
-
-            foreach (Tile unsupportedTile in tilesToRemove)
-            {
                 changed = true;
-                arc.cell1.tileOptions.Remove(unsupportedTile);
-                CurrentStateChanges.addDomainChange(arc.cell1, unsupportedTile);
+                arc.cell1.tileOptions.Remove(tileToRemove);
+                CurrentStateChanges.addDomainChange(arc.cell1, tileToRemove);
             }
 
             // Check if domain is empty.

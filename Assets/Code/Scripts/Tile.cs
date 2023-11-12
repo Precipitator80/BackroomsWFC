@@ -10,8 +10,6 @@ namespace PrecipitatorWFC
     /// </summary>
     public abstract class Tile : MonoBehaviour, IEquatable<Tile>
     {
-        public int id = -2; // The ID of the tile. Represents all different subclasses of tiles in the tile set. Should be set by LG manager when generating the level.
-
         /// <summary>
         /// Returns the possible neighbour tiles of a collapsed cell in the bird's eye direction to a neighbour.
         /// Cardinal rotation: 0-3 in steps of 90 degrees. (0 = Above, 1 = Right, 2 = Below, 3 = Left)
@@ -73,25 +71,41 @@ namespace PrecipitatorWFC
         /// <exception cref="ArgumentException">Thrown if the cells are not adjacent. Should be impossible.</exception>
         protected int Cardinality(CellArc cellArc)
         {
-            string debugMessage = "Checking cardinality: y: " + (cellArc.cell2.y - cellArc.cell1.y) + ", x: " + (cellArc.cell2.x - cellArc.cell1.x);
+            string debugMessage = string.Empty;
+            if (LevelGenerationManager.Instance.debugMode)
+            {
+                debugMessage = "Checking cardinality: y: " + (cellArc.cell2.y - cellArc.cell1.y) + ", x: " + (cellArc.cell2.x - cellArc.cell1.x);
+            }
             if (cellArc.cell2.y - cellArc.cell1.y == 1)
             {
-                Debug.Log(debugMessage + ". Cardinality = 0.");
+                if (LevelGenerationManager.Instance.debugMode)
+                {
+                    Debug.Log(debugMessage + ". Cardinality = 0.");
+                }
                 return 0;
             }
             if (cellArc.cell2.x - cellArc.cell1.x == 1)
             {
-                Debug.Log(debugMessage + ". Cardinality = 1.");
+                if (LevelGenerationManager.Instance.debugMode)
+                {
+                    Debug.Log(debugMessage + ". Cardinality = 1.");
+                }
                 return 1;
             }
             if (cellArc.cell2.y - cellArc.cell1.y == -1)
             {
-                Debug.Log(debugMessage + ". Cardinality = 2.");
+                if (LevelGenerationManager.Instance.debugMode)
+                {
+                    Debug.Log(debugMessage + ". Cardinality = 2.");
+                }
                 return 2;
             }
             if (cellArc.cell2.x - cellArc.cell1.x == -1)
             {
-                Debug.Log(debugMessage + ". Cardinality = 3.");
+                if (LevelGenerationManager.Instance.debugMode)
+                {
+                    Debug.Log(debugMessage + ". Cardinality = 3.");
+                }
                 return 3;
             }
             throw new ArgumentException("Could not calculate cardinality of cell arc due to poor positioning.");
@@ -108,29 +122,30 @@ namespace PrecipitatorWFC
         {
             // EITHER
             // Check that the other cell has this tile as a possible neighbour.
-            Debug.Log("Checking support of " + arc);
+            if (LevelGenerationManager.Instance.debugMode)
+            {
+                Debug.Log("Checking support of " + this + " on " + arc);
+            }
             foreach (Tile neighbourTile in arc.cell2.tileOptions)
             {
                 Tile[] possibleNeighbours = neighbourTile.PossibleNeighbours(new CellArc(arc.cell2, arc.cell1));
-                foreach (Tile tile in possibleNeighbours)
+                if (possibleNeighbours.Contains(this))
                 {
-                    Debug.Log("Possible neighbour: " + tile + ". Is this the same as " + this + "? " + (tile == this) + " / " + (tile.Equals(this)));
-                    if (tile.Equals(this))
+                    if (LevelGenerationManager.Instance.debugMode)
                     {
-                        Debug.Log(this + " is supported on " + arc + "(1)");
-                        return true;
+                        Debug.Log(this + " is supported on " + arc + "(2)");
                     }
-                }
-                if (possibleNeighbours.ToList().Contains(this))
-                {
-                    Debug.Log(this + " is supported on " + arc + "(2)");
                     return true;
                 }
             }
             // OR
             // Check that this tile has a possible neighbour that is an option in the other cell.
 
-            Debug.Log(this + " is NOT supported on " + arc);
+            // Return false if support could not be found.
+            if (LevelGenerationManager.Instance.debugMode)
+            {
+                Debug.Log(this + " is NOT supported on " + arc);
+            }
             return false;
         }
 
@@ -139,11 +154,14 @@ namespace PrecipitatorWFC
         /// </summary>
         /// <param name="other">The other tile to check equality with.</param>
         /// <returns>True if both tiles have the same id. This represents the same type.</returns>
+        /// Debugging code:
+        /// bool identityEquality = this == other; // Does not work when multiple instances are used.
+        /// bool idEquality = this.id == other.id; // Must be declared manually for each tile.
+        /// bool typeEquality = this.GetType() == other.GetType(); // Does not work for two different tiles using the same symmetry subclass.
+        /// Debug.Log("Does tile " + this + " / " + this.id + " / " + this.GetType() + " equal tile " + other + " / " + other.id + " / " + other.GetType() + "? " + identityEquality + " / " + idEquality + " / " + typeEquality);
         public bool Equals(Tile other)
         {
-            bool equality = this.id == other.id;
-            Debug.Log("Does tile " + this + " / " + this.id + " equal tile " + other + " / " + other.id + "? " + (this == other) + " / " + equality);
-            return equality;
+            return this.name == other.name;
         }
 
         /// <summary>
