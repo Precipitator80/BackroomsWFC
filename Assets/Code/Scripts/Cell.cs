@@ -77,10 +77,15 @@ namespace PrecipitatorWFC
             bool changed = false;
             foreach (Tile otherTile in tilesToRemove)
             {
-                if (PruneDomain(otherTile))
+                try
                 {
-                    changed = true;
+                    PruneDomain(otherTile);
                 }
+                catch (EmptyDomainException)
+                {
+                    Debug.LogError("Domain wipeout while assigning a cell! There is likely an error in the code.");
+                }
+                changed = true;
             }
             if (LevelGenerationManager.Instance.debugMode)
             {
@@ -94,25 +99,23 @@ namespace PrecipitatorWFC
         /// This means that the cell is set to not equal this specific tile (right branch).
         /// </summary>
         /// <param name="tile">The tile to remove.</param>
-        /// <returns>Whether the tile was removed / pruned successfully.</returns>
-        public bool Unassign(Tile tile)
+        public void Unassign(Tile tile)
         {
-            return PruneDomain(tile);
+            PruneDomain(tile);
         }
 
         /// <summary>
         /// Remove / prune a specific tile from a cell's domain.
         /// </summary>
         /// <param name="tile">The tile to remove.</param>
-        /// <returns>Whether the tile was removed / pruned successfully.</returns>
-        public bool PruneDomain(Tile tile)
+        public void PruneDomain(Tile tile)
         {
-            bool removed = tileOptions.Remove(tile);
-            if (removed)
+            tileOptions.Remove(tile);
+            LevelGenerationManager.Instance.CurrentStateChanges.addDomainChange(this, tile);
+            if (tileOptions.Count == 0)
             {
-                LevelGenerationManager.Instance.CurrentStateChanges.addDomainChange(this, tile);
+                throw new EmptyDomainException("Domain wipeout when pruning domain!");
             }
-            return removed;
         }
 
         /// <summary>
@@ -140,7 +143,8 @@ namespace PrecipitatorWFC
         /// <summary>
         /// Collapses the cell, instantiating the remaining tile option as the tile prefab.
         /// </summary>
-        /// <exception cref="System.Exception">Thrown when there is no tile option to use. Should never be thrown when collapsed after successful level generation.</exception>
+        /// <exception cref="EmptyDomainException">Thrown when there is no tile option to use. Should never be thrown when collapsed after successful level generation.</exception>
+        /// <exception cref="System.Exception">Thrown when there is more than one tile option left to use. Should never be thrown when collapsed after successful level generation.</exception>
         public void Collapse()
         {
             // Check for a contradiction. Should never happen if this is called only after successful level generation.

@@ -9,8 +9,16 @@ namespace PrecipitatorWFC
     /// </summary>
     public class StateChange
     {
+        public StateChange(Cell assignedCell)
+        {
+            this.assignedCell = assignedCell;
+        }
+
         // A dictionary that records the pruned tile values for cells.
         Dictionary<Cell, HashSet<Tile>> domainChanges = new Dictionary<Cell, HashSet<Tile>>();
+
+        // The cell that was assigned in this state change.
+        public Cell assignedCell;
 
         /// <summary>
         /// Adds a domain change to the state change.

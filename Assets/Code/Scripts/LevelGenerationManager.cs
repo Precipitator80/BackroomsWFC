@@ -46,6 +46,7 @@ namespace PrecipitatorWFC
         public Cell[,] grid; // A grid of cells to run MAC3 / WFC on.
         public bool debugMode = false; // Logs each step of the algorithm to the console.
         private Stack<StateChange> stateChanges; // A stack of state changes for each recursive step / depth of search.
+        private List<Cell> cellList; // A list of cells left to assign.
 
         /// <summary>
         /// Generates a level using the MAC3 algorithm for WFC.
@@ -67,15 +68,17 @@ namespace PrecipitatorWFC
 
             // Initialise the state changes stack and add an initial state.
             stateChanges = new Stack<StateChange>();
-            enterNewState();
+            enterNewState(null);
 
             // Set up a grid of cells.
             grid = new Cell[ySize, xSize];
+            cellList = new List<Cell>();
             for (int y = 0; y < ySize; y++)
             {
                 for (int x = 0; x < xSize; x++)
                 {
                     grid[y, x] = new Cell(y, x);
+                    cellList.Add(grid[y, x]);
                 }
             }
 
@@ -116,24 +119,25 @@ namespace PrecipitatorWFC
                 return;
             }
 
-            // Create a new state.
-            enterNewState();
-
             // Select a cell and tile to assign.
             Cell cell = selectCell();
             Tile tile = cell.SelectTile();
 
+            // Create a new state.
             // Assign the tile to the cell, removing all other tile from the cell's domain.
+            enterNewState(cell);
             bool changed = cell.Assign(tile);
+            cellList.Remove(cell);
 
             // Propagate any changes and, if there were any, run the algorithm again to assign further cells.
             // If no changes were made by AC3 (returns false) after checking for a solution, then a dead end was reached.
             try
             {
-                if (macAC3(cell) || changed)
+                if (changed)
                 {
-                    MAC3();
+                    macAC3(cell);
                 }
+                MAC3();
             } // Exception to let AC3 cancel early in the case of a domain wipeout.
             catch (EmptyDomainException) { }
 
@@ -149,7 +153,6 @@ namespace PrecipitatorWFC
             // If recursion finished, this code is reached.
             // Revert the state and remove the tile value that was checked from the cell's domain.
             revertState();
-            changed = cell.Unassign(tile);
 
             // If the domain is not empty, propagate the domain pruning.
             // If this resulted in changes, run the algorithm again.
@@ -157,10 +160,9 @@ namespace PrecipitatorWFC
             {
                 try
                 {
-                    if (macAC3(cell) || changed)
-                    {
-                        MAC3();
-                    }
+                    cell.Unassign(tile);
+                    macAC3(cell);
+                    MAC3();
                 } // Exception to let AC3 cancel early in the case of a domain wipeout.
                 catch (EmptyDomainException) { }
             }
@@ -192,9 +194,9 @@ namespace PrecipitatorWFC
         /// <summary>
         /// Enter a new state by adding an empty state change to the stack.
         /// </summary>
-        private void enterNewState()
+        private void enterNewState(Cell assignedCell)
         {
-            stateChanges.Push(new StateChange());
+            stateChanges.Push(new StateChange(assignedCell));
             if (debugMode)
             {
                 Debug.Log("Entered new state. Stack size is now " + stateChanges.Count);
@@ -215,6 +217,7 @@ namespace PrecipitatorWFC
             {
                 StateChange currentState = stateChanges.Pop();
                 currentState.revert();
+                cellList.Add(currentState.assignedCell);
             }
             else if (debugMode)
             {
@@ -229,18 +232,46 @@ namespace PrecipitatorWFC
         /// <returns>The cell to make a choice for.</returns>
         private Cell selectCell()
         {
-            for (int x = 0; x < xSize; x++)
+            return selectCellAscendingOrder();
+            //return selectCellSmallestDomain();
+        }
+
+        /// <summary>
+        /// Selects the first cell that is not yet assigned.
+        /// </summary>
+        /// <returns>The first cell that is not yet assigned.</returns>
+        private Cell selectCellAscendingOrder()
+        {
+            if (cellList.Count > 0)
             {
-                for (int y = 0; y < ySize; y++)
-                {
-                    if (!grid[y, x].Assigned)
-                    {
-                        return grid[y, x];
-                    }
-                }
+                return cellList[0];
             }
             Debug.Log("All cells are already collapsed! Returning 0,0.");
             return grid[0, 0];
+        }
+
+        /// <summary>
+        /// Selects the cell with the smallest domain not yet assigned.
+        /// </summary>
+        /// <returns>The cell with the smallest domain not yet assigned.</returns>
+        private Cell selectCellSmallestDomain()
+        {
+            Cell smallestDomainCell = null;
+            int smallestDomainSize = int.MaxValue;
+            foreach (Cell potentialCell in cellList)
+            {
+                if (potentialCell.tileOptions.Count < smallestDomainSize)
+                {
+                    smallestDomainCell = potentialCell;
+                    smallestDomainSize = potentialCell.tileOptions.Count;
+                }
+            }
+            if (smallestDomainCell == null)
+            {
+                Debug.Log("Trying to select cell when all are assigned! Returning default (0,0).");
+                return grid[0, 0];
+            }
+            return smallestDomainCell;
         }
 
         /// <summary>
