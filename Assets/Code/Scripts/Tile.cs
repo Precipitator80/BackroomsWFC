@@ -10,6 +10,8 @@ namespace PrecipitatorWFC
     /// </summary>
     public abstract class Tile : MonoBehaviour, IEquatable<Tile>
     {
+        public int weight;
+
         /// <summary>
         /// Returns the possible neighbour tiles of a collapsed cell in the bird's eye direction to a neighbour.
         /// Cardinal rotation: 0-3 in steps of 90 degrees. (0 = Above, 1 = Right, 2 = Below, 3 = Left)

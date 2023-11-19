@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -135,9 +136,42 @@ namespace PrecipitatorWFC
         /// <returns>The chosen tile.</returns>
         public Tile SelectTile()
         {
+            return SelectTileWeighted();
+        }
+
+        public Tile SelectTileWeighted()
+        {
+            Tile[] tileOptionsArray = tileOptions.ToArray();
+            int weightSum = tileOptionsArray.Sum(tileOption => tileOption.weight);
+            int randomWeight = UnityEngine.Random.Range(0, weightSum);
+
+            //Debug.Log("Selecting tile by weighting. Sum is " + weightSum);
+            foreach (Tile tileOption in tileOptionsArray)
+            {
+                //Debug.Log("Random weight: " + randomWeight + ". TileOption weight: " + tileOption.weight);
+                if (randomWeight < tileOption.weight)
+                {
+                    //Debug.Log("Chosen tile: " + tileOption);
+                    return tileOption;
+                }
+
+                randomWeight -= tileOption.weight;
+            }
+
+            // This should never happen if the weights are configured correctly
+            throw new InvalidOperationException("Weighted options are not configured correctly");
+        }
+
+        public Tile SelectTileRandomChoice()
+        {
             Tile[] tileOptionsArray = tileOptions.ToArray();
             return tileOptionsArray[UnityEngine.Random.Range(0, tileOptionsArray.Length)];
-            //return tileOptionsArray[0];
+        }
+
+        public Tile SelectTileAscending()
+        {
+            Tile[] tileOptionsArray = tileOptions.ToArray();
+            return tileOptionsArray[0];
         }
 
         /// <summary>

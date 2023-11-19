@@ -47,6 +47,8 @@ namespace PrecipitatorWFC
         public bool debugMode = false; // Logs each step of the algorithm to the console.
         private Stack<StateChange> stateChanges; // A stack of state changes for each recursive step / depth of search.
         private List<Cell> cellList; // A list of cells left to assign.
+        public float timeOut = 10f;
+        private float startTime;
 
         /// <summary>
         /// Generates a level using the MAC3 algorithm for WFC.
@@ -82,26 +84,47 @@ namespace PrecipitatorWFC
                 }
             }
 
+
             // The grid will only not be globally arc consistent at the start if the domains are not all equal.
             // In simple WFC, all cells have the same domain choices at the start, so AC3 doesn't have to be run.
             // If choosing preset cells, it might be sufficient to just run macAC3 around those cells rather than running them on every cell.
-            // macAC3();
+            Queue<CellArc> startingQueue = new Queue<CellArc>();
+            foreach (Cell cell in grid)
+            {
+                Queue<CellArc> queueForOne = getArcs(cell);
+                while (queueForOne.Count > 0)
+                {
+                    startingQueue.Enqueue(queueForOne.Dequeue());
+                }
+            }
+            macAC3(startingQueue);
+
+            startTime = Time.realtimeSinceStartup;
+            Debug.Log("Start Time: " + startTime);
 
             // Run the MAC3 search algorithm.
             MAC3();
 
             if (finished())
             {
-                Debug.Log("Level generation successful! Collapsing all cells!");
-                foreach (Cell cell in grid)
+                if (!TimedOut)
                 {
-                    cell.Collapse();
+                    Debug.Log("Level generation successful! Collapsing all cells!");
+                    foreach (Cell cell in grid)
+                    {
+                        cell.Collapse();
+                    }
+                }
+                else
+                {
+                    Debug.LogError("Level generation failed due to timeout!");
                 }
             }
             else
             {
-                Debug.LogError("Level generation failed!");
+                Debug.LogError("Level generation failed! Could not find a solution");
             }
+            Debug.Log("End Time: " + Time.realtimeSinceStartup);
         }
 
         /// <summary>
@@ -232,8 +255,9 @@ namespace PrecipitatorWFC
         /// <returns>The cell to make a choice for.</returns>
         private Cell selectCell()
         {
-            return selectCellAscendingOrder();
+            //return selectCellAscendingOrder();
             //return selectCellSmallestDomain();
+            return SelectCellWithLowestWeightedEntropy();
         }
 
         /// <summary>
@@ -271,7 +295,46 @@ namespace PrecipitatorWFC
                 Debug.Log("Trying to select cell when all are assigned! Returning default (0,0).");
                 return grid[0, 0];
             }
+            Debug.Log("Smallest domain cell: " + smallestDomainCell);
             return smallestDomainCell;
+        }
+
+        private Cell SelectCellWithLowestWeightedEntropy()
+        {
+            Cell lowestEntropyCell = null;
+            float lowestWeightedEntropy = float.MaxValue;
+
+            foreach (Cell cell in cellList)
+            {
+                float weightedEntropy = CalculateShannonEntropy(cell);
+
+                if (weightedEntropy < lowestWeightedEntropy)
+                {
+                    lowestWeightedEntropy = weightedEntropy;
+                    lowestEntropyCell = cell;
+                }
+            }
+
+            return lowestEntropyCell;
+        }
+
+        private float CalculateShannonEntropy(Cell cell)
+        {
+            if (cell.tileOptions.Count == 0)
+            {
+                return 0f;
+            }
+
+            // Calculate the sum of weights
+            float sumOfWeights = cell.tileOptions.Sum(tile => tile.weight);
+
+            // Calculate the sum of (weight * log(weight))
+            float sumWeightedLogWeights = cell.tileOptions.Sum(tile => tile.weight * Mathf.Log(tile.weight));
+
+            // Calculate the Shannon entropy
+            float shannonEntropy = Mathf.Log(sumOfWeights) - (sumWeightedLogWeights / sumOfWeights);
+
+            return shannonEntropy;
         }
 
         /// <summary>
@@ -328,6 +391,10 @@ namespace PrecipitatorWFC
         /// <returns>True if all cells have been assigned a tile.</returns>
         private bool finished()
         {
+            if (TimedOut)
+            {
+                return true;
+            }
             //return cellsCollapsed == (xSize * ySize); // Might be a more optimal way to check this to implement later.
             foreach (Cell cell in grid)
             {
@@ -337,6 +404,14 @@ namespace PrecipitatorWFC
                 }
             }
             return true;
+        }
+
+        private bool TimedOut
+        {
+            get
+            {
+                return Time.realtimeSinceStartup - startTime > timeOut;
+            }
         }
 
         /// <summary>
