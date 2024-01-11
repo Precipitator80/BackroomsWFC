@@ -50,6 +50,22 @@ namespace PrecipitatorWFC
         public float timeOut = 10f;
         private float startTime;
 
+        //int chunkSize = 13;
+        //int blocksize = (chunkSize - 2);
+
+        /*
+        General idea:
+        Grid is potentially infinite:
+            Dictionary of Dictionary mapping int and int to Cell.
+        Choose a chunk size.
+        Choose a chunk distance to generate around the player (hide rest with fog in-game).
+        Generate a single layer by identifying a sub-area of each chunk and then generating these concurrently through multithreading.
+            Per sub-area:
+                Initialise cells if needed.
+                (Would WFC bleed over outside of chunks? How would you manage this? What about chunk borders? Would the multithreading break determinism?)
+            Define 
+        */
+
         /// <summary>
         /// Generates a level using the MAC3 algorithm for WFC.
         /// </summary>
