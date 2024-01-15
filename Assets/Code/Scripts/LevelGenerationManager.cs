@@ -33,7 +33,7 @@ namespace PrecipitatorWFC
         /// <summary>
         /// Awake function to set the LevelGenerationManager instance.
         /// </summary>
-        private void Awake()
+        public void Awake()
         {
             Debug.Log("LevelGenerationManager is awake!");
             instance = this;
