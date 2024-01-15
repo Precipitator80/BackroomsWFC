@@ -10,6 +10,7 @@ namespace PrecipitatorWFC
     /// </summary>
     public abstract class Tile : MonoBehaviour, IEquatable<Tile>
     {
+        public GameObject model;
         public int weight;
 
         /// <summary>
@@ -172,9 +173,13 @@ namespace PrecipitatorWFC
         /// <param name="cell">The cell to place the tile prefab in.</param>
         public void CollapseIntoCell(Cell cell)
         {
-            cell.tilePrefab = Instantiate(this.gameObject, LevelGenerationManager.Instance.transform);
-            cell.tilePrefab.transform.localPosition = new Vector3(LevelGenerationManager.Instance.tileSize * cell.x, 0f, LevelGenerationManager.Instance.tileSize * cell.y);
-            cell.tilePrefab.SetActive(true);
+            if (this.model != null)
+            {
+                cell.tilePrefab = Instantiate(this.model, this.transform);
+                cell.tilePrefab.transform.SetParent(LevelGenerationManager.Instance.transform, true);
+                cell.tilePrefab.transform.localPosition = new Vector3(LevelGenerationManager.Instance.tileSize * cell.x, 0f, LevelGenerationManager.Instance.tileSize * cell.y);
+                cell.tilePrefab.SetActive(true);
+            }
         }
     }
 }
