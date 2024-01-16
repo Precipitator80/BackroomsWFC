@@ -6,8 +6,6 @@ using UnityEngine;
 
 namespace PrecipitatorWFC
 {
-    // TODO: Fix generation algorithm!
-
     /// <summary>
     /// LevelGenerationManager to handle the MAC3 / WFC search.
     /// </summary>
@@ -43,12 +41,137 @@ namespace PrecipitatorWFC
         public int xSize = 10; // The width of the level.
         public int tileSize = 2; // The size of all tiles in the tile set.
         public Tile[] tileSet; // A tile set of all possible tiles to place in the grid.
+        private List<NonSymmetricTile> explicitTileSet; // An explicit tile set filled with a non-symmetric tile for each possible original tile rotation to avoid intricate rotation checks.
         public Cell[,] grid; // A grid of cells to run MAC3 / WFC on.
         public bool debugMode = false; // Logs each step of the algorithm to the console.
         private Stack<StateChange> stateChanges; // A stack of state changes for each recursive step / depth of search.
         private List<Cell> cellList; // A list of cells left to assign.
         public float timeOut = 10f;
         private float startTime;
+
+        public List<NonSymmetricTile> ExplicitTileSet
+        {
+            get
+            {
+                // Initialise the explicit tile set if it has not already been done.
+                if (explicitTileSet == null)
+                {
+                    explicitTileSet = new List<NonSymmetricTile>();
+
+                    // Create a game object to hold the explicit tile set.
+                    GameObject explicitTileSetGO = new GameObject("Explicit Tile Set Parent");
+                    explicitTileSetGO.transform.parent = this.transform;
+
+                    // Create non-symmetric variants for each tile.
+                    foreach (Tile tile in tileSet)
+                    {
+                        // Create a non-symmetric copy of the original tile.
+                        NonSymmetricTile nonSymmetricTile = tile.InstantiateNonSymmetricTile();
+                        nonSymmetricTile.name = tile.name;
+                        nonSymmetricTile.transform.parent = explicitTileSetGO.transform;
+
+                        // Add the copy to the explicit tile set and set it as the 0 rotation variant.
+                        tile.ExplicitVariants = new NonSymmetricTile[4];
+                        tile.ExplicitVariants[0] = nonSymmetricTile;
+                        explicitTileSet.Add(nonSymmetricTile);
+                        if (debugMode)
+                        {
+                            Debug.Log("Added explicit variant of tile " + tile + ": " + tile.ExplicitVariants[0]);
+                        }
+
+                        // Create rotation variants for non-cube tiles.
+                        if (tile.GetType() != typeof(CubeTile))
+                        {
+                            nonSymmetricTile.name += " - 0"; // Specify the rotation of the variant.
+                            for (int cardinality = 1; cardinality < tile.ExplicitVariants.Length; cardinality++)
+                            {
+                                // Create a rotation variant with the previous rotation as the base.
+                                NonSymmetricTile variant = Instantiate(explicitTileSet[explicitTileSet.Count - 1], explicitTileSetGO.transform);
+
+                                // Rotate the variant by 90 degrees and specify its rotation / cardinality in the name.
+                                variant.transform.Rotate(0f, 90f, 0f);
+                                variant.name = tile.name + " - " + cardinality;
+
+                                // Add the variant to both the tile's variants array and the explicit tile set.
+                                tile.ExplicitVariants[cardinality] = variant;
+                                explicitTileSet.Add(variant);
+                                if (debugMode)
+                                {
+                                    foreach (Tile[] side in new Tile[][] { variant.backNeighbours, variant.rightNeighbours, variant.frontNeighbours, variant.leftNeighbours })
+                                    {
+                                        foreach (Tile neighbour in variant.backNeighbours)
+                                        {
+                                            Debug.Log("Tile variant " + variant + " has neighbour: " + neighbour);
+                                        }
+                                    }
+                                }
+
+                                // Switch the neighbour and rotation arrays to follow the 90 degree rotation.
+                                (variant.backNeighbours, variant.rightNeighbours, variant.frontNeighbours, variant.leftNeighbours) = (variant.leftNeighbours, variant.backNeighbours, variant.rightNeighbours, variant.frontNeighbours);
+                                (variant.backRotations, variant.rightRotations, variant.frontRotations, variant.leftRotations) = (variant.leftRotations, variant.backRotations, variant.rightRotations, variant.frontRotations);
+
+                                // Increase cardinality values of neighbours to account for the 90 degree rotation.
+                                foreach (int[] rotationsArray in new int[][] { variant.backRotations, variant.rightRotations, variant.frontRotations, variant.leftRotations })
+                                {
+                                    for (int i = 0; i < rotationsArray.Length; i++)
+                                    {
+                                        rotationsArray[i] = (rotationsArray[i] + 1) % 4;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // For cube tiles, simply set the explicit rotation variants to be the 0 rotation non-symmetric tile.
+                            tile.ExplicitVariants[1] = nonSymmetricTile;
+                            tile.ExplicitVariants[2] = nonSymmetricTile;
+                            tile.ExplicitVariants[3] = nonSymmetricTile;
+                        }
+                    }
+
+                    // Replace the neighbours of each explicit tile without explicit rotational information with explicit variants accounting for the rotations.
+                    foreach (NonSymmetricTile tile in explicitTileSet)
+                    {
+                        if (debugMode)
+                        {
+                            Debug.Log("Tile in explicit tile set: " + tile + ". Neighbours");
+                        }
+
+                        // Use 2D arrays of the neighbours and rotations to simplify the operation.
+                        Tile[][] neighbourArrays = new Tile[][] { tile.backNeighbours, tile.rightNeighbours, tile.frontNeighbours, tile.leftNeighbours };
+                        int[][] rotationsArrays = new int[][] { tile.backRotations, tile.rightRotations, tile.frontRotations, tile.leftRotations };
+
+                        // Go through each neighbour array and neighbour tile in it.
+                        for (int cardinality = 0; cardinality < neighbourArrays.Length; cardinality++)
+                        {
+                            for (int i = 0; i < neighbourArrays[cardinality].Length; i++)
+                            {
+                                // Get the rotation / cardinality value of the variant to use.
+                                int rotation = rotationsArrays[cardinality][i];
+
+                                if (debugMode)
+                                {
+                                    Debug.Log("Cardinality: " + cardinality + ". Neighbour index: " + i + ". Rotation: " + rotation);
+                                    Debug.Log("NeighbourArrays.Length: " + neighbourArrays.Length);
+                                    Debug.Log("NeighbourArrays[cardinality].Length: " + neighbourArrays[cardinality].Length);
+                                    Debug.Log("NeighbourArrays[cardinality][i]: " + neighbourArrays[cardinality][i]);
+                                    Debug.Log("neighbourArrays[cardinality][i].explicitVariants.Length: " + neighbourArrays[cardinality][i].ExplicitVariants.Length);
+                                }
+
+                                // Set the neighbour to the explicit variant with the correct rotation.
+                                neighbourArrays[cardinality][i] = neighbourArrays[cardinality][i].ExplicitVariants[rotation];
+
+                                if (debugMode)
+                                {
+                                    Debug.Log(tile + " has, at cardinality " + cardinality + ", neighbour " + neighbourArrays[cardinality][i]);
+                                }
+                            }
+                        }
+                    }
+                }
+                return explicitTileSet;
+            }
+        }
 
         //int chunkSize = 13;
         //int blocksize = (chunkSize - 2);
@@ -71,10 +194,13 @@ namespace PrecipitatorWFC
         /// </summary>
         public void GenerateLevel()
         {
+            // Reset the explicit tile set in case the tile set was changed.
+            explicitTileSet = null;
+
             // Ensure that the tile set is filled.
             if (tileSet.Length == 0)
             {
-                Debug.LogError("Tileset for level generation cannot be empty!");
+                Debug.LogError("Tile set for level generation cannot be empty!");
                 return;
             }
 

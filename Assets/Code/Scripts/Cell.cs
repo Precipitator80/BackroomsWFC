@@ -24,7 +24,7 @@ namespace PrecipitatorWFC
         /// <param name="x">The x coordinate of the cell in the grid.</param>
         public Cell(int y, int x)
         {
-            tileOptions = new HashSet<Tile>(LevelGenerationManager.Instance.tileSet);
+            tileOptions = new HashSet<Tile>(LevelGenerationManager.Instance.ExplicitTileSet);
             this.y = y;
             this.x = x;
         }
