@@ -185,7 +185,7 @@ namespace PrecipitatorWFC
                 cell.tilePrefab.name = this.name;
 
                 // Change the tile's parent to the level generation manager, keeping the same initial scaling and rotation but aligning the position with the grid.
-                cell.tilePrefab.transform.SetParent(LevelGenerationManager.Instance.transform, true);
+                cell.tilePrefab.transform.SetParent(LevelGenerationManager.Instance.CellParent.transform, true);
                 cell.tilePrefab.transform.localPosition = new Vector3(LevelGenerationManager.Instance.tileSize * cell.x, 0f, LevelGenerationManager.Instance.tileSize * cell.y);
 
                 // Activate the tile prefab in case the models are switched off.

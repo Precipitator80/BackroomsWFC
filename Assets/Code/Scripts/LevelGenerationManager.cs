@@ -48,6 +48,20 @@ namespace PrecipitatorWFC
         private List<Cell> cellList; // A list of cells left to assign.
         public float timeOut = 10f;
         private float startTime;
+        private GameObject cellParent;
+
+        public GameObject CellParent
+        {
+            get
+            {
+                if (cellParent == null)
+                {
+                    cellParent = new GameObject("Level");
+                    cellParent.transform.parent = this.transform;
+                }
+                return cellParent;
+            }
+        }
 
         public List<NonSymmetricTile> ExplicitTileSet
         {
