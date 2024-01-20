@@ -12,6 +12,11 @@ namespace PrecipitatorWFC
 
         public override NonSymmetricTile InstantiateNonSymmetricTile()
         {
+            if (neighbours.Length != backRotations.Length)
+            {
+                throw new Exception("Ensure that the tile '" + name + "' has equal length of neighbour, rotation and weight information.");
+            }
+
             // Create a copy of the tile and add a non-symmetric tile component with the same components, removing the Cube tile component.
             NonSymmetricTile nonSymmetricTile = Instantiate(gameObject).AddComponent<NonSymmetricTile>();
             nonSymmetricTile.model = this.model;

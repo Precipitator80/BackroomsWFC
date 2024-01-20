@@ -20,6 +20,12 @@ namespace PrecipitatorWFC
         {
             // Instantiate the tile and copy neighbours from the original tile by value to separate references.
             // If this is not done, then variants cannot be created properly.
+
+            if (backNeighbours.Length != backRotations.Length || rightNeighbours.Length != rightRotations.Length || frontNeighbours.Length != frontRotations.Length || leftNeighbours.Length != leftRotations.Length)
+            {
+                throw new Exception("Ensure that the tile '" + name + "' has equal length of neighbour, rotation and weight information.");
+            }
+
             NonSymmetricTile copy = Instantiate(this);
             Array.Copy(backNeighbours, copy.backNeighbours, backNeighbours.Length);
             Array.Copy(rightNeighbours, copy.rightNeighbours, rightNeighbours.Length);
