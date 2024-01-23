@@ -37,6 +37,7 @@ namespace PrecipitatorWFC
             instance = this;
         }
 
+        public int seed = 0;
         public int ySize = 10; // The depth of the level.
         public int xSize = 10; // The width of the level.
         public int tileSize = 2; // The size of all tiles in the tile set.
@@ -123,6 +124,7 @@ namespace PrecipitatorWFC
                                 // Switch the neighbour and rotation arrays to follow the 90 degree rotation.
                                 (variant.backNeighbours, variant.rightNeighbours, variant.frontNeighbours, variant.leftNeighbours) = (variant.leftNeighbours, variant.backNeighbours, variant.rightNeighbours, variant.frontNeighbours);
                                 (variant.backRotations, variant.rightRotations, variant.frontRotations, variant.leftRotations) = (variant.leftRotations, variant.backRotations, variant.rightRotations, variant.frontRotations);
+                                // (variant.backWeights, variant.rightWeights, variant.frontWeights, variant.leftWeights) = (variant.leftWeights, variant.backWeights, variant.rightWeights, variant.frontWeights);
 
                                 // Increase cardinality values of neighbours to account for the 90 degree rotation.
                                 foreach (int[] rotationsArray in new int[][] { variant.backRotations, variant.rightRotations, variant.frontRotations, variant.leftRotations })
@@ -208,6 +210,8 @@ namespace PrecipitatorWFC
         /// </summary>
         public void GenerateLevel()
         {
+            UnityEngine.Random.InitState(seed);
+
             // Reset the explicit tile set in case the tile set was changed.
             explicitTileSet = null;
 
@@ -224,6 +228,33 @@ namespace PrecipitatorWFC
                 DestroyImmediate(transform.GetChild(i).gameObject);
             }
 
+            int overlap = 2;
+            GenerateLevel(0, 0);
+            GenerateLevel(0, xSize - overlap);
+            //GenerateLevel(ySize - overlap, 0);
+            //GenerateLevel(ySize - overlap, xSize - overlap);
+        }
+
+        private Cell GetCell(int y, int x)
+        {
+            Vector3 position = new Vector3(x * tileSize, y * tileSize, 0f);
+            //Debug.Log("Position = " + position + ". Current (x,y) = (" + x + "," + y + ")");
+            Collider[] colliders = Physics.OverlapSphere(position, tileSize);
+            if (colliders.Length > 0)
+            {
+                Debug.Log("colliders.length = " + colliders.Length);
+                Tile tile = colliders[0].gameObject.GetComponentInParent<Tile>();
+                if (tile != null && tile.CollapsedCell != null)
+                {
+                    Debug.Log("Current (x,y) = (" + x + "," + y + "). Collapsed Cell (x,y) = (" + tile.CollapsedCell.x + "," + tile.CollapsedCell.y + ")");
+                    return tile.CollapsedCell;
+                }
+            }
+            return null;
+        }
+
+        private void GenerateLevel(int yOffset, int xOffset)
+        {
             // Initialise the state changes stack and add an initial state.
             stateChanges = new Stack<StateChange>();
             enterNewState(null);
@@ -235,7 +266,15 @@ namespace PrecipitatorWFC
             {
                 for (int x = 0; x < xSize; x++)
                 {
-                    grid[y, x] = new Cell(y, x);
+                    Cell previousCell = GetCell(y + yOffset, x + xOffset);
+                    if (previousCell != null)
+                    {
+                        grid[y, x] = previousCell;
+                    }
+                    else
+                    {
+                        grid[y, x] = new Cell(y, yOffset, x, xOffset);
+                    }
                     cellList.Add(grid[y, x]);
                 }
             }

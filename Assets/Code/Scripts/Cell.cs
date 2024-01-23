@@ -15,18 +15,22 @@ namespace PrecipitatorWFC
         public HashSet<Tile> tileOptions; // A set of possible tile options for the cell at any given point. Reduced to one option before collapse.
         public GameObject tilePrefab; // A GameObject to hold the tile prefab once the cell has been collapsed.
         public int y; // The y coordinate of the cell in the grid.
+        public int yOffset; // The y offset of the coordinate of the cell in the level.
         public int x; // The x coordinate of the cell in the grid.
+        public int xOffset; // The y offset of the coordinate of the cell in the level.
 
         /// <summary>
         /// Constructor that initialises the tile options and position variables.
         /// </summary>
         /// <param name="y">The y coordinate of the cell in the grid.</param>
         /// <param name="x">The x coordinate of the cell in the grid.</param>
-        public Cell(int y, int x)
+        public Cell(int y, int yOffset, int x, int xOffset)
         {
             tileOptions = new HashSet<Tile>(LevelGenerationManager.Instance.ExplicitTileSet);
             this.y = y;
+            this.yOffset = yOffset;
             this.x = x;
+            this.xOffset = xOffset;
         }
 
         /// <summary>

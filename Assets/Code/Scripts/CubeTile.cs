@@ -7,12 +7,13 @@ namespace PrecipitatorWFC
     /// </summary>
     public class CubeTile : Tile
     {
-        public Tile[] neighbours; // Neighbours connecting to any side of the cube.
-        public int[] backRotations; // Rotations of neighbours when placed at the back of the tile.
+        public Tile[] neighbours; // Neighbour tiles connecting to any side of the cube.
+        public int[] backRotations; // Valid rotations / cardinalities of neighbours when placed at the back of the cube tile.
+        public int[] weights; // Weights of the neighbour tiles.
 
         public override NonSymmetricTile InstantiateNonSymmetricTile()
         {
-            if (neighbours.Length != backRotations.Length)
+            if (neighbours.Length != backRotations.Length) //|| backRotations.Length != weights.Length)
             {
                 throw new Exception("Ensure that the tile '" + name + "' has equal length of neighbour, rotation and weight information.");
             }
@@ -32,6 +33,17 @@ namespace PrecipitatorWFC
             Array.Copy(neighbours, nonSymmetricTile.rightNeighbours, neighbours.Length);
             Array.Copy(neighbours, nonSymmetricTile.frontNeighbours, neighbours.Length);
             Array.Copy(neighbours, nonSymmetricTile.leftNeighbours, neighbours.Length);
+
+            /*
+            nonSymmetricTile.backWeights = new int[weights.Length];
+            nonSymmetricTile.rightWeights = new int[weights.Length];
+            nonSymmetricTile.frontWeights = new int[weights.Length];
+            nonSymmetricTile.leftWeights = new int[weights.Length];
+            Array.Copy(weights, nonSymmetricTile.backWeights, weights.Length);
+            Array.Copy(weights, nonSymmetricTile.rightWeights, weights.Length);
+            Array.Copy(weights, nonSymmetricTile.frontWeights, weights.Length);
+            Array.Copy(weights, nonSymmetricTile.leftWeights, weights.Length);
+            */
 
             // Set up rotation arrays. Keep the back rotation the same, but shift the rotation of the neighbour for each other side correspondingly.
             nonSymmetricTile.backRotations = new int[backRotations.Length];

@@ -7,21 +7,35 @@ namespace PrecipitatorWFC
     /// </summary>
     public class NonSymmetricTile : Tile
     {
-        public Tile[] backNeighbours; // Neighbours connecting to the back of the tile.
-        public int[] backRotations; // Rotations of neighbours at the back of the tile.
-        public Tile[] rightNeighbours; // Neighbours connecting to the right of the tile.
-        public int[] rightRotations; // Rotations of neighbours on the right of the tile.
-        public Tile[] frontNeighbours; // Neighbours connecting to the front of the tile.
-        public int[] frontRotations; // Rotations of neighbours on the front of the tile.
-        public Tile[] leftNeighbours; // Neighbours connecting to the left of the tile.
-        public int[] leftRotations; // Rotations of neighbours on the left of the tile.
+        // Information for neighbours connecting to the back of the tile.
+        public Tile[] backNeighbours; // Neighbour tiles.
+        public int[] backRotations; // Valid rotations / cardinalities of the neighbour tiles.
+        public int[] backWeights; // Weights of the neighbour tiles.
+
+        // Information for neighbours connecting to the right of the tile.
+        public Tile[] rightNeighbours;
+        public int[] rightRotations;
+        public int[] rightWeights;
+
+        // Information for neighbours connecting to the front of the tile.
+        public Tile[] frontNeighbours;
+        public int[] frontRotations;
+        public int[] frontWeights;
+
+        // Information for neighbours connecting to the left of the tile.
+        public Tile[] leftNeighbours;
+        public int[] leftRotations;
+        public int[] leftWeights;
 
         public override NonSymmetricTile InstantiateNonSymmetricTile()
         {
             // Instantiate the tile and copy neighbours from the original tile by value to separate references.
             // If this is not done, then variants cannot be created properly.
 
-            if (backNeighbours.Length != backRotations.Length || rightNeighbours.Length != rightRotations.Length || frontNeighbours.Length != frontRotations.Length || leftNeighbours.Length != leftRotations.Length)
+            if (backNeighbours.Length != backRotations.Length   //|| backRotations.Length != backWeights.Length
+             || rightNeighbours.Length != rightRotations.Length //|| rightRotations.Length != rightWeights.Length
+             || frontNeighbours.Length != frontRotations.Length //|| frontRotations.Length != frontWeights.Length
+             || leftNeighbours.Length != leftRotations.Length)  //|| leftRotations.Length != leftWeights.Length)
             {
                 throw new Exception("Ensure that the tile '" + name + "' has equal length of neighbour, rotation and weight information.");
             }
