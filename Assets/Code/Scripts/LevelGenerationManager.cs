@@ -41,6 +41,7 @@ namespace PrecipitatorWFC
         public int ySize = 10; // The depth of the level.
         public int xSize = 10; // The width of the level.
         public int tileSize = 2; // The size of all tiles in the tile set.
+        public int numberOfChunks = 1; // Misleading name. How many chunks to spawn on each size. 1 = 1 NE, NW, SW and SE.
         public Tile[] tileSet; // A tile set of all possible tiles to place in the grid.
         private List<NonSymmetricTile> explicitTileSet; // An explicit tile set filled with a non-symmetric tile for each possible original tile rotation to avoid intricate rotation checks.
         public Cell[,] grid; // A grid of cells to run MAC3 / WFC on.
@@ -48,6 +49,7 @@ namespace PrecipitatorWFC
         private Stack<StateChange> stateChanges; // A stack of state changes for each recursive step / depth of search.
         private List<Cell> cellList; // A list of cells left to assign.
         public float timeOut = 10f;
+        private readonly int CHUNK_OVERLAP = 2; // Edge overlap from one chunk to the next in number of blocks.
         private float startTime;
         private GameObject cellParent;
 
@@ -210,6 +212,7 @@ namespace PrecipitatorWFC
         /// </summary>
         public void GenerateLevel()
         {
+            ClearGizmos();
             UnityEngine.Random.InitState(seed);
 
             // Reset the explicit tile set in case the tile set was changed.
@@ -228,33 +231,94 @@ namespace PrecipitatorWFC
                 DestroyImmediate(transform.GetChild(i).gameObject);
             }
 
-            int overlap = 2;
-            GenerateLevel(0, 0);
-            GenerateLevel(0, xSize - overlap);
-            //GenerateLevel(ySize - overlap, 0);
-            //GenerateLevel(ySize - overlap, xSize - overlap);
+            if (ExplicitTileSet == null)
+            {
+                Debug.LogError("Could not generate explicit tileset before generation!");
+            }
+            else
+            {
+                // Spawn some empty tiles for the player.
+                // Todo. Should this be done via code or preplaced in the editor?
+
+                // Spawn the rest of the level.
+                for (int xChunkNumber = -numberOfChunks; xChunkNumber < numberOfChunks; xChunkNumber++)
+                {
+                    for (int yChunkNumber = -numberOfChunks; yChunkNumber < numberOfChunks; yChunkNumber++)
+                    {
+                        Debug.Log("Generating chunk: (" + xChunkNumber + "," + yChunkNumber + ").");
+                        GenerateLevel(yChunkNumber, xChunkNumber);
+                    }
+                }
+            }
         }
 
-        private Cell GetCell(int y, int x)
+        /// <summary>
+        /// Searches for a pre-existing cell in a certain position.
+        /// </summary>
+        /// <param name="y">The y coordinate within the chunk.</param>
+        /// <param name="yOffset">The base y offset of the chunk in the entire level. Aligns with local y = 0.</param>
+        /// <param name="x">The x coordinate within the chunk.</param>
+        /// <param name="xOffset">The base x offset of the chunk in the entire level. Aligns with local x = 0.</param>
+        /// <returns></returns>
+        private Cell GetCell(int y, int yOffset, int x, int xOffset)
         {
-            Vector3 position = new Vector3(x * tileSize, y * tileSize, 0f);
-            //Debug.Log("Position = " + position + ". Current (x,y) = (" + x + "," + y + ")");
-            Collider[] colliders = Physics.OverlapSphere(position, tileSize);
+            // Position based on coordinates withing the local chunk and offset of the chunk itself.
+            Vector3 position = new Vector3((x + xOffset) * tileSize, 0f, (y + yOffset) * tileSize);
+
+            // Do a box overlap to check for the box collider of a tile of a previously spawned chunk.
+            Vector3 halfExtents = new Vector3(tileSize / 2f, tileSize / 2f, tileSize / 2f);
+            Collider[] colliders = Physics.OverlapBox(position, halfExtents);
+
+            // Gizmos debug data.
+            gizmosPosAndSize.AddLast(new LinkedListNode<(Vector3, Vector3)>((position, 2f * halfExtents)));
+
             if (colliders.Length > 0)
             {
-                Debug.Log("colliders.length = " + colliders.Length);
-                Tile tile = colliders[0].gameObject.GetComponentInParent<Tile>();
-                if (tile != null && tile.CollapsedCell != null)
+                if (debugMode)
                 {
-                    Debug.Log("Current (x,y) = (" + x + "," + y + "). Collapsed Cell (x,y) = (" + tile.CollapsedCell.x + "," + tile.CollapsedCell.y + ")");
-                    return tile.CollapsedCell;
+                    Debug.Log("colliders.length = " + colliders.Length + " Current(x, y) = (" + x + ", " + y + "). Position: " + position);
+                }
+                foreach (Collider collider in colliders)
+                {
+                    if (collider.GetType() == typeof(BoxCollider))
+                    {
+                        if (debugMode)
+                        {
+                            Debug.Log(collider.gameObject.name);
+                        }
+
+                        // Check for a cell reference within the collider.
+                        CellReference cellReference = collider.gameObject.GetComponent<CellReference>();
+                        if (cellReference == null)
+                        {
+                            cellReference = collider.transform.parent.GetComponentInParent<CellReference>();
+                        }
+
+                        // Update the information of the cell and use it in the next chunk.
+                        if (cellReference != null && cellReference.cell != null)
+                        {
+                            if (debugMode)
+                            {
+                                Debug.Log("Found cell reference! Current (x,y) = (" + x + "," + y + "). Position: " + position + ". Collapsed Cell (x,y) = (" + cellReference.cell.x + "," + cellReference.cell.y + "). Collapsed cell position: " + cellReference.transform.position + ". CellReference GO name: " + cellReference.gameObject.name);
+                            }
+                            cellReference.cell.x = x;
+                            cellReference.cell.y = y;
+                            cellReference.cell.xOffset = xOffset;
+                            cellReference.cell.yOffset = yOffset;
+                            return cellReference.cell;
+                        }
+                    }
                 }
             }
             return null;
         }
 
-        private void GenerateLevel(int yOffset, int xOffset)
+        private void GenerateLevel(int yChunkNumber, int xChunkNumber)
         {
+            // Calculate offset from chunk numbers and level generation properties.
+            int yOffset = (ySize - CHUNK_OVERLAP) * yChunkNumber;
+            int xOffset = (xSize - CHUNK_OVERLAP) * xChunkNumber;
+
             // Initialise the state changes stack and add an initial state.
             stateChanges = new Stack<StateChange>();
             enterNewState(null);
@@ -266,7 +330,8 @@ namespace PrecipitatorWFC
             {
                 for (int x = 0; x < xSize; x++)
                 {
-                    Cell previousCell = GetCell(y + yOffset, x + xOffset);
+                    // Check for previous information. If there is none, make a fresh cell.
+                    Cell previousCell = GetCell(y, yOffset, x, xOffset);
                     if (previousCell != null)
                     {
                         grid[y, x] = previousCell;
@@ -766,6 +831,26 @@ namespace PrecipitatorWFC
             GUILayout.EndArea();
 
             Handles.EndGUI();
+        }
+
+        // Gizmos for debugging. Used to draw colliders.
+        public LinkedList<(Vector3, Vector3)> gizmosPosAndSize;
+        void ClearGizmos()
+        {
+            gizmosPosAndSize = new LinkedList<(Vector3, Vector3)>();
+        }
+
+        // Visualise all gizmos (overlap box calls and box colliders).
+        void OnDrawGizmos()
+        {
+            if (debugMode)
+            {
+                Gizmos.color = Color.red;
+                foreach ((Vector3 gizmosPos, Vector3 gizmosSize) in gizmosPosAndSize)
+                {
+                    Gizmos.DrawWireCube(gizmosPos, gizmosSize);
+                }
+            }
         }
     }
 
