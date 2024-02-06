@@ -37,21 +37,16 @@ namespace PrecipitatorWFC
             instance = this;
         }
 
-        public int seed = 0;
-        public int ySize = 10; // The depth of the level.
-        public int xSize = 10; // The width of the level.
+        public int seed = 0; // The seed to use for generation. Randomises random generation.
+        public int chunkSize = 10; // The size of each chunk. Should not be lower than 3 to have proper overlap.
         public int tileSize = 2; // The size of all tiles in the tile set.
         public int numberOfChunks = 1; // Misleading name. How many chunks to spawn on each size. 1 = 1 NE, NW, SW and SE.
-        public Tile[] tileSet; // A tile set of all possible tiles to place in the grid.
+        public Tile[] tileSet; // A tile set of all possible tiles to place in the grid. Must contain the empty tile.
+        public Tile emptyTile; // A tile used as empty space for the player starting area and for the ungenerated borders of chunks.
         private List<NonSymmetricTile> explicitTileSet; // An explicit tile set filled with a non-symmetric tile for each possible original tile rotation to avoid intricate rotation checks.
-        public Cell[,] grid; // A grid of cells to run MAC3 / WFC on.
         public bool debugMode = false; // Logs each step of the algorithm to the console.
-        private Stack<StateChange> stateChanges; // A stack of state changes for each recursive step / depth of search.
-        private List<Cell> cellList; // A list of cells left to assign.
-        public float timeOut = 10f;
-        private readonly int CHUNK_OVERLAP = 2; // Edge overlap from one chunk to the next in number of blocks.
-        private float startTime;
-        private GameObject cellParent;
+        public float timeOut = 1f; // The timeout to use for individual generation layers.
+        private GameObject cellParent; // A gameObject to hold the currently loaded chunks.
 
         public GameObject CellParent
         {
@@ -66,6 +61,28 @@ namespace PrecipitatorWFC
             }
         }
 
+        private GameObject player; // The player's gameObject. Used for generation. Must use 'Player' tag.
+        private GameObject Player
+        {
+            get
+            {
+                if (player == null)
+                {
+                    player = GameObject.FindGameObjectWithTag("Player");
+                }
+                return player;
+            }
+        }
+
+        private NonSymmetricTile explicitEmptyTile;
+        public NonSymmetricTile ExplicitEmptyTile
+        {
+            get
+            {
+                return explicitEmptyTile;
+            }
+        }
+
         public List<NonSymmetricTile> ExplicitTileSet
         {
             get
@@ -73,6 +90,16 @@ namespace PrecipitatorWFC
                 // Initialise the explicit tile set if it has not already been done.
                 if (explicitTileSet == null)
                 {
+                    // Ensure that the empty tile is in the tile set.
+                    if (emptyTile == null)
+                    {
+                        throw new Exception("The empty tile must be specified!");
+                    }
+                    if (!tileSet.Contains(emptyTile))
+                    {
+                        throw new Exception("The tile set does not contain the specified empty tile!");
+                    }
+
                     explicitTileSet = new List<NonSymmetricTile>();
 
                     // Create a game object to hold the explicit tile set.
@@ -94,6 +121,12 @@ namespace PrecipitatorWFC
                         if (debugMode)
                         {
                             Debug.Log("Added explicit variant of tile " + tile + ": " + tile.ExplicitVariants[0]);
+                        }
+
+                        // Set the explicit variant of the empty tile if applicable.
+                        if (tile.Equals(emptyTile))
+                        {
+                            explicitEmptyTile = nonSymmetricTile;
                         }
 
                         // Create rotation variants for non-cube tiles.
@@ -191,9 +224,6 @@ namespace PrecipitatorWFC
             }
         }
 
-        //int chunkSize = 13;
-        //int blocksize = (chunkSize - 2);
-
         /*
         General idea:
         Grid is potentially infinite:
@@ -205,6 +235,12 @@ namespace PrecipitatorWFC
                 Initialise cells if needed.
                 (Would WFC bleed over outside of chunks? How would you manage this? What about chunk borders? Would the multithreading break determinism?)
             Define 
+
+
+        New Infinite Modifying in Blocks Discussion:
+        Have some way of identifying chunks around the player at any position. These chunks do have some overlap.
+        Be able to identify which chunks around the player are not generated.
+        Have the chunks to be loaded in a list that is generated in layers.
         */
 
         /// <summary>
@@ -238,560 +274,89 @@ namespace PrecipitatorWFC
             else
             {
                 // Spawn some empty tiles for the player.
-                // Todo. Should this be done via code or preplaced in the editor?
+                // Todo. Should this be done via code or preplaced in the editor? Best to use explicit empty tile if there is a variable for this anyway.
 
                 // Spawn the rest of the level.
-                for (int xChunkNumber = -numberOfChunks; xChunkNumber < numberOfChunks; xChunkNumber++)
-                {
-                    for (int yChunkNumber = -numberOfChunks; yChunkNumber < numberOfChunks; yChunkNumber++)
-                    {
-                        Debug.Log("Generating chunk: (" + xChunkNumber + "," + yChunkNumber + ").");
-                        GenerateLevel(yChunkNumber, xChunkNumber);
-                    }
-                }
+                SpawnChunksAroundPlayer();
             }
         }
 
         /// <summary>
-        /// Searches for a pre-existing cell in a certain position.
+        /// Spawns any chunks around the player up to the render distance. TODO: Make this and the render distance actually align.
         /// </summary>
-        /// <param name="y">The y coordinate within the chunk.</param>
-        /// <param name="yOffset">The base y offset of the chunk in the entire level. Aligns with local y = 0.</param>
-        /// <param name="x">The x coordinate within the chunk.</param>
-        /// <param name="xOffset">The base x offset of the chunk in the entire level. Aligns with local x = 0.</param>
+        private void SpawnChunksAroundPlayer()
+        {
+            // Create a list to hold chunks to generate.
+            List<Chunk> chunks = new List<Chunk>();
+
+            // Get the player's chunk.
+            Chunk playerChunk = new Chunk(Player.transform.position);
+
+            // Get chunks around the player chunk. // TODO HAVE SOMETHING CHECK WHETHER A CHUNK IS GENERATED SO THAT IT ISN'T RESPAWNED IF ALREADY THERE. USE STARTING CELL OF LAYER 1 TO CHECK.
+            for (int xChunkOffset = -numberOfChunks; xChunkOffset < numberOfChunks; xChunkOffset++)
+            {
+                for (int yChunkOffset = -numberOfChunks; yChunkOffset < numberOfChunks; yChunkOffset++)
+                {
+                    chunks.Add(new Chunk(playerChunk.y + yChunkOffset, playerChunk.x + xChunkOffset));
+                }
+            }
+
+            // Spawn all the chunks in the list.
+            SpawnChunks(chunks);
+        }
+
+        /// <summary>
+        /// Spawns the chunk in a given list.
+        /// </summary>
+        /// <param name="chunks">The chunks to spawn.</param>
+        private void SpawnChunks(List<Chunk> chunks)
+        {
+            foreach (Chunk chunk in chunks)
+            {
+                SpawnLayer(chunk.Layer1, chunk);
+            }
+            foreach (Chunk chunk in chunks)
+            {
+                SpawnLayer(chunk.Layer2, chunk);
+            }
+            foreach (Chunk chunk in chunks)
+            {
+                SpawnLayer(chunk.Layer3, chunk);
+            }
+            foreach (Chunk chunk in chunks)
+            {
+                SpawnLayer(chunk.Layer4, chunk);
+            }
+        }
+
+        /// <summary>
+        /// Spawns a single layer in a chunk.
+        /// </summary>
+        /// <param name="layerStartingCellCoordinate">The starting coordinate in the global grid of the layer.</param>
+        /// <param name="parentChunk">The chunk that the layer is a part of.</param>
+        private void SpawnLayer(Vector3 layerStartingCellCoordinate, Chunk parentChunk)
+        {
+            new LayerSpawner(layerStartingCellCoordinate, parentChunk).Spawn();
+        }
+
+        /// <summary>
+        /// Converts global grid coordinates to world position relative to the level generation manager instance.
+        /// </summary>
+        /// <param name="gridCoordinates">The coordinates to convert.</param>
         /// <returns></returns>
-        private Cell GetCell(int y, int yOffset, int x, int xOffset)
+        public Vector3 GridCoordinatesToWorldPos(Vector3 gridCoordinates)
         {
-            // Position based on coordinates withing the local chunk and offset of the chunk itself.
-            Vector3 position = new Vector3((x + xOffset) * tileSize, 0f, (y + yOffset) * tileSize);
-
-            // Do a box overlap to check for the box collider of a tile of a previously spawned chunk.
-            Vector3 halfExtents = new Vector3(tileSize / 2f, tileSize / 2f, tileSize / 2f);
-            Collider[] colliders = Physics.OverlapBox(position, halfExtents);
-
-            // Gizmos debug data.
-            gizmosPosAndSize.AddLast(new LinkedListNode<(Vector3, Vector3)>((position, 2f * halfExtents)));
-
-            if (colliders.Length > 0)
-            {
-                if (debugMode)
-                {
-                    Debug.Log("colliders.length = " + colliders.Length + " Current(x, y) = (" + x + ", " + y + "). Position: " + position);
-                }
-                foreach (Collider collider in colliders)
-                {
-                    if (collider.GetType() == typeof(BoxCollider))
-                    {
-                        if (debugMode)
-                        {
-                            Debug.Log(collider.gameObject.name);
-                        }
-
-                        // Check for a cell reference within the collider.
-                        CellReference cellReference = collider.gameObject.GetComponent<CellReference>();
-                        if (cellReference == null)
-                        {
-                            cellReference = collider.transform.parent.GetComponentInParent<CellReference>();
-                        }
-
-                        // Update the information of the cell and use it in the next chunk.
-                        if (cellReference != null && cellReference.cell != null)
-                        {
-                            if (debugMode)
-                            {
-                                Debug.Log("Found cell reference! Current (x,y) = (" + x + "," + y + "). Position: " + position + ". Collapsed Cell (x,y) = (" + cellReference.cell.x + "," + cellReference.cell.y + "). Collapsed cell position: " + cellReference.transform.position + ". CellReference GO name: " + cellReference.gameObject.name);
-                            }
-                            cellReference.cell.x = x;
-                            cellReference.cell.y = y;
-                            cellReference.cell.xOffset = xOffset;
-                            cellReference.cell.yOffset = yOffset;
-                            return cellReference.cell;
-                        }
-                    }
-                }
-            }
-            return null;
-        }
-
-        private void GenerateLevel(int yChunkNumber, int xChunkNumber)
-        {
-            // Calculate offset from chunk numbers and level generation properties.
-            int yOffset = (ySize - CHUNK_OVERLAP) * yChunkNumber;
-            int xOffset = (xSize - CHUNK_OVERLAP) * xChunkNumber;
-
-            // Initialise the state changes stack and add an initial state.
-            stateChanges = new Stack<StateChange>();
-            enterNewState(null);
-
-            // Set up a grid of cells.
-            grid = new Cell[ySize, xSize];
-            cellList = new List<Cell>();
-            for (int y = 0; y < ySize; y++)
-            {
-                for (int x = 0; x < xSize; x++)
-                {
-                    // Check for previous information. If there is none, make a fresh cell.
-                    Cell previousCell = GetCell(y, yOffset, x, xOffset);
-                    if (previousCell != null)
-                    {
-                        grid[y, x] = previousCell;
-                    }
-                    else
-                    {
-                        grid[y, x] = new Cell(y, yOffset, x, xOffset);
-                    }
-                    cellList.Add(grid[y, x]);
-                }
-            }
-
-
-            // The grid will only not be globally arc consistent at the start if the domains are not all equal.
-            // In simple WFC, all cells have the same domain choices at the start, so AC3 doesn't have to be run.
-            // If choosing preset cells, it might be sufficient to just run macAC3 around those cells rather than running them on every cell.
-            Queue<CellArc> startingQueue = new Queue<CellArc>();
-            foreach (Cell cell in grid)
-            {
-                Queue<CellArc> queueForOne = getArcs(cell);
-                while (queueForOne.Count > 0)
-                {
-                    startingQueue.Enqueue(queueForOne.Dequeue());
-                }
-            }
-            macAC3(startingQueue);
-
-            startTime = Time.realtimeSinceStartup;
-            Debug.Log("Start Time: " + startTime);
-
-            // Run the MAC3 search algorithm.
-            MAC3();
-
-            if (finished())
-            {
-                if (!TimedOut)
-                {
-                    Debug.Log("Level generation successful! Collapsing all cells!");
-                    foreach (Cell cell in grid)
-                    {
-                        cell.Collapse();
-                    }
-                }
-                else
-                {
-                    Debug.LogError("Level generation failed due to timeout!");
-                }
-            }
-            else
-            {
-                Debug.LogError("Level generation failed! Could not find a solution");
-            }
-            Debug.Log("End Time: " + Time.realtimeSinceStartup);
+            return (gridCoordinates - this.transform.position) * tileSize;
         }
 
         /// <summary>
-        /// Maintaining Arc Consistency Algorithm using AC3.
+        /// Converts world positions relative to the level generation manager instance to global grid coordinates.
         /// </summary>
-        private void MAC3()
+        /// <param name="worldPosition">The world position to convert.</param>
+        /// <returns></returns>
+        public Vector3 WorldPosToGridCoordinates(Vector3 worldPosition)
         {
-            // Check whether all cells have been assigned.
-            if (finished())
-            {
-                if (debugMode)
-                {
-                    Debug.Log("Finished! (1)");
-                }
-                return;
-            }
-
-            // Select a cell and tile to assign.
-            Cell cell = selectCell();
-            Tile tile = cell.SelectTile();
-
-            // Create a new state.
-            // Assign the tile to the cell, removing all other tile from the cell's domain.
-            enterNewState(cell);
-            bool changed = cell.Assign(tile);
-            cellList.Remove(cell);
-
-            // Propagate any changes and, if there were any, run the algorithm again to assign further cells.
-            // If no changes were made by AC3 (returns false) after checking for a solution, then a dead end was reached.
-            try
-            {
-                if (changed)
-                {
-                    macAC3(cell);
-                }
-                MAC3();
-            } // Exception to let AC3 cancel early in the case of a domain wipeout.
-            catch (EmptyDomainException) { }
-
-            if (finished())
-            {
-                if (debugMode)
-                {
-                    Debug.Log("Finished! (2)");
-                }
-                return;
-            }
-
-            // If recursion finished, this code is reached.
-            // Revert the state and remove the tile value that was checked from the cell's domain.
-            revertState();
-
-            // If the domain is not empty, propagate the domain pruning.
-            // If this resulted in changes, run the algorithm again.
-            if (!cell.EmptyDomain)
-            {
-                try
-                {
-                    cell.Unassign(tile);
-                    macAC3(cell);
-                    MAC3();
-                } // Exception to let AC3 cancel early in the case of a domain wipeout.
-                catch (EmptyDomainException) { }
-            }
-
-            if (finished())
-            {
-                if (debugMode)
-                {
-                    Debug.Log("Finished! (3)");
-                }
-                return;
-            }
-
-            // Restore the cell's domain with the chosen tile to be a potential option when making a previous choice differently.
-            cell.RestoreDomain(tile);
-        }
-
-        /// <summary>
-        /// Get the current state change.
-        /// </summary>
-        public StateChange CurrentStateChanges
-        {
-            get
-            {
-                return stateChanges.Peek();
-            }
-        }
-
-        /// <summary>
-        /// Enter a new state by adding an empty state change to the stack.
-        /// </summary>
-        private void enterNewState(Cell assignedCell)
-        {
-            stateChanges.Push(new StateChange(assignedCell));
-            if (debugMode)
-            {
-                Debug.Log("Entered new state. Stack size is now " + stateChanges.Count);
-            }
-        }
-
-        /// <summary>
-        /// Pops the current state and reverts any changes made by it.
-        /// Only done when the current state is not the starting state.
-        /// </summary>
-        private void revertState()
-        {
-            if (debugMode)
-            {
-                Debug.Log("Reverting state!");
-            }
-            if (stateChanges.Count > 1)
-            {
-                StateChange currentState = stateChanges.Pop();
-                currentState.revert();
-                cellList.Add(currentState.assignedCell);
-            }
-            else if (debugMode)
-            {
-                Debug.Log("State changes is at starting size!");
-            }
-        }
-
-        /// <summary>
-        /// Method to select a cell to make a choice for.
-        /// At the moment it is in ascending order but should later be switched to lowest entropy
-        /// </summary>
-        /// <returns>The cell to make a choice for.</returns>
-        private Cell selectCell()
-        {
-            //return selectCellAscendingOrder();
-            //return selectCellSmallestDomain();
-            return SelectCellWithLowestWeightedEntropy();
-        }
-
-        /// <summary>
-        /// Selects the first cell that is not yet assigned.
-        /// </summary>
-        /// <returns>The first cell that is not yet assigned.</returns>
-        private Cell selectCellAscendingOrder()
-        {
-            if (cellList.Count > 0)
-            {
-                return cellList[0];
-            }
-            Debug.Log("All cells are already collapsed! Returning 0,0.");
-            return grid[0, 0];
-        }
-
-        /// <summary>
-        /// Selects the cell with the smallest domain not yet assigned.
-        /// </summary>
-        /// <returns>The cell with the smallest domain not yet assigned.</returns>
-        private Cell selectCellSmallestDomain()
-        {
-            Cell smallestDomainCell = null;
-            int smallestDomainSize = int.MaxValue;
-            foreach (Cell potentialCell in cellList)
-            {
-                if (potentialCell.tileOptions.Count < smallestDomainSize)
-                {
-                    smallestDomainCell = potentialCell;
-                    smallestDomainSize = potentialCell.tileOptions.Count;
-                }
-            }
-            if (smallestDomainCell == null)
-            {
-                Debug.Log("Trying to select cell when all are assigned! Returning default (0,0).");
-                return grid[0, 0];
-            }
-            Debug.Log("Smallest domain cell: " + smallestDomainCell);
-            return smallestDomainCell;
-        }
-
-        private Cell SelectCellWithLowestWeightedEntropy()
-        {
-            Cell lowestEntropyCell = null;
-            float lowestWeightedEntropy = float.MaxValue;
-
-            foreach (Cell cell in cellList)
-            {
-                float weightedEntropy = CalculateShannonEntropy(cell);
-
-                if (weightedEntropy < lowestWeightedEntropy)
-                {
-                    lowestWeightedEntropy = weightedEntropy;
-                    lowestEntropyCell = cell;
-                }
-            }
-
-            return lowestEntropyCell;
-        }
-
-        private float CalculateShannonEntropy(Cell cell)
-        {
-            if (cell.tileOptions.Count == 0)
-            {
-                return 0f;
-            }
-
-            // Calculate the sum of weights
-            float sumOfWeights = cell.tileOptions.Sum(tile => tile.weight);
-
-            // Calculate the sum of (weight * log(weight))
-            float sumWeightedLogWeights = cell.tileOptions.Sum(tile => tile.weight * Mathf.Log(tile.weight));
-
-            // Calculate the Shannon entropy
-            float shannonEntropy = Mathf.Log(sumOfWeights) - (sumWeightedLogWeights / sumOfWeights);
-
-            return shannonEntropy;
-        }
-
-        /// <summary>
-        /// AC3 starting with one cell.
-        /// </summary>
-        /// <param name="cell"> The starting cell.</param>
-        /// <returns>Whether any domains were changed.</returns>
-        private bool macAC3(Cell cell)
-        {
-            return macAC3(getArcs(cell));
-        }
-
-        /// <summary>
-        /// Arc Consistency 3 in the MAC Algorithm.
-        /// </summary>
-        /// <param name="queue">The propagation queue of arcs to check.</param>
-        /// <returns>Whether any domains were changed.</returns>
-        private bool macAC3(Queue<CellArc> queue)
-        {
-            bool changed = false;
-            if (debugMode)
-            {
-                Debug.Log("Running macAC3 with a propagation queue of size " + queue.Count);
-            }
-            while (queue.Count > 0)
-            {
-                CellArc arc = queue.Dequeue();
-                if (debugMode)
-                {
-                    Debug.Log("Revising arc: " + arc);
-                }
-                if (Revise(arc))
-                {
-                    changed = true;
-                    if (debugMode)
-                    {
-                        Debug.Log("Getting targeted arcs for arc: " + arc);
-                    }
-                    foreach (CellArc targetedArc in getTargetedArcs(arc))
-                    {
-                        if (!queue.Contains(arc))
-                        {
-                            queue.Enqueue(targetedArc);
-                        }
-                    }
-                }
-            }
-            return changed;
-        }
-
-        /// <summary>
-        /// Checks whether assignments have been finished.
-        /// </summary>
-        /// <returns>True if all cells have been assigned a tile.</returns>
-        private bool finished()
-        {
-            if (TimedOut)
-            {
-                return true;
-            }
-            //return cellsCollapsed == (xSize * ySize); // Might be a more optimal way to check this to implement later.
-            foreach (Cell cell in grid)
-            {
-                if (cell.tileOptions.Count != 1)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        private bool TimedOut
-        {
-            get
-            {
-                return Time.realtimeSinceStartup - startTime > timeOut;
-            }
-        }
-
-        /// <summary>
-        /// Gets all the arcs around a single cell in the grid.
-        /// </summary>
-        /// <param name="cell">The cell to get connected arcs of.</param>
-        /// <returns>All arcs around the cell.</returns>
-        private Queue<CellArc> getArcs(Cell cell)
-        {
-            Queue<CellArc> queue = new Queue<CellArc>();
-            // Propagate to each neighbour of the cell.
-            // Upper neighbour.
-            if (cell.y < ySize - 1)
-            {
-                generateArcPair(cell, grid[cell.y + 1, cell.x], ref queue);
-            }
-            // Right neighbour.
-            if (cell.x < xSize - 1)
-            {
-                generateArcPair(cell, grid[cell.y, cell.x + 1], ref queue);
-            }
-            // Bottom neighbour.
-            if (cell.y > 1)
-            {
-                generateArcPair(cell, grid[cell.y - 1, cell.x], ref queue);
-            }
-            // Left neighbour.
-            if (cell.x > 1)
-            {
-                generateArcPair(cell, grid[cell.y, cell.x - 1], ref queue);
-            }
-            return queue;
-        }
-
-        /// <summary>
-        /// Creates arcs for a pair of cells and adds them to a queue.
-        /// </summary>
-        /// <param name="cell1">The first cell of the arc.</param>
-        /// <param name="cell2">The second cell of the arc.</param>
-        /// <param name="queue">The queue to add the arcs to.</param>
-        private void generateArcPair(Cell cell1, Cell cell2, ref Queue<CellArc> queue)
-        {
-            queue.Enqueue(new CellArc(cell1, cell2));
-            queue.Enqueue(new CellArc(cell2, cell1));
-        }
-
-        /// <summary>
-        /// Gets all the arcs targeting a given cell.
-        /// </summary>
-        /// <param name="arc">An arc containing the target cell as well as another cell to ignore.</param>
-        /// <returns>A queue of arcs targeting the given cell.</returns>
-        private Queue<CellArc> getTargetedArcs(CellArc arc)
-        {
-            Queue<CellArc> queue = new Queue<CellArc>();
-            Cell cell = arc.cell1;
-            // Propagate to each neighbour of the cell.
-            // Upper neighbour.
-            if (cell.y < ySize - 1)
-            {
-                Cell otherCell = grid[cell.y + 1, cell.x];
-                if (otherCell != arc.cell2)
-                {
-                    queue.Enqueue(new CellArc(otherCell, cell));
-                }
-            }
-            // Right neighbour.
-            if (cell.x < xSize - 1)
-            {
-                Cell otherCell = grid[cell.y, cell.x + 1];
-                if (otherCell != arc.cell2)
-                {
-                    queue.Enqueue(new CellArc(otherCell, cell));
-                }
-            }
-            // Bottom neighbour.
-            if (cell.y > 1)
-            {
-                Cell otherCell = grid[cell.y - 1, cell.x];
-                if (otherCell != arc.cell2)
-                {
-                    queue.Enqueue(new CellArc(otherCell, cell));
-                }
-            }
-            // Left neighbour.
-            if (cell.x > 1)
-            {
-                Cell otherCell = grid[cell.y, cell.x - 1];
-                if (otherCell != arc.cell2)
-                {
-                    queue.Enqueue(new CellArc(otherCell, cell));
-                }
-            }
-            return queue;
-        }
-
-        /// <summary>
-        /// An arc revision that removes any domain values not supporting it.
-        /// </summary>
-        /// <param name="arc">The arc to revise.</param>
-        /// <returns>Whether the domain of the arc's primary / first cell was changed without any domain wipeout.</returns>
-        /// <exception cref="EmptyDomainException">Thrown when revision leaves a domain empty.</exception>
-        private bool Revise(CellArc arc)
-        {
-            bool changed = false;
-            // Remove any tiles not supported.
-            HashSet<Tile> tilesToRemove = new HashSet<Tile>(arc.cell1.tileOptions.Where(tile => !tile.Supported(arc)));
-            foreach (Tile tileToRemove in tilesToRemove)
-            {
-                changed = true;
-                arc.cell1.tileOptions.Remove(tileToRemove);
-                CurrentStateChanges.addDomainChange(arc.cell1, tileToRemove);
-            }
-
-            // Check if domain is empty.
-            if (arc.cell1.tileOptions.Count == 0)
-            {
-                throw new EmptyDomainException();
-            }
-
-            return changed;
+            return (worldPosition / tileSize) + this.transform.position;
         }
 
         /// <summary>

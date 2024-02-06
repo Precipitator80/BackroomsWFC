@@ -177,37 +177,47 @@ namespace PrecipitatorWFC
         /// <param name="cell">The cell to place the tile prefab in.</param>
         public void CollapseIntoCell(Cell cell)
         {
-            // Only collapse if a model is available and the cell has not already been collapsed.
-            if (this.model != null && cell.tilePrefab == null)
+            // Only collapse if a model is available.
+            if (this.model == null)
             {
-                // Instantiate the prefab at following the transform of the tile to preserve scaling and rotation.
-                cell.tilePrefab = Instantiate(this.model, this.transform);
-
-                // Give it the name of the tile rather than the model.
-                cell.tilePrefab.name = this.name;
-
-                // Add a reference to the cell the model is in.
-                CellReference cellReference = cell.tilePrefab.AddComponent<CellReference>();
-                cellReference.cell = cell;
-
-                // Change the tile's parent to the level generation manager, keeping the same initial scaling and rotation but aligning the position with the grid.
-                cell.tilePrefab.transform.SetParent(LevelGenerationManager.Instance.CellParent.transform, true);
-                cell.tilePrefab.transform.localPosition = new Vector3(LevelGenerationManager.Instance.tileSize * (cell.x + cell.xOffset), 0f, LevelGenerationManager.Instance.tileSize * (cell.y + cell.yOffset));
-
-
-                // Give each tile a box collider to allow for detection in generation.
-                BoxCollider collider = cell.tilePrefab.AddComponent<BoxCollider>();
-                Vector3 originalSize = new Vector3(LevelGenerationManager.Instance.tileSize / (2f * cell.tilePrefab.transform.localScale.x), LevelGenerationManager.Instance.tileSize / (2f * cell.tilePrefab.transform.localScale.y), LevelGenerationManager.Instance.tileSize / (2f * cell.tilePrefab.transform.localScale.z));
-                Vector3 rotatedSize = cell.tilePrefab.transform.rotation * originalSize;
-                collider.size = rotatedSize;
-                collider.isTrigger = true;
-
-                // Add collider information to the debug gizmos.
-                LevelGenerationManager.Instance.gizmosPosAndSize.AddLast(new LinkedListNode<(Vector3, Vector3)>((collider.transform.position, collider.size)));
-
-                // Activate the tile prefab in case the models are switched off.
-                cell.tilePrefab.SetActive(true);
+                throw new Exception("The tile '" + this + "' does not have a model available to allow for collapse!");
             }
+
+            // Destroy the previous tilePrefab if the cell was replaced by a higher layer.
+            if (cell.tilePrefab != null)
+            {
+                DestroyImmediate(cell.tilePrefab);
+            }
+
+            // Instantiate the prefab at following the transform of the tile to preserve scaling and rotation.
+            cell.tilePrefab = Instantiate(this.model, this.transform);
+
+            // Give it the name of the tile rather than the model.
+            cell.tilePrefab.name = this.name;
+
+            // Add a reference to the cell the model is in.
+            CellReference cellReference = cell.tilePrefab.AddComponent<CellReference>();
+            cellReference.cell = cell;
+
+            // Change the tile's parent to the level generation manager, keeping the same initial scaling and rotation but aligning the position with the grid.
+            cell.tilePrefab.transform.SetParent(LevelGenerationManager.Instance.CellParent.transform, true);
+            cell.tilePrefab.transform.localPosition = cell.worldCoordinates;
+
+            // Give each tile a box collider to allow for detection in generation.
+            BoxCollider collider = cell.tilePrefab.AddComponent<BoxCollider>();
+            Vector3 originalSize = new Vector3(LevelGenerationManager.Instance.tileSize / (2f * cell.tilePrefab.transform.localScale.x), LevelGenerationManager.Instance.tileSize / (2f * cell.tilePrefab.transform.localScale.y), LevelGenerationManager.Instance.tileSize / (2f * cell.tilePrefab.transform.localScale.z));
+            Vector3 rotatedSize = cell.tilePrefab.transform.rotation * originalSize;
+            collider.size = rotatedSize;
+            collider.isTrigger = true;
+
+            // Add collider information to the debug gizmos.
+            LevelGenerationManager.Instance.gizmosPosAndSize.AddLast(new LinkedListNode<(Vector3, Vector3)>((collider.transform.position, collider.size)));
+
+            // Set the previous tile of the cell so that it can be recovered if a layer fails to generate on top of the cell.
+            cell.previouslyCollapsedTile = this;
+
+            // Activate the tile prefab in case the models are switched off.
+            cell.tilePrefab.SetActive(true);
         }
     }
 }

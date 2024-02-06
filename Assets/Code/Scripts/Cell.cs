@@ -13,24 +13,40 @@ namespace PrecipitatorWFC
     public class Cell
     {
         public HashSet<Tile> tileOptions; // A set of possible tile options for the cell at any given point. Reduced to one option before collapse.
+        public Tile previouslyCollapsedTile; // The tile chosen for this cell in previous generation.
         public GameObject tilePrefab; // A GameObject to hold the tile prefab once the cell has been collapsed.
-        public int y; // The y coordinate of the cell in the grid.
-        public int yOffset; // The y offset of the coordinate of the cell in the level.
-        public int x; // The x coordinate of the cell in the grid.
-        public int xOffset; // The y offset of the coordinate of the cell in the level.
+        public int y; // The y coordinate of the cell in the current layer being collapsed.
+        public int x; // The x coordinate of the cell in the current layer being collapsed.
+        public Vector3 worldCoordinates; // The coordinates of the cell in the global grid.
+        private Chunk currentChunk; // The current chunk that the cell is part of in generation. Holds the RNG for all its cells.
 
         /// <summary>
         /// Constructor that initialises the tile options and position variables.
         /// </summary>
-        /// <param name="y">The y coordinate of the cell in the grid.</param>
-        /// <param name="x">The x coordinate of the cell in the grid.</param>
-        public Cell(int y, int yOffset, int x, int xOffset)
+        /// <param name="y">The y coordinate of the cell in the current layer being collapsed.</param>
+        /// <param name="x">The x coordinate of the cell in the current layer being collapsed.</param>
+        /// <param name="globalGridCoordinates">The coordinates of the cell in the global grid.</param>
+        /// <param name="currentChunk">The current chunk that the cell is part of in generation. Holds the RNG for all its cells.</param>
+        public Cell(int y, int x, Vector3 globalGridCoordinates, Chunk currentChunk)
         {
             tileOptions = new HashSet<Tile>(LevelGenerationManager.Instance.ExplicitTileSet);
             this.y = y;
-            this.yOffset = yOffset;
             this.x = x;
-            this.xOffset = xOffset;
+            this.worldCoordinates = LevelGenerationManager.Instance.GridCoordinatesToWorldPos(globalGridCoordinates);
+            this.currentChunk = currentChunk;
+        }
+
+        /// <summary>
+        /// Updates the local coordinates and chunk of the cell to allow re-use of the cell in further generation.
+        /// </summary>
+        /// <param name="y">The y coordinate of the cell in the current layer being collapsed.</param>
+        /// <param name="x">The x coordinate of the cell in the current layer being collapsed.</param>
+        /// <param name="currentChunk"></param>
+        public void updateLocalCoordinates(int y, int x, Chunk currentChunk)
+        {
+            this.y = y;
+            this.x = x;
+            this.currentChunk = currentChunk;
         }
 
         /// <summary>
@@ -67,13 +83,15 @@ namespace PrecipitatorWFC
             }
         }
 
+
         /// <summary>
         /// Assign a specific tile to a cell by removing all other tiles from the domain.
         /// This means that the cell is set to equal this specific tile (left branch).
         /// </summary>
         /// <param name="tile">The tile to assign the cell to.</param>
+        /// <param name="layerSpawner">The layer spawner holding the current state of its generation.</param>
         /// <returns>Whether domain pruning occurred.</returns>
-        public bool Assign(Tile tile)
+        public bool Assign(Tile tile, LayerSpawner layerSpawner)
         {
             // Create a copy of the tile options set that only includes tiles that are not the tile to assign.
             HashSet<Tile> tilesToRemove = new HashSet<Tile>(tileOptions.Where(otherTile => !otherTile.Equals(tile)));
@@ -84,7 +102,7 @@ namespace PrecipitatorWFC
             {
                 try
                 {
-                    PruneDomain(otherTile);
+                    PruneDomain(otherTile, layerSpawner);
                 }
                 catch (EmptyDomainException)
                 {
@@ -104,19 +122,21 @@ namespace PrecipitatorWFC
         /// This means that the cell is set to not equal this specific tile (right branch).
         /// </summary>
         /// <param name="tile">The tile to remove.</param>
-        public void Unassign(Tile tile)
+        /// <param name="layerSpawner">The layer spawner holding the current state of its generation.</param>
+        public void Unassign(Tile tile, LayerSpawner layerSpawner)
         {
-            PruneDomain(tile);
+            PruneDomain(tile, layerSpawner);
         }
 
         /// <summary>
         /// Remove / prune a specific tile from a cell's domain.
         /// </summary>
         /// <param name="tile">The tile to remove.</param>
-        public void PruneDomain(Tile tile)
+        /// <param name="layerSpawner">The layer spawner holding the current state of its generation.</param>
+        public void PruneDomain(Tile tile, LayerSpawner layerSpawner)
         {
             tileOptions.Remove(tile);
-            LevelGenerationManager.Instance.CurrentStateChanges.addDomainChange(this, tile);
+            layerSpawner.CurrentStateChanges.addDomainChange(this, tile);
             if (tileOptions.Count == 0)
             {
                 throw new EmptyDomainException("Domain wipeout when pruning domain!");
@@ -147,7 +167,7 @@ namespace PrecipitatorWFC
         {
             Tile[] tileOptionsArray = tileOptions.ToArray();
             int weightSum = tileOptionsArray.Sum(tileOption => tileOption.weight);
-            int randomWeight = UnityEngine.Random.Range(0, weightSum);
+            int randomWeight = currentChunk.rng.NextInt(0, weightSum);
 
             //Debug.Log("Selecting tile by weighting. Sum is " + weightSum);
             foreach (Tile tileOption in tileOptionsArray)
@@ -169,7 +189,7 @@ namespace PrecipitatorWFC
         public Tile SelectTileRandomChoice()
         {
             Tile[] tileOptionsArray = tileOptions.ToArray();
-            return tileOptionsArray[UnityEngine.Random.Range(0, tileOptionsArray.Length)];
+            return tileOptionsArray[currentChunk.rng.NextInt(0, tileOptionsArray.Length)];
         }
 
         public Tile SelectTileAscending()
@@ -200,7 +220,7 @@ namespace PrecipitatorWFC
             tileOption.CollapseIntoCell(this);
 
             // // Use one of the possible rotations.
-            // float randomRotation = 90f * tileOption.possibleCardinalities[Random.Range(0, tileOption.possibleCardinalities.Count)];
+            // float randomRotation = 90f * tileOption.possibleCardinalities[currentChunk.rng.NextInt(0, tileOption.possibleCardinalities.Count)];
             // collapsedCell.transform.Rotate(0f, randomRotation, 0f);
         }
 
