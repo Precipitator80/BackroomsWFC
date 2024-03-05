@@ -32,9 +32,9 @@ namespace PrecipitatorWFC
         {
             // Partially used reference.
             // How can I compute which chunk a coordinate is in? user1430 - https://gamedev.stackexchange.com/questions/94021/how-can-i-compute-which-chunk-a-coordinat -e-is-in - 06.02.2024
-            Vector3 gridPosition = LevelGenerationManager.Instance.WorldPosToGridCoordinates(worldPosition);
-            x = (int)Math.Floor(gridPosition.x / LevelGenerationManager.Instance.chunkSize);
-            y = (int)Math.Floor(gridPosition.z / LevelGenerationManager.Instance.chunkSize);
+            Vector3Int chunkCoordinates = LevelGenerationManager.Instance.WorldPosToChunkCoordinates(worldPosition);
+            x = chunkCoordinates.x;
+            y = chunkCoordinates.z;
             InitialiseRNG();
         }
 
@@ -68,6 +68,11 @@ namespace PrecipitatorWFC
 
             // Initialise the RNG with the calculated seed.
             rng = new Unity.Mathematics.Random(seed);
+        }
+
+        public void Unload()
+        {
+
         }
 
         ////// Getters to return the starting cell coordinates of each layer.

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace PrecipitatorWFC
     /// <summary>
     /// LevelGenerationManager to handle the MAC3 / WFC search.
     /// </summary>
-    [ExecuteInEditMode]
+    [ExecuteAlways]
     public class LevelGenerationManager : MonoBehaviour
     {
         /// <summary>
@@ -31,10 +32,23 @@ namespace PrecipitatorWFC
         /// <summary>
         /// Awake function to set the LevelGenerationManager instance.
         /// </summary>
-        public void Awake()
+        void Awake()
         {
             Debug.Log("LevelGenerationManager is awake!");
             instance = this;
+        }
+
+        void Update()
+        {
+            if (generatedLevel)
+            {
+                Debug.Log("Updating chunks");
+                UpdateChunks();
+            }
+            else
+            {
+                Debug.Log("Level has not been spawned");
+            }
         }
 
         public int seed = 0; // The seed to use for generation. Randomises random generation.
@@ -47,6 +61,7 @@ namespace PrecipitatorWFC
         public bool debugMode = false; // Logs each step of the algorithm to the console.
         public float timeOut = 1f; // The timeout to use for individual generation layers.
         private GameObject cellParent; // A gameObject to hold the currently loaded chunks.
+        private bool generatedLevel;
 
         public GameObject CellParent
         {
@@ -243,11 +258,20 @@ namespace PrecipitatorWFC
         Have the chunks to be loaded in a list that is generated in layers.
         */
 
+        public void ClearLevel()
+        {
+            for (int i = transform.childCount - 1; i >= 0; i--)
+            {
+                DestroyImmediate(transform.GetChild(i).gameObject);
+            }
+        }
+
         /// <summary>
         /// Generates a level using the MAC3 algorithm for WFC.
         /// </summary>
         public void GenerateLevel()
         {
+            generatedLevel = false;
             ClearGizmos();
             UnityEngine.Random.InitState(seed);
 
@@ -262,10 +286,7 @@ namespace PrecipitatorWFC
             }
 
             // Delete the previous level if one was generated.
-            for (int i = transform.childCount - 1; i >= 0; i--)
-            {
-                DestroyImmediate(transform.GetChild(i).gameObject);
-            }
+            ClearLevel();
 
             if (ExplicitTileSet == null)
             {
@@ -277,17 +298,79 @@ namespace PrecipitatorWFC
                 // Todo. Should this be done via code or preplaced in the editor? Best to use explicit empty tile if there is a variable for this anyway.
 
                 // Spawn the rest of the level.
-                SpawnChunksAroundPlayer();
+                InitialChunkSpawn();
+                generatedLevel = true;
             }
         }
+
+        List<Chunk> chunks = new List<Chunk>();
+        List<Chunk> newChunks = new List<Chunk>();
+
+        private void UpdateChunks()
+        {
+            Vector3Int playerChunkCoordinates = WorldPosToChunkCoordinates(player.transform.position);
+            int playerX = playerChunkCoordinates.x;
+            int playerY = playerChunkCoordinates.z;
+            Debug.Log("Player is at (" + playerX + "," + playerY + ")");
+
+            // Check each chunk's position to determine whether updating is required.
+            for (int i = chunks.Count - 1; i >= 0; i--)
+            {
+                // Check the render distance against the chunk's coordinates.
+                int xDifference = playerX - chunks[i].x;
+                int yDifference = playerY - chunks[i].y;
+                bool outOfBoundsX = Math.Abs(xDifference) > numberOfChunks;
+                bool outOfBoundsY = Math.Abs(yDifference) > numberOfChunks;
+
+                // If the chunk is out of bounds, unloading and generate a new chunk on the opposite side of the player.
+                if (outOfBoundsX || outOfBoundsY)
+                {
+                    Debug.Log("Chunk is out of bounds: " + chunks[i]);
+                    // Calculate the coordinates of the new chunk to load in place of this chunk.
+                    int newChunkX = playerX;
+                    if (outOfBoundsX)
+                    {
+                        newChunkX += xDifference - 1 * Math.Sign(xDifference);
+                    }
+                    else
+                    {
+                        newChunkX -= xDifference;
+                    }
+
+                    int newChunkY = playerY;
+                    if (outOfBoundsY)
+                    {
+                        newChunkY += yDifference - 1 * Math.Sign(yDifference);
+                    }
+                    else
+                    {
+                        newChunkY -= yDifference;
+                    }
+
+                    // Unload the old chunk.
+                    chunks[i].Unload();
+                    chunks.Remove(chunks[i]);
+
+                    // Set the new chunk to be generated.
+                    Chunk newChunk = new Chunk(newChunkY, newChunkX);
+                    newChunks.Add(newChunk);
+                    chunks.Add(newChunk);
+                }
+            }
+
+            // Spawn any new chunks and clear the list for the next update.
+            SpawnChunks(newChunks);
+            newChunks.Clear();
+        }
+
 
         /// <summary>
         /// Spawns any chunks around the player up to the render distance. TODO: Make this and the render distance actually align.
         /// </summary>
-        private void SpawnChunksAroundPlayer()
+        private void InitialChunkSpawn()
         {
             // Create a list to hold chunks to generate.
-            List<Chunk> chunks = new List<Chunk>();
+            chunks = new List<Chunk>();
 
             // Get the player's chunk.
             Chunk playerChunk = new Chunk(Player.transform.position);
@@ -313,6 +396,7 @@ namespace PrecipitatorWFC
         {
             foreach (Chunk chunk in chunks)
             {
+                Debug.Log("Spawning chunk: " + chunk);
                 SpawnLayer(chunk.Layer1, chunk);
             }
             foreach (Chunk chunk in chunks)
@@ -359,6 +443,12 @@ namespace PrecipitatorWFC
             return (worldPosition / tileSize) + this.transform.position;
         }
 
+
+        public Vector3Int WorldPosToChunkCoordinates(Vector3 worldPosition)
+        {
+            return Vector3Int.FloorToInt(WorldPosToGridCoordinates(worldPosition) / LevelGenerationManager.Instance.chunkSize);
+        }
+
         /// <summary>
         /// Hooks to add generation buttons to the editor.
         /// </summary>
@@ -388,9 +478,9 @@ namespace PrecipitatorWFC
             {
                 generator.GenerateLevel();
             }
-            if (GUILayout.Button("Abort and Clear"))
+            if (GUILayout.Button("Clear Level"))
             {
-                throw new NotImplementedException();
+                generator.ClearLevel();
             }
 
             GUILayout.EndArea();
@@ -431,9 +521,9 @@ namespace PrecipitatorWFC
             {
                 generator.GenerateLevel();
             }
-            if (GUILayout.Button("Abort and Clear"))
+            if (GUILayout.Button("Clear"))
             {
-                throw new NotImplementedException();
+                generator.ClearLevel();
             }
             DrawDefaultInspector();
         }
