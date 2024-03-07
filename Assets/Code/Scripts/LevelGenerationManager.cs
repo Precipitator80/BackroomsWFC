@@ -376,9 +376,9 @@ namespace PrecipitatorWFC
             Chunk playerChunk = new Chunk(Player.transform.position);
 
             // Get chunks around the player chunk. // TODO HAVE SOMETHING CHECK WHETHER A CHUNK IS GENERATED SO THAT IT ISN'T RESPAWNED IF ALREADY THERE. USE STARTING CELL OF LAYER 1 TO CHECK.
-            for (int xChunkOffset = -numberOfChunks; xChunkOffset < numberOfChunks; xChunkOffset++)
+            for (int xChunkOffset = -numberOfChunks; xChunkOffset <= numberOfChunks; xChunkOffset++)
             {
-                for (int yChunkOffset = -numberOfChunks; yChunkOffset < numberOfChunks; yChunkOffset++)
+                for (int yChunkOffset = -numberOfChunks; yChunkOffset <= numberOfChunks; yChunkOffset++)
                 {
                     chunks.Add(new Chunk(playerChunk.y + yChunkOffset, playerChunk.x + xChunkOffset));
                 }
