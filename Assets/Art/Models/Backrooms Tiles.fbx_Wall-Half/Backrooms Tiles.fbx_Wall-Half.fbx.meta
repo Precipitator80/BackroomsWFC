@@ -3,7 +3,27 @@ guid: 05ed739588dda454a898b27fce6ab080
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carpet
+    second: {fileID: 2100000, guid: ed5f7caddc7546140ab7202b3f0dc064, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CeilingTile
+    second: {fileID: 2100000, guid: ec0aa37f6d5e6b143951dbe2f6ded981, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallTrim
+    second: {fileID: 2100000, guid: c57fb1127b5368b449b99d9002f5689a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wallpaper
+    second: {fileID: 2100000, guid: be7761e5b4dea4e4f9f16e5f83f22ba4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
