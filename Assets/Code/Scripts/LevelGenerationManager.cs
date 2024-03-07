@@ -397,30 +397,20 @@ namespace PrecipitatorWFC
             foreach (Chunk chunk in chunks)
             {
                 Debug.Log("Spawning chunk: " + chunk);
-                SpawnLayer(chunk.Layer1, chunk);
+                chunk.SpawnLayer(1);
             }
             foreach (Chunk chunk in chunks)
             {
-                SpawnLayer(chunk.Layer2, chunk);
+                chunk.SpawnLayer(2);
             }
             foreach (Chunk chunk in chunks)
             {
-                SpawnLayer(chunk.Layer3, chunk);
+                chunk.SpawnLayer(3);
             }
             foreach (Chunk chunk in chunks)
             {
-                SpawnLayer(chunk.Layer4, chunk);
+                chunk.SpawnLayer(4);
             }
-        }
-
-        /// <summary>
-        /// Spawns a single layer in a chunk.
-        /// </summary>
-        /// <param name="layerStartingCellCoordinate">The starting coordinate in the global grid of the layer.</param>
-        /// <param name="parentChunk">The chunk that the layer is a part of.</param>
-        private void SpawnLayer(Vector3 layerStartingCellCoordinate, Chunk parentChunk)
-        {
-            new LayerSpawner(layerStartingCellCoordinate, parentChunk).Spawn();
         }
 
         /// <summary>

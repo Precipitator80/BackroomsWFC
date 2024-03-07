@@ -26,17 +26,13 @@ namespace PrecipitatorWFC
         /// <summary>
         /// Constructor that initialises the chunk from a given position.
         /// Used to generate a chunk at the player's position.
+        /// Partially used reference:
+        /// How can I compute which chunk a coordinate is in? user1430 - https://gamedev.stackexchange.com/questions/94021/how-can-i-compute-which-chunk-a-coordinat -e-is-in - 06.02.2024
         /// </summary>
         /// <param name="worldPosition">The position in the grid the chunk should be generated for.</param>
-        public Chunk(Vector3 worldPosition)
-        {
-            // Partially used reference.
-            // How can I compute which chunk a coordinate is in? user1430 - https://gamedev.stackexchange.com/questions/94021/how-can-i-compute-which-chunk-a-coordinat -e-is-in - 06.02.2024
-            Vector3Int chunkCoordinates = LevelGenerationManager.Instance.WorldPosToChunkCoordinates(worldPosition);
-            x = chunkCoordinates.x;
-            y = chunkCoordinates.z;
-            InitialiseRNG();
-        }
+        public Chunk(Vector3 worldPosition) : this(LevelGenerationManager.Instance.WorldPosToChunkCoordinates(worldPosition)) { }
+
+        public Chunk(Vector3Int chunkCoordinates) : this(chunkCoordinates.z, chunkCoordinates.x) { }
 
         /// <summary>
         /// Alternative constructor that uses chunk numbers directly.
@@ -49,7 +45,16 @@ namespace PrecipitatorWFC
             this.y = y;
             this.x = x;
             InitialiseRNG();
+            layer1Spawner = new LayerSpawner(Layer1, this);
+            layer2Spawner = new LayerSpawner(Layer2, this);
+            layer3Spawner = new LayerSpawner(Layer3, this);
+            layer4Spawner = new LayerSpawner(Layer4, this);
         }
+
+        LayerSpawner layer1Spawner;
+        LayerSpawner layer2Spawner;
+        LayerSpawner layer3Spawner;
+        LayerSpawner layer4Spawner;
 
         /// <summary>
         /// Initialises the RNG with a seed based on the chunk numbers to give each chunk a unique seed.
@@ -70,9 +75,33 @@ namespace PrecipitatorWFC
             rng = new Unity.Mathematics.Random(seed);
         }
 
+        public void SpawnLayer(int layer)
+        {
+            switch (layer)
+            {
+                case 1:
+                    layer1Spawner.Spawn();
+                    break;
+                case 2:
+                    layer2Spawner.Spawn();
+                    break;
+                case 3:
+                    layer3Spawner.Spawn();
+                    break;
+                case 4:
+                    layer4Spawner.Spawn();
+                    break;
+                default:
+                    throw new Exception(layer + " is an invalid layer number! Layer must be a number from 1 to 4.");
+            }
+        }
+
         public void Unload()
         {
-
+            layer1Spawner.Unload();
+            layer2Spawner.Unload();
+            layer3Spawner.Unload();
+            layer4Spawner.Unload();
         }
 
         ////// Getters to return the starting cell coordinates of each layer.

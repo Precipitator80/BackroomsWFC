@@ -145,6 +145,17 @@ namespace PrecipitatorWFC
             }
         }
 
+        public void Unload()
+        {
+            foreach (Cell cell in grid)
+            {
+                if (cell.tilePrefab != null)
+                {
+                    UnityEngine.Object.DestroyImmediate(cell.tilePrefab);
+                }
+            }
+        }
+
         /// <summary>
         /// Searches for a pre-existing cell in a certain position.
         /// </summary>
