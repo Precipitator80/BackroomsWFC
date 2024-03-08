@@ -429,7 +429,7 @@ namespace PrecipitatorWFC
         /// <returns>Whether any domains were changed.</returns>
         private bool macAC3(Cell cell)
         {
-            return macAC3(getArcs(cell));
+            return macAC3(getTargetedArcs(cell));
         }
 
         /// <summary>
@@ -588,6 +588,41 @@ namespace PrecipitatorWFC
                 {
                     queue.Enqueue(new CellArc(otherCell, cell));
                 }
+            }
+            return queue;
+        }
+
+        /// <summary>
+        /// Gets all the arcs targeting a given cell.
+        /// </summary>
+        /// <returns>A queue of arcs targeting the given cell.</returns>
+        private Queue<CellArc> getTargetedArcs(Cell cell)
+        {
+            Queue<CellArc> queue = new Queue<CellArc>();
+            // Propagate to each neighbour of the cell.
+            // Upper neighbour.
+            if (cell.y < grid.GetLength(0) - 1)
+            {
+                Cell otherCell = grid[cell.y + 1, cell.x];
+                queue.Enqueue(new CellArc(otherCell, cell));
+            }
+            // Right neighbour.
+            if (cell.x < grid.GetLength(1) - 1)
+            {
+                Cell otherCell = grid[cell.y, cell.x + 1];
+                queue.Enqueue(new CellArc(otherCell, cell));
+            }
+            // Bottom neighbour.
+            if (cell.y > 1)
+            {
+                Cell otherCell = grid[cell.y - 1, cell.x];
+                queue.Enqueue(new CellArc(otherCell, cell));
+            }
+            // Left neighbour.
+            if (cell.x > 1)
+            {
+                Cell otherCell = grid[cell.y, cell.x - 1];
+                queue.Enqueue(new CellArc(otherCell, cell));
             }
             return queue;
         }
