@@ -1,0 +1,38 @@
+\chapter{Evaluation}
+% Evaluate the success of your program against what you were asked to do.
+
+% Reflect DIRECTLY on the points listed in the requirements specification. Make subsections or itemize for each point and comment on the extent of its completion.
+\section{Against Requirements Specification}
+\subsection{Primary Objectives}
+\subsubsection{Create a game that uses procedural level generation}
+The final project includes a very basic game in which the player can explore an infinite world generated through procedural level generation. The game is themed after `the Backrooms', a fictional concept detailing an infinite expanse of `levels'. The first of these levels, `Level Zero', is included in the game.
+
+\subsubsection{Use novel PCG methods such as Wave Function Collapse}
+Wave Function Collapse was studied thoroughly throughout the project. WFC was contextualised within theory of constraint programming and a simple-tiled implementation created using the MAC3 algorithm with lowest entropy cell and weighted random tile selection.
+
+\subsubsection{Extend on at least one PCG method}
+Standard Wave Function Collapse is finite in grid size and has increasing complexity with larger grid sizes. WFC was extended upon through the addition of the Infinite Modifying in Blocks algorithm. This helped generate output consistently, where standard WFC might require extensive backtracking in certain cases. Furthermore, it allowed WFC to be applied to generate an infinite world by generating many small, finite chunks as the player moves around in the world.
+
+\subsubsection{Use assets to give the game a full set of graphics and audio}
+A small set of models were created to serve as tiles for WFC. These match the design of the Backrooms through the use of online assets. Furthermore, a basic soundscape is created with some tiles given fluorescent lamp sound effects. Ambience sound played consistently throughout the game also add to this.% Mention limitations.
+
+\subsection{Secondary Objectives}
+\subsubsection{Make levels navigable by AI opponents}
+No attempts were made to introduce AI opponents to the game.
+
+\subsubsection{Allow customisation of level generation and other gameplay elements via an in-game menu}
+The final game allows the user to set the seed of the level generator and includes an option to spawn with all the required items to solve puzzles more quickly.
+
+\section{Designer-facing Components}
+\subsection{Editor Interface and Code Quality}
+The final project includes an interface for level designers to run the WFC implementation with their own tile set. Efforts were made to comment code clearly, which is something other WFC implementations miss. This is also an issue facing the original WFC implementation, which does not include any comments in its code \cite{Gumin_Wave_Function_Collapse_2016}.
+
+\subsection{Ease of Use}
+The level generation code includes exceptions that can tell the level designer what is incorrect with their setup. However, despite this additional guidance, the level generation manager interface can be confusing. Especially concepts such as cells vs tiles, tiles vs models and tile cardinality are likely to confuse users of the project's code. This problem is likely worsened since WFC is often treated as a black box by people from a range of backgrounds \cite{WFC_In_The_Wild}. These users may not be experts in reading code and simply want to set up the generator with their own tile set. It is possible that these users are the likeliest to struggle with correctly setting up the level generation manager.
+
+\section{Player-facing Components}
+\subsection{Gameplay}
+Players are able to explore an infinite map and solve simple puzzles to escape. While this may be interesting for a while, the experience has a significant issue with homogeneity. The low variety of models used means that the geometry of the level does not form many interesting structures. The lack of multiple levels also limits the amount of enjoyment players may get out of the game.
+
+\subsection{Performance}
+While the procedural level generation is functional, it suffers from a lack of optimisations that would make it more suitable to application for a video game. For example, chunk loading could be multi-threaded. However, implementation of this is difficult due to poor support by Unity. Furthermore, the use of Unity coroutines could be explored to let chunk loading take place across multiple frames. This would avoid lag spikes, which can be very off-putting to players.

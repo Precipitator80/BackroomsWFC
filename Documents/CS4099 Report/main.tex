@@ -1,0 +1,85 @@
+\documentclass[a4paper, 12pt]{report}
+
+% Setting up author or address string variables in LaTeX - Michael Daum - https://stackoverflow.com/questions/2336007/setting-up-author-or-address-string-variables-in-latex - Accessed 20.10.2023
+\newcommand{\Author}{Benjamin Mathias Sonnet}
+\newcommand{\Title}{Procedural Content Generation in Video Games}
+\newcommand{\Subject}{Applying Constraint Programming to Procedural Content Generation in Video Games}
+\newcommand{\Keywords}{Video Games, Procedural Content Generation, Wave Function Collapse, Constraint Programming}
+\newcommand{\Subtitle}{CS4099 Major Software Project}
+\newcommand{\Date}{March 2024}
+
+\newcommand{\AuthorNumber}{190018469}
+
+\title{\Title}
+\author{\Author}
+
+\input{Template/Setup}
+\begin{document}
+\pagenumbering{roman}
+\input{Template/Cover}
+\input{Main Sections/01Frontmatter}
+\tableofcontents
+\listoffigures
+\listoftables
+\newpage\pagenumbering{arabic}
+\include{Main Sections/02Introduction} % Partially written
+\include{Main Sections/03PlayerGuide} % First draft
+\include{Main Sections/04LiteratureReview} % First draft
+\include{Main Sections/05RequirementsSpecification} % First draft
+\include{Main Sections/06SoftwareEngineeringProcess} % Partial first draft
+\include{Main Sections/07Ethics} % First draft
+\include{Main Sections/08Design} % Partially written
+\include{Main Sections/09Implementation} % Partially written
+\include{Main Sections/10Evaluation} % Not written
+\include{Main Sections/11Conclusion} % Not written
+\printbibliography
+%TC:ignore - Starts ignoring word count.
+\include{Main Sections/12Appendix}
+%TC:endignore - Ends ignoring word count.
+\end{document}
+% "input" does not include page break wrapping.
+% "include" includes page break wrapping.
+%TC:ignore - Starts ignoring word count.
+%TC:endignore - Ends ignoring word count.
+
+Tilly's Tips / Discussion:
+6000 to 15000 words
+ 
+Abstract
+Declaration
+Acknowledgements
+Introduction
+-- Player guide
+Literature review
+Methodology
+Requirements specification??
+Software engineering process
+Design and implementation
+Testing
+Evaluation/Discussion
+ 
+Deadline - 22 March
+
+Abstract -200-300 words
+Declaration / 
+Acknowledgements / 
+Introduction - 1000 words
+-- Player guide
+Literature review - 1500 words
+Methodology/Software engineering process  - 700 words
+Requirements specification??
+Design and implementation - 2500 words
+Testing - 1000 words
+Evaluation/Discussion - 2000 words
+
+(9) Abstract
+(7) Declaration
+(8) Acknowledgements
+(3) Introduction
+-- Player guide
+(1) Literature review
+(2) Methodology/Software engineering process
+Requirements specification??
+(4) Design and implementation
+(5) Testing
+(6) Evaluation/Discussion

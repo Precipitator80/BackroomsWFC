@@ -1,0 +1,303 @@
+\chapter{Design}
+% Indicating the structure of the system, with particular focus on main ideas of the design, unusual design features, etc.
+% Describe the design of your program. Justify the decisions you made.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\section{JUSTIFY DECISIONS!!!!!!!!!!}
+\section{Game Design}
+\subsection{Premise}
+The premise of the game was inspired by the fictional concept of `the Backrooms'. These encompass an endless collection of `levels', each a potentially infinite space with a unique theme centred around invoking a feeling of liminality. This was deemed a suitable theme to use for a game exploring novel procedural content generation techniques. The first level of the Backrooms, `Level Zero', resembles an empty office-like space. Yellow wallpaper, light brown carpet and bright fluorescent lights combine to give it an unsettling monotone appearance and soundscape.
+
+% Side-by-side Image of the backrooms with image in-game
+
+\subsection{Gameplay}
+\subsubsection{Player Controller}
+The player controller was taken from an online tutorial \cite{FPS_controller_YouTube, FPS_controller_GitHub}. Additionally, the ability to pick up and drop items was added. This allows the player to solve puzzles throughout the world.
+
+\subsubsection{Puzzles}
+The player must explore the backrooms in search of items spawned randomly with the level geometry.
+
+% REMEMBER: COLLECT ITEMS TO REPAIR SOMETHING!
+% Goal walls are locked doors. Adjacent to them are fuse boxes?
+
+% Old idea (?):
+% Goal walls are locked doors. Safe in wall containing key. Safe requires finding combination / power out?
+
+
+%\begin{enumerate}
+    %\item Find 
+%\end{enumerate}
+
+\section{Level Generation}
+\subsection{Contextualising the Wave Function Collapse Algorithm}
+The Wave Function Collapse (WFC) algorithm can be viewed as an extension on the ideas presented by the Maintaining Arc Consistency 3 (MAC3) algorithm. What is referred to as a grid of cells with tile choices in Wave Function Collapse is analogous to a graph of variables / nodes with a domain of possible values. Constraints between variables can then be viewed as edges in an undirected graph as in Figure \ref{fig:undirectedGraph}.
+
+% Diagram of a directed graph
+
+\begin{figure}[H]
+    \centering
+    \subfigure[Undirected graph]{
+        \begin{tikzpicture}[circlenode/.style={circle, draw=black, very thick, minimum size=5mm}]
+        %Nodes
+        \node[circlenode]      (00)                              {0,0};
+        \node[circlenode]      (01)       [right=of 00]          {0,1};
+        \node[circlenode]      (02)       [right=of 01]          {0,2};
+        \node[circlenode]      (10)       [above=of 00]          {1,0};
+        \node[circlenode]      (11)       [right=of 10]          {1,1};
+        \node[circlenode]      (12)       [right=of 11]          {1,2};
+        \node[circlenode]      (20)       [above=of 10]          {2,0};
+        \node[circlenode]      (21)       [right=of 20]          {2,1};
+        \node[circlenode]      (22)       [right=of 21]          {2,2};
+
+        %Lines
+        \draw[-] (00.north) -- (10.south);
+        \draw[-] (10.north) -- (20.south);
+        \draw[-] (01.north) -- (11.south);
+        \draw[-] (11.north) -- (21.south);
+        \draw[-] (02.north) -- (12.south);
+        \draw[-] (12.north) -- (22.south);
+
+        \draw[-] (00.east) -- (01.west);
+        \draw[-] (01.east) -- (02.west);
+        \draw[-] (10.east) -- (11.west);
+        \draw[-] (11.east) -- (12.west);
+        \draw[-] (20.east) -- (21.west);
+        \draw[-] (21.east) -- (22.west);
+        \end{tikzpicture}
+        \label{fig:undirectedGraph}
+    }
+    \hfill
+    \subfigure[Directed graph]{
+        \begin{tikzpicture}[circlenode/.style={circle, draw=black, very thick, minimum size=5mm}]
+        %Nodes
+        \node[circlenode]      (00)                              {0,0};
+        \node[circlenode]      (01)       [right=of 00]          {0,1};
+        \node[circlenode]      (02)       [right=of 01]          {0,2};
+        \node[circlenode]      (10)       [above=of 00]          {1,0};
+        \node[circlenode]      (11)       [right=of 10]          {1,1};
+        \node[circlenode]      (12)       [right=of 11]          {1,2};
+        \node[circlenode]      (20)       [above=of 10]          {2,0};
+        \node[circlenode]      (21)       [right=of 20]          {2,1};
+        \node[circlenode]      (22)       [right=of 21]          {2,2};
+
+        %Lines
+        
+        \draw[->] (00.800) -- (10.280);
+        \draw[->] (10.800) -- (20.280);
+        \draw[->] (01.800) -- (11.280);
+        \draw[->] (11.800) -- (21.280);
+        \draw[->] (02.800) -- (12.280);
+        \draw[->] (12.800) -- (22.280);
+
+        \draw[<-] (00.100) -- (10.260);
+        \draw[<-] (10.100) -- (20.260);
+        \draw[<-] (01.100) -- (11.260);
+        \draw[<-] (11.100) -- (21.260);
+        \draw[<-] (02.100) -- (12.260);
+        \draw[<-] (12.100) -- (22.260);
+
+        \draw[->] (00.350) -- (01.190);
+        \draw[->] (01.350) -- (02.190);
+        \draw[->] (10.350) -- (11.190);
+        \draw[->] (11.350) -- (12.190);
+        \draw[->] (20.350) -- (21.190);
+        \draw[->] (21.350) -- (22.190);
+
+        \draw[<-] (00.370) -- (01.170);
+        \draw[<-] (01.370) -- (02.170);
+        \draw[<-] (10.370) -- (11.170);
+        \draw[<-] (11.370) -- (12.170);
+        \draw[<-] (20.370) -- (21.170);
+        \draw[<-] (21.370) -- (22.170);
+        \end{tikzpicture}
+        \label{fig:directedGraph}
+    }
+    
+    \caption{A \(3\times3\) cell grid as an undirected and directed graph}
+    \label{fig:graphs}
+\end{figure}
+
+\subsection{Arcs}
+An edge in an undirected graph can alternatively be viewed as two opposite edges in a directed graph as in Figure \ref{fig:directedGraph}. Arcs apply this concept to constraints, with each arc representing one of the two edges making up a constraint in the directed graph. For an arc to be locally arc consistent, all the values in the first variable's domain must be supported by at least one value in the second variable's domain.
+
+For example, suppose the use of an extremely simple tile set with only cubes and empty tiles, where any tile choice is possible at the start. Furthermore, say that cubes can only have other cubes as neighbours and that empty tiles only have empty tiles as neighbours. This corresponds to Figure \ref{fig:arcsStart}.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[circlenode/.style={circle, draw=black, very thick, minimum size=5mm}]
+        %Nodes
+        \node[circlenode, label={[align=center]\{Cube, Empty\}}]      (00)                                            {A};
+        \node[circlenode, label={[align=center]\{Cube, Empty\}}]      (01)       [right=of 00, xshift=1.5cm]          {B};
+        \node[circlenode, label={[align=center]\{Cube, Empty\}}]      (02)       [right=of 01, xshift=1.5cm]          {C};
+
+        %Lines
+        \draw[->] (00.350) -- (01.190);
+        \draw[<-] (00.370) -- (01.170);
+        \draw[->] (01.350) -- (02.190);
+        \draw[<-] (01.370) -- (02.170);
+    \end{tikzpicture}
+    \caption{Example starting state, in which all arcs are consistent}
+    \label{fig:arcsStart}
+\end{figure}
+
+Then, assume that node A is set to be a cube, removing the empty tile from its domain. Now, the arc <A,B> is consistent as B still has a cube as a support value. However, the arc <B,A> is no longer consistent since the empty tile does not have any support in A's domain, which only has the cube in it. This corresponds to Figure \ref{fig:arcsAssigned}.
+
+% Diagram showing two arcs of a constraint
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[circlenode/.style={circle, draw=black, very thick, minimum size=5mm}]
+        %Nodes
+        \node[circlenode, label={[align=center]\{Cube\}}]      (00)                                            {A};
+        \node[circlenode, label={[align=center]\{Cube, Empty\}}]      (01)       [right=of 00, xshift=1.5cm]          {B};
+        \node[circlenode, label={[align=center]\{Cube, Empty\}}]      (02)       [right=of 01, xshift=1.5cm]          {C};
+
+        %Lines
+        \draw[->] (00.350) -- (01.190);
+        \draw[<-, dashed] (00.370) -- (01.170);
+        \draw[->] (01.350) -- (02.190);
+        \draw[<-] (01.370) -- (02.170);
+    \end{tikzpicture}
+    \caption{After assigning Cube to A, <B,A> is no longer consistent}
+    \label{fig:arcsAssigned}
+\end{figure}
+
+\subsection{AC3}
+The Arc Consistency 3 (AC3) algorithm enforces arc consistency in the grid of cells. The algorithm is given a queue of arcs to enforce arc consistency across. Each arc is checked for support and unsupported domain values pruned. If any domain changes occur, then all arcs targeting the primary variable of the current arc are re-added to the queue. This is required as the domain change may have resulted in support for arcs to this variable being lost.
+
+% Diagram showing arc revision
+Back to the example, assigning Cube to A will trigger arc revision with all the arcs incident on A. In this case, this initialises the queue with arc <B,A>. Checking the arc as in Figure \ref{fig:arcRevision} shows that B's Empty value is no longer supported by A.
+
+\begin{figure}[H]
+    \begin{framed}
+    \begin{enumerate}
+        \item Check arc <B,A>:
+        \begin{enumerate}
+            \item B's value Cube has support in A through its value Cube.
+            \item B's value Empty does NOT have support in A! Remove it from the domain.
+        \end{enumerate}
+    \end{enumerate}
+    \end{framed}
+    \caption{Revising arc <B,A>}
+    \label{fig:arcRevision}
+\end{figure}
+
+Performing this single revision leaves the graph in the state as shown in Figure \ref{fig:arcsRevised1}. Revising <B,A> results in <C,B> becoming inconsistent, highlighting the importance of adding targeted arcs to the queue after a domain change. In this case, <C,B> must be added to the queue. <A,B> does not have to be added since the domain change happened while revising <B,A>. This exploits the fact that arc support is bi-directional, meaning that if a value is supported on <B,A>, then it must be supporting some value on arc <A,B>.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[circlenode/.style={circle, draw=black, very thick, minimum size=5mm}]
+        %Nodes
+        \node[circlenode, label={[align=center]\{Cube\}}]      (00)                                            {A};
+        \node[circlenode, label={[align=center]\{Cube\}}]      (01)       [right=of 00, xshift=1.5cm]          {B};
+        \node[circlenode, label={[align=center]\{Cube, Empty\}}]      (02)       [right=of 01, xshift=1.5cm]          {C};
+
+        %Lines
+        \draw[->] (00.350) -- (01.190);
+        \draw[<-] (00.370) -- (01.170);
+        \draw[->] (01.350) -- (02.190);
+        \draw[<-,dashed] (01.370) -- (02.170);
+    \end{tikzpicture}
+    
+    \caption{Revising <B,A> results in <C,B> becoming inconsistent}
+    \label{fig:arcsRevised1}
+\end{figure}
+
+ Revision of <C,B> proceeds similarly to revision of <B,A> as in Figure \ref{fig:arcRevision}. Similarly, C's domain change from revision of <C,B> does not require re-checking of arc <B,C>. After this, the queue of arcs to revise is empty and as such the consistency before assignment has been maintained. The state after revision is shown in Figure \ref{fig:arcsRevised2}.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[circlenode/.style={circle, draw=black, very thick, minimum size=5mm}]
+        %Nodes
+        \node[circlenode, label={[align=center]\{Cube\}}]      (00)                                            {A};
+        \node[circlenode, label={[align=center]\{Cube\}}]      (01)       [right=of 00, xshift=1.5cm]          {B};
+        \node[circlenode, label={[align=center]\{Cube\}}]      (02)       [right=of 01, xshift=1.5cm]          {C};
+
+        %Lines
+        \draw[->] (00.350) -- (01.190);
+        \draw[<-] (00.370) -- (01.170);
+        \draw[->] (01.350) -- (02.190);
+        \draw[<-] (01.370) -- (02.170);
+    \end{tikzpicture}
+    
+    \caption{The graph after AC3 has been carried out}
+    \label{fig:arcsRevised2}
+\end{figure}
+
+An additional property to note is that each node now only has one value in its domain. Given that each arc is consistent, this means that this is a valid solution to the original problem where each node could either be a cube or empty tile. In the context of WFC, this means that all cells have been collapsed with a valid tile choice and thus that a valid map has been generated.
+
+\subsection{MAC3}
+MAC3 uses AC3 to create a full constraint solving algorithm. To begin, AC3 is run with all arcs to ensure global arc consistency at the start. Then, a variable and value are chosen in an attempt to find a solution. This choice is like that done in the example shown previously in Figure \ref{fig:arcsAssigned}. Arc consistency is then maintained by running AC3 with the all the arcs targeting the variable that had a value assigned as in Figure \ref{fig:arcRevision}. This ensures that these arcs maintain local arc consistency. As global arc consistency was enforced at the start, maintaining local arc consistency after each assignment is enough to also maintain global arc consistency. If any variable assignments lead to a domain wipeout (an empty domain) when enforcing arc consistency, then backtracking can be performed and another value chosen. Once each variable only has one value left and all arcs are consistent, a solution has been found. If not stopped by a timeout, MAC3 will continue running until a solution has been found or all choices have been attempted, meaning that there is no solution.
+
+\subsection{Variable and Value Choice}\label{sec:variableAndValueChoice}
+The manner in which a variable and value are chosen can be implemented as desired. The most effective method often depends on the specific problem. A common method used in wave function collapse is lowest entropy cell selection together with weighted random tile selection.
+
+\subsubsection{Lowest Entropy Cell Selection}
+The lowest entropy method can be viewed as choosing the most constrained cell at each step as it takes into account the weight of each cell. This increases the chance to find a solution quickly as any contradictory assignments are reached faster and backtracked from with fewer steps. The weight of each tile is defined in the level editor and represents the target rate of occurrence of a tile in the generated level. Equation \ref{shannonEntropy} shows the Shannon Entropy of a cell, which is lowest for cells with a small number of remaining tile choices of imbalanced weighting.% An example of this concept is shown in figure \ref{fig:entropyExample}.
+
+% https://robertheaton.com/2018/12/17/wavefunction-collapse-algorithm/ - At latest 26.02.2024, but definitely before then.
+\begin{align}
+    \label{shannonEntropy}
+    \text{Shannon Entropy}=S=\log(\sum{\text{weight}}) - \frac{\sum\left(\text{weight} \times \log(\text{weight})\right)}{\sum{\text{weight}}}
+\end{align}
+
+% Cell selection image. Show how lowest entropy selects the most constrained cell.
+%\begin{figure}[H]
+        %\centering
+        %\includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{ImagePath}
+        %\caption{captionText}
+        %\label{fig:entropyExample}
+%\end{figure}
+
+\subsubsection{Weighted Random Tile Selection}
+Once a cell has been chosen, the tile choice is done by summing all tile weights and then choosing a random number within that range. This gives higher weight tiles a higher chance to be selected. If the tile choice did not include any randomness, then unplayable levels such as a completely empty level could be generated. This highlights the challenge in applying a simple constraint solver to level generation in a game. A level that satisfies all constraints for the solver does not necessarily translate to a good level. Some additional constraints could be added in, such as requiring a specific block in generated chunks. However, other constraints such as requiring a certain percentage of a specific block type in the entire level are harder to enforce effectively and efficiently. Such constraints can be encourage implicitly in generation, through features such as the weighted random tile selection. With this, output is not guaranteed to satisfy block percentages, but instead strongly biased towards creating outputs that roughly match these constraints.% Maybe this should be moved to evaluation or somewhere else?
+
+% Show two screenshots of how varying weights produces different levels.
+
+\subsection{Infinite Modifying in Blocks}
+\label{sec:IMIB}
+Infinite modifying in blocks works by splitting up generation into overlapping chunks, each of which are split into four layers. These layers are offset such that they do not interfere with each other. This can be used to ensure that generation is deterministic and optionally process each layer in parallel.% As example, the images in Figure \ref{} show the concept in action. The images from the original source were edited to show more clearly the concepts of chunks and layers as implemented.
+
+% Diagram of chunks.
+
+The algorithm is run layer by layer, finishing the layers of all active chunks before moving to the next layer. First, a layer is prepared. This involves calculating the area inside of the chunk that forms the layer and clearing all cells inside of it.
+
+% Show first layer preparation.
+
+Second, the solver tries to find a solution for the layer. This takes into account adjacency information from the cells next to the layer. If a solution is not found, the layer is left as it was before. This is not an issue for most tile sets as single layer failures are hidden by other layers successfully generating.
+
+% Single layer generated.
+
+Once each chunk has generated its first layer, the second layer is generated. This process is repeated until all layers have been generated.
+
+% Images of all layers generating.
+
+\section{Graphics}
+\subsection{Models and Textures}
+The models with texturing for each tile were made in the software Blender using a YouTube video as a guide \cite{backroomsGraphics}. The tiles have distinct shapes, but share common wallpaper \cite{sketchfab_texture}, ceiling tile \cite{ceiling_texture} and carpet textures \cite{carpet_texture}. These textures are mapped so that they appear continuous when tiles are placed next to each other.
+
+% Image of tiles in Blender. Write text to define each.
+
+\subsection{Camera Effects}
+To simulate the appearance of a video recorded onto a VHS tape, a range of camera effects were used. These are listed below.
+
+% LIST USING ITEMISE
+
+\subsection{Lighting Model}
+A deferred lighting model was used to light the level \cite{lighting_models}. Unity's default lighting relies heavily on baked lighting to provide for high quality lighting. Baking lighting describes pre-calculating lighting before runtime. Textures can  then be illuminated cheaply at runtime using this baking data to help give levels a realistic look.
+
+% Example of baked lighting
+
+As the project uses procedurally generated levels, it must heavily rely on realtime lighting instead. This describes lighting that is calculated at runtime as opposed to baked lighting. However, forward rendering (Unity's default rendering method) only allows for a limited number of realtime light sources to be rendered at once. Deferred lighting instead supports many realtime lights at the cost of less accurate lighting.
+
+% Compare two images. One is forward rendering of a generated level and the other deferred.
+
+\section{Audio}
+To give the game area an immersive soundscape, a collection of ambient effects and sound effects were used. Ambient effects are those sounds that are played equally at all times, while sound effects are those sounds that are placed inside of the environment. The most distinct sound effect of Level Zero of the Backrooms is the buzzing of the fluorescent lights. Each empty tile with a light is given an audio source that plays such a sound. Each light is given its own random offset so that the audio does not poorly overlap and cause constructive interference. For ambient sounds, a VHS sound and low droning are included. All audio assets were taken from \url{freesound.org} as this site offers sounds free for use in games.
+
+\section{Unity Editor and Tile Representation}
+The Unity Editor was used to provide a platform with which level designer could specify parameters for level generation. First, the level designer should attach the Level Generation Manager component to a unity game object. The designer may specify the size of chunks use in infinite modifying in blocks. Tiles are split into three different components across the entire specification to generation pipeline, with the tile set for generation specified in steps 1 and 2.
+\begin{enumerate}
+    \item The level designer must first specify tiles by creating Unity game objects and then attaching a subclass of the Tile component to it. The Cube subclass exists for fully-symmetric tiles and the NonSymmetric subclass exists for all other tiles. The designer can then specify tile adjacencies by dragging other tile game objects into the neighbours arrays and specifying the desired rotation of the neighbouring tile. Base rotations of tiles should have their solid face at the back of the tile. The base rotation for corner tiles has the back of the corner on the left and back of the tile. Each game object should then be dragged into the tile set array of the level generator. Additionally, an empty tile must be specified directly.
+    \item After specifying tile adjacencies, the level designer should import FBX models to form a second set of game objects. These should be given a collider to avoid the player falling through the level. The designer can also add any additional components such as lights or audio sources. These model game objects can then be referenced in the matching tile script component. This tells the level generator to use the desired model for a given tile. The tile size specified in the level generator must match the size of the tile models in order for the generator to put them together properly.
+    \item Finally, the tile set that the level designer specified is converted from the designer-specified semi-explicit tile set to a fully-explicit tile set. The level generator takes each specified tile and rotates it in steps of 90 degrees, adjusting adjacency data to suit. This gives each possible rotation of a tile its own tile, hence the term fully-explicit. In effect, this enables the generation of maps without having to perform intermediate calculations on tile rotation, simplifying the algorithm at the cost of a larger tile set.
+\end{enumerate}
+
+% Diagram of specification to generation pipeline. Define cardinality / rotation clearly in the diagram. Maybe also in text more clearly or somewhere else.

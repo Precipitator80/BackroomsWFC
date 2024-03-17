@@ -1,0 +1,155 @@
+% Language setting
+\usepackage[UKenglish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{graphicx} % Required for inserting images
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage[pdftex,
+            pdfauthor={\Author},
+            pdftitle={\Title},
+            pdfsubject={\Subject},
+            pdfkeywords={\Keywords},
+            colorlinks=true,
+            allcolors=blue]{hyperref}
+% ------------------------------ %
+% Various useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{float}
+% IEEE bibliography setup.
+\usepackage[backend=biber, style=ieee, isbn=false,sortcites, maxbibnames=6, minbibnames=1]{biblatex}
+\addbibresource{ref.bib} % The references.bib file in which the bibliography used should be.
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage[T1]{fontenc} % Extra font options such as small capital (textsc).
+\usepackage{lipsum} % Lorem Ipsum Package for placeholder text.
+%\usepackage{comment} % Multi-line / Block comments. Doesn't seem to work.
+
+% Enumerate tag using the alphabet instead of numbers - A.Ellett - https://tex.stackexchange.com/questions/129951/enumerate-tag-using-the-alphabet-instead-of-numbers - Accessed 15.04.2023
+\usepackage{enumitem} % Better list customisation
+
+% Frames for enumerate and itemize.
+\usepackage{framed} 
+% ------------------------------ %
+% Subfigures
+\usepackage{subfigure}
+\usepackage{subcaption}
+% ------------------------------ %
+% Node Graphs
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+%\begin{tikzpicture}[
+%roundnode/.style={circle, draw=green!60, fill=green!5, very thick, minimum size=7mm},
+%squarednode/.style={rectangle, draw=red!60, fill=red!5, very thick, minimum size=5mm},
+%]
+%%Nodes
+%\node[squarednode]      (maintopic)                              {2};
+%\node[roundnode]        (uppercircle)       [above=of maintopic] {1};
+%\node[squarednode]      (rightsquare)       [right=of maintopic] {3};
+%\node[roundnode]        (lowercircle)       [below=of maintopic] {4};
+%
+%%Lines
+%\draw[->] (uppercircle.south) -- (maintopic.north);
+%\draw[->] (maintopic.east) -- (rightsquare.west);
+%\draw[->] (rightsquare.south) .. controls +(down:7mm) and +(right:7mm) .. (lowercircle.east);
+%\end{tikzpicture}
+% ------------------------------ %
+% Allow urls to break more cleanly in the bibliography.
+\setcounter{biburllcpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburlnumpenalty}{100}
+%\emergencystretch=1em % Might help with other spills.
+
+% Latex Bibliography Reference Going Off The Page - James - https://stackoverflow.com/questions/43590245/latex-bibliography-reference-going-off-the-page - Accessed 13.02.2024
+% BibLaTeX long URL extending into border despite using biburllcpenalty - moewe - https://tex.stackexchange.com/questions/466114/biblatex-long-url-extending-into-border-despite-using-biburllcpenalty - Accessed 13.02.2024
+% ------------------------------ %
+% Code listing - Overleaf - https://www.overleaf.com/learn/latex/Code_listing - Accessed 17.10.2023
+% How to make a figure with code? - James - https://tex.stackexchange.com/questions/503533/how-to-make-a-figure-with-code - Accessed 17.10.2023
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\scriptsize, % Font size (i.e. \scriptsize or \footnotesize)
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    aboveskip=20pt,
+}
+
+\lstset{style=mystyle}
+
+%\noindent\begin{minipage}{\linewidth}
+%\begin{lstlisting}[caption={captiontext}, label={code:labelname}, frame=single]
+%\end{lstlisting}
+%\end{minipage}
+% ------------------------------ %
+% Headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\lhead{\Title}
+%\rhead{\Author}
+\setlength{\headheight}{15pt}
+
+% Report
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{#1}}
+%\lhead{\nouppercase{\chaptername\ \thechapter. \leftmark}}
+%\rhead{\nouppercase{\thesection. \rightmark}}
+
+\lhead{\nouppercase\leftmark}
+\rhead{\nouppercase\rightmark}
+
+% Article - Or instead just use the commented out code at the top?
+%\renewcommand{\sectionmark}[1]{\markright{#1}}
+%\lhead{\nouppercase{\sectionname\ \thesection. \leftmark}}
+%\rhead{\nouppercase{\rightmark}}
+% ------------------------------ %
+% Custom commands
+% Guide text: Substitution
+\newcommand{\substitution}[1]{[\textit{#1}]}
+
+% Guide text: Optional
+\newcommand{\optional}[1]{[#1]}
+
+% Full Reference to Section
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}} % One single link
+% ------------------------------ %
+% Other References:
+% set a maximum width and height for an image - Yiannis Lazarides - https://tex.stackexchange.com/questions/47245/set-a-maximum-width-and-height-for-an-image - Accessed 16.04.2023
+%\begin{figure}[H]
+        %\centering
+        %\includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{ImagePath}
+        %\caption{captionText}
+        %\label{fig:figureName}
+%\end{figure}
+% ------------------------------ %
+% Scrap code
+%\usepackage{geometry}
+%\geometry{a4paper, total={170mm,257mm}, left=5mm, top=5mm}
+
+% OLD WAY OF HAVING TITLE VARIABLES
+% Edit these for each new project. Make sure to use "\makeatletter" in each new tex file.
+% Use the values of \title, \author and \date on a custom title page - Martin Scharrer - https://tex.stackexchange.com/questions/10130/use-the-values-of-title-author-and-date-on-a-custom-title-page - Accessed 12.09.2023
