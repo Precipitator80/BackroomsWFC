@@ -1,8 +1,8 @@
-PWD c:/Users/Benjamin/Desktop/St Andrews Files/2023 - 2024 S2/CS4099 Report
+PWD h:/UnityProjects/BackroomsWFC/Documents/CS4099 Report
 INPUT h:/Program Files/texlive/2024/texmf.cnf
 INPUT h:/Program Files/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT h:/Program Files/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/Benjamin/Desktop/St Andrews Files/2023 - 2024 S2/CS4099 Report/main.tex
+INPUT h:/UnityProjects/BackroomsWFC/Documents/CS4099 Report/main.tex
 OUTPUT main.log
 INPUT h:/Program Files/texlive/2024/texmf-dist/tex/latex/base/report.cls
 INPUT h:/Program Files/texlive/2024/texmf-dist/tex/latex/base/report.cls
@@ -669,6 +669,31 @@ INPUT ./Images/SymmetryDictionary.png
 INPUT ./Images/SymmetryDictionary.png
 INPUT ./Images/SymmetryDictionary.png
 INPUT ./Images/SymmetryDictionary.png
+INPUT ./Images/Minecraft.jpg
+INPUT ./Images/Minecraft.jpg
+INPUT ./Images/Minecraft.jpg
+INPUT ./Images/Minecraft.jpg
+INPUT ./Images/Minecraft.jpg
+INPUT ./Images/Magic3D.jpg
+INPUT ./Images/Magic3D.jpg
+INPUT ./Images/Magic3D.jpg
+INPUT ./Images/Magic3D.jpg
+INPUT ./Images/Magic3D.jpg
+INPUT ./Images/StableDiffusion.jpg
+INPUT ./Images/StableDiffusion.jpg
+INPUT ./Images/StableDiffusion.jpg
+INPUT ./Images/StableDiffusion.jpg
+INPUT ./Images/StableDiffusion.jpg
+INPUT ./Images/VGDL.jpg
+INPUT ./Images/VGDL.jpg
+INPUT ./Images/VGDL.jpg
+INPUT ./Images/VGDL.jpg
+INPUT ./Images/VGDL.jpg
+INPUT ./Images/CESAGAN.jpg
+INPUT ./Images/CESAGAN.jpg
+INPUT ./Images/CESAGAN.jpg
+INPUT ./Images/CESAGAN.jpg
+INPUT ./Images/CESAGAN.jpg
 INPUT ./Main Sections/05RequirementsSpecification.tex
 INPUT ./Main Sections/05RequirementsSpecification.tex
 OUTPUT Main Sections/05RequirementsSpecification.aux

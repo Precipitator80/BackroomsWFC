@@ -309,8 +309,8 @@
       \strng{authorbibnamehash}{c1e8f36c537b67931de8cac36326fc96}
       \strng{authornamehash}{c1e8f36c537b67931de8cac36326fc96}
       \strng{authorfullhash}{c1e8f36c537b67931de8cac36326fc96}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Model Synthesis}
@@ -498,8 +498,8 @@
       \list{publisher}{1}{%
         {Springer International Publishing}%
       }
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labeltitlesource}{title}
       \field{isbn}{9783319501369}
       \field{series}{Lecture Notes in Computer Science}
@@ -566,8 +566,8 @@
       \strng{editorbibnamehash}{6e6577085f2cd61dec80252ebe6e4171}
       \strng{editornamehash}{6e6577085f2cd61dec80252ebe6e4171}
       \strng{editorfullhash}{6e6577085f2cd61dec80252ebe6e4171}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Constraint solvers are complex pieces of software and are notoriously difficult to debug. In large part this is due to the difficulty of pinpointing the source of an error in the vast searches these solvers perform, since the effect of an error may only come to light long after the error is made. In addition, an error does not necessarily lead to the wrong result, further complicating the debugging process. A major source of errors in a constraint solver is the complex constraint propagation algorithms that provide the inference that controls and directs the search. In this paper we show that metamorphic testing is a principled way to test constraint solvers by comparing two different implementations of the same constraint. Specifically, specialised propagators for the constraint are tested against the general purpose table constraint propagator. We report on metamorphic testing of the constraint solver Minion. We demonstrate that the metamorphic testing method is very effective for finding artificial bugs introduced by random code mutation.}
@@ -617,8 +617,8 @@
       \strng{authorbibnamehash}{4aa98dd244f0699a91e7f785e830112f}
       \strng{authornamehash}{57d2c12a017d98d6fdf0dbfdf45cbf1d}
       \strng{authorfullhash}{4aa98dd244f0699a91e7f785e830112f}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{{Autonomous robots can be employed in exploring unknown environments and performing many tasks, such as, e.g. detecting areas of interest, collecting target objects, etc. Deep reinforcement learning (RL) is often used to train this kind of robot. However, concerning the artificial environments aimed at testing the robot, there is a lack of available data sets and a long time is needed to create them from scratch. A good data set is in fact usually produced with high effort in terms of cost and human work to satisfy the constraints imposed by the expected results. In the first part of this paper, we focus on the specification of the properties of the solutions needed to build a data set, making the case of environment exploration. In the proposed approach, rather than using imperative programming, we explore the possibility of generating data sets using constraint programming in Prolog. In this phase, geometric predicates describe a virtual environment according to inter-space requirements. The second part of the paper is focused on testing the generated data set in an AI gym via space search techniques. We developed a Neuro-Symbolic agent built from the following: (i) A deep Q-learning component implemented in Python, able to address via RL a search problem in the virtual space; the agent has the goal to explore a generated virtual environment to seek for a target, improving its performance through a RL process. (ii) A symbolic component able to re-address the search when the Q-learning component gets stuck in a part of the virtual environment; these components stimulate the agent to move to and explore other parts of the environment. Wide experimentation has been performed, with promising results, and is reported, to demonstrate the effectiveness of the approach.}}
@@ -734,8 +734,8 @@
       \strng{editorbibnamehash}{1a711dab4262e3bd7f295cd504fdf074}
       \strng{editornamehash}{1a711dab4262e3bd7f295cd504fdf074}
       \strng{editorfullhash}{1a711dab4262e3bd7f295cd504fdf074}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{Keywords: constraint programming, video games, modelization, procedural generation}
@@ -1321,6 +1321,34 @@
       \endverb
       \verb{url}
       \verb https://www.eurogamer.net/how-many-weapons-are-in-borderlands-2
+      \endverb
+    \endentry
+    \entry{minecraft_screenshot}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e3416675e3a20772d0b78f45f4ce995d}{%
+           family={Minecraft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{e3416675e3a20772d0b78f45f4ce995d}
+      \strng{fullhash}{e3416675e3a20772d0b78f45f4ce995d}
+      \strng{bibnamehash}{e3416675e3a20772d0b78f45f4ce995d}
+      \strng{authorbibnamehash}{e3416675e3a20772d0b78f45f4ce995d}
+      \strng{authornamehash}{e3416675e3a20772d0b78f45f4ce995d}
+      \strng{authorfullhash}{e3416675e3a20772d0b78f45f4ce995d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Minecraft Caves and Cliffs Snapshot Twitter Post}
+      \field{urlday}{17}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://twitter.com/Minecraft/status/1414978446229393420
+      \endverb
+      \verb{url}
+      \verb https://twitter.com/Minecraft/status/1414978446229393420
       \endverb
     \endentry
     \entry{AIGC_Survey}{misc}{}

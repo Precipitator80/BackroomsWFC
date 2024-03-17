@@ -27,21 +27,26 @@
 \contentsline {figure}{\numberline {3.19}{\ignorespaces Infinite game implementation with N-WFC and sub-complete tile set \blx@tocontentsinit {0}\cite {Nested_WFC}}}{17}{figure.caption.36}%
 \contentsline {figure}{\numberline {3.20}{\ignorespaces Placing nodes on a navigation mesh using graph-based WFC \blx@tocontentsinit {0}\cite {WFC_Graph-based}}}{18}{figure.caption.38}%
 \contentsline {figure}{\numberline {3.21}{\ignorespaces Using growing grid and WFC to generate more complex worlds \blx@tocontentsinit {0}\cite {WFC_Neural_Network}}}{18}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Minecraft lets the player explore an infinite, procedural world \blx@tocontentsinit {0}\cite {minecraft_screenshot}}}{20}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Magic3D performs text-to-3D synthesis \blx@tocontentsinit {0}\cite {Magic3D}}}{21}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Stable Diffusion offers text-to-image synthesis \blx@tocontentsinit {0}\cite {Stable_Diffusion}}}{22}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Games generated using the Video Game Description Language \blx@tocontentsinit {0}\cite {VGDL}}}{22}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces CESAGAN extends upon Generative Adversarial Networks to encourage generation of playable levels requiring additional constraints (top) instead of unplayable levels (bottom) \blx@tocontentsinit {0}\cite {CESAGAN}}}{23}{figure.caption.45}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces A \(3\times 3\) cell grid as an undirected and directed graph}}{26}{figure.caption.45}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Example starting state, in which all arcs are consistent}}{26}{figure.caption.46}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces After assigning Cube to A, <B,A> is no longer consistent}}{26}{figure.caption.47}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Revising arc <B,A>}}{27}{figure.caption.48}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Revising <B,A> results in <C,B> becoming inconsistent}}{27}{figure.caption.49}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces The graph after AC3 has been carried out}}{27}{figure.caption.50}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces A \(3\times 3\) cell grid as an undirected and directed graph}}{29}{figure.caption.50}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Example starting state, in which all arcs are consistent}}{29}{figure.caption.51}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces After assigning Cube to A, <B,A> is no longer consistent}}{29}{figure.caption.52}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Revising arc <B,A>}}{30}{figure.caption.53}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Revising <B,A> results in <C,B> becoming inconsistent}}{30}{figure.caption.54}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces The graph after AC3 has been carried out}}{30}{figure.caption.55}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces The three parts of the recursive MAC3 method}}{35}{figure.caption.56}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces The three parts of the recursive MAC3 method}}{38}{figure.caption.61}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Key areas of further development}}{39}{figure.caption.63}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Key areas of further development}}{42}{figure.caption.68}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
