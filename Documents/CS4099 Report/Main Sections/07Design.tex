@@ -226,6 +226,16 @@ An additional property to note is that each node now only has one value in its d
 \subsection{MAC3}
 MAC3 uses AC3 to create a full constraint solving algorithm. To begin, AC3 is run with all arcs to ensure global arc consistency at the start. Then, a variable and value are chosen in an attempt to find a solution. This choice is like that done in the example shown previously in Figure \ref{fig:arcsAssigned}. Arc consistency is then maintained by running AC3 with the all the arcs targeting the variable that had a value assigned as in Figure \ref{fig:arcRevision}. This ensures that these arcs maintain local arc consistency. As global arc consistency was enforced at the start, maintaining local arc consistency after each assignment is enough to also maintain global arc consistency. If any variable assignments lead to a domain wipeout (an empty domain) when enforcing arc consistency, then backtracking can be performed and another value chosen. Once each variable only has one value left and all arcs are consistent, a solution has been found. If not stopped by a timeout, MAC3 will continue running until a solution has been found or all choices have been attempted, meaning that there is no solution.
 
+Sudoku can serve as an example to make the constraint solving process clearer. Someone solving Sudoku might pencil in the possible number for each cell to help make guesses and fill the grid.
+
+At the start, given numbers help the player pencil each remaining cell. Like this, the possible numbers of each cell are reduced. If a cell only has one possible number remaining, then the player knows that the cell must hold that value. This is analogous to running AC3 at the start to ensure each cell has a consistent set of possible numbers.
+
+Eventually, the player is likely to face the situation where no more numbers can be inferred from the given clues. Just like the MAC3 solver, the player must make a guess as to what the correct number might be. After making a guess, the implications of it can be carried forward. This is analogous to running AC3 after making a variable assignment.
+
+If this guess was incorrect and leads to a cell with no choices remaining, the player must undo the guess. This is analogous to having a domain wipeout and backtracking. After backtracking, the player knows that the choice they made was incorrect, so can pencil out the number they tried. From this, they may gain more clues about other cells in the grid. This is analogous to unassigning a value and running AC3 again.
+
+If the player keeps making guesses and inferring additional information from them, they will eventually solve the Sudoku. If the player were to ignore the implications of a guess, then their solution may not be valid. This highlights the need to maintain consistency between each pair of constrained cells in the grid.
+
 \subsection{Variable and Value Choice}\label{sec:variableAndValueChoice}
 The manner in which a variable and value are chosen can be implemented as desired. The most effective method often depends on the specific problem. A common method used in wave function collapse is lowest entropy cell selection together with weighted random tile selection.
 
