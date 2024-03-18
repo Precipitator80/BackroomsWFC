@@ -694,6 +694,16 @@ INPUT ./Images/CESAGAN.jpg
 INPUT ./Images/CESAGAN.jpg
 INPUT ./Images/CESAGAN.jpg
 INPUT ./Images/CESAGAN.jpg
+INPUT ./Images/PCGRL.jpg
+INPUT ./Images/PCGRL.jpg
+INPUT ./Images/PCGRL.jpg
+INPUT ./Images/PCGRL.jpg
+INPUT ./Images/PCGRL.jpg
+INPUT ./Images/PCGMLTaxonomy.jpg
+INPUT ./Images/PCGMLTaxonomy.jpg
+INPUT ./Images/PCGMLTaxonomy.jpg
+INPUT ./Images/PCGMLTaxonomy.jpg
+INPUT ./Images/PCGMLTaxonomy.jpg
 INPUT ./Main Sections/05RequirementsSpecification.tex
 INPUT ./Main Sections/05RequirementsSpecification.tex
 OUTPUT Main Sections/05RequirementsSpecification.aux

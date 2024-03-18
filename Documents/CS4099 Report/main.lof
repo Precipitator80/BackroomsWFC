@@ -32,21 +32,23 @@
 \contentsline {figure}{\numberline {3.24}{\ignorespaces Stable Diffusion offers text-to-image synthesis \blx@tocontentsinit {0}\cite {Stable_Diffusion}}}{22}{figure.caption.43}%
 \contentsline {figure}{\numberline {3.25}{\ignorespaces Games generated using the Video Game Description Language \blx@tocontentsinit {0}\cite {VGDL}}}{22}{figure.caption.44}%
 \contentsline {figure}{\numberline {3.26}{\ignorespaces CESAGAN extends upon Generative Adversarial Networks to encourage generation of playable levels requiring additional constraints (top) instead of unplayable levels (bottom) \blx@tocontentsinit {0}\cite {CESAGAN}}}{23}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Procedural Content Generation via Reinforcement Learning used to create Zelda style levels. An initial random layout (a) is used with three different Markov Decision Process Representations (b), (c) and (d) to create playable levels. \blx@tocontentsinit {0}\cite {Markov_PCGRL}}}{23}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces A taxonomisation of Procedural Content Generation Machine Learning techniques. There are two categorisations: the underlying data structure (graph, grid, or sequence) and the training method (matrix factorisation, EM, frequency counting, evolution, and backpropagation). Marks are colored for the specific type of content that was generated: red circles are platformer levels, orange squares are ``dungeons,'' the dark blue x is real time strategy levels, light blue triangles are collectible game cards, and the purple star is interactive fiction. Citations for each are listed. Citation numbers correspond to those in the cited paper. \blx@tocontentsinit {0}\cite {PCGML}}}{24}{figure.caption.47}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces A \(3\times 3\) cell grid as an undirected and directed graph}}{29}{figure.caption.50}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Example starting state, in which all arcs are consistent}}{29}{figure.caption.51}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces After assigning Cube to A, <B,A> is no longer consistent}}{29}{figure.caption.52}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Revising arc <B,A>}}{30}{figure.caption.53}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Revising <B,A> results in <C,B> becoming inconsistent}}{30}{figure.caption.54}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces The graph after AC3 has been carried out}}{30}{figure.caption.55}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces A \(3\times 3\) cell grid as an undirected and directed graph}}{30}{figure.caption.52}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Example starting state, in which all arcs are consistent}}{30}{figure.caption.53}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces After assigning Cube to A, <B,A> is no longer consistent}}{30}{figure.caption.54}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Revising arc <B,A>}}{31}{figure.caption.55}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Revising <B,A> results in <C,B> becoming inconsistent}}{31}{figure.caption.56}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces The graph after AC3 has been carried out}}{31}{figure.caption.57}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces The three parts of the recursive MAC3 method}}{38}{figure.caption.61}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces The three parts of the recursive MAC3 method}}{39}{figure.caption.63}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Key areas of further development}}{42}{figure.caption.68}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Key areas of further development}}{43}{figure.caption.70}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

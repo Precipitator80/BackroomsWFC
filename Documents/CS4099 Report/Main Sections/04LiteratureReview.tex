@@ -408,7 +408,21 @@ One paper \cite{CESAGAN} identifies that Generative Adversarial Networks (GANs) 
 
 Another transforms 2D level design problems into Markov decision processes \cite{Markov_PCGRL}. This aids reinforced learning to produce high quality output levels. It suggests this reinforced learning could be applied to self-play agents to improve the content generated through simulated playtesting. Three other papers similarly suggest that machine learning is useful for evaluating content through methods like simulated playtesting \cite{DeepLearningPCG, VGDL_ASP, PCGML}. In the context of WFC, it might be useful to apply machine learning content evaluation and adjust the output to increase its quality.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/PCGRL.jpg}
+    \caption{Procedural Content Generation via Reinforcement Learning used to create Zelda style levels. An initial random layout (a) is used with three different Markov Decision Process Representations (b), (c) and (d) to create playable levels. \cite{Markov_PCGRL}}
+    \label{fig:pcgrl}
+\end{figure}
+
 One paper \cite{PCGML} also comments specifically on two limitations of PCG via machine learning. It states that the playability of output produced through machine learning is not guaranteed to be playable, but rather biassed towards generating playable content through the input. The second limitation is that most machine learning has been applied to 2D content. Similarly, whether WFC output is playable or not is not always guaranteed but heavily depends on how the input is defined. Furthermore, the core WFC implementation and many of its offshoots only support 2D content generation \cite{Gumin_Wave_Function_Collapse_2016}. As a result, both machine learning PCG and WFC require carefully tweaked input data and an output evaluator when applied to level generation.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.5\textheight, keepaspectratio]{Images/PCGMLTaxonomy.jpg}
+    \caption{A taxonomisation of Procedural Content Generation Machine Learning techniques. There are two categorisations: the underlying data structure (graph, grid, or sequence) and the training method (matrix factorisation, EM, frequency counting, evolution, and backpropagation). Marks are colored for the specific type of content that was generated: red circles are platformer levels, orange squares are ``dungeons,'' the dark blue x is real time strategy levels, light blue triangles are collectible game cards, and the purple star is interactive fiction. Citations for each are listed. Citation numbers correspond to those in the cited paper. \cite{PCGML}}
+    \label{fig:pcgml}
+\end{figure}
 
 %\subsection{Search Algorithms}
 %\subsection{Generation Methods}
