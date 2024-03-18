@@ -35,7 +35,75 @@
 
 Three key themes identified to be investigated were constraint programming, wave function collapse and procedural content generation. While these themes are presented in three different sections, the ideas discussed heavily overlap.
 
-Constraint programming and procedural content generation have wide applications and have been a big area of recent research. For example, procedural content generation has seen an increased use of machine learning in recent years, allowing new content to be generated from large dataset models. Similarly, novel constraint programming techniques such as wave function collapse have seen use in generating new output from very limited input data. These techniques are typically applied to video games in order to help create an ever changing experience for the player.
+In summary, Constraint programming and procedural content generation have wide applications and have been a big area of recent research. For example, procedural content generation has seen an increased use of machine learning in recent years, allowing new content to be generated from large dataset models. Similarly, novel constraint programming techniques such as wave function collapse have seen use in generating new output from very limited input data. These techniques are typically applied to video games in order to help create an ever changing experience for the player.
+
+\section{Procedural Content Generation}
+\subsection{Overview}
+Procedural Content Generation (PCG) describes the use of algorithms to pseudo-randomly generate content. In the context of video games, this randomisation is often used to provide players with variety that can make games more enjoyable to play multiple times. Procedural Content Generation can be used in many facets of video game development. One frequent use of PCG is in randomised level generation. For example, in exploration games such as Minecraft \cite{minecraft} and No Man's Sky \cite{nomanssky}, PCG is used to generate the player's world, offering virtually infinite locations to explore. Other uses include randomising enemy characteristics in Shadow of Mordor \cite{shadowofmordor} and generating randomised weapons in Borderlands \cite{borderlands}. The book `Procedural Content Generation in Games' \cite{pcgbook} is a great resource to read more about PCG.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/Minecraft.jpg}
+    \caption{Minecraft lets the player explore an infinite, procedural world \cite{minecraft_screenshot}}
+    \label{fig:minecraftScreenshot}
+\end{figure}
+
+\subsection{Current Applications and Research}
+A lot of modern PCG research looks into using AI and machine learning to generate content. Some current applications of machine learning are art, music and code generation as well as chatbots \cite{AIGC_Survey}, text-to-3D synthesis \cite{Magic3D} and even self-driving cars \cite{Self_Driving_Cars}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.5\textheight, keepaspectratio]{Images/Magic3D.jpg}
+    \caption{Magic3D performs text-to-3D synthesis \cite{Magic3D}}
+    \label{fig:magic3D}
+\end{figure}
+
+Applications like Stable Diffusion \cite{Stable_Diffusion} can be used to create high quality text-to-image content, while others such as Magic3D \cite{Magic3D} offers text-to-3D synthesis. In terms of text-to-text, ChatGPT \cite{Chat_GPT} serves as a leading language model that can be used to converse about any topic, while GitHub Copilot \cite{GitHub_Copilot} can generate code snippets from user prompts.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/StableDiffusion.jpg}
+    \caption{Stable Diffusion offers text-to-image synthesis \cite{Stable_Diffusion}}
+    \label{fig:stableDiffusion}
+\end{figure}
+
+In the context of games, machine learning is frequently used in areas like text, character model, texture, music and sound generation \cite{DeepLearningPCG}. Languages such as the Video Game Description Language (VGDL) have even be used to generate entire games using AI \cite{VGDL, VGDL_ASP}. However, by themselves, such languages have limited expressiveness, making it difficult to create interesting games \cite{VGDL}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/VGDL.jpg}
+    \caption{Games generated using the Video Game Description Language \cite{VGDL}}
+    \label{fig:vgdl}
+\end{figure}
+
+One paper \cite{CESAGAN} identifies that Generative Adversarial Networks (GANs) can also be used for image generation, but that it is difficult to incorporate constraints. As a solution, it proposes a Conditional Embedding Self-Attention Generative Adversarial Network (CESAGAN). This allows the embedding of a feature vector to the input, enabling the network to model non-local constraints. As a result, this produces higher quality outputs with fewer duplicates. In WFC, it is also difficult to enforce non-local constraints without additional modifications.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/CESAGAN.jpg}
+    \caption{CESAGAN extends upon Generative Adversarial Networks to encourage generation of playable levels requiring additional constraints (top) instead of unplayable levels (bottom) \cite{CESAGAN}}
+    \label{fig:cesagan}
+\end{figure}
+
+Another transforms 2D level design problems into Markov decision processes \cite{Markov_PCGRL}. This aids reinforced learning to produce high quality output levels. It suggests this reinforced learning could be applied to self-play agents to improve the content generated through simulated playtesting. Three other papers similarly suggest that machine learning is useful for evaluating content through methods like simulated playtesting \cite{DeepLearningPCG, VGDL_ASP, PCGML}. In the context of WFC, it might be useful to apply machine learning content evaluation and adjust the output to increase its quality.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/PCGRL.jpg}
+    \caption{Procedural Content Generation via Reinforcement Learning used to create Zelda style levels. An initial random layout (a) is used with three different Markov Decision Process Representations (b), (c) and (d) to create playable levels. \cite{Markov_PCGRL}}
+    \label{fig:pcgrl}
+\end{figure}
+
+One paper \cite{PCGML} also comments specifically on two limitations of PCG via machine learning. It states that the playability of output produced through machine learning is not guaranteed to be playable, but rather biassed towards generating playable content through the input. The second limitation is that most machine learning has been applied to 2D content. Similarly, whether WFC output is playable or not is not always guaranteed but heavily depends on how the input is defined. Furthermore, the core WFC implementation and many of its offshoots only support 2D content generation \cite{Gumin_Wave_Function_Collapse_2016}. As a result, both machine learning PCG and WFC require carefully tweaked input data and an output evaluator when applied to level generation.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.5\textheight, keepaspectratio]{Images/PCGMLTaxonomy.jpg}
+    \caption{A taxonomisation of Procedural Content Generation Machine Learning techniques. There are two categorisations: the underlying data structure (graph, grid, or sequence) and the training method (matrix factorisation, EM, frequency counting, evolution, and backpropagation). Marks are colored for the specific type of content that was generated: red circles are platformer levels, orange squares are ``dungeons,'' the dark blue x is real time strategy levels, light blue triangles are collectible game cards, and the purple star is interactive fiction. Citations for each are listed. Citation numbers correspond to those in the cited paper. \cite{PCGML}}
+    \label{fig:pcgml}
+\end{figure}
+
+
 
 \section{Constraint Programming}
 \subsection{Overview}
@@ -357,72 +425,6 @@ Very simple implementations may ignore symmetry when defining tile neighbours in
     \caption{A symmetry dictionary proposed by \cite{WFC_Automatic_Rules_And_Better_Symmetries}}
     \label{fig:symmetryDictionary}
 \end{table}
-
-\section{Procedural Content Generation}
-\subsection{Overview}
-Procedural Content Generation (PCG) describes the use of algorithms to pseudo-randomly generate content. In the context of video games, this randomisation is often used to provide players with variety that can make games more enjoyable to play multiple times. Procedural Content Generation can be used in many facets of video game development. One frequent use of PCG is in randomised level generation. For example, in exploration games such as Minecraft \cite{minecraft} and No Man's Sky \cite{nomanssky}, PCG is used to generate the player's world, offering virtually infinite locations to explore. Other uses include randomising enemy characteristics in Shadow of Mordor \cite{shadowofmordor} and generating randomised weapons in Borderlands \cite{borderlands}. The book `Procedural Content Generation in Games' \cite{pcgbook} is a great resource to read more about PCG.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/Minecraft.jpg}
-    \caption{Minecraft lets the player explore an infinite, procedural world \cite{minecraft_screenshot}}
-    \label{fig:minecraftScreenshot}
-\end{figure}
-
-\subsection{Current Applications and Research}
-A lot of modern PCG research looks into using AI and machine learning to generate content. Some current applications of machine learning are art, music and code generation as well as chatbots \cite{AIGC_Survey}, text-to-3D synthesis \cite{Magic3D} and even self-driving cars \cite{Self_Driving_Cars}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth, height=0.5\textheight, keepaspectratio]{Images/Magic3D.jpg}
-    \caption{Magic3D performs text-to-3D synthesis \cite{Magic3D}}
-    \label{fig:magic3D}
-\end{figure}
-
-Applications like Stable Diffusion \cite{Stable_Diffusion} can be used to create high quality text-to-image content, while others such as Magic3D \cite{Magic3D} offers text-to-3D synthesis. In terms of text-to-text, ChatGPT \cite{Chat_GPT} serves as a leading language model that can be used to converse about any topic, while GitHub Copilot \cite{GitHub_Copilot} can generate code snippets from user prompts.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/StableDiffusion.jpg}
-    \caption{Stable Diffusion offers text-to-image synthesis \cite{Stable_Diffusion}}
-    \label{fig:stableDiffusion}
-\end{figure}
-
-In the context of games, machine learning is frequently used in areas like text, character model, texture, music and sound generation \cite{DeepLearningPCG}. Languages such as the Video Game Description Language (VGDL) have even be used to generate entire games using AI \cite{VGDL, VGDL_ASP}. However, by themselves, such languages have limited expressiveness, making it difficult to create interesting games \cite{VGDL}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/VGDL.jpg}
-    \caption{Games generated using the Video Game Description Language \cite{VGDL}}
-    \label{fig:vgdl}
-\end{figure}
-
-One paper \cite{CESAGAN} identifies that Generative Adversarial Networks (GANs) can also be used for image generation, but that it is difficult to incorporate constraints. As a solution, it proposes a Conditional Embedding Self-Attention Generative Adversarial Network (CESAGAN). This allows the embedding of a feature vector to the input, enabling the network to model non-local constraints. As a result, this produces higher quality outputs with fewer duplicates. In WFC, it is also difficult to enforce non-local constraints without additional modifications.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/CESAGAN.jpg}
-    \caption{CESAGAN extends upon Generative Adversarial Networks to encourage generation of playable levels requiring additional constraints (top) instead of unplayable levels (bottom) \cite{CESAGAN}}
-    \label{fig:cesagan}
-\end{figure}
-
-Another transforms 2D level design problems into Markov decision processes \cite{Markov_PCGRL}. This aids reinforced learning to produce high quality output levels. It suggests this reinforced learning could be applied to self-play agents to improve the content generated through simulated playtesting. Three other papers similarly suggest that machine learning is useful for evaluating content through methods like simulated playtesting \cite{DeepLearningPCG, VGDL_ASP, PCGML}. In the context of WFC, it might be useful to apply machine learning content evaluation and adjust the output to increase its quality.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/PCGRL.jpg}
-    \caption{Procedural Content Generation via Reinforcement Learning used to create Zelda style levels. An initial random layout (a) is used with three different Markov Decision Process Representations (b), (c) and (d) to create playable levels. \cite{Markov_PCGRL}}
-    \label{fig:pcgrl}
-\end{figure}
-
-One paper \cite{PCGML} also comments specifically on two limitations of PCG via machine learning. It states that the playability of output produced through machine learning is not guaranteed to be playable, but rather biassed towards generating playable content through the input. The second limitation is that most machine learning has been applied to 2D content. Similarly, whether WFC output is playable or not is not always guaranteed but heavily depends on how the input is defined. Furthermore, the core WFC implementation and many of its offshoots only support 2D content generation \cite{Gumin_Wave_Function_Collapse_2016}. As a result, both machine learning PCG and WFC require carefully tweaked input data and an output evaluator when applied to level generation.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth, height=0.5\textheight, keepaspectratio]{Images/PCGMLTaxonomy.jpg}
-    \caption{A taxonomisation of Procedural Content Generation Machine Learning techniques. There are two categorisations: the underlying data structure (graph, grid, or sequence) and the training method (matrix factorisation, EM, frequency counting, evolution, and backpropagation). Marks are colored for the specific type of content that was generated: red circles are platformer levels, orange squares are ``dungeons,'' the dark blue x is real time strategy levels, light blue triangles are collectible game cards, and the purple star is interactive fiction. Citations for each are listed. Citation numbers correspond to those in the cited paper. \cite{PCGML}}
-    \label{fig:pcgml}
-\end{figure}
 
 %\subsection{Search Algorithms}
 %\subsection{Generation Methods}
