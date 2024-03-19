@@ -459,16 +459,18 @@ To start generation, the level designer must have defined a tile set for the gen
 The MAC3 solver code is held in the layer spawner class. This matches the idea of layers and chunks modifying the world in an infinite set of blocks. To allow accurate placement of tiles in the world, a starting cell coordinate must be passed when initialising the layer spawner. Furthermore, a reference to the layer's parent chunk is kept in order to utilise its random number generator.
 
 \subsection{Grid Initialisation}
-First, a grid of cells is initialised. Additionally, a list of cells left to assign is initialised to simplify cell choices when solving. Padding on the layer size is used to include any previously collapsed cells. Added cells that have not been collapsed are treated as empty tiles. This padding means that non-padded cells take into account full adjacency information. If the layer were not padded, then border cells would not have arc consistency with cells outside of the layer as these arcs would not be checked by the solver. The non-padding cells in the centre of the grid are refreshed by restoring each cell's tile options set to include all possible tiles. This allows each each layer to re-generate its cells. In effect, this connects singular, overlapping layers into an infinite, continuous grid.% WHY Are non-collapsed cells treated as empty tiles? DOES THIS HELP STITCHING? EXPERIMENT AGAIN AND WRITE DOWN REASONING.
+Before starting generation of a layer, the grid of cells composing it must be initialised. Additionally, a list of cells left to assign is initialised to simplify cell choices when solving. Padding on the layer size is used to include any previously collapsed cells. Added cells that have not been collapsed are treated as empty tiles. This padding means that non-padded cells take into account full adjacency information. If the layer were not padded, then border cells would not have arc consistency with cells outside of the layer as these arcs would not be checked by the solver. The non-padding cells in the centre of the grid are refreshed by restoring each cell's tile options set to include all possible tiles. This allows each each layer to re-generate its cells. In effect, this connects singular, overlapping layers into an infinite, continuous grid.% WHY Are non-collapsed cells treated as empty tiles? DOES THIS HELP STITCHING? EXPERIMENT AGAIN AND WRITE DOWN REASONING.
+
+% Diagram of inner cells with outer cells as padding.
 
 \subsection{Dealing with an Infinite Grid}
 Were every cell stored in a global grid, then it would be trivially easy to get previously collapsed cells. This is unfeasible due to the requirement of letting the player navigate an infinite world. As such, once cells are collapsed, the grid used by the solver is discarded. Instead, the cell reference class described in Section \ref{sec:cellReferenceClass} is used to preserve a reference to the cell. Each tile has its own collider that can be used to obtain the cell reference as described in Section \ref{sec:collapsingCells}.% DISCUSS ALTERNATIVE IN EVALUATION. MAYBE A "SEMI-GLOBAL" GRID THAT CONTAINS ALL THE CURRENTLY COLLAPSED CELLS AND SHIFTS AS THE PLAYER MOVES.
 
 \subsection{Setting up MAC3}
-With the layer's grid fully initialised, the main stage of the solver can now begin. First, a stack of state changes is initialised. This tracks changes to cells after each assignment by pushing a new state change to the stack. To make the grid globally arc consistent, the arc of each cell in the grid is generated. Subsequently, AC3 is run with this starting queue of cell arcs.
+With the layer's grid fully initialised, the main stage of the solver begins. First, a stack of state changes is initialised. This tracks changes to cells after each assignment by pushing a new state change to the stack. Second, global arc consistency must be enforced. To do this, AC3 is run with the starting queue consisting of all arcs in the grid.
 
 \subsection{MAC3 Recursion}
-After this, the first iteration of a recursive implementation of the MAC3 algorithm is called. Pseudocode of this is given below. How each step works and its purpose is explained in more detail in subsections following the pseudocode.
+Once global arc consistency has been enforced, the first iteration of the recursive MAC3 algorithm is called. Pseudocode of this is given below. How each step works and its purpose is explained in more detail in subsections following the pseudocode.
 
 \begin{enumerate}
     \item If all cells have been assigned, return.
@@ -480,11 +482,11 @@ After this, the first iteration of a recursive implementation of the MAC3 algori
     \item We are now in the case that a domain wipeout must have occurred. Revert the state.
     \item If the cell we tried to assign still has other options left, remove / `unassign' the tile we tried from the options, run AC3 and recurse again.
     \item If all cells have been assigned, return.
-    \item We are now in the case that all possible tile values for a cell led to a wipeout. This means that an earlier choice must be to blame. Restore the tile we tried both to assign and unassign and return.
+    \item It is now the case that all possible tile values for a cell have led to a domain wipeout. This means that an earlier choice must be to blame. Restore the tile we tried both to assign and unassign and return.
 \end{enumerate}
 
 \subsubsection{Managing State Changes}
-To track state changes, each layer spawner holds a stack of state changes. After each time a new cell is chosen to be assigned, a new state is entered. A state change class is used that holds the cell being assigned and any domain changes occurring across the grid. Domain changes can happen to any cell and can consist of multiple tile changes, so a dictionary of cells to hash sets of tiles is used. To track a new state change, a new entry and hash set are added to the dictionary if required. After this, the hash set can be obtained from the dictionary through use of the cell and any tile changes added.
+To track state changes, each layer spawner holds a stack of state changes. After each time a new cell is chosen to be assigned, a new state is entered. A state change class is used that holds the cell being assigned and any domain changes occurring across the grid. Domain changes can happen to any cell and can consist of multiple tile changes. Hence, a dictionary that maps each cell to a hash set of removed tiles is used. To track a new state change, a new key and hash set are added to the dictionary if required. After this, the hash set can be obtained from the dictionary through use of the cell and any tile changes added.
 
 % Image of domain changes structure.
 
@@ -495,7 +497,7 @@ Assigning a tile to a cell involves pruning all tiles except the one being assig
 
 % Image of assignment.
 
-Unassigning a tile to a cell first requires the state to be reverted. After this, the opposite choice is taken. This is done by pruning only the tile choice that was previously assigned. This demonstrates the 2-way branching nature of the implementation. Rather than exploring all possible tile values in one level of search, each tile value is either assigned or unassigned.
+Unassigning a tile to a cell first requires the state to be reverted. After this, the opposite choice is taken. This is done by pruning only the tile choice that was previously assigned. This demonstrates the binary branching nature of the implementation. Rather than exploring all possible tile values in one level of search, each tile value is either assigned or unassigned.
 
 \subsubsection{Visualising Recursion}
 The recursive MAC3 method can be visualised as consisting of three parts as in Figure \ref{fig:mac3Recursion}.
@@ -512,4 +514,4 @@ The recursive MAC3 method can be visualised as consisting of three parts as in F
     \label{fig:mac3Recursion}
 \end{figure}
 
-The finishing state of the grid is checked both before making the new assignment and after each of the assignments. This ensures that the recursion is finished immediately after consistency has been enforced from an assignment and each cell only has one value left.
+The finishing state of the grid is checked before making the new assignment and after each of the assignments. This ensures that the recursion is finished immediately after consistency has been enforced from an assignment and each cell only has one value left.

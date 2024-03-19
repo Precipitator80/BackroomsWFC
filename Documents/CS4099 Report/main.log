@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  19 MAR 2024 13:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  19 MAR 2024 16:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1792,13 +1792,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  35610 strings out of 474103
  682587 string characters out of 5740405
- 1965496 words of memory out of 5000000
+ 1966496 words of memory out of 5000000
  57020 multiletter control sequences out of 15000+600000
  573190 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,12n,96p,1962b,2531s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (70 pages, 16543798 bytes).
+Output written on main.pdf (70 pages, 16543778 bytes).
 PDF statistics:
  1559 PDF objects out of 1728 (max. 8388607)
  1344 compressed objects within 14 object streams
