@@ -7,6 +7,37 @@
 The cell class contains integer coordinates, a set of possible tile options and a tile prefab game object. These variables allow the cell to be used in a grid for level generation. The set of tile options is initialised with the entire fully-explicit tile set. As WFC is run on a grid including the cell, tiles that become invalid options are removed. Once the cell has been collapsed, the assigned tile is instantiated. Additionally a reference to the instantiated tile is preserved in the tile prefab field.
 
 % Diagram of a Cell, showing its list of possible tile choices.
+\begin{figure}[H]
+    \centering
+    \subfigure[Cell]{
+        \begin{tikzpicture}[circlenode/.style={circle, draw=black, very thick, minimum size=5mm}]
+            %Nodes
+            \node[circlenode, label={[align=center]\{Cube, Corner, Wall\}}]      (00)                                            {A};
+
+            %Lines
+        \end{tikzpicture}
+        \label{fig:tileOptions1}
+    }
+
+    \vspace{\baselineskip} % add some vertical space between the rows
+
+    \subfigure[Cube Tile]{
+        \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+        \label{fig:tileOptions2}
+    }
+    \hfill
+    \subfigure[Corner Tile]{
+        \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+        \label{fig:tileOptions3}
+    }
+    \hfill
+    \subfigure[Wall Tile]{
+        \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+        \label{fig:tileOptions4}
+    }
+    \caption{A cell with cube, corner and wall tiles as options}
+    \label{fig:tileOptions}
+\end{figure}
 
 One additional property to note is that the cell class does not inherit from Unity's MonoBehaviour class. This means that it can use constructors that pass basic information needed to initialise each cell. Initialisation data includes the coordinates of the cell within the current layer, the cell's global grid coordinates and the current chunk using the cell. This data is needed for constraint calculations while solving and is updated each time a new layer is spawned.
 
@@ -24,21 +55,123 @@ The cell reference class contains a reference to a cell. As mentioned in Section
 
 \section{Tiles}
 \subsection{Rotation / Cardinality}
-Each spawned tile has a cardinality of either 0, 1, 2 or 3. These cardinalities correspond to rotations of 0, 90, 180 and 270 degrees respectively. Cardinality information is used to determine which combination of two tiles and their rotations fit together. For example, a single wall tile constituting part of a longer wall will require any adjacent wall tiles to be of the same cardinality. When specifying the neighbours of a tile, the level designer must also set the cardinality of each neighbour.
+Each spawned tile has a cardinality of either 0, 1, 2 or 3. These cardinalities correspond to rotations of 0, 90, 180 and 270 degrees respectively. As example, all cardinalities for the corner tile are shown in Figure \ref{fig:cornerCardinalities}.
 
-% Show corner tile with cardinalities 0, 1, 2 and 3.
+% Show corner tile with cardinalities 0, 1, 2 and 3.\begin{figure}[H]
+\begin{figure}[H]
+    \centering
+    \subfigure[Cardinality 0 (0 Degrees)]{
+        \rotatebox[origin=c]{-0}{
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+        }
+        \label{fig:cornerCardinalities0}
+    }
+    \hfill
+    \subfigure[Cardinality 1 (90 Degrees)]{
+        \rotatebox[origin=c]{-90}{
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+        }
+        \label{fig:cornerCardinalities1}
+    }
+    \hfill
+    \subfigure[Cardinality 2 (180 Degrees)]{
+        \rotatebox[origin=c]{-180}{
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+        }
+        \label{fig:cornerCardinalities2}
+    }
+    \hfill
+    \subfigure[Cardinality 3 (270 Degrees)]{
+        \rotatebox[origin=c]{-270}{
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+        }
+        \label{fig:cornerCardinalities3}
+    }
+    \caption{The corner tile with all possible rotations (counted clockwise)}
+    \label{fig:cornerCardinalities}
+\end{figure}
 
-% Also show wall tiles fitting together. 0,0,0 walls fit and 1,0,3 walls don't.
+Cardinality information is used to determine which combination of two tiles and their rotations fit together. For example, a single wall tile constituting part of a longer wall will require any adjacent wall tiles to be of the same cardinality as in Figure \ref{fig:wallExample1}. When specifying the neighbours of a tile, the level designer must also set the cardinality of each neighbour.
+
+% Also show wall tiles fitting together. 0,0,0 walls fit and 3,0,1 walls don't.
+\begin{figure}[H]
+    \centering
+    \subfigure[Valid wall placement (Cardinalities 0,0,0,0)]{
+        \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+        \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+        \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+        \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+        \label{fig:wallExample1}
+    }
+
+    \vspace{\baselineskip} % add some vertical space between the rows
+
+    \subfigure[Invalid wall placement (Cardinalities 3,0,2,1)]{
+        \rotatebox[origin=c]{-270}{
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+        }
+        \rotatebox[origin=c]{-0}{
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+        }
+        \rotatebox[origin=c]{-180}{
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+        }
+        \rotatebox[origin=c]{-90}{
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+        }
+        \label{fig:wallExample2}
+    }
+    \caption{Comparison of valid wall placement to invalid wall placement if adjacent walls must have matching cardinality}
+    \label{fig:wallExample}
+\end{figure}
 
 \subsection{Tile Symmetry}\label{sec:tileSymmetry}
 To reduce the amount of adjacency data to be specified by the level designer, as well as the chance for human error, the level generator includes the functionality to convert a semi-explicit tile set into a fully-explicit tile set. This fully-explicit tile set is created at the start of generation in several steps.
 
 First, it is checked whether the empty tile was specified and is included in the semi-explicit tile set. After confirming this, the main conversion stage begins.
 
-% A bit unclear wording?
 Second, a non-symmetric copy is created for each tile. Non-symmetric tiles may have different neighbours on each side. Any symmetric tile can be represented as a non-symmetric tile. For example, a tile with equal symmetry on all sides can be converted by copying the single list of neighbours onto all sides and incrementing the cardinality per side as required. Specifically, cardinalities on side 1 are incremented by 1, those on side 2 by 2 and those on side 3 by 3. This fully symmetric tile is called a cube tile in the code.
 
 % Image of cube with wall neighbour being turned into non-symmetric tile.
+\begin{figure}[H]
+    \subfigure[A symmetric cube tile with only a wall neighbour of cardinality 2 on the back side specified]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \rotatebox[origin=c]{-180}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/EmptyTile.png}
+        \end{minipage}
+        \label{fig:cubeSymmetryConversion1}
+    }
+    \hfill
+    \subfigure[A non-symmetric cube tile variant with a wall neighbour specified on each side. Clockwise from the back, cardinalities of the walls are 2, 3, 0 and 1.]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \rotatebox[origin=c]{-180}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+
+            \rotatebox[origin=c]{-90}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+            \rotatebox[origin=c]{-270}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+
+            \rotatebox[origin=c]{-0}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+        \end{minipage}
+        \label{fig:cubeSymmetryConversion2}
+    }
+    \caption{A symmetric cube tile converted to a non-symmetric tile}
+    \label{fig:cubeSymmetryConversion}
+\end{figure}
 
 Third, an array for each possible tile rotation is created (cardinalities 0, 1, 2 and 3). This array is attached to the original tile to set explicit neighbours later. The instantiated tile is used as the base rotation (cardinality 0) and referenced in the array. For cube tiles, the base rotation tile can be referenced for each rotation instead of having to create additional copies.
 
@@ -53,24 +186,24 @@ Finally, once all the explicit variants have been generated, the neighbours of e
 % Diagram of this process. Show the original tile and each variant in a line. Then show how the neighbours of one of these is replaced with the explicit variants.
 
 % // Initialise the explicit tile set if it has not already been done.
-    % // Ensure that the empty tile is in the tile set.
-    % // Create a game object to hold the explicit tile set.
-    % // Create non-symmetric variants for each tile.
-        % // Create a non-symmetric copy of the original tile.
-        % // Add the copy to the explicit tile set and set it as the 0 rotation variant.
-        % // Set the explicit variant of the empty tile if applicable.
-        %%%IF // Create rotation variants for non-cube tiles.
-            % // Create a rotation variant with the previous rotation as the base.
-            % // Rotate the variant by 90 degrees and specify its rotation / cardinality in the name.
-            % // Add the variant to both the tile's variants array and the explicit tile set.
-            % // Switch the neighbour and rotation arrays to follow the 90 degree rotation.
-            % // Increase cardinality values of neighbours to account for the 90 degree rotation.
-        %%%ELSE // For cube tiles, simply set the explicit rotation variants to be the 0 rotation non-symmetric tile.
-        % // Replace the neighbours of each explicit tile without explicit rotational information with explicit variants accounting for the rotations.
-            % // Use 2D arrays of the neighbours and rotations to simplify the operation.
-            % // Go through each neighbour array and neighbour tile in it.
-                % // Get the rotation / cardinality value of the variant to use.
-                % // Set the neighbour to the explicit variant with the correct rotation.
+% // Ensure that the empty tile is in the tile set.
+% // Create a game object to hold the explicit tile set.
+% // Create non-symmetric variants for each tile.
+% // Create a non-symmetric copy of the original tile.
+% // Add the copy to the explicit tile set and set it as the 0 rotation variant.
+% // Set the explicit variant of the empty tile if applicable.
+%%%IF // Create rotation variants for non-cube tiles.
+% // Create a rotation variant with the previous rotation as the base.
+% // Rotate the variant by 90 degrees and specify its rotation / cardinality in the name.
+% // Add the variant to both the tile's variants array and the explicit tile set.
+% // Switch the neighbour and rotation arrays to follow the 90 degree rotation.
+% // Increase cardinality values of neighbours to account for the 90 degree rotation.
+%%%ELSE // For cube tiles, simply set the explicit rotation variants to be the 0 rotation non-symmetric tile.
+% // Replace the neighbours of each explicit tile without explicit rotational information with explicit variants accounting for the rotations.
+% // Use 2D arrays of the neighbours and rotations to simplify the operation.
+% // Go through each neighbour array and neighbour tile in it.
+% // Get the rotation / cardinality value of the variant to use.
+% // Set the neighbour to the explicit variant with the correct rotation.
 
 \subsection{Collapsing Cells}\label{sec:collapsingCells}
 To collapse a tile into a cell, the tile's model is instantiated. Then, the model is set to follow the level generation manager's transform (position, rotation and scale) and has its local position reset to the cell's world coordinates. Doing the placement in this way ensures that the model lines up with the world grid while maintaining the correct scale and rotation. Finally, a Unity box collider is added to the model, a second reference to the tile added to the cell and the model activated to render it in the world. The second reference ensures that the spawned tile can be recovered if the generation of a layer fails. Unity's `Physics.OverlapBox' function can be used to detect the box collider given the world coordinates of the cell. This box overlap can be used to obtain the cell reference during the generation of later layers.
@@ -136,11 +269,11 @@ The recursive MAC3 method can be visualised as consisting of three parts as in F
 
 \begin{figure}[H]
     \begin{framed}
-    \begin{enumerate}
-        \item Making a new assignment.
-        \item Making the opposite assignment (``unassignment'') after the first one failed.
-        \item Both assignments having failed.
-    \end{enumerate}
+        \begin{enumerate}
+            \item Making a new assignment.
+            \item Making the opposite assignment (``unassignment'') after the first one failed.
+            \item Both assignments having failed.
+        \end{enumerate}
     \end{framed}
     \caption{The three parts of the recursive MAC3 method}
     \label{fig:mac3Recursion}

@@ -1,100 +1,100 @@
 \babel@toc {UKenglish}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Player Guide}{4}{chapter.2}%
-\contentsline {subsubsection}{Premise}{4}{section*.11}%
-\contentsline {subsubsection}{Controls}{4}{section*.12}%
-\contentsline {chapter}{\numberline {3}Literature Review}{5}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Constraint Programming}{5}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Overview}{5}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Combinatorial Problems}{5}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Logic Programming Languages}{6}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Further Application to Video Games}{8}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}Wave Function Collapse}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Implementation Variations}{10}{subsection.3.2.1}%
-\contentsline {subsubsection}{Data Input}{10}{section*.22}%
-\contentsline {subsubsection}{2D vs 3D}{11}{section*.24}%
-\contentsline {subsection}{\numberline {3.2.2}Limitations of Wave Function Collapse}{11}{subsection.3.2.2}%
-\contentsline {subsubsection}{Lack of Global Constraints}{11}{section*.25}%
-\contentsline {subsubsection}{Overfitting}{14}{section*.31}%
-\contentsline {subsubsection}{Performance}{15}{section*.33}%
-\contentsline {subsubsection}{Other Challenges}{17}{section*.37}%
-\contentsline {section}{\numberline {3.3}Procedural Content Generation}{19}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Overview}{19}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Current Applications and Research}{20}{subsection.3.3.2}%
-\contentsline {chapter}{\numberline {4}Requirements Specification}{25}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Software Engineering Process}{26}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Methodology}{26}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}General Overview}{26}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Semester One}{26}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Semester Two}{26}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Tools and Technologies}{27}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Unity (C\#)}{27}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Blender}{27}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}GitHub}{27}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Document Management}{27}{subsection.5.2.4}%
-\contentsline {chapter}{\numberline {6}Ethics}{28}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Design}{29}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Game Design}{29}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Premise}{29}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Gameplay}{29}{subsection.7.1.2}%
-\contentsline {subsubsection}{Player Controller}{29}{section*.50}%
-\contentsline {subsubsection}{Puzzles}{29}{section*.51}%
-\contentsline {section}{\numberline {7.2}Level Generation}{29}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Contextualising the Wave Function Collapse Algorithm}{29}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Arcs}{30}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}AC3}{30}{subsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.2.4}MAC3}{32}{subsection.7.2.4}%
-\contentsline {subsection}{\numberline {7.2.5}Variable and Value Choice}{32}{subsection.7.2.5}%
-\contentsline {subsubsection}{Lowest Entropy Cell Selection}{32}{section*.58}%
-\contentsline {subsubsection}{Weighted Random Tile Selection}{32}{section*.59}%
-\contentsline {subsection}{\numberline {7.2.6}Infinite Modifying in Blocks}{33}{subsection.7.2.6}%
-\contentsline {section}{\numberline {7.3}Graphics}{33}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Models and Textures}{33}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Camera Effects}{33}{subsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}Lighting Model}{33}{subsection.7.3.3}%
-\contentsline {section}{\numberline {7.4}Audio}{34}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Unity Editor and Tile Representation}{34}{section.7.5}%
-\contentsline {chapter}{\numberline {8}Implementation}{35}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Cells}{35}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Cell Class}{35}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}CellArc Class}{35}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}CellReference Class}{35}{subsection.8.1.3}%
-\contentsline {section}{\numberline {8.2}Tiles}{35}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Rotation / Cardinality}{35}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}Tile Symmetry}{36}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}Collapsing Cells}{36}{subsection.8.2.3}%
-\contentsline {section}{\numberline {8.3}Chunks}{36}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Level Generation Manager}{37}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Prerequisites}{37}{subsection.8.4.1}%
-\contentsline {subsection}{\numberline {8.4.2}Solver (Layer Spawners)}{37}{subsection.8.4.2}%
-\contentsline {subsection}{\numberline {8.4.3}Grid Initialisation}{37}{subsection.8.4.3}%
-\contentsline {subsection}{\numberline {8.4.4}Dealing with an Infinite Grid}{37}{subsection.8.4.4}%
-\contentsline {subsection}{\numberline {8.4.5}Setting up MAC3}{38}{subsection.8.4.5}%
-\contentsline {subsection}{\numberline {8.4.6}MAC3 Recursion}{38}{subsection.8.4.6}%
-\contentsline {subsubsection}{Managing State Changes}{38}{section*.60}%
-\contentsline {subsubsection}{Assigning and Unassigning a Tile to a Cell}{39}{section*.61}%
-\contentsline {subsubsection}{Visualising Recursion}{39}{section*.62}%
-\contentsline {chapter}{\numberline {9}Evaluation}{40}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Against Requirements Specification}{40}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Primary Objectives}{40}{subsection.9.1.1}%
-\contentsline {subsubsection}{Create a game that uses procedural level generation}{40}{section*.64}%
-\contentsline {subsubsection}{Use novel PCG methods such as Wave Function Collapse}{40}{section*.65}%
-\contentsline {subsubsection}{Extend on at least one PCG method}{40}{section*.66}%
-\contentsline {subsubsection}{Use assets to give the game a full set of graphics and audio}{40}{section*.67}%
-\contentsline {subsection}{\numberline {9.1.2}Secondary Objectives}{41}{subsection.9.1.2}%
-\contentsline {subsubsection}{Make levels navigable by AI opponents}{41}{section*.68}%
-\contentsline {subsubsection}{Allow customisation of level generation and other gameplay elements via an in-game menu}{41}{section*.69}%
-\contentsline {section}{\numberline {9.2}Designer-facing Components}{41}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}Editor Interface and Code Quality}{41}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {9.2.2}Ease of Use}{41}{subsection.9.2.2}%
-\contentsline {section}{\numberline {9.3}Player-facing Components}{41}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}Gameplay}{41}{subsection.9.3.1}%
-\contentsline {subsection}{\numberline {9.3.2}Performance}{41}{subsection.9.3.2}%
-\contentsline {chapter}{\numberline {10}Conclusion}{43}{chapter.10}%
-\contentsline {chapter}{\numberline {A}Testing Summary}{49}{appendix.A}%
-\contentsline {chapter}{\numberline {B}User Manual}{50}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Meeting Notes}{51}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Semester One Meeting Notes}{51}{section.C.1}%
-\contentsline {section}{\numberline {C.2}Semester Two Meeting Notes}{52}{section.C.2}%
-\contentsline {chapter}{\numberline {D}Design Document}{54}{appendix.D}%
-\contentsline {chapter}{\numberline {E}Holiday and Semester Two Task List}{56}{appendix.E}%
+\contentsline {chapter}{\numberline {2}Literature Review}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Procedural Content Generation}{4}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Overview}{4}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Current Applications and Research}{5}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Constraint Programming}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Overview}{9}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Combinatorial Problems}{10}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Logic Programming Languages}{10}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Further Application to Video Games}{13}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Wave Function Collapse}{13}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Implementation Variations}{15}{subsection.2.3.1}%
+\contentsline {subsubsection}{Data Input}{15}{section*.27}%
+\contentsline {subsubsection}{2D vs 3D}{16}{section*.29}%
+\contentsline {subsection}{\numberline {2.3.2}Limitations of Wave Function Collapse}{16}{subsection.2.3.2}%
+\contentsline {subsubsection}{Lack of Global Constraints}{16}{section*.30}%
+\contentsline {subsubsection}{Overfitting}{19}{section*.36}%
+\contentsline {subsubsection}{Performance}{20}{section*.38}%
+\contentsline {subsubsection}{Other Challenges}{22}{section*.42}%
+\contentsline {chapter}{\numberline {3}Requirements Specification}{25}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Software Engineering Process}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Methodology}{26}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}General Overview}{26}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Semester One}{26}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Semester Two}{26}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Tools and Technologies}{27}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Unity (C\#)}{27}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Blender}{27}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}GitHub}{27}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Document Management}{27}{subsection.4.2.4}%
+\contentsline {chapter}{\numberline {5}Ethics}{28}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Design}{29}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Game Design}{29}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Premise}{29}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Gameplay}{29}{subsection.6.1.2}%
+\contentsline {subsubsection}{Player Controller}{29}{section*.48}%
+\contentsline {subsubsection}{Puzzles}{29}{section*.49}%
+\contentsline {section}{\numberline {6.2}Level Generation}{29}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Contextualising the Wave Function Collapse Algorithm}{29}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Arcs}{30}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}AC3}{30}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}MAC3}{32}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Variable and Value Choice}{32}{subsection.6.2.5}%
+\contentsline {subsubsection}{Lowest Entropy Cell Selection}{33}{section*.56}%
+\contentsline {subsubsection}{Weighted Random Tile Selection}{33}{section*.57}%
+\contentsline {subsection}{\numberline {6.2.6}Infinite Modifying in Blocks}{33}{subsection.6.2.6}%
+\contentsline {section}{\numberline {6.3}Graphics}{34}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Models and Textures}{34}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Camera Effects}{34}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Lighting Model}{34}{subsection.6.3.3}%
+\contentsline {section}{\numberline {6.4}Audio}{34}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Unity Editor and Tile Representation}{34}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Implementation}{36}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Cells}{36}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Cell Class}{36}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}CellArc Class}{37}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}CellReference Class}{37}{subsection.7.1.3}%
+\contentsline {section}{\numberline {7.2}Tiles}{37}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Rotation / Cardinality}{37}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Tile Symmetry}{38}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Collapsing Cells}{39}{subsection.7.2.3}%
+\contentsline {section}{\numberline {7.3}Chunks}{40}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Level Generation Manager}{40}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Prerequisites}{40}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Solver (Layer Spawners)}{40}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Grid Initialisation}{40}{subsection.7.4.3}%
+\contentsline {subsection}{\numberline {7.4.4}Dealing with an Infinite Grid}{41}{subsection.7.4.4}%
+\contentsline {subsection}{\numberline {7.4.5}Setting up MAC3}{41}{subsection.7.4.5}%
+\contentsline {subsection}{\numberline {7.4.6}MAC3 Recursion}{41}{subsection.7.4.6}%
+\contentsline {subsubsection}{Managing State Changes}{42}{section*.62}%
+\contentsline {subsubsection}{Assigning and Unassigning a Tile to a Cell}{42}{section*.63}%
+\contentsline {subsubsection}{Visualising Recursion}{42}{section*.64}%
+\contentsline {chapter}{\numberline {8}Evaluation}{43}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Against Requirements Specification}{43}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Primary Objectives}{43}{subsection.8.1.1}%
+\contentsline {subsubsection}{Create a game that uses procedural level generation}{43}{section*.66}%
+\contentsline {subsubsection}{Use novel PCG methods such as Wave Function Collapse}{43}{section*.67}%
+\contentsline {subsubsection}{Extend on at least one PCG method}{43}{section*.68}%
+\contentsline {subsubsection}{Use assets to give the game a full set of graphics and audio}{43}{section*.69}%
+\contentsline {subsection}{\numberline {8.1.2}Secondary Objectives}{44}{subsection.8.1.2}%
+\contentsline {subsubsection}{Make levels navigable by AI opponents}{44}{section*.70}%
+\contentsline {subsubsection}{Allow customisation of level generation and other gameplay elements via an in-game menu}{44}{section*.71}%
+\contentsline {section}{\numberline {8.2}Designer-facing Components}{44}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Editor Interface and Code Quality}{44}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Ease of Use}{44}{subsection.8.2.2}%
+\contentsline {section}{\numberline {8.3}Player-facing Components}{44}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Gameplay}{44}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Performance}{44}{subsection.8.3.2}%
+\contentsline {chapter}{\numberline {9}Conclusion}{46}{chapter.9}%
+\contentsline {chapter}{\numberline {A}Testing Summary}{52}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Player Guide}{53}{appendix.B}%
+\contentsline {subsubsection}{Premise}{53}{section*.74}%
+\contentsline {subsubsection}{Controls}{53}{section*.75}%
+\contentsline {chapter}{\numberline {C}User Manual}{54}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Meeting Notes}{55}{appendix.D}%
+\contentsline {section}{\numberline {D.1}Semester One Meeting Notes}{55}{section.D.1}%
+\contentsline {section}{\numberline {D.2}Semester Two Meeting Notes}{56}{section.D.2}%
+\contentsline {chapter}{\numberline {E}Design Document}{58}{appendix.E}%
+\contentsline {chapter}{\numberline {F}Holiday and Semester Two Task List}{60}{appendix.F}%

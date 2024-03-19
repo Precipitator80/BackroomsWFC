@@ -325,6 +325,807 @@
       \verb https://gamma-web.iacs.umd.edu/papers/documents/dissertations/merrell09.pdf
       \endverb
     \endentry
+    \entry{minecraft}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=286eb1355114f63f5ea725ef0a2d6d5d}{%
+           family={Fingas},
+           familyi={F\bibinitperiod},
+           given={Jon},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Engadget}%
+      }
+      \strng{namehash}{286eb1355114f63f5ea725ef0a2d6d5d}
+      \strng{fullhash}{286eb1355114f63f5ea725ef0a2d6d5d}
+      \strng{bibnamehash}{286eb1355114f63f5ea725ef0a2d6d5d}
+      \strng{authorbibnamehash}{286eb1355114f63f5ea725ef0a2d6d5d}
+      \strng{authornamehash}{286eb1355114f63f5ea725ef0a2d6d5d}
+      \strng{authorfullhash}{286eb1355114f63f5ea725ef0a2d6d5d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Engadget}
+      \field{month}{7}
+      \field{title}{Here’s how “Minecraft” creates its gigantic worlds}
+      \field{urlday}{12}
+      \field{urlmonth}{9}
+      \field{urlyear}{2023}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.engadget.com/2015-03-04-how-minecraft-worlds-are-made.html
+      \endverb
+      \verb{url}
+      \verb https://www.engadget.com/2015-03-04-how-minecraft-worlds-are-made.html
+      \endverb
+    \endentry
+    \entry{nomanssky}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=7f0e9c3928f46bbf1aedc3c0033d301f}{%
+           family={Alexandra},
+           familyi={A\bibinitperiod},
+           given={Heather},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Kotaku}%
+      }
+      \strng{namehash}{7f0e9c3928f46bbf1aedc3c0033d301f}
+      \strng{fullhash}{7f0e9c3928f46bbf1aedc3c0033d301f}
+      \strng{bibnamehash}{7f0e9c3928f46bbf1aedc3c0033d301f}
+      \strng{authorbibnamehash}{7f0e9c3928f46bbf1aedc3c0033d301f}
+      \strng{authornamehash}{7f0e9c3928f46bbf1aedc3c0033d301f}
+      \strng{authorfullhash}{7f0e9c3928f46bbf1aedc3c0033d301f}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Kotaku}
+      \field{month}{10}
+      \field{title}{A look at how no man’s Sky’s procedural generation works}
+      \field{urlday}{12}
+      \field{urlmonth}{9}
+      \field{urlyear}{2023}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://kotaku.com/a-look-at-how-no-mans-skys-procedural-generation-works-1787928446
+      \endverb
+      \verb{url}
+      \verb https://kotaku.com/a-look-at-how-no-mans-skys-procedural-generation-works-1787928446
+      \endverb
+    \endentry
+    \entry{shadowofmordor}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=7a389cfc828479f90d171205f8f48d75}{%
+           family={Game\bibnamedelimb DeveloperStaffJanuary\bibnamedelima 01},
+           familyi={G\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim 0\bibinitperiod},
+           given={2016},
+           giveni={2\bibinitperiod}}}%
+      }
+      \strng{namehash}{7a389cfc828479f90d171205f8f48d75}
+      \strng{fullhash}{7a389cfc828479f90d171205f8f48d75}
+      \strng{bibnamehash}{7a389cfc828479f90d171205f8f48d75}
+      \strng{authorbibnamehash}{7a389cfc828479f90d171205f8f48d75}
+      \strng{authornamehash}{7a389cfc828479f90d171205f8f48d75}
+      \strng{authorfullhash}{7a389cfc828479f90d171205f8f48d75}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Game Developer}
+      \field{month}{1}
+      \field{title}{7 uses of procedural generation that all developers should study}
+      \field{urlday}{12}
+      \field{urlmonth}{9}
+      \field{urlyear}{2023}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.gamedeveloper.com/design/7-uses-of-procedural-generation-that-all-developers-should-study
+      \endverb
+      \verb{url}
+      \verb https://www.gamedeveloper.com/design/7-uses-of-procedural-generation-that-all-developers-should-study
+      \endverb
+    \endentry
+    \entry{borderlands}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=52d7f11475a90a69cacc19d527ac93e2}{%
+           family={Yin-Poole},
+           familyi={Y\bibinithyphendelim P\bibinitperiod},
+           given={Wesley},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Eurogamer.net}%
+      }
+      \strng{namehash}{52d7f11475a90a69cacc19d527ac93e2}
+      \strng{fullhash}{52d7f11475a90a69cacc19d527ac93e2}
+      \strng{bibnamehash}{52d7f11475a90a69cacc19d527ac93e2}
+      \strng{authorbibnamehash}{52d7f11475a90a69cacc19d527ac93e2}
+      \strng{authornamehash}{52d7f11475a90a69cacc19d527ac93e2}
+      \strng{authorfullhash}{52d7f11475a90a69cacc19d527ac93e2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Eurogamer.net}
+      \field{month}{7}
+      \field{title}{How many weapons are in borderlands 2?}
+      \field{urlday}{12}
+      \field{urlmonth}{9}
+      \field{urlyear}{2023}
+      \field{year}{2012}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.eurogamer.net/how-many-weapons-are-in-borderlands-2
+      \endverb
+      \verb{url}
+      \verb https://www.eurogamer.net/how-many-weapons-are-in-borderlands-2
+      \endverb
+    \endentry
+    \entry{pcgbook}{book}{}
+      \name{author}{3}{}{%
+        {{hash=ae1fe57aa4583addaa565aa16bfea22b}{%
+           family={Shaker},
+           familyi={S\bibinitperiod},
+           given={Noor},
+           giveni={N\bibinitperiod}}}%
+        {{hash=cbd110b21df9b90cd72ce148aa04de7f}{%
+           family={Togelius},
+           familyi={T\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f0a3a62cf62a96f28c7fba0e3e16283b}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={Mark\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{f94d337436520f5209d3360e69b11bc0}
+      \strng{fullhash}{f94d337436520f5209d3360e69b11bc0}
+      \strng{bibnamehash}{f94d337436520f5209d3360e69b11bc0}
+      \strng{authorbibnamehash}{f94d337436520f5209d3360e69b11bc0}
+      \strng{authornamehash}{f94d337436520f5209d3360e69b11bc0}
+      \strng{authorfullhash}{f94d337436520f5209d3360e69b11bc0}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Procedural Content Generation in Games: A Textbook and an Overview of Current Research}
+      \field{urlday}{12}
+      \field{urlmonth}{9}
+      \field{urlyear}{2023}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1007/978-3-319-42716-4
+      \endverb
+      \verb{urlraw}
+      \verb https://www.pcgbook.com/
+      \endverb
+      \verb{url}
+      \verb https://www.pcgbook.com/
+      \endverb
+    \endentry
+    \entry{minecraft_screenshot}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e3416675e3a20772d0b78f45f4ce995d}{%
+           family={Minecraft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{e3416675e3a20772d0b78f45f4ce995d}
+      \strng{fullhash}{e3416675e3a20772d0b78f45f4ce995d}
+      \strng{bibnamehash}{e3416675e3a20772d0b78f45f4ce995d}
+      \strng{authorbibnamehash}{e3416675e3a20772d0b78f45f4ce995d}
+      \strng{authornamehash}{e3416675e3a20772d0b78f45f4ce995d}
+      \strng{authorfullhash}{e3416675e3a20772d0b78f45f4ce995d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Minecraft Caves and Cliffs Snapshot Twitter Post}
+      \field{urlday}{17}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://twitter.com/Minecraft/status/1414978446229393420
+      \endverb
+      \verb{url}
+      \verb https://twitter.com/Minecraft/status/1414978446229393420
+      \endverb
+    \endentry
+    \entry{AIGC_Survey}{misc}{}
+      \name{author}{7}{}{%
+        {{hash=c1cf3e8a19f3a6f7ebf33f2775b045cb}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Yihan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=52602db9cf98a7b30eab3ee6b1c2490e}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Siyu},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c8c0e2e8882c8cbe0bbeb873ae3dc3df}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yixin},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c7400217cbb00404a8746d77ed87c5d0}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={Zhiling},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=f3592c8d3564b8903ff61ebb47fbd1ed}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Yutong},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ed7b2de2f08bfa6638d5d174d55d839b}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Philip\bibnamedelima S.},
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=48972a9b89e478f69f1b1e95205c6278}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Lichao},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{2dc6c0f9252df6a0e4f98d396ee95e60}
+      \strng{fullhash}{98d44bda2d2a959d34ce202bbbdb84c0}
+      \strng{bibnamehash}{13fd878e851afeadcbe2e4032744dcee}
+      \strng{authorbibnamehash}{13fd878e851afeadcbe2e4032744dcee}
+      \strng{authornamehash}{2dc6c0f9252df6a0e4f98d396ee95e60}
+      \strng{authorfullhash}{98d44bda2d2a959d34ce202bbbdb84c0}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.AI}
+      \field{eprinttype}{arXiv}
+      \field{title}{A Comprehensive Survey of AI-Generated Content (AIGC): A History of Generative AI from GAN to ChatGPT}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2303.04226
+      \endverb
+    \endentry
+    \entry{Magic3D}{misc}{}
+      \name{author}{10}{}{%
+        {{hash=b2dc759174e1ae2d25f9ed0f8edd4a8d}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Chen-Hsuan},
+           giveni={C\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=9a3433149c20baec10f299b1558363b5}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=473158d70ee692d75b3e65756265bca2}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Luming},
+           giveni={L\bibinitperiod}}}%
+        {{hash=38b897098df37c367803d4ea5b650de8}{%
+           family={Takikawa},
+           familyi={T\bibinitperiod},
+           given={Towaki},
+           giveni={T\bibinitperiod}}}%
+        {{hash=c01a37ca191377410cb09f2dafdd7cba}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={Xiaohui},
+           giveni={X\bibinitperiod}}}%
+        {{hash=18e2748019898f7b8be59e77f5b8b20e}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Xun},
+           giveni={X\bibinitperiod}}}%
+        {{hash=1385d3fa16f20884c6f1879595666f6c}{%
+           family={Kreis},
+           familyi={K\bibinitperiod},
+           given={Karsten},
+           giveni={K\bibinitperiod}}}%
+        {{hash=132467c4a712be4725c988c89c68a30e}{%
+           family={Fidler},
+           familyi={F\bibinitperiod},
+           given={Sanja},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0c3c4604957af5f2ce5f1537fdbaa510}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ming-Yu},
+           giveni={M\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=08f925fe4692d130a1d7cb7d94483351}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Tsung-Yi},
+           giveni={T\bibinithyphendelim Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{b8dd6189552aeeda8472209b34b4dac0}
+      \strng{fullhash}{38d0920f3162b05f37e01372b4917ce1}
+      \strng{bibnamehash}{1d0259b6cb0820d0e3d367756160a9cb}
+      \strng{authorbibnamehash}{1d0259b6cb0820d0e3d367756160a9cb}
+      \strng{authornamehash}{b8dd6189552aeeda8472209b34b4dac0}
+      \strng{authorfullhash}{38d0920f3162b05f37e01372b4917ce1}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CV}
+      \field{eprinttype}{arXiv}
+      \field{title}{Magic3D: High-Resolution Text-to-3D Content Creation}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2211.10440
+      \endverb
+    \endentry
+    \entry{Self_Driving_Cars}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=f2e1f9579174419a6228418e8317821f}{%
+           family={Gambi},
+           familyi={G\bibinitperiod},
+           given={Alessio},
+           giveni={A\bibinitperiod}}}%
+        {{hash=70e7313d13be1905982cfad0089ebafe}{%
+           family={Mueller},
+           familyi={M\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fc66f39b83d69c05a49d023f90b98586}{%
+           family={Fraser},
+           familyi={F\bibinitperiod},
+           given={Gordon},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Beijing, China}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{7a2b97a3a77e2313463f78e4161758b3}
+      \strng{fullhash}{7a2b97a3a77e2313463f78e4161758b3}
+      \strng{bibnamehash}{7a2b97a3a77e2313463f78e4161758b3}
+      \strng{authorbibnamehash}{7a2b97a3a77e2313463f78e4161758b3}
+      \strng{authornamehash}{7a2b97a3a77e2313463f78e4161758b3}
+      \strng{authorfullhash}{7a2b97a3a77e2313463f78e4161758b3}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Self-driving cars rely on software which needs to be thoroughly tested. Testing self-driving car software in real traffic is not only expensive but also dangerous, and has already caused fatalities. Virtual tests, in which self-driving car software is tested in computer simulations, offer a more efficient and safer alternative compared to naturalistic field operational tests. However, creating suitable test scenarios is laborious and difficult. In this paper we combine procedural content generation, a technique commonly employed in modern video games, and search-based testing, a testing technique proven to be effective in many domains, in order to automatically create challenging virtual scenarios for testing self-driving car soft- ware. Our AsFault prototype implements this approach to generate virtual roads for testing lane keeping, one of the defining features of autonomous driving. Evaluation on two different self-driving car software systems demonstrates that AsFault can generate effective virtual road networks that succeed in revealing software failures, which manifest as cars departing their lane. Compared to random testing AsFault was not only more efficient, but also caused up to twice as many lane departures.}
+      \field{booktitle}{Proceedings of the 28th ACM SIGSOFT International Symposium on Software Testing and Analysis}
+      \field{isbn}{9781450362245}
+      \field{series}{ISSTA 2019}
+      \field{title}{Automatically Testing Self-Driving Cars with Search-Based Procedural Content Generation}
+      \field{year}{2019}
+      \field{pages}{318\bibrangedash 328}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1145/3293882.3330566
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3293882.3330566
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3293882.3330566
+      \endverb
+      \keyw{automatic test generation,procedural content generation,search-based testing,self-driving cars}
+    \endentry
+    \entry{Stable_Diffusion}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=230efc1db61425699ee20089c8e55c13}{%
+           family={{Stability AI}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{230efc1db61425699ee20089c8e55c13}
+      \strng{fullhash}{230efc1db61425699ee20089c8e55c13}
+      \strng{bibnamehash}{230efc1db61425699ee20089c8e55c13}
+      \strng{authorbibnamehash}{230efc1db61425699ee20089c8e55c13}
+      \strng{authornamehash}{230efc1db61425699ee20089c8e55c13}
+      \strng{authorfullhash}{230efc1db61425699ee20089c8e55c13}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Stable Diffusion Generative Models}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/Stability-AI/generative-models
+      \endverb
+      \verb{url}
+      \verb https://github.com/Stability-AI/generative-models
+      \endverb
+    \endentry
+    \entry{Chat_GPT}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=0523b13262b12c215d8009938f5c14f1}{%
+           family={OpenAI},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{0523b13262b12c215d8009938f5c14f1}
+      \strng{fullhash}{0523b13262b12c215d8009938f5c14f1}
+      \strng{bibnamehash}{0523b13262b12c215d8009938f5c14f1}
+      \strng{authorbibnamehash}{0523b13262b12c215d8009938f5c14f1}
+      \strng{authornamehash}{0523b13262b12c215d8009938f5c14f1}
+      \strng{authorfullhash}{0523b13262b12c215d8009938f5c14f1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{ChatGPT}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://chat.openai.com/
+      \endverb
+      \verb{url}
+      \verb https://chat.openai.com/
+      \endverb
+    \endentry
+    \entry{GitHub_Copilot}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d3b7c913cd04ebfec0e9ec32cb6fd58c}{%
+           family={GitHub},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
+      \strng{fullhash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
+      \strng{bibnamehash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
+      \strng{authorbibnamehash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
+      \strng{authornamehash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
+      \strng{authorfullhash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{GitHub Copilot}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/features/copilot
+      \endverb
+      \verb{url}
+      \verb https://github.com/features/copilot
+      \endverb
+    \endentry
+    \entry{DeepLearningPCG}{article}{}
+      \name{author}{6}{}{%
+        {{hash=23048a7504f1280f267bbc5de576ad5c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jialin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b76cd99c7d9f136d105a5b9ef54cd023}{%
+           family={Snodgrass},
+           familyi={S\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8cf60c4d9250095feca7d9e907cf7f45}{%
+           family={Khalifa},
+           familyi={K\bibinitperiod},
+           given={Ahmed},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ac3851112edf82ed4ab22929459e0622}{%
+           family={Risi},
+           familyi={R\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cf368727b2920ced839da42cbd3e69a0}{%
+           family={Yannakakis},
+           familyi={Y\bibinitperiod},
+           given={Georgios\bibnamedelima N.},
+           giveni={G\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=cbd110b21df9b90cd72ce148aa04de7f}{%
+           family={Togelius},
+           familyi={T\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{d571de3568ac55431f20d4ecc2d15dd4}
+      \strng{fullhash}{4a53915dbc9f6139f3e297df79be26cd}
+      \strng{bibnamehash}{4a53915dbc9f6139f3e297df79be26cd}
+      \strng{authorbibnamehash}{4a53915dbc9f6139f3e297df79be26cd}
+      \strng{authornamehash}{d571de3568ac55431f20d4ecc2d15dd4}
+      \strng{authorfullhash}{4a53915dbc9f6139f3e297df79be26cd}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Procedural content generation in video games has a long history. Existing procedural content generation methods, such as search-based, solver-based, rule-based and grammar-based methods have been applied to various content types such as levels, maps, character models, and textures. A research field centered on content generation in games has existed for more than a decade. More recently, deep learning has powered a remarkable range of inventions in content production, which are applicable to games. While some cutting-edge deep learning methods are applied on their own, others are applied in combination with more traditional methods, or in an interactive setting. This article surveys the various deep learning methods that have been applied to generate game content directly or indirectly, discusses deep learning methods that could be used for content generation purposes but are rarely used today, and envisages some limitations and potential future directions of deep learning for procedural content generation.}
+      \field{issn}{1433-3058}
+      \field{journaltitle}{Neural Computing and Applications}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Deep learning for procedural content generation}
+      \field{volume}{33}
+      \field{year}{2021}
+      \field{pages}{19\bibrangedash 37}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1007/s00521-020-05383-8
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s00521-020-05383-8
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s00521-020-05383-8
+      \endverb
+    \endentry
+    \entry{VGDL}{article}{}
+      \name{author}{6}{}{%
+        {{hash=3f669771a768bee87a4fb3de16c2fe70}{%
+           family={Perez-Liebana},
+           familyi={P\bibinithyphendelim L\bibinitperiod},
+           given={Diego},
+           giveni={D\bibinitperiod}}}%
+        {{hash=23048a7504f1280f267bbc5de576ad5c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jialin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8cf60c4d9250095feca7d9e907cf7f45}{%
+           family={Khalifa},
+           familyi={K\bibinitperiod},
+           given={Ahmed},
+           giveni={A\bibinitperiod}}}%
+        {{hash=42b28f71a84dbbf5e5fb2a46cd3ef552}{%
+           family={Gaina},
+           familyi={G\bibinitperiod},
+           given={Raluca\bibnamedelima D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=cbd110b21df9b90cd72ce148aa04de7f}{%
+           family={Togelius},
+           familyi={T\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+        {{hash=96c14bf82b5e245648d824afab085394}{%
+           family={Lucas},
+           familyi={L\bibinitperiod},
+           given={Simon\bibnamedelima M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{c4f86dc33841d3a9967967e15c97922a}
+      \strng{fullhash}{85e6737ebf0b023acbd5f2e7f6ddf1f6}
+      \strng{bibnamehash}{85e6737ebf0b023acbd5f2e7f6ddf1f6}
+      \strng{authorbibnamehash}{85e6737ebf0b023acbd5f2e7f6ddf1f6}
+      \strng{authornamehash}{c4f86dc33841d3a9967967e15c97922a}
+      \strng{authorfullhash}{85e6737ebf0b023acbd5f2e7f6ddf1f6}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Games}
+      \field{number}{3}
+      \field{title}{General Video Game AI: A Multitrack Framework for Evaluating Agents, Games, and Content Generation Algorithms}
+      \field{volume}{11}
+      \field{year}{2019}
+      \field{pages}{195\bibrangedash 214}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1109/TG.2019.2901021
+      \endverb
+    \endentry
+    \entry{VGDL_ASP}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=efbc6abc2aa800b147c91954113f8d12}{%
+           family={Neufeld},
+           familyi={N\bibinitperiod},
+           given={Xenija},
+           giveni={X\bibinitperiod}}}%
+        {{hash=0791bc0e37ea2dfc81bfead0967176ae}{%
+           family={Mostaghim},
+           familyi={M\bibinitperiod},
+           given={Sanaz},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3f669771a768bee87a4fb3de16c2fe70}{%
+           family={Perez-Liebana},
+           familyi={P\bibinithyphendelim L\bibinitperiod},
+           given={Diego},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{5cb37a58a8ded9dafbe596683b4a0275}
+      \strng{fullhash}{5cb37a58a8ded9dafbe596683b4a0275}
+      \strng{bibnamehash}{5cb37a58a8ded9dafbe596683b4a0275}
+      \strng{authorbibnamehash}{5cb37a58a8ded9dafbe596683b4a0275}
+      \strng{authornamehash}{5cb37a58a8ded9dafbe596683b4a0275}
+      \strng{authorfullhash}{5cb37a58a8ded9dafbe596683b4a0275}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 7th Computer Science and Electronic Engineering Conference (CEEC)}
+      \field{title}{Procedural level generation with answer set programming for general Video Game playing}
+      \field{year}{2015}
+      \field{pages}{207\bibrangedash 212}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/CEEC.2015.7332726
+      \endverb
+    \endentry
+    \entry{CESAGAN}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=0ddfa95232f4728eb2ebf49c74498e14}{%
+           family={Rodriguez\bibnamedelima Torrado},
+           familyi={R\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Ruben},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8cf60c4d9250095feca7d9e907cf7f45}{%
+           family={Khalifa},
+           familyi={K\bibinitperiod},
+           given={Ahmed},
+           giveni={A\bibinitperiod}}}%
+        {{hash=36f2a616e2e47e1d55e21a70f5776224}{%
+           family={Cerny\bibnamedelima Green},
+           familyi={C\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8f64e114087a1f9feeadea103501d355}{%
+           family={Justesen},
+           familyi={J\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ac3851112edf82ed4ab22929459e0622}{%
+           family={Risi},
+           familyi={R\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cbd110b21df9b90cd72ce148aa04de7f}{%
+           family={Togelius},
+           familyi={T\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2fff08dc766e451dedf8e690a0e6c1b}
+      \strng{fullhash}{913d8488d31d0f6b8e677728867c505e}
+      \strng{bibnamehash}{913d8488d31d0f6b8e677728867c505e}
+      \strng{authorbibnamehash}{913d8488d31d0f6b8e677728867c505e}
+      \strng{authornamehash}{a2fff08dc766e451dedf8e690a0e6c1b}
+      \strng{authorfullhash}{913d8488d31d0f6b8e677728867c505e}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2020 IEEE Conference on Games (CoG)}
+      \field{title}{Bootstrapping Conditional GANs for Video Game Level Generation}
+      \field{year}{2020}
+      \field{pages}{41\bibrangedash 48}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/CoG47356.2020.9231576
+      \endverb
+    \endentry
+    \entry{Markov_PCGRL}{article}{}
+      \name{author}{4}{}{%
+        {{hash=8cf60c4d9250095feca7d9e907cf7f45}{%
+           family={Khalifa},
+           familyi={K\bibinitperiod},
+           given={Ahmed},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4505e041f77b137101094a2522aed23c}{%
+           family={Bontrager},
+           familyi={B\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod}}}%
+        {{hash=495f1f7321ab1541320d57f92a26ae86}{%
+           family={Earle},
+           familyi={E\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cbd110b21df9b90cd72ce148aa04de7f}{%
+           family={Togelius},
+           familyi={T\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2c7174d6a982aa581b979fcb192361f4}
+      \strng{fullhash}{ff020027ac0762da6abd909bbc870363}
+      \strng{bibnamehash}{ff020027ac0762da6abd909bbc870363}
+      \strng{authorbibnamehash}{ff020027ac0762da6abd909bbc870363}
+      \strng{authornamehash}{2c7174d6a982aa581b979fcb192361f4}
+      \strng{authorfullhash}{ff020027ac0762da6abd909bbc870363}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment}
+      \field{month}{10}
+      \field{number}{1}
+      \field{title}{PCGRL: Procedural Content Generation via Reinforcement Learning}
+      \field{volume}{16}
+      \field{year}{2020}
+      \field{pages}{95\bibrangedash 101}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1609/aiide.v16i1.7416
+      \endverb
+      \verb{urlraw}
+      \verb https://ojs.aaai.org/index.php/AIIDE/article/view/7416
+      \endverb
+      \verb{url}
+      \verb https://ojs.aaai.org/index.php/AIIDE/article/view/7416
+      \endverb
+    \endentry
+    \entry{PCGML}{article}{}
+      \name{author}{8}{}{%
+        {{hash=198982c57c855e20171a0d57488800c6}{%
+           family={Summerville},
+           familyi={S\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b76cd99c7d9f136d105a5b9ef54cd023}{%
+           family={Snodgrass},
+           familyi={S\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8e135527091b0f84e96d6573052d149b}{%
+           family={Guzdial},
+           familyi={G\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+        {{hash=36d10fc86048a38b49af3fada5db7c52}{%
+           family={Holmgård},
+           familyi={H\bibinitperiod},
+           given={Christoffer},
+           giveni={C\bibinitperiod}}}%
+        {{hash=993b84f2da72478a96a6ddccf1db4953}{%
+           family={Hoover},
+           familyi={H\bibinitperiod},
+           given={Amy\bibnamedelima K.},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=5c2dfe32580e160e14b6a6838e0f77c9}{%
+           family={Isaksen},
+           familyi={I\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b42b016dc19b9d5aaa8679d8a1506a52}{%
+           family={Nealen},
+           familyi={N\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=cbd110b21df9b90cd72ce148aa04de7f}{%
+           family={Togelius},
+           familyi={T\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b3864d8699c0d563ca74509abcb362dd}
+      \strng{fullhash}{6e2076797d39e4d4274a6633911e3284}
+      \strng{bibnamehash}{980472e054c4b0a4d53d1c00a3e68019}
+      \strng{authorbibnamehash}{980472e054c4b0a4d53d1c00a3e68019}
+      \strng{authornamehash}{b3864d8699c0d563ca74509abcb362dd}
+      \strng{authorfullhash}{6e2076797d39e4d4274a6633911e3284}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Games}
+      \field{number}{3}
+      \field{title}{Procedural Content Generation via Machine Learning (PCGML)}
+      \field{volume}{10}
+      \field{year}{2018}
+      \field{pages}{257\bibrangedash 270}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/TG.2018.2846639
+      \endverb
+    \endentry
     \entry{WFC_In_The_Wild}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=40164fe78eb5370b5d7502de2836f402}{%
@@ -351,8 +1152,8 @@
       \strng{authornamehash}{6f9f5309cb73fdd910932005e06e03a5}
       \strng{authorfullhash}{6f9f5309cb73fdd910932005e06e03a5}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Maxim Gumin's WaveFunctionCollapse (WFC) algorithm is an example-driven image generation algorithm emerging from the craft practice of procedural content generation. In WFC, new images are generated in the style of given examples by ensuring every local window of the output occurs somewhere in the input. Operationally, WFC implements a non-backtracking, greedy search method. This paper examines WFC as an instance of constraint solving methods. We trace WFC's explosive influence on the technical artist community, explain its operation in terms of ideas from the constraint solving literature, and probe its strengths by means of a surrogate implementation using answer set programming.}
@@ -416,8 +1217,8 @@
       \strng{authorbibnamehash}{6dff069aef886d923e234f7c6b13995e}
       \strng{authornamehash}{7ee30bdcffa4c4243f5d5c7b2b0c65b9}
       \strng{authorfullhash}{2a46b8ee95a28b0f09b3addbcd9e5d02}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{CSPLib Problems Library}
@@ -466,8 +1267,8 @@
       \strng{authorbibnamehash}{fcb7c0baf81e63326b8bc8537f692433}
       \strng{authornamehash}{d81c8606ee1406ff627deda844ac0229}
       \strng{authorfullhash}{fcb7c0baf81e63326b8bc8537f692433}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
@@ -498,8 +1299,8 @@
       \list{publisher}{1}{%
         {Springer International Publishing}%
       }
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{isbn}{9783319501369}
       \field{series}{Lecture Notes in Computer Science}
@@ -566,8 +1367,8 @@
       \strng{editorbibnamehash}{6e6577085f2cd61dec80252ebe6e4171}
       \strng{editornamehash}{6e6577085f2cd61dec80252ebe6e4171}
       \strng{editorfullhash}{6e6577085f2cd61dec80252ebe6e4171}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Constraint solvers are complex pieces of software and are notoriously difficult to debug. In large part this is due to the difficulty of pinpointing the source of an error in the vast searches these solvers perform, since the effect of an error may only come to light long after the error is made. In addition, an error does not necessarily lead to the wrong result, further complicating the debugging process. A major source of errors in a constraint solver is the complex constraint propagation algorithms that provide the inference that controls and directs the search. In this paper we show that metamorphic testing is a principled way to test constraint solvers by comparing two different implementations of the same constraint. Specifically, specialised propagators for the constraint are tested against the general purpose table constraint propagator. We report on metamorphic testing of the constraint solver Minion. We demonstrate that the metamorphic testing method is very effective for finding artificial bugs introduced by random code mutation.}
@@ -617,8 +1418,8 @@
       \strng{authorbibnamehash}{4aa98dd244f0699a91e7f785e830112f}
       \strng{authornamehash}{57d2c12a017d98d6fdf0dbfdf45cbf1d}
       \strng{authorfullhash}{4aa98dd244f0699a91e7f785e830112f}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{{Autonomous robots can be employed in exploring unknown environments and performing many tasks, such as, e.g. detecting areas of interest, collecting target objects, etc. Deep reinforcement learning (RL) is often used to train this kind of robot. However, concerning the artificial environments aimed at testing the robot, there is a lack of available data sets and a long time is needed to create them from scratch. A good data set is in fact usually produced with high effort in terms of cost and human work to satisfy the constraints imposed by the expected results. In the first part of this paper, we focus on the specification of the properties of the solutions needed to build a data set, making the case of environment exploration. In the proposed approach, rather than using imperative programming, we explore the possibility of generating data sets using constraint programming in Prolog. In this phase, geometric predicates describe a virtual environment according to inter-space requirements. The second part of the paper is focused on testing the generated data set in an AI gym via space search techniques. We developed a Neuro-Symbolic agent built from the following: (i) A deep Q-learning component implemented in Python, able to address via RL a search problem in the virtual space; the agent has the goal to explore a generated virtual environment to seek for a target, improving its performance through a RL process. (ii) A symbolic component able to re-address the search when the Q-learning component gets stuck in a part of the virtual environment; these components stimulate the agent to move to and explore other parts of the environment. Wide experimentation has been performed, with promising results, and is reported, to demonstrate the effectiveness of the approach.}}
@@ -640,53 +1441,6 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1093/logcom/exad032
-      \endverb
-    \endentry
-    \entry{pcgbook}{book}{}
-      \name{author}{3}{}{%
-        {{hash=ae1fe57aa4583addaa565aa16bfea22b}{%
-           family={Shaker},
-           familyi={S\bibinitperiod},
-           given={Noor},
-           giveni={N\bibinitperiod}}}%
-        {{hash=cbd110b21df9b90cd72ce148aa04de7f}{%
-           family={Togelius},
-           familyi={T\bibinitperiod},
-           given={Julian},
-           giveni={J\bibinitperiod}}}%
-        {{hash=f0a3a62cf62a96f28c7fba0e3e16283b}{%
-           family={Nelson},
-           familyi={N\bibinitperiod},
-           given={Mark\bibnamedelima J.},
-           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{f94d337436520f5209d3360e69b11bc0}
-      \strng{fullhash}{f94d337436520f5209d3360e69b11bc0}
-      \strng{bibnamehash}{f94d337436520f5209d3360e69b11bc0}
-      \strng{authorbibnamehash}{f94d337436520f5209d3360e69b11bc0}
-      \strng{authornamehash}{f94d337436520f5209d3360e69b11bc0}
-      \strng{authorfullhash}{f94d337436520f5209d3360e69b11bc0}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Procedural Content Generation in Games: A Textbook and an Overview of Current Research}
-      \field{urlday}{12}
-      \field{urlmonth}{9}
-      \field{urlyear}{2023}
-      \field{year}{2016}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.1007/978-3-319-42716-4
-      \endverb
-      \verb{urlraw}
-      \verb https://www.pcgbook.com/
-      \endverb
-      \verb{url}
-      \verb https://www.pcgbook.com/
       \endverb
     \endentry
     \entry{Graph_Constraint_Dungeon}{inproceedings}{}
@@ -734,8 +1488,8 @@
       \strng{editorbibnamehash}{1a711dab4262e3bd7f295cd504fdf074}
       \strng{editornamehash}{1a711dab4262e3bd7f295cd504fdf074}
       \strng{editorfullhash}{1a711dab4262e3bd7f295cd504fdf074}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{Keywords: constraint programming, video games, modelization, procedural generation}
@@ -793,8 +1547,8 @@
       \strng{authorbibnamehash}{0daf0c22a477d086361007a4fa4c92e1}
       \strng{authornamehash}{dead78cd96f30f283549d0e12d1cd0fa}
       \strng{authorfullhash}{0daf0c22a477d086361007a4fa4c92e1}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper presents a framework and an initial study in general video game level generation, the problem of generating levels for not only a single game but for any game within a specified range. While existing level generators are tailored to a particular game, this new challenge requires generators to take into account the constraints and affordances of games that might not even have been designed when the generator was constructed. The framework presented here builds on the General Video Game AI framework (GVG-AI) and the Video Game Description Language (VGDL), in order to reap synergies from research activities connected to the General Video Game Playing Competition. The framework will also form the basis for a new track of this competition. In addition to the framework, the paper presents three general level generators and an empirical comparison of their qualities.}
@@ -856,8 +1610,8 @@
       \strng{editorbibnamehash}{06801325150e7eb386e08c097fbbe0da}
       \strng{editornamehash}{06801325150e7eb386e08c097fbbe0da}
       \strng{editorfullhash}{06801325150e7eb386e08c097fbbe0da}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{Keywords: AI Planning, Modelling, Constraint Programming}
@@ -899,8 +1653,8 @@
       \strng{authorbibnamehash}{25404ed48a52c7c18bad5018e3c29298}
       \strng{authornamehash}{25404ed48a52c7c18bad5018e3c29298}
       \strng{authorfullhash}{25404ed48a52c7c18bad5018e3c29298}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Visualization and Computer Graphics}
@@ -944,8 +1698,8 @@
       \strng{authorbibnamehash}{df15e2dec2851b6298d15960e4aeb2ec}
       \strng{authornamehash}{df15e2dec2851b6298d15960e4aeb2ec}
       \strng{authorfullhash}{df15e2dec2851b6298d15960e4aeb2ec}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Wave Function Collapse (WFC) is a non-backtracking, greedy search algorithm that is commonly known for its ability to take an example image and generate similar images. Since its inception, technical artists have explored the algorithm's extensibility and usability through various implementations spanning from 3D world generation to poetry creation. However, there has been no integration of design constraints into the generative process. In this paper, we explore WFC as a constraint satisfaction solver to integrate design principles and practices by modifying components within the algorithm. First, we extend the local constraint reasoning by incorporating non-local constraints as well as upper and lower bounds. Next, we further manipulate the generative space by introducing weight recalculation and dependencies. Lastly, we evaluate our design-focused variant of WFC against the original implementation to examine the associated costs in computational time and memory usage. In summary, this paper describes a technical implementation of integrating design constraints into WFC and analyzes the computational trade-offs.}
@@ -979,8 +1733,8 @@
       \strng{authorbibnamehash}{e62e1b0923b947c62d85adcc29240841}
       \strng{authornamehash}{e62e1b0923b947c62d85adcc29240841}
       \strng{authorfullhash}{e62e1b0923b947c62d85adcc29240841}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Math for Game Developers: Tile-Based Map Generation Using WaveFunctionCollapse in Caves of Qud}
@@ -1019,8 +1773,8 @@
       \strng{authorbibnamehash}{595da9cee23f46315145a007dad4bbe9}
       \strng{authornamehash}{595da9cee23f46315145a007dad4bbe9}
       \strng{authorfullhash}{595da9cee23f46315145a007dad4bbe9}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-3-030-65735-2}
@@ -1180,760 +1934,6 @@
       \endverb
       \verb{url}
       \verb https://github.com/GarnetKane99/WaveFunctionCollapse
-      \endverb
-    \endentry
-    \entry{minecraft}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=286eb1355114f63f5ea725ef0a2d6d5d}{%
-           family={Fingas},
-           familyi={F\bibinitperiod},
-           given={Jon},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Engadget}%
-      }
-      \strng{namehash}{286eb1355114f63f5ea725ef0a2d6d5d}
-      \strng{fullhash}{286eb1355114f63f5ea725ef0a2d6d5d}
-      \strng{bibnamehash}{286eb1355114f63f5ea725ef0a2d6d5d}
-      \strng{authorbibnamehash}{286eb1355114f63f5ea725ef0a2d6d5d}
-      \strng{authornamehash}{286eb1355114f63f5ea725ef0a2d6d5d}
-      \strng{authorfullhash}{286eb1355114f63f5ea725ef0a2d6d5d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Engadget}
-      \field{month}{7}
-      \field{title}{Here’s how “Minecraft” creates its gigantic worlds}
-      \field{urlday}{12}
-      \field{urlmonth}{9}
-      \field{urlyear}{2023}
-      \field{year}{2019}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.engadget.com/2015-03-04-how-minecraft-worlds-are-made.html
-      \endverb
-      \verb{url}
-      \verb https://www.engadget.com/2015-03-04-how-minecraft-worlds-are-made.html
-      \endverb
-    \endentry
-    \entry{nomanssky}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=7f0e9c3928f46bbf1aedc3c0033d301f}{%
-           family={Alexandra},
-           familyi={A\bibinitperiod},
-           given={Heather},
-           giveni={H\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Kotaku}%
-      }
-      \strng{namehash}{7f0e9c3928f46bbf1aedc3c0033d301f}
-      \strng{fullhash}{7f0e9c3928f46bbf1aedc3c0033d301f}
-      \strng{bibnamehash}{7f0e9c3928f46bbf1aedc3c0033d301f}
-      \strng{authorbibnamehash}{7f0e9c3928f46bbf1aedc3c0033d301f}
-      \strng{authornamehash}{7f0e9c3928f46bbf1aedc3c0033d301f}
-      \strng{authorfullhash}{7f0e9c3928f46bbf1aedc3c0033d301f}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Kotaku}
-      \field{month}{10}
-      \field{title}{A look at how no man’s Sky’s procedural generation works}
-      \field{urlday}{12}
-      \field{urlmonth}{9}
-      \field{urlyear}{2023}
-      \field{year}{2016}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://kotaku.com/a-look-at-how-no-mans-skys-procedural-generation-works-1787928446
-      \endverb
-      \verb{url}
-      \verb https://kotaku.com/a-look-at-how-no-mans-skys-procedural-generation-works-1787928446
-      \endverb
-    \endentry
-    \entry{shadowofmordor}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=7a389cfc828479f90d171205f8f48d75}{%
-           family={Game\bibnamedelimb DeveloperStaffJanuary\bibnamedelima 01},
-           familyi={G\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim 0\bibinitperiod},
-           given={2016},
-           giveni={2\bibinitperiod}}}%
-      }
-      \strng{namehash}{7a389cfc828479f90d171205f8f48d75}
-      \strng{fullhash}{7a389cfc828479f90d171205f8f48d75}
-      \strng{bibnamehash}{7a389cfc828479f90d171205f8f48d75}
-      \strng{authorbibnamehash}{7a389cfc828479f90d171205f8f48d75}
-      \strng{authornamehash}{7a389cfc828479f90d171205f8f48d75}
-      \strng{authorfullhash}{7a389cfc828479f90d171205f8f48d75}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Game Developer}
-      \field{month}{1}
-      \field{title}{7 uses of procedural generation that all developers should study}
-      \field{urlday}{12}
-      \field{urlmonth}{9}
-      \field{urlyear}{2023}
-      \field{year}{2016}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.gamedeveloper.com/design/7-uses-of-procedural-generation-that-all-developers-should-study
-      \endverb
-      \verb{url}
-      \verb https://www.gamedeveloper.com/design/7-uses-of-procedural-generation-that-all-developers-should-study
-      \endverb
-    \endentry
-    \entry{borderlands}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=52d7f11475a90a69cacc19d527ac93e2}{%
-           family={Yin-Poole},
-           familyi={Y\bibinithyphendelim P\bibinitperiod},
-           given={Wesley},
-           giveni={W\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Eurogamer.net}%
-      }
-      \strng{namehash}{52d7f11475a90a69cacc19d527ac93e2}
-      \strng{fullhash}{52d7f11475a90a69cacc19d527ac93e2}
-      \strng{bibnamehash}{52d7f11475a90a69cacc19d527ac93e2}
-      \strng{authorbibnamehash}{52d7f11475a90a69cacc19d527ac93e2}
-      \strng{authornamehash}{52d7f11475a90a69cacc19d527ac93e2}
-      \strng{authorfullhash}{52d7f11475a90a69cacc19d527ac93e2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Eurogamer.net}
-      \field{month}{7}
-      \field{title}{How many weapons are in borderlands 2?}
-      \field{urlday}{12}
-      \field{urlmonth}{9}
-      \field{urlyear}{2023}
-      \field{year}{2012}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.eurogamer.net/how-many-weapons-are-in-borderlands-2
-      \endverb
-      \verb{url}
-      \verb https://www.eurogamer.net/how-many-weapons-are-in-borderlands-2
-      \endverb
-    \endentry
-    \entry{minecraft_screenshot}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=e3416675e3a20772d0b78f45f4ce995d}{%
-           family={Minecraft},
-           familyi={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{e3416675e3a20772d0b78f45f4ce995d}
-      \strng{fullhash}{e3416675e3a20772d0b78f45f4ce995d}
-      \strng{bibnamehash}{e3416675e3a20772d0b78f45f4ce995d}
-      \strng{authorbibnamehash}{e3416675e3a20772d0b78f45f4ce995d}
-      \strng{authornamehash}{e3416675e3a20772d0b78f45f4ce995d}
-      \strng{authorfullhash}{e3416675e3a20772d0b78f45f4ce995d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Minecraft Caves and Cliffs Snapshot Twitter Post}
-      \field{urlday}{17}
-      \field{urlmonth}{3}
-      \field{urlyear}{2024}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://twitter.com/Minecraft/status/1414978446229393420
-      \endverb
-      \verb{url}
-      \verb https://twitter.com/Minecraft/status/1414978446229393420
-      \endverb
-    \endentry
-    \entry{AIGC_Survey}{misc}{}
-      \name{author}{7}{}{%
-        {{hash=c1cf3e8a19f3a6f7ebf33f2775b045cb}{%
-           family={Cao},
-           familyi={C\bibinitperiod},
-           given={Yihan},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=52602db9cf98a7b30eab3ee6b1c2490e}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Siyu},
-           giveni={S\bibinitperiod}}}%
-        {{hash=c8c0e2e8882c8cbe0bbeb873ae3dc3df}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Yixin},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=c7400217cbb00404a8746d77ed87c5d0}{%
-           family={Yan},
-           familyi={Y\bibinitperiod},
-           given={Zhiling},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=f3592c8d3564b8903ff61ebb47fbd1ed}{%
-           family={Dai},
-           familyi={D\bibinitperiod},
-           given={Yutong},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=ed7b2de2f08bfa6638d5d174d55d839b}{%
-           family={Yu},
-           familyi={Y\bibinitperiod},
-           given={Philip\bibnamedelima S.},
-           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-        {{hash=48972a9b89e478f69f1b1e95205c6278}{%
-           family={Sun},
-           familyi={S\bibinitperiod},
-           given={Lichao},
-           giveni={L\bibinitperiod}}}%
-      }
-      \strng{namehash}{2dc6c0f9252df6a0e4f98d396ee95e60}
-      \strng{fullhash}{98d44bda2d2a959d34ce202bbbdb84c0}
-      \strng{bibnamehash}{13fd878e851afeadcbe2e4032744dcee}
-      \strng{authorbibnamehash}{13fd878e851afeadcbe2e4032744dcee}
-      \strng{authornamehash}{2dc6c0f9252df6a0e4f98d396ee95e60}
-      \strng{authorfullhash}{98d44bda2d2a959d34ce202bbbdb84c0}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.AI}
-      \field{eprinttype}{arXiv}
-      \field{title}{A Comprehensive Survey of AI-Generated Content (AIGC): A History of Generative AI from GAN to ChatGPT}
-      \field{year}{2023}
-      \verb{eprint}
-      \verb 2303.04226
-      \endverb
-    \endentry
-    \entry{Magic3D}{misc}{}
-      \name{author}{10}{}{%
-        {{hash=b2dc759174e1ae2d25f9ed0f8edd4a8d}{%
-           family={Lin},
-           familyi={L\bibinitperiod},
-           given={Chen-Hsuan},
-           giveni={C\bibinithyphendelim H\bibinitperiod}}}%
-        {{hash=9a3433149c20baec10f299b1558363b5}{%
-           family={Gao},
-           familyi={G\bibinitperiod},
-           given={Jun},
-           giveni={J\bibinitperiod}}}%
-        {{hash=473158d70ee692d75b3e65756265bca2}{%
-           family={Tang},
-           familyi={T\bibinitperiod},
-           given={Luming},
-           giveni={L\bibinitperiod}}}%
-        {{hash=38b897098df37c367803d4ea5b650de8}{%
-           family={Takikawa},
-           familyi={T\bibinitperiod},
-           given={Towaki},
-           giveni={T\bibinitperiod}}}%
-        {{hash=c01a37ca191377410cb09f2dafdd7cba}{%
-           family={Zeng},
-           familyi={Z\bibinitperiod},
-           given={Xiaohui},
-           giveni={X\bibinitperiod}}}%
-        {{hash=18e2748019898f7b8be59e77f5b8b20e}{%
-           family={Huang},
-           familyi={H\bibinitperiod},
-           given={Xun},
-           giveni={X\bibinitperiod}}}%
-        {{hash=1385d3fa16f20884c6f1879595666f6c}{%
-           family={Kreis},
-           familyi={K\bibinitperiod},
-           given={Karsten},
-           giveni={K\bibinitperiod}}}%
-        {{hash=132467c4a712be4725c988c89c68a30e}{%
-           family={Fidler},
-           familyi={F\bibinitperiod},
-           given={Sanja},
-           giveni={S\bibinitperiod}}}%
-        {{hash=0c3c4604957af5f2ce5f1537fdbaa510}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Ming-Yu},
-           giveni={M\bibinithyphendelim Y\bibinitperiod}}}%
-        {{hash=08f925fe4692d130a1d7cb7d94483351}{%
-           family={Lin},
-           familyi={L\bibinitperiod},
-           given={Tsung-Yi},
-           giveni={T\bibinithyphendelim Y\bibinitperiod}}}%
-      }
-      \strng{namehash}{b8dd6189552aeeda8472209b34b4dac0}
-      \strng{fullhash}{38d0920f3162b05f37e01372b4917ce1}
-      \strng{bibnamehash}{1d0259b6cb0820d0e3d367756160a9cb}
-      \strng{authorbibnamehash}{1d0259b6cb0820d0e3d367756160a9cb}
-      \strng{authornamehash}{b8dd6189552aeeda8472209b34b4dac0}
-      \strng{authorfullhash}{38d0920f3162b05f37e01372b4917ce1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.CV}
-      \field{eprinttype}{arXiv}
-      \field{title}{Magic3D: High-Resolution Text-to-3D Content Creation}
-      \field{year}{2023}
-      \verb{eprint}
-      \verb 2211.10440
-      \endverb
-    \endentry
-    \entry{Self_Driving_Cars}{inproceedings}{}
-      \name{author}{3}{}{%
-        {{hash=f2e1f9579174419a6228418e8317821f}{%
-           family={Gambi},
-           familyi={G\bibinitperiod},
-           given={Alessio},
-           giveni={A\bibinitperiod}}}%
-        {{hash=70e7313d13be1905982cfad0089ebafe}{%
-           family={Mueller},
-           familyi={M\bibinitperiod},
-           given={Marc},
-           giveni={M\bibinitperiod}}}%
-        {{hash=fc66f39b83d69c05a49d023f90b98586}{%
-           family={Fraser},
-           familyi={F\bibinitperiod},
-           given={Gordon},
-           giveni={G\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Beijing, China}%
-      }
-      \list{publisher}{1}{%
-        {Association for Computing Machinery}%
-      }
-      \strng{namehash}{7a2b97a3a77e2313463f78e4161758b3}
-      \strng{fullhash}{7a2b97a3a77e2313463f78e4161758b3}
-      \strng{bibnamehash}{7a2b97a3a77e2313463f78e4161758b3}
-      \strng{authorbibnamehash}{7a2b97a3a77e2313463f78e4161758b3}
-      \strng{authornamehash}{7a2b97a3a77e2313463f78e4161758b3}
-      \strng{authorfullhash}{7a2b97a3a77e2313463f78e4161758b3}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Self-driving cars rely on software which needs to be thoroughly tested. Testing self-driving car software in real traffic is not only expensive but also dangerous, and has already caused fatalities. Virtual tests, in which self-driving car software is tested in computer simulations, offer a more efficient and safer alternative compared to naturalistic field operational tests. However, creating suitable test scenarios is laborious and difficult. In this paper we combine procedural content generation, a technique commonly employed in modern video games, and search-based testing, a testing technique proven to be effective in many domains, in order to automatically create challenging virtual scenarios for testing self-driving car soft- ware. Our AsFault prototype implements this approach to generate virtual roads for testing lane keeping, one of the defining features of autonomous driving. Evaluation on two different self-driving car software systems demonstrates that AsFault can generate effective virtual road networks that succeed in revealing software failures, which manifest as cars departing their lane. Compared to random testing AsFault was not only more efficient, but also caused up to twice as many lane departures.}
-      \field{booktitle}{Proceedings of the 28th ACM SIGSOFT International Symposium on Software Testing and Analysis}
-      \field{isbn}{9781450362245}
-      \field{series}{ISSTA 2019}
-      \field{title}{Automatically Testing Self-Driving Cars with Search-Based Procedural Content Generation}
-      \field{year}{2019}
-      \field{pages}{318\bibrangedash 328}
-      \range{pages}{11}
-      \verb{doi}
-      \verb 10.1145/3293882.3330566
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1145/3293882.3330566
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1145/3293882.3330566
-      \endverb
-      \keyw{automatic test generation,procedural content generation,search-based testing,self-driving cars}
-    \endentry
-    \entry{Stable_Diffusion}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=230efc1db61425699ee20089c8e55c13}{%
-           family={{Stability AI}},
-           familyi={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{230efc1db61425699ee20089c8e55c13}
-      \strng{fullhash}{230efc1db61425699ee20089c8e55c13}
-      \strng{bibnamehash}{230efc1db61425699ee20089c8e55c13}
-      \strng{authorbibnamehash}{230efc1db61425699ee20089c8e55c13}
-      \strng{authornamehash}{230efc1db61425699ee20089c8e55c13}
-      \strng{authorfullhash}{230efc1db61425699ee20089c8e55c13}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Stable Diffusion Generative Models}
-      \field{urlday}{26}
-      \field{urlmonth}{10}
-      \field{urlyear}{2023}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://github.com/Stability-AI/generative-models
-      \endverb
-      \verb{url}
-      \verb https://github.com/Stability-AI/generative-models
-      \endverb
-    \endentry
-    \entry{Chat_GPT}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=0523b13262b12c215d8009938f5c14f1}{%
-           family={OpenAI},
-           familyi={O\bibinitperiod}}}%
-      }
-      \strng{namehash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{fullhash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{bibnamehash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{authorbibnamehash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{authornamehash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{authorfullhash}{0523b13262b12c215d8009938f5c14f1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{ChatGPT}
-      \field{urlday}{26}
-      \field{urlmonth}{10}
-      \field{urlyear}{2023}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://chat.openai.com/
-      \endverb
-      \verb{url}
-      \verb https://chat.openai.com/
-      \endverb
-    \endentry
-    \entry{GitHub_Copilot}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=d3b7c913cd04ebfec0e9ec32cb6fd58c}{%
-           family={GitHub},
-           familyi={G\bibinitperiod}}}%
-      }
-      \strng{namehash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
-      \strng{fullhash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
-      \strng{bibnamehash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
-      \strng{authorbibnamehash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
-      \strng{authornamehash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
-      \strng{authorfullhash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{GitHub Copilot}
-      \field{urlday}{26}
-      \field{urlmonth}{10}
-      \field{urlyear}{2023}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://github.com/features/copilot
-      \endverb
-      \verb{url}
-      \verb https://github.com/features/copilot
-      \endverb
-    \endentry
-    \entry{DeepLearningPCG}{article}{}
-      \name{author}{6}{}{%
-        {{hash=23048a7504f1280f267bbc5de576ad5c}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Jialin},
-           giveni={J\bibinitperiod}}}%
-        {{hash=b76cd99c7d9f136d105a5b9ef54cd023}{%
-           family={Snodgrass},
-           familyi={S\bibinitperiod},
-           given={Sam},
-           giveni={S\bibinitperiod}}}%
-        {{hash=8cf60c4d9250095feca7d9e907cf7f45}{%
-           family={Khalifa},
-           familyi={K\bibinitperiod},
-           given={Ahmed},
-           giveni={A\bibinitperiod}}}%
-        {{hash=ac3851112edf82ed4ab22929459e0622}{%
-           family={Risi},
-           familyi={R\bibinitperiod},
-           given={Sebastian},
-           giveni={S\bibinitperiod}}}%
-        {{hash=cf368727b2920ced839da42cbd3e69a0}{%
-           family={Yannakakis},
-           familyi={Y\bibinitperiod},
-           given={Georgios\bibnamedelima N.},
-           giveni={G\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
-        {{hash=cbd110b21df9b90cd72ce148aa04de7f}{%
-           family={Togelius},
-           familyi={T\bibinitperiod},
-           given={Julian},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{d571de3568ac55431f20d4ecc2d15dd4}
-      \strng{fullhash}{4a53915dbc9f6139f3e297df79be26cd}
-      \strng{bibnamehash}{4a53915dbc9f6139f3e297df79be26cd}
-      \strng{authorbibnamehash}{4a53915dbc9f6139f3e297df79be26cd}
-      \strng{authornamehash}{d571de3568ac55431f20d4ecc2d15dd4}
-      \strng{authorfullhash}{4a53915dbc9f6139f3e297df79be26cd}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Procedural content generation in video games has a long history. Existing procedural content generation methods, such as search-based, solver-based, rule-based and grammar-based methods have been applied to various content types such as levels, maps, character models, and textures. A research field centered on content generation in games has existed for more than a decade. More recently, deep learning has powered a remarkable range of inventions in content production, which are applicable to games. While some cutting-edge deep learning methods are applied on their own, others are applied in combination with more traditional methods, or in an interactive setting. This article surveys the various deep learning methods that have been applied to generate game content directly or indirectly, discusses deep learning methods that could be used for content generation purposes but are rarely used today, and envisages some limitations and potential future directions of deep learning for procedural content generation.}
-      \field{issn}{1433-3058}
-      \field{journaltitle}{Neural Computing and Applications}
-      \field{month}{1}
-      \field{number}{1}
-      \field{title}{Deep learning for procedural content generation}
-      \field{volume}{33}
-      \field{year}{2021}
-      \field{pages}{19\bibrangedash 37}
-      \range{pages}{19}
-      \verb{doi}
-      \verb 10.1007/s00521-020-05383-8
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1007/s00521-020-05383-8
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1007/s00521-020-05383-8
-      \endverb
-    \endentry
-    \entry{VGDL}{article}{}
-      \name{author}{6}{}{%
-        {{hash=3f669771a768bee87a4fb3de16c2fe70}{%
-           family={Perez-Liebana},
-           familyi={P\bibinithyphendelim L\bibinitperiod},
-           given={Diego},
-           giveni={D\bibinitperiod}}}%
-        {{hash=23048a7504f1280f267bbc5de576ad5c}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Jialin},
-           giveni={J\bibinitperiod}}}%
-        {{hash=8cf60c4d9250095feca7d9e907cf7f45}{%
-           family={Khalifa},
-           familyi={K\bibinitperiod},
-           given={Ahmed},
-           giveni={A\bibinitperiod}}}%
-        {{hash=42b28f71a84dbbf5e5fb2a46cd3ef552}{%
-           family={Gaina},
-           familyi={G\bibinitperiod},
-           given={Raluca\bibnamedelima D.},
-           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=cbd110b21df9b90cd72ce148aa04de7f}{%
-           family={Togelius},
-           familyi={T\bibinitperiod},
-           given={Julian},
-           giveni={J\bibinitperiod}}}%
-        {{hash=96c14bf82b5e245648d824afab085394}{%
-           family={Lucas},
-           familyi={L\bibinitperiod},
-           given={Simon\bibnamedelima M.},
-           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-      }
-      \strng{namehash}{c4f86dc33841d3a9967967e15c97922a}
-      \strng{fullhash}{85e6737ebf0b023acbd5f2e7f6ddf1f6}
-      \strng{bibnamehash}{85e6737ebf0b023acbd5f2e7f6ddf1f6}
-      \strng{authorbibnamehash}{85e6737ebf0b023acbd5f2e7f6ddf1f6}
-      \strng{authornamehash}{c4f86dc33841d3a9967967e15c97922a}
-      \strng{authorfullhash}{85e6737ebf0b023acbd5f2e7f6ddf1f6}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on Games}
-      \field{number}{3}
-      \field{title}{General Video Game AI: A Multitrack Framework for Evaluating Agents, Games, and Content Generation Algorithms}
-      \field{volume}{11}
-      \field{year}{2019}
-      \field{pages}{195\bibrangedash 214}
-      \range{pages}{20}
-      \verb{doi}
-      \verb 10.1109/TG.2019.2901021
-      \endverb
-    \endentry
-    \entry{VGDL_ASP}{inproceedings}{}
-      \name{author}{3}{}{%
-        {{hash=efbc6abc2aa800b147c91954113f8d12}{%
-           family={Neufeld},
-           familyi={N\bibinitperiod},
-           given={Xenija},
-           giveni={X\bibinitperiod}}}%
-        {{hash=0791bc0e37ea2dfc81bfead0967176ae}{%
-           family={Mostaghim},
-           familyi={M\bibinitperiod},
-           given={Sanaz},
-           giveni={S\bibinitperiod}}}%
-        {{hash=3f669771a768bee87a4fb3de16c2fe70}{%
-           family={Perez-Liebana},
-           familyi={P\bibinithyphendelim L\bibinitperiod},
-           given={Diego},
-           giveni={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{5cb37a58a8ded9dafbe596683b4a0275}
-      \strng{fullhash}{5cb37a58a8ded9dafbe596683b4a0275}
-      \strng{bibnamehash}{5cb37a58a8ded9dafbe596683b4a0275}
-      \strng{authorbibnamehash}{5cb37a58a8ded9dafbe596683b4a0275}
-      \strng{authornamehash}{5cb37a58a8ded9dafbe596683b4a0275}
-      \strng{authorfullhash}{5cb37a58a8ded9dafbe596683b4a0275}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{2015 7th Computer Science and Electronic Engineering Conference (CEEC)}
-      \field{title}{Procedural level generation with answer set programming for general Video Game playing}
-      \field{year}{2015}
-      \field{pages}{207\bibrangedash 212}
-      \range{pages}{6}
-      \verb{doi}
-      \verb 10.1109/CEEC.2015.7332726
-      \endverb
-    \endentry
-    \entry{CESAGAN}{inproceedings}{}
-      \name{author}{6}{}{%
-        {{hash=0ddfa95232f4728eb2ebf49c74498e14}{%
-           family={Rodriguez\bibnamedelima Torrado},
-           familyi={R\bibinitperiod\bibinitdelim T\bibinitperiod},
-           given={Ruben},
-           giveni={R\bibinitperiod}}}%
-        {{hash=8cf60c4d9250095feca7d9e907cf7f45}{%
-           family={Khalifa},
-           familyi={K\bibinitperiod},
-           given={Ahmed},
-           giveni={A\bibinitperiod}}}%
-        {{hash=36f2a616e2e47e1d55e21a70f5776224}{%
-           family={Cerny\bibnamedelima Green},
-           familyi={C\bibinitperiod\bibinitdelim G\bibinitperiod},
-           given={Michael},
-           giveni={M\bibinitperiod}}}%
-        {{hash=8f64e114087a1f9feeadea103501d355}{%
-           family={Justesen},
-           familyi={J\bibinitperiod},
-           given={Niels},
-           giveni={N\bibinitperiod}}}%
-        {{hash=ac3851112edf82ed4ab22929459e0622}{%
-           family={Risi},
-           familyi={R\bibinitperiod},
-           given={Sebastian},
-           giveni={S\bibinitperiod}}}%
-        {{hash=cbd110b21df9b90cd72ce148aa04de7f}{%
-           family={Togelius},
-           familyi={T\bibinitperiod},
-           given={Julian},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{a2fff08dc766e451dedf8e690a0e6c1b}
-      \strng{fullhash}{913d8488d31d0f6b8e677728867c505e}
-      \strng{bibnamehash}{913d8488d31d0f6b8e677728867c505e}
-      \strng{authorbibnamehash}{913d8488d31d0f6b8e677728867c505e}
-      \strng{authornamehash}{a2fff08dc766e451dedf8e690a0e6c1b}
-      \strng{authorfullhash}{913d8488d31d0f6b8e677728867c505e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{2020 IEEE Conference on Games (CoG)}
-      \field{title}{Bootstrapping Conditional GANs for Video Game Level Generation}
-      \field{year}{2020}
-      \field{pages}{41\bibrangedash 48}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.1109/CoG47356.2020.9231576
-      \endverb
-    \endentry
-    \entry{Markov_PCGRL}{article}{}
-      \name{author}{4}{}{%
-        {{hash=8cf60c4d9250095feca7d9e907cf7f45}{%
-           family={Khalifa},
-           familyi={K\bibinitperiod},
-           given={Ahmed},
-           giveni={A\bibinitperiod}}}%
-        {{hash=4505e041f77b137101094a2522aed23c}{%
-           family={Bontrager},
-           familyi={B\bibinitperiod},
-           given={Philip},
-           giveni={P\bibinitperiod}}}%
-        {{hash=495f1f7321ab1541320d57f92a26ae86}{%
-           family={Earle},
-           familyi={E\bibinitperiod},
-           given={Sam},
-           giveni={S\bibinitperiod}}}%
-        {{hash=cbd110b21df9b90cd72ce148aa04de7f}{%
-           family={Togelius},
-           familyi={T\bibinitperiod},
-           given={Julian},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{2c7174d6a982aa581b979fcb192361f4}
-      \strng{fullhash}{ff020027ac0762da6abd909bbc870363}
-      \strng{bibnamehash}{ff020027ac0762da6abd909bbc870363}
-      \strng{authorbibnamehash}{ff020027ac0762da6abd909bbc870363}
-      \strng{authornamehash}{2c7174d6a982aa581b979fcb192361f4}
-      \strng{authorfullhash}{ff020027ac0762da6abd909bbc870363}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment}
-      \field{month}{10}
-      \field{number}{1}
-      \field{title}{PCGRL: Procedural Content Generation via Reinforcement Learning}
-      \field{volume}{16}
-      \field{year}{2020}
-      \field{pages}{95\bibrangedash 101}
-      \range{pages}{7}
-      \verb{doi}
-      \verb 10.1609/aiide.v16i1.7416
-      \endverb
-      \verb{urlraw}
-      \verb https://ojs.aaai.org/index.php/AIIDE/article/view/7416
-      \endverb
-      \verb{url}
-      \verb https://ojs.aaai.org/index.php/AIIDE/article/view/7416
-      \endverb
-    \endentry
-    \entry{PCGML}{article}{}
-      \name{author}{8}{}{%
-        {{hash=198982c57c855e20171a0d57488800c6}{%
-           family={Summerville},
-           familyi={S\bibinitperiod},
-           given={Adam},
-           giveni={A\bibinitperiod}}}%
-        {{hash=b76cd99c7d9f136d105a5b9ef54cd023}{%
-           family={Snodgrass},
-           familyi={S\bibinitperiod},
-           given={Sam},
-           giveni={S\bibinitperiod}}}%
-        {{hash=8e135527091b0f84e96d6573052d149b}{%
-           family={Guzdial},
-           familyi={G\bibinitperiod},
-           given={Matthew},
-           giveni={M\bibinitperiod}}}%
-        {{hash=36d10fc86048a38b49af3fada5db7c52}{%
-           family={Holmgård},
-           familyi={H\bibinitperiod},
-           given={Christoffer},
-           giveni={C\bibinitperiod}}}%
-        {{hash=993b84f2da72478a96a6ddccf1db4953}{%
-           family={Hoover},
-           familyi={H\bibinitperiod},
-           given={Amy\bibnamedelima K.},
-           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
-        {{hash=5c2dfe32580e160e14b6a6838e0f77c9}{%
-           family={Isaksen},
-           familyi={I\bibinitperiod},
-           given={Aaron},
-           giveni={A\bibinitperiod}}}%
-        {{hash=b42b016dc19b9d5aaa8679d8a1506a52}{%
-           family={Nealen},
-           familyi={N\bibinitperiod},
-           given={Andy},
-           giveni={A\bibinitperiod}}}%
-        {{hash=cbd110b21df9b90cd72ce148aa04de7f}{%
-           family={Togelius},
-           familyi={T\bibinitperiod},
-           given={Julian},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{b3864d8699c0d563ca74509abcb362dd}
-      \strng{fullhash}{6e2076797d39e4d4274a6633911e3284}
-      \strng{bibnamehash}{980472e054c4b0a4d53d1c00a3e68019}
-      \strng{authorbibnamehash}{980472e054c4b0a4d53d1c00a3e68019}
-      \strng{authornamehash}{b3864d8699c0d563ca74509abcb362dd}
-      \strng{authorfullhash}{6e2076797d39e4d4274a6633911e3284}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on Games}
-      \field{number}{3}
-      \field{title}{Procedural Content Generation via Machine Learning (PCGML)}
-      \field{volume}{10}
-      \field{year}{2018}
-      \field{pages}{257\bibrangedash 270}
-      \range{pages}{14}
-      \verb{doi}
-      \verb 10.1109/TG.2018.2846639
       \endverb
     \endentry
     \entry{unity-WFC}{misc}{}

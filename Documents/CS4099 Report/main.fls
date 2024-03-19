@@ -338,36 +338,33 @@ INPUT main.aux
 INPUT ./Main Sections/02Introduction.aux
 INPUT ./Main Sections/02Introduction.aux
 INPUT Main Sections/02Introduction.aux
-INPUT ./Main Sections/03PlayerGuide.aux
-INPUT ./Main Sections/03PlayerGuide.aux
-INPUT Main Sections/03PlayerGuide.aux
-INPUT ./Main Sections/04LiteratureReview.aux
-INPUT ./Main Sections/04LiteratureReview.aux
-INPUT Main Sections/04LiteratureReview.aux
-INPUT ./Main Sections/05RequirementsSpecification.aux
-INPUT ./Main Sections/05RequirementsSpecification.aux
-INPUT Main Sections/05RequirementsSpecification.aux
-INPUT ./Main Sections/06SoftwareEngineeringProcess.aux
-INPUT ./Main Sections/06SoftwareEngineeringProcess.aux
-INPUT Main Sections/06SoftwareEngineeringProcess.aux
-INPUT ./Main Sections/07Ethics.aux
-INPUT ./Main Sections/07Ethics.aux
-INPUT Main Sections/07Ethics.aux
-INPUT ./Main Sections/08Design.aux
-INPUT ./Main Sections/08Design.aux
-INPUT Main Sections/08Design.aux
-INPUT ./Main Sections/09Implementation.aux
-INPUT ./Main Sections/09Implementation.aux
-INPUT Main Sections/09Implementation.aux
-INPUT ./Main Sections/10Evaluation.aux
-INPUT ./Main Sections/10Evaluation.aux
-INPUT Main Sections/10Evaluation.aux
-INPUT ./Main Sections/11Conclusion.aux
-INPUT ./Main Sections/11Conclusion.aux
-INPUT Main Sections/11Conclusion.aux
-INPUT ./Main Sections/12Appendix.aux
-INPUT ./Main Sections/12Appendix.aux
-INPUT Main Sections/12Appendix.aux
+INPUT ./Main Sections/03LiteratureReview.aux
+INPUT ./Main Sections/03LiteratureReview.aux
+INPUT Main Sections/03LiteratureReview.aux
+INPUT ./Main Sections/04RequirementsSpecification.aux
+INPUT ./Main Sections/04RequirementsSpecification.aux
+INPUT Main Sections/04RequirementsSpecification.aux
+INPUT ./Main Sections/05SoftwareEngineeringProcess.aux
+INPUT ./Main Sections/05SoftwareEngineeringProcess.aux
+INPUT Main Sections/05SoftwareEngineeringProcess.aux
+INPUT ./Main Sections/06Ethics.aux
+INPUT ./Main Sections/06Ethics.aux
+INPUT Main Sections/06Ethics.aux
+INPUT ./Main Sections/07Design.aux
+INPUT ./Main Sections/07Design.aux
+INPUT Main Sections/07Design.aux
+INPUT ./Main Sections/08Implementation.aux
+INPUT ./Main Sections/08Implementation.aux
+INPUT Main Sections/08Implementation.aux
+INPUT ./Main Sections/09Evaluation.aux
+INPUT ./Main Sections/09Evaluation.aux
+INPUT Main Sections/09Evaluation.aux
+INPUT ./Main Sections/10Conclusion.aux
+INPUT ./Main Sections/10Conclusion.aux
+INPUT Main Sections/10Conclusion.aux
+INPUT ./Main Sections/11Appendix.aux
+INPUT ./Main Sections/11Appendix.aux
+INPUT Main Sections/11Appendix.aux
 OUTPUT main.aux
 INPUT h:/Program Files/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT h:/Program Files/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -501,19 +498,48 @@ INPUT ./Images/IMIB9.png
 INPUT ./Images/IMIB9.png
 INPUT ./Images/IMIB9.png
 INPUT ./Images/IMIB9.png
-INPUT ./Main Sections/03PlayerGuide.tex
-INPUT ./Main Sections/03PlayerGuide.tex
-OUTPUT Main Sections/03PlayerGuide.aux
-INPUT ./Main Sections/03PlayerGuide.tex
-INPUT ./Main Sections/03PlayerGuide.tex
-INPUT Main Sections/03PlayerGuide.tex
-INPUT ./Main Sections/04LiteratureReview.tex
-INPUT ./Main Sections/04LiteratureReview.tex
-OUTPUT Main Sections/04LiteratureReview.aux
-INPUT ./Main Sections/04LiteratureReview.tex
-INPUT ./Main Sections/04LiteratureReview.tex
-INPUT Main Sections/04LiteratureReview.tex
+INPUT ./Main Sections/03LiteratureReview.tex
+INPUT ./Main Sections/03LiteratureReview.tex
+OUTPUT Main Sections/03LiteratureReview.aux
+INPUT ./Main Sections/03LiteratureReview.tex
+INPUT ./Main Sections/03LiteratureReview.tex
+INPUT Main Sections/03LiteratureReview.tex
 INPUT h:/Program Files/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm
+INPUT ./Images/Minecraft.jpg
+INPUT ./Images/Minecraft.jpg
+INPUT ./Images/Minecraft.jpg
+INPUT ./Images/Minecraft.jpg
+INPUT ./Images/Minecraft.jpg
+INPUT ./Images/Magic3D.jpg
+INPUT ./Images/Magic3D.jpg
+INPUT ./Images/Magic3D.jpg
+INPUT ./Images/Magic3D.jpg
+INPUT ./Images/Magic3D.jpg
+INPUT ./Images/StableDiffusion.jpg
+INPUT ./Images/StableDiffusion.jpg
+INPUT ./Images/StableDiffusion.jpg
+INPUT ./Images/StableDiffusion.jpg
+INPUT ./Images/StableDiffusion.jpg
+INPUT ./Images/VGDL.jpg
+INPUT ./Images/VGDL.jpg
+INPUT ./Images/VGDL.jpg
+INPUT ./Images/VGDL.jpg
+INPUT ./Images/VGDL.jpg
+INPUT ./Images/CESAGAN.jpg
+INPUT ./Images/CESAGAN.jpg
+INPUT ./Images/CESAGAN.jpg
+INPUT ./Images/CESAGAN.jpg
+INPUT ./Images/CESAGAN.jpg
+INPUT ./Images/PCGRL.jpg
+INPUT ./Images/PCGRL.jpg
+INPUT ./Images/PCGRL.jpg
+INPUT ./Images/PCGRL.jpg
+INPUT ./Images/PCGRL.jpg
+INPUT ./Images/PCGMLTaxonomy.jpg
+INPUT ./Images/PCGMLTaxonomy.jpg
+INPUT ./Images/PCGMLTaxonomy.jpg
+INPUT ./Images/PCGMLTaxonomy.jpg
+INPUT ./Images/PCGMLTaxonomy.jpg
 INPUT ./Images/AlgorithmSelection.png
 INPUT ./Images/AlgorithmSelection.png
 INPUT ./Images/AlgorithmSelection.png
@@ -669,133 +695,191 @@ INPUT ./Images/SymmetryDictionary.png
 INPUT ./Images/SymmetryDictionary.png
 INPUT ./Images/SymmetryDictionary.png
 INPUT ./Images/SymmetryDictionary.png
-INPUT ./Images/Minecraft.jpg
-INPUT ./Images/Minecraft.jpg
-INPUT ./Images/Minecraft.jpg
-INPUT ./Images/Minecraft.jpg
-INPUT ./Images/Minecraft.jpg
-INPUT ./Images/Magic3D.jpg
-INPUT ./Images/Magic3D.jpg
-INPUT ./Images/Magic3D.jpg
-INPUT ./Images/Magic3D.jpg
-INPUT ./Images/Magic3D.jpg
-INPUT ./Images/StableDiffusion.jpg
-INPUT ./Images/StableDiffusion.jpg
-INPUT ./Images/StableDiffusion.jpg
-INPUT ./Images/StableDiffusion.jpg
-INPUT ./Images/StableDiffusion.jpg
-INPUT ./Images/VGDL.jpg
-INPUT ./Images/VGDL.jpg
-INPUT ./Images/VGDL.jpg
-INPUT ./Images/VGDL.jpg
-INPUT ./Images/VGDL.jpg
-INPUT ./Images/CESAGAN.jpg
-INPUT ./Images/CESAGAN.jpg
-INPUT ./Images/CESAGAN.jpg
-INPUT ./Images/CESAGAN.jpg
-INPUT ./Images/CESAGAN.jpg
-INPUT ./Images/PCGRL.jpg
-INPUT ./Images/PCGRL.jpg
-INPUT ./Images/PCGRL.jpg
-INPUT ./Images/PCGRL.jpg
-INPUT ./Images/PCGRL.jpg
-INPUT ./Images/PCGMLTaxonomy.jpg
-INPUT ./Images/PCGMLTaxonomy.jpg
-INPUT ./Images/PCGMLTaxonomy.jpg
-INPUT ./Images/PCGMLTaxonomy.jpg
-INPUT ./Images/PCGMLTaxonomy.jpg
-INPUT ./Main Sections/05RequirementsSpecification.tex
-INPUT ./Main Sections/05RequirementsSpecification.tex
-OUTPUT Main Sections/05RequirementsSpecification.aux
-INPUT ./Main Sections/05RequirementsSpecification.tex
-INPUT ./Main Sections/05RequirementsSpecification.tex
-INPUT Main Sections/05RequirementsSpecification.tex
+INPUT ./Main Sections/04RequirementsSpecification.tex
+INPUT ./Main Sections/04RequirementsSpecification.tex
+OUTPUT Main Sections/04RequirementsSpecification.aux
+INPUT ./Main Sections/04RequirementsSpecification.tex
+INPUT ./Main Sections/04RequirementsSpecification.tex
+INPUT Main Sections/04RequirementsSpecification.tex
 INPUT h:/Program Files/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
 INPUT h:/Program Files/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-INPUT ./Main Sections/06SoftwareEngineeringProcess.tex
-INPUT ./Main Sections/06SoftwareEngineeringProcess.tex
-OUTPUT Main Sections/06SoftwareEngineeringProcess.aux
-INPUT ./Main Sections/06SoftwareEngineeringProcess.tex
-INPUT ./Main Sections/06SoftwareEngineeringProcess.tex
-INPUT Main Sections/06SoftwareEngineeringProcess.tex
+INPUT ./Main Sections/05SoftwareEngineeringProcess.tex
+INPUT ./Main Sections/05SoftwareEngineeringProcess.tex
+OUTPUT Main Sections/05SoftwareEngineeringProcess.aux
+INPUT ./Main Sections/05SoftwareEngineeringProcess.tex
+INPUT ./Main Sections/05SoftwareEngineeringProcess.tex
+INPUT Main Sections/05SoftwareEngineeringProcess.tex
 INPUT h:/Program Files/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT h:/Program Files/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT h:/Program Files/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT h:/Program Files/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm
-INPUT ./Main Sections/07Ethics.tex
-INPUT ./Main Sections/07Ethics.tex
-OUTPUT Main Sections/07Ethics.aux
-INPUT ./Main Sections/07Ethics.tex
-INPUT ./Main Sections/07Ethics.tex
-INPUT Main Sections/07Ethics.tex
-INPUT ./Main Sections/08Design.tex
-INPUT ./Main Sections/08Design.tex
-OUTPUT Main Sections/08Design.aux
-INPUT ./Main Sections/08Design.tex
-INPUT ./Main Sections/08Design.tex
-INPUT Main Sections/08Design.tex
+INPUT ./Main Sections/06Ethics.tex
+INPUT ./Main Sections/06Ethics.tex
+OUTPUT Main Sections/06Ethics.aux
+INPUT ./Main Sections/06Ethics.tex
+INPUT ./Main Sections/06Ethics.tex
+INPUT Main Sections/06Ethics.tex
+INPUT ./Main Sections/07Design.tex
+INPUT ./Main Sections/07Design.tex
+OUTPUT Main Sections/07Design.aux
+INPUT ./Main Sections/07Design.tex
+INPUT ./Main Sections/07Design.tex
+INPUT Main Sections/07Design.tex
 INPUT h:/Program Files/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT h:/Program Files/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
-INPUT ./Main Sections/09Implementation.tex
-INPUT ./Main Sections/09Implementation.tex
-OUTPUT Main Sections/09Implementation.aux
-INPUT ./Main Sections/09Implementation.tex
-INPUT ./Main Sections/09Implementation.tex
-INPUT Main Sections/09Implementation.tex
-INPUT ./Main Sections/10Evaluation.tex
-INPUT ./Main Sections/10Evaluation.tex
-OUTPUT Main Sections/10Evaluation.aux
-INPUT ./Main Sections/10Evaluation.tex
-INPUT ./Main Sections/10Evaluation.tex
-INPUT Main Sections/10Evaluation.tex
-INPUT ./Main Sections/11Conclusion.tex
-INPUT ./Main Sections/11Conclusion.tex
-OUTPUT Main Sections/11Conclusion.aux
-INPUT ./Main Sections/11Conclusion.tex
-INPUT ./Main Sections/11Conclusion.tex
-INPUT Main Sections/11Conclusion.tex
+INPUT ./Main Sections/08Implementation.tex
+INPUT ./Main Sections/08Implementation.tex
+OUTPUT Main Sections/08Implementation.aux
+INPUT ./Main Sections/08Implementation.tex
+INPUT ./Main Sections/08Implementation.tex
+INPUT Main Sections/08Implementation.tex
+INPUT ./Images/CubeTile.png
+INPUT ./Images/CubeTile.png
+INPUT ./Images/CubeTile.png
+INPUT ./Images/CubeTile.png
+INPUT ./Images/CubeTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/CornerTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/CubeTile.png
+INPUT ./Images/CubeTile.png
+INPUT ./Images/CubeTile.png
+INPUT ./Images/CubeTile.png
+INPUT ./Images/EmptyTile.png
+INPUT ./Images/EmptyTile.png
+INPUT ./Images/EmptyTile.png
+INPUT ./Images/EmptyTile.png
+INPUT ./Images/EmptyTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/CubeTile.png
+INPUT ./Images/CubeTile.png
+INPUT ./Images/CubeTile.png
+INPUT ./Images/CubeTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Images/WallTile.png
+INPUT ./Main Sections/09Evaluation.tex
+INPUT ./Main Sections/09Evaluation.tex
+OUTPUT Main Sections/09Evaluation.aux
+INPUT ./Main Sections/09Evaluation.tex
+INPUT ./Main Sections/09Evaluation.tex
+INPUT Main Sections/09Evaluation.tex
+INPUT ./Main Sections/10Conclusion.tex
+INPUT ./Main Sections/10Conclusion.tex
+OUTPUT Main Sections/10Conclusion.aux
+INPUT ./Main Sections/10Conclusion.tex
+INPUT ./Main Sections/10Conclusion.tex
+INPUT Main Sections/10Conclusion.tex
 INPUT h:/Program Files/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecti1200.tfm
 INPUT h:/Program Files/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/eccc1200.tfm
-INPUT ./Main Sections/12Appendix.tex
-INPUT ./Main Sections/12Appendix.tex
-OUTPUT Main Sections/12Appendix.aux
-INPUT ./Main Sections/12Appendix.tex
-INPUT ./Main Sections/12Appendix.tex
-INPUT Main Sections/12Appendix.tex
+INPUT ./Main Sections/11Appendix.tex
+INPUT ./Main Sections/11Appendix.tex
+OUTPUT Main Sections/11Appendix.aux
+INPUT ./Main Sections/11Appendix.tex
+INPUT ./Main Sections/11Appendix.tex
+INPUT Main Sections/11Appendix.tex
 INPUT main.aux
 INPUT ./Main Sections/02Introduction.aux
 INPUT ./Main Sections/02Introduction.aux
 INPUT Main Sections/02Introduction.aux
-INPUT ./Main Sections/03PlayerGuide.aux
-INPUT ./Main Sections/03PlayerGuide.aux
-INPUT Main Sections/03PlayerGuide.aux
-INPUT ./Main Sections/04LiteratureReview.aux
-INPUT ./Main Sections/04LiteratureReview.aux
-INPUT Main Sections/04LiteratureReview.aux
-INPUT ./Main Sections/05RequirementsSpecification.aux
-INPUT ./Main Sections/05RequirementsSpecification.aux
-INPUT Main Sections/05RequirementsSpecification.aux
-INPUT ./Main Sections/06SoftwareEngineeringProcess.aux
-INPUT ./Main Sections/06SoftwareEngineeringProcess.aux
-INPUT Main Sections/06SoftwareEngineeringProcess.aux
-INPUT ./Main Sections/07Ethics.aux
-INPUT ./Main Sections/07Ethics.aux
-INPUT Main Sections/07Ethics.aux
-INPUT ./Main Sections/08Design.aux
-INPUT ./Main Sections/08Design.aux
-INPUT Main Sections/08Design.aux
-INPUT ./Main Sections/09Implementation.aux
-INPUT ./Main Sections/09Implementation.aux
-INPUT Main Sections/09Implementation.aux
-INPUT ./Main Sections/10Evaluation.aux
-INPUT ./Main Sections/10Evaluation.aux
-INPUT Main Sections/10Evaluation.aux
-INPUT ./Main Sections/11Conclusion.aux
-INPUT ./Main Sections/11Conclusion.aux
-INPUT Main Sections/11Conclusion.aux
-INPUT ./Main Sections/12Appendix.aux
-INPUT ./Main Sections/12Appendix.aux
-INPUT Main Sections/12Appendix.aux
+INPUT ./Main Sections/03LiteratureReview.aux
+INPUT ./Main Sections/03LiteratureReview.aux
+INPUT Main Sections/03LiteratureReview.aux
+INPUT ./Main Sections/04RequirementsSpecification.aux
+INPUT ./Main Sections/04RequirementsSpecification.aux
+INPUT Main Sections/04RequirementsSpecification.aux
+INPUT ./Main Sections/05SoftwareEngineeringProcess.aux
+INPUT ./Main Sections/05SoftwareEngineeringProcess.aux
+INPUT Main Sections/05SoftwareEngineeringProcess.aux
+INPUT ./Main Sections/06Ethics.aux
+INPUT ./Main Sections/06Ethics.aux
+INPUT Main Sections/06Ethics.aux
+INPUT ./Main Sections/07Design.aux
+INPUT ./Main Sections/07Design.aux
+INPUT Main Sections/07Design.aux
+INPUT ./Main Sections/08Implementation.aux
+INPUT ./Main Sections/08Implementation.aux
+INPUT Main Sections/08Implementation.aux
+INPUT ./Main Sections/09Evaluation.aux
+INPUT ./Main Sections/09Evaluation.aux
+INPUT Main Sections/09Evaluation.aux
+INPUT ./Main Sections/10Conclusion.aux
+INPUT ./Main Sections/10Conclusion.aux
+INPUT Main Sections/10Conclusion.aux
+INPUT ./Main Sections/11Appendix.aux
+INPUT ./Main Sections/11Appendix.aux
+INPUT Main Sections/11Appendix.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT main.run.xml
