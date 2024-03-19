@@ -210,6 +210,17 @@ namespace PrecipitatorWFC
             collider.size = rotatedSize;
             collider.isTrigger = true;
 
+            FloorSpawner floorSpawner = cell.tilePrefab.GetComponent<FloorSpawner>();
+            if (floorSpawner != null)
+            {
+                Debug.Log("Spawned floor at collapse " + floorSpawner.transform.position);
+                floorSpawner.SpawnFloor();
+            }
+            else
+            {
+                Debug.Log("Floor spawner is null for tile " + cell.tilePrefab);
+            }
+
             // Add collider information to the debug gizmos.
             LevelGenerationManager.Instance.gizmosPosAndSize.AddLast(new LinkedListNode<(Vector3, Vector3)>((collider.transform.position, collider.size)));
 

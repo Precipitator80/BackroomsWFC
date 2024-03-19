@@ -36,6 +36,7 @@ namespace PrecipitatorWFC
         {
             Debug.Log("LevelGenerationManager is awake!");
             instance = this;
+            GenerateLevel();
         }
 
         void Update()
