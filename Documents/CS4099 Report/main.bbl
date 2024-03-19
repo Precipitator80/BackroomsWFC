@@ -1289,6 +1289,58 @@
       \verb https://ojs.aaai.org/index.php/AAAI/article/view/16484
       \endverb
     \endentry
+    \entry{Combinatorics_Streamliner_Constraints}{article}{}
+      \name{author}{4}{}{%
+        {{hash=720e622269f8ec4d9c89f0836c8ddde8}{%
+           family={Spracklen},
+           familyi={S\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=5255799063f651a4ab79aa0558bdb580}{%
+           family={Dang},
+           familyi={D\bibinitperiod},
+           given={Nguyen},
+           giveni={N\bibinitperiod}}}%
+        {{hash=3c0f53d26148a709ef448f621b8cbd29}{%
+           family={Akgün},
+           familyi={A\bibinitperiod},
+           given={Özgür},
+           giveni={Ö\bibinitperiod}}}%
+        {{hash=c813bea56d59d6a8d7b3ddae8ff87cbd}{%
+           family={Miguel},
+           familyi={M\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{6d7e60b55f8d4e04c7cea133a13683ed}
+      \strng{fullhash}{8532b54025241ad8f4450944a5557367}
+      \strng{bibnamehash}{8532b54025241ad8f4450944a5557367}
+      \strng{authorbibnamehash}{8532b54025241ad8f4450944a5557367}
+      \strng{authornamehash}{6d7e60b55f8d4e04c7cea133a13683ed}
+      \strng{authorfullhash}{8532b54025241ad8f4450944a5557367}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Constraint Programming (CP) is a powerful technique for solving large-scale combinatorial problems. Solving a problem proceeds in two distinct phases: modelling and solving. Effective modelling has a huge impact on the performance of the solving process. Even with the advance of modern automated modelling tools, search spaces involved can be so vast that problems can still be difficult to solve. To further constrain the model, a more aggressive step that can be taken is the addition of streamliner constraints, which are not guaranteed to be sound but are designed to focus effort on a highly restricted but promising portion of the search space. Previously, producing effective streamlined models was a manual, difficult and time-consuming task. This paper presents a completely automated process to the generation, search and selection of streamliner portfolios to produce a substantial reduction in search effort across a diverse range of problems. The results demonstrate a marked improvement in performance for both Chuffed, a CP solver with clause learning, and lingeling, a modern SAT solver.}
+      \field{issn}{0004-3702}
+      \field{journaltitle}{Artificial Intelligence}
+      \field{title}{Automated streamliner portfolios for constraint satisfaction problems}
+      \field{volume}{319}
+      \field{year}{2023}
+      \field{pages}{103915}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.artint.2023.103915
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0004370223000619
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0004370223000619
+      \endverb
+      \keyw{Constraint programming,Constraint modelling,Constraint satisfaction problem,Algorithm selection}
+    \endentry
     \entry{Data_Mining_and_Constraint_Programming}{book}{}
       \list{language}{1}{%
         {en}%

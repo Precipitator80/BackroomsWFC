@@ -58,7 +58,7 @@ A lot of modern \acrshort{pcg} research looks into using AI and machine learning
     \label{fig:magic3D}
 \end{figure}
 
-Applications like Stable Diffusion \cite{Stable_Diffusion} can be used to create high quality text-to-image content, while others such as Magic3D \cite{Magic3D} offers text-to-3D synthesis. In terms of text-to-text, ChatGPT \cite{Chat_GPT} serves as a leading language model that can be used to converse about any topic, while GitHub Copilot \cite{GitHub_Copilot} can generate code snippets from user prompts.
+Applications such as Stable Diffusion \cite{Stable_Diffusion} can be used to create high quality text-to-image content, while others such as Magic3D \cite{Magic3D} offers text-to-3D synthesis. In terms of text-to-text, ChatGPT \cite{Chat_GPT} serves as a leading language model that can be used to converse about any topic, while GitHub Copilot \cite{GitHub_Copilot} can generate code snippets from user prompts.
 
 \begin{figure}[H]
     \centering
@@ -67,7 +67,7 @@ Applications like Stable Diffusion \cite{Stable_Diffusion} can be used to create
     \label{fig:stableDiffusion}
 \end{figure}
 
-In the context of games, machine learning is frequently used in areas like text, character model, texture, music and sound generation \cite{DeepLearningPCG}. Languages such as the Video Game Description Language (VGDL) have even be used to generate entire games using AI \cite{VGDL, VGDL_ASP}. However, by themselves, such languages have limited expressiveness, making it difficult to create interesting games \cite{VGDL}.
+In the context of games, machine learning is frequently used in areas such as text, character model, texture, music and sound generation \cite{DeepLearningPCG}. Languages such as the Video Game Description Language (VGDL) have even be used to generate entire games using AI \cite{VGDL, VGDL_ASP}. However, by themselves, such languages have limited expressiveness, making it difficult to create interesting games \cite{VGDL}.
 
 \begin{figure}[H]
     \centering
@@ -76,7 +76,7 @@ In the context of games, machine learning is frequently used in areas like text,
     \label{fig:vgdl}
 \end{figure}
 
-One paper \cite{CESAGAN} identifies that Generative Adversarial Networks (GANs) can also be used for image generation, but that it is difficult to incorporate constraints. As a solution, it proposes a Conditional Embedding Self-Attention Generative Adversarial Network (CESAGAN). This allows the embedding of a feature vector to the input, enabling the network to model non-local constraints. As a result, this produces higher quality outputs with fewer duplicates. In \acrshort{wfc}, it is also difficult to enforce non-local constraints without additional modifications.
+R. Rodriguez Torrado et al. identify that Generative Adversarial Networks (GANs) can also be used for image generation, but that it is difficult to incorporate constraints \cite{CESAGAN}. As a solution, they propose a Conditional Embedding Self-Attention Generative Adversarial Network (CESAGAN). This allows the embedding of a feature vector to the input, enabling the network to model non-local constraints. As a result, this produces higher quality outputs with fewer duplicates. In \acrshort{wfc}, it is also difficult to enforce non-local constraints without additional modifications.
 
 \begin{figure}[H]
     \centering
@@ -85,7 +85,7 @@ One paper \cite{CESAGAN} identifies that Generative Adversarial Networks (GANs) 
     \label{fig:cesagan}
 \end{figure}
 
-Another transforms 2D level design problems into Markov decision processes \cite{Markov_PCGRL}. This aids reinforced learning to produce high quality output levels. It suggests this reinforced learning could be applied to self-play agents to improve the content generated through simulated playtesting. Three other papers similarly suggest that machine learning is useful for evaluating content through methods like simulated playtesting \cite{DeepLearningPCG, VGDL_ASP, PCGML}. In the context of \acrshort{wfc}, it might be useful to apply machine learning content evaluation and adjust the output to increase its quality.
+A. Khalifa et al. transform 2D level design problems into Markov decision processes \cite{Markov_PCGRL}. This aids reinforced learning to produce high quality output levels. It is suggested that this reinforced learning could be applied to self-play agents to improve the content generated through simulated playtesting. Three other papers similarly suggest that machine learning is useful for evaluating content through methods such as simulated playtesting \cite{DeepLearningPCG, VGDL_ASP, PCGML}. In the context of \acrshort{wfc}, it might be useful to apply machine learning content evaluation and adjust the output to increase its quality.
 
 \begin{figure}[H]
     \centering
@@ -94,7 +94,7 @@ Another transforms 2D level design problems into Markov decision processes \cite
     \label{fig:pcgrl}
 \end{figure}
 
-One paper \cite{PCGML} also comments specifically on two limitations of \acrshort{pcg} via machine learning. It states that the playability of output produced through machine learning is not guaranteed to be playable, but rather biassed towards generating playable content through the input. The second limitation is that most machine learning has been applied to 2D content. Similarly, whether \acrshort{wfc} output is playable or not is not always guaranteed but heavily depends on how the input is defined. Furthermore, the core \acrshort{wfc} implementation and many of its offshoots only support 2D content generation \cite{Gumin_Wave_Function_Collapse_2016}. As a result, both machine learning \acrshort{pcg} and \acrshort{wfc} require carefully tweaked input data and an output evaluator when applied to level generation.
+A. Summerville et al. comment specifically on two limitations of \acrshort{pcg} via machine learning \cite{PCGML}. They state that the playability of output produced through machine learning is not guaranteed to be playable, but rather biassed towards generating playable content through the input. The second limitation is that most machine learning has been applied to 2D content. Similarly, whether \acrshort{wfc} output is playable or not is not always guaranteed but heavily depends on how the input is defined. Furthermore, the core \acrshort{wfc} implementation and many of its offshoots only support 2D content generation \cite{Gumin_Wave_Function_Collapse_2016}. As a result, both machine learning \acrshort{pcg} and \acrshort{wfc} require carefully tweaked input data and an output evaluator when applied to level generation.
 
 \begin{figure}[H]
     \centering
@@ -114,7 +114,13 @@ Constraint programming has been applied to a large variety of problem categories
 
 % Then discuss some current research and identify which problems they attempt to solve.
 \subsection{Combinatorial Problems}
-For example, three papers take a deeper look into combinatorial problems, which deal with finding an optimal solution among a finite set of possibilities. Deep reinforcement learning has been used to tackle these problems, but it only provides approximate solutions \cite{Combinatorics_CP_RL}. To find optimal solutions, the paper combines deep RL with constraint programming, detailing its use for problems such as the travelling salesman problem with time windows and the 0-1 knapsack problem. Large scale combinatorial problems may have huge search spaces, resulting in low solver performance \cite{Combinatorics_CP_RL}. To address this, it introduces and automated process to add streamliner constraints, which focus effort on searching promising parts of the search space to improve performance. A survey of combinatorial problems and attempts at modelling and solving them effectively identifies, for example, that algorithm selection techniques can achieve significant performance improvements for combinatorial search \cite{Data_Mining_and_Constraint_Programming}. It presents a model for the algorithm selection problem as in Figure \ref{fig:algorithmSelection}.
+For example, three papers take a deeper look into combinatorial problems, which deal with finding an optimal solution among a finite set of possibilities.
+
+Q. Cappart et al. acknowledge that deep reinforcement learning has been used to tackle these problems, but that it only provides approximate solutions \cite{Combinatorics_CP_RL}. To find optimal solutions, they combine deep RL with constraint programming, detailing its use for problems such as the travelling salesman problem with time windows and the 0-1 knapsack problem.
+
+P. Spracklen et al. comment that large scale combinatorial problems may have huge search spaces, resulting in low solver performance \cite{Combinatorics_Streamliner_Constraints}. To address this, they introduce an automated process to add streamliner constraints, which focus effort on searching promising parts of the search space to improve performance.
+
+Furthermore, a survey of combinatorial problems and attempts at modelling and solving them effectively identifies, for example, that algorithm selection techniques can achieve significant performance improvements for combinatorial search \cite{Data_Mining_and_Constraint_Programming}. It presents a model for the algorithm selection problem as in Figure \ref{fig:algorithmSelection}.
 
 \begin{figure}[H]
     \centering
@@ -123,10 +129,10 @@ For example, three papers take a deeper look into combinatorial problems, which 
     \label{fig:algorithmSelection}
 \end{figure}
 
-Another paper \cite{Metamorphic_Testing} recognises the difficulty in testing constraint solvers due to the vastness of searches they may perform. As a solution, it uses metamorphic testing, which generates new test cases from existing ones. However, it expresses the limitation that this should be used with other forms of testing as metamorphic testing does not recognise when a solver falsely identifies a problem as unsolvable.
+Ö. Akgün et al. recognise the difficulty in testing constraint solvers due to the vastness of searches they may perform \cite{Metamorphic_Testing}. As a solution, they use metamorphic testing, which generates new test cases from existing ones. However, they also express the limitation that this should be used with other forms of testing. This is because metamorphic testing does not recognise when a solver falsely identifies a problem as unsolvable.
 
 \subsection{Logic Programming Languages}
-Another interesting application of constraint programming is to AI deep reinforced learning. One paper \cite{Prolog_Deep_Learning} explores the use of the Prolog logic programming language to generate data sets to aid this learning, finding positive results in trained AI agent performance. As part of this process, the paper converts user-specified constraints into Prolog queries through a Python program that generates JSON house plans as in Figure \ref{fig:housePlans}. The pipeline for this is shown in Figure \ref{fig:pythonToProlog}.
+Another interesting application of constraint programming is to AI deep reinforced learning. G. De Gasperi et al. explore the use of the Prolog logic programming language to generate data sets to aid this learning, finding positive results in trained AI agent performance \cite{Prolog_Deep_Learning}. As part of this process, they convert user-specified constraints into Prolog queries through a Python program that generates JSON house plans as in Figure \ref{fig:housePlans}. The pipeline for this is shown in Figure \ref{fig:pythonToProlog}.
 
 \begin{figure}[H]
     \centering
@@ -151,7 +157,7 @@ Other languages similar to Prolog such as Answer Set Programming (ASP) and the V
     \label{fig:aspDungeons}
 \end{figure}
 
-One paper \cite{Graph_Constraint_Dungeon} also applies constraint programming to dungeon generation, but instead uses a graph constraint to generate high quality dungeons with distinct areas. Hundreds of variations can be generated from one dungeon with labelled rooms. The dungeon is represented as a graph, which lets areas be selectively turned off and rearranged while meeting design constraints. The concept is shown in Figure \ref{fig:graphDungeon}.
+G. Glorian et al. also apply constraint programming to dungeon generation, but instead use a graph constraint to generate high quality dungeons with distinct areas \cite{Graph_Constraint_Dungeon}. Hundreds of variations can be generated from one dungeon with labelled rooms. The dungeon is represented as a graph, which lets areas be selectively turned off and rearranged while meeting design constraints. The concept is shown in Figure \ref{fig:graphDungeon}.
 
 \begin{figure}[H]
     \centering
@@ -168,7 +174,7 @@ One paper \cite{Graph_Constraint_Dungeon} also applies constraint programming to
     \label{fig:graphDungeon}
 \end{figure}
 
-Another paper \cite{GVG-AI_and_VGDL_Level_Generators} builds on the General Video Game AI framework (GVG-AI) and the Video Game Description Language (VGDL) to create general video game generators. These generators aim to save time by eliminating the need to custom-build a generator for each game. Instead, a game description is given as input and used to generate a level for the game. The results of three generators for a Zelda-style game are shown in Figure \ref{fig:gvgAILevels}. Here, the aim is to collect the key and get to the exit while avoiding attacks by monsters. The player has a sword which can be used to attack monsters and gain additional points.
+A. Khalifa et al. build on the General Video Game AI framework (GVG-AI) and the Video Game Description Language (VGDL) to create general video game generators \cite{GVG-AI_and_VGDL_Level_Generators}. These generators aim to save time by eliminating the need to custom-build a generator for each game. Instead, a game description is given as input and used to generate a level for the game. The results of three generators for a Zelda-style game are shown in Figure \ref{fig:gvgAILevels}. Here, the aim is to collect the key and get to the exit while avoiding attacks by monsters. The player has a sword which can be used to attack monsters and gain additional points.
 
 \begin{figure}[H]
     \centering
@@ -178,12 +184,12 @@ Another paper \cite{GVG-AI_and_VGDL_Level_Generators} builds on the General Vide
 \end{figure}
 
 \subsection{Further Application to Video Games}
-In the context of video games, constraint programming research has looked into applying constraints to \acrshort{pcg} and solving game tasks. One recent paper \cite{Plotting_Planning_Problem} aims to solve a planning problem presented in the game Plotting. In it, the player must plan a sequence of actions to clear blocks of varying types from a grid. The paper models the problem in two modelling language, namely the widely used Planning Domain Definition Language (PDDL) and the novel Essence Prime. Their effectiveness is then compared using several solvers, finding a SAT solver to be most effective for the problem as shown in Figure \ref{fig:plottingSolverComparison}.
+In the context of video games, constraint programming research has looked into applying constraints to \acrshort{pcg} and solving game tasks. One recent paper by J. Espasa et al. \cite{Plotting_Planning_Problem} aimed to solve a planning problem presented in the game Plotting. In Plotting, the player must plan a sequence of actions to clear blocks of varying types from a grid. The authors model the problem in two modelling language, namely the widely used Planning Domain Definition Language (PDDL) and the novel Essence Prime. Their effectiveness is then compared using several solvers, finding a SAT solver to be most effective for the problem as shown in Figure \ref{fig:plottingSolverComparison}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/PlottingSolverComparison.png}
-    \caption{Comparing performance of Plotting models and solvers  \cite{Plotting_Planning_Problem}}
+    \caption{Comparing performance of Plotting models and solvers \cite{Plotting_Planning_Problem}}
     \label{fig:plottingSolverComparison}
 \end{figure}
 
@@ -192,7 +198,7 @@ In the context of video games, constraint programming research has looked into a
 %\subsubsection{Local}
 
 \section{Wave Function Collapse}
-\acrfull{wfc} \cite{Gumin_Wave_Function_Collapse_2016} is a modern \acrshort{pcg} method that has found use in games such as Townscaper \cite{townscaper} and Bad North \cite{badnorth}. It can be described as a family of algorithms, rather than one specific algorithm \cite{WFC_ConstraintSolving_and_ML}. As such, a large variety of implementations are available online, each with their own specialisations to solve the problem they were designed for. One paper noted that \acrlong{wfc} is often used as a black box, being incorporated into a workflow without being altered \cite{WFC_In_The_Wild}.
+\acrfull{wfc} \cite{Gumin_Wave_Function_Collapse_2016} is a modern \acrshort{pcg} method that has found use in games such as Townscaper \cite{townscaper} and Bad North \cite{badnorth}. It can be described as a family of algorithms, rather than one specific algorithm \cite{WFC_ConstraintSolving_and_ML}. As such, a large variety of implementations are available online, each with their own specialisations to solve the problem they were designed for. I. Karth and A. M. Smith note that \acrlong{wfc} is often used as a black box, being incorporated into a workflow without being altered \cite{WFC_In_The_Wild}.
 
 \begin{figure}[H]
     \centering
@@ -262,7 +268,9 @@ In some applications, such as the game Caves of Qud \cite{cavesofqud}, \acrshort
     \label{fig:cavesOfQudWFCHomogeneity}
 \end{figure}
 
-Two papers add in additional constraints that are checked after each observation step. In the first paper \cite{WFC_Automatic_Rules_And_Better_Symmetries}, constraints added include a minimum tile count, maximum tile count and object distance constraint.
+Two papers add in additional constraints that are checked after each observation step.
+
+D. Cheng et al. add constraints on minimum tile count, maximum tile count and object distance \cite{WFC_Automatic_Rules_And_Better_Symmetries}.
 
 The global maximum tile count constraint allows balancing of tile counts. This constraint is analogous to the use of weighted tile selection. Figure \ref{fig:wfcMaximumConstraint} shows the global maximum tile count constraint being used to reduce the amount of water in the level.
 
@@ -332,7 +340,7 @@ One additional option included is to carry out generation in two passes. This he
     \label{fig:wfcMultiLayer}
 \end{figure}
 
-The second paper, \cite{WFC_Design_Constraints}, achieves the same goal as minimum and maximum tile count constraints through the use of a weighted choice. In addition to using entropy to choose the most constrained tile after each propagation step, assigning a weight to each choice can encourage the algorithm to choose a different balance of tiles. Furthermore, this paper introduces a second observation step. This performs a second, smaller scale \acrshort{wfc} algorithm, which can be used to refine item placement and create subregions within a map.
+A. Sandhu et al. achieve the same goal as minimum and maximum tile count constraints through the use of a weighted choice \cite{WFC_Design_Constraints}. In addition to using entropy to choose the most constrained tile after each propagation step, assigning a weight to each choice can encourage the algorithm to choose a different balance of tiles. Furthermore, the authors introduce a second observation step. This performs a second, smaller scale \acrshort{wfc} algorithm, which can be used to refine item placement and create subregions within a map.
 
 Solutions altering \acrshort{wfc} directly to support global constraints are faced with the issue that the additional constraints can have a negative impact on performance. However, by combining such solutions with those discussed in the Performance Subsection (\ref{sec:performance}), the impact can be reduced \cite{WFC_ConstraintSolving_and_ML}.
 
@@ -361,7 +369,7 @@ Here, a multi-pass approach can not only be used to help globally constrain the 
 \subsubsection{Performance}\label{sec:performance}
 Another issue identified with \acrshort{wfc} is performance. While the chance of success is high with small inputs, larger inputs are much likelier to fail, especially with more complicated tile sets \cite{WFC_ConstraintSolving_and_ML}. This can result in a significant generation time for large outputs. Several solutions to \acrshort{wfc}'s scalability problem have been proposed.%(More citations and graph of performance)
 
-One of the most common solutions is to include some form of backtracking, which allows further searching of the search space upon a contradiction instead of having to restart. However, with complex tile sets, care must be taken to reduce the chance of backtracking exploring an unpromising search space for an extended time as in the 3D Escheresque example shown previously in Figure \ref{fig:escheresque}. Using a search heuristic could help with this. One paper compared the performance of \acrshort{wfc} with and without backtracking and global constraints, finding that backtracking is critical to improving performance when using global constraints as seen in Figure \ref{fig:backtrackingPerformance} \cite{WFC_ConstraintSolving_and_ML}.
+One of the most common solutions is to include some form of backtracking, which allows further searching of the search space upon a contradiction instead of having to restart. However, with complex tile sets, care must be taken to reduce the chance of backtracking exploring an unpromising search space for an extended time as in the 3D Escheresque example shown previously in Figure \ref{fig:escheresque}. Using a search heuristic could help with this. I. Karth and A. M. Smith compared the performance of \acrshort{wfc} with and without backtracking and global constraints, finding that backtracking is critical to improving performance when using global constraints as seen in Figure \ref{fig:backtrackingPerformance} \cite{WFC_ConstraintSolving_and_ML}.
 
 \begin{figure}[H]
     \centering
@@ -391,7 +399,7 @@ Another technique, \acrlong{imib} \cite{Infinite_Modifying_In_Blocks}, applies W
 \subsubsection{Other Challenges}
 Environments of a certain style, especially those trying to create a realistic feel, may struggle from \acrshort{wfc}'s use of a grid structure for its output. However, if this regular grid is transformed into an irregular quadrilateral grid, more complex shapes can be used.
 
-One paper \cite{WFC_Graph-based} achieves this by using a graph-based data structure, which can be integrated with a navigation mesh in 3D as shown in Figure \ref{fig:navigationMeshNodePlacement}. However, this solution is limited due to a lack of control over solution order.
+H. Kim et al. achieve this by using a graph-based data structure, which can be integrated with a navigation mesh in 3D as shown in Figure \ref{fig:navigationMeshNodePlacement} \cite{WFC_Graph-based}. However, this solution is limited due to a lack of control over solution order.
 
 \begin{figure}[H]
     \centering
@@ -400,7 +408,7 @@ One paper \cite{WFC_Graph-based} achieves this by using a graph-based data struc
     \label{fig:navigationMeshNodePlacement}
 \end{figure}
 
-Another paper explores the use of a growing grid neural network to augment \acrshort{wfc} \cite{WFC_Neural_Network}. Growing grid can be used to create irregular quadrilateral grids that fit a given input shape as in Figure \ref{fig:growingGrid1}. Here, gradients can be used to control grid density. \acrshort{wfc} output can then be fit onto an irregular quadrilateral grid to create more interesting worlds as in Figure \ref{fig:growingGrid2}. This paper also found that players have higher self-confidence in navigating irregularly shaped maps and an increased ability to form mental maps of their environment.
+T. Møller and J. Billeskov explore the use of a growing grid neural network to augment \acrshort{wfc} \cite{WFC_Neural_Network}. Growing grid can be used to create irregular quadrilateral grids that fit a given input shape as in Figure \ref{fig:growingGrid1}. Here, gradients can be used to control grid density. \acrshort{wfc} output can then be fit onto an irregular quadrilateral grid to create more interesting worlds as in Figure \ref{fig:growingGrid2}. The authors also found that players have higher self-confidence in navigating irregularly shaped maps and an increased ability to form mental maps of their environment.
 
 \begin{figure}[H]
     \centering
@@ -417,7 +425,7 @@ Another paper explores the use of a growing grid neural network to augment \acrs
     \label{fig:growingGrid}
 \end{figure}
 
-Very simple implementations may ignore symmetry when defining tile neighbours in the simple tiled method \cite{Easy_WFC}. Instead, every neighbour for each direction of each tile is listed explicitly. While this keeps the code simple, it means that a huge amount of work is required when defining neighbours for complex tile sets, with high chance of human error. What the original \acrshort{wfc} implementation and several others do instead is to define a symmetry type for each tile. This means that much less data about the input has to be provided, lessening the work required and chance of human error. The original \acrshort{wfc} implementation defines five symmetry types, which it applies to a variety of 2D images. Another paper instead defines nine symmetry types as in Table \ref{fig:symmetryDictionary}, which supports a greater variety of tile sets \cite{WFC_Automatic_Rules_And_Better_Symmetries}.
+Very simple implementations may ignore symmetry when defining tile neighbours in the simple tiled method \cite{Easy_WFC}. Instead, every neighbour for each direction of each tile is listed explicitly. While this keeps the code simple, it means that a huge amount of work is required when defining neighbours for complex tile sets, with high chance of human error. What the original \acrshort{wfc} implementation and several others do instead is to define a symmetry type for each tile. This means that much less data about the input has to be provided, lessening the work required and chance of human error. The original \acrshort{wfc} implementation defines five symmetry types, which it applies to a variety of 2D images. D. Cheng et al. instead define nine symmetry types as in Table \ref{fig:symmetryDictionary}, which supports a greater variety of tile sets \cite{WFC_Automatic_Rules_And_Better_Symmetries}.
 
 \begin{table}[H]
     \centering
