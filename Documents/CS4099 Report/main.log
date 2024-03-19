@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  19 MAR 2024 12:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.16)  19 MAR 2024 13:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1038,12 +1038,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  (./Main Sections/02Introduction.tex
 Chapter 1.
-<Images/Townscaper.png, id=636, 1003.75pt x 565.11125pt>
+<Images/Townscaper.png, id=646, 1003.75pt x 565.11125pt>
 File: Images/Townscaper.png Graphic file (type png)
 <use Images/Townscaper.png>
 Package pdftex.def Info: Images/Townscaper.png  used on input line 9.
 (pdftex.def)             Requested size: 374.47551pt x 210.82971pt.
-<Images/circuit-1.png, id=639, 624.83438pt x 316.18124pt>
+<Images/circuit-1.png, id=649, 624.83438pt x 316.18124pt>
 File: Images/circuit-1.png Graphic file (type png)
 <use Images/circuit-1.png>
 Package pdftex.def Info: Images/circuit-1.png  used on input line 19.
@@ -1052,28 +1052,28 @@ Package pdftex.def Info: Images/circuit-1.png  used on input line 19.
 
 
  <./Images/Townscaper.png>]
-<Images/escher_sample-768x445.jpg, id=647, 770.88pt x 446.66875pt>
+<Images/escher_sample-768x445.jpg, id=657, 770.88pt x 446.66875pt>
 File: Images/escher_sample-768x445.jpg Graphic file (type jpg)
 <use Images/escher_sample-768x445.jpg>
 Package pdftex.def Info: Images/escher_sample-768x445.jpg  used on input line 30.
 (pdftex.def)             Requested size: 363.87808pt x 210.8408pt.
  [2 <./Images/circuit-1.png> <./Images/escher_sample-768x445.jpg>]
-<Images/IMIB3.png, id=655, 1027.84pt x 770.88pt>
+<Images/IMIB3.png, id=665, 1027.84pt x 770.88pt>
 File: Images/IMIB3.png Graphic file (type png)
 <use Images/IMIB3.png>
 Package pdftex.def Info: Images/IMIB3.png  used on input line 53.
 (pdftex.def)             Requested size: 202.72563pt x 152.04422pt.
-<Images/IMIB4.png, id=656, 1027.84pt x 770.88pt>
+<Images/IMIB4.png, id=666, 1027.84pt x 770.88pt>
 File: Images/IMIB4.png Graphic file (type png)
 <use Images/IMIB4.png>
 Package pdftex.def Info: Images/IMIB4.png  used on input line 58.
 (pdftex.def)             Requested size: 202.72563pt x 152.04422pt.
-<Images/IMIB5.png, id=657, 1027.84pt x 770.88pt>
+<Images/IMIB5.png, id=667, 1027.84pt x 770.88pt>
 File: Images/IMIB5.png Graphic file (type png)
 <use Images/IMIB5.png>
 Package pdftex.def Info: Images/IMIB5.png  used on input line 65.
 (pdftex.def)             Requested size: 202.72563pt x 152.04422pt.
-<Images/IMIB9.png, id=658, 1027.84pt x 770.88pt>
+<Images/IMIB9.png, id=668, 1027.84pt x 770.88pt>
 File: Images/IMIB9.png Graphic file (type png)
 <use Images/IMIB9.png>
 Package pdftex.def Info: Images/IMIB9.png  used on input line 70.
@@ -1083,7 +1083,7 @@ Package pdftex.def Info: Images/IMIB9.png  used on input line 70.
 
  (./Main Sections/03LiteratureReview.tex
 Chapter 2.
-<Images/Minecraft.jpg, id=680, 2569.6pt x 1382.16376pt>
+<Images/Minecraft.jpg, id=690, 2569.6pt x 1382.16376pt>
 File: Images/Minecraft.jpg Graphic file (type jpg)
 <use Images/Minecraft.jpg>
 Package pdftex.def Info: Images/Minecraft.jpg  used on input line 46.
@@ -1094,205 +1094,205 @@ Package pdftex.def Info: Images/Minecraft.jpg  used on input line 46.
 
 
 ]
-<Images/Magic3D.jpg, id=694, 990.70125pt x 905.63344pt>
+<Images/Magic3D.jpg, id=704, 990.70125pt x 905.63344pt>
 File: Images/Magic3D.jpg Graphic file (type jpg)
 <use Images/Magic3D.jpg>
 Package pdftex.def Info: Images/Magic3D.jpg  used on input line 56.
 (pdftex.def)             Requested size: 384.39163pt x 351.38535pt.
  [5 <./Images/Minecraft.jpg>]
-<Images/StableDiffusion.jpg, id=708, 4111.36pt x 2055.68pt>
+<Images/StableDiffusion.jpg, id=718, 4111.36pt x 2055.68pt>
 File: Images/StableDiffusion.jpg Graphic file (type jpg)
 <use Images/StableDiffusion.jpg>
 Package pdftex.def Info: Images/StableDiffusion.jpg  used on input line 65.
 (pdftex.def)             Requested size: 421.6367pt x 210.81834pt.
  [6 <./Images/Magic3D.jpg>]
-<Images/VGDL.jpg, id=721, 2097.8375pt x 1215.54124pt>
+<Images/VGDL.jpg, id=731, 2097.8375pt x 1215.54124pt>
 File: Images/VGDL.jpg Graphic file (type jpg)
 <use Images/VGDL.jpg>
 Package pdftex.def Info: Images/VGDL.jpg  used on input line 74.
 (pdftex.def)             Requested size: 363.862pt x 210.83104pt.
-<Images/CESAGAN.jpg, id=725, 1586.17593pt x 542.77782pt>
+<Images/CESAGAN.jpg, id=735, 1586.17593pt x 542.77782pt>
 File: Images/CESAGAN.jpg Graphic file (type jpg)
 <use Images/CESAGAN.jpg>
 Package pdftex.def Info: Images/CESAGAN.jpg  used on input line 83.
 (pdftex.def)             Requested size: 426.77264pt x 146.03847pt.
  [7 <./Images/StableDiffusion.jpg> <./Images/VGDL.jpg>]
-<Images/PCGRL.jpg, id=738, 1365.60187pt x 801.74532pt>
+<Images/PCGRL.jpg, id=748, 1365.60187pt x 801.74532pt>
 File: Images/PCGRL.jpg Graphic file (type jpg)
 <use Images/PCGRL.jpg>
 Package pdftex.def Info: Images/PCGRL.jpg  used on input line 92.
 (pdftex.def)             Requested size: 359.1114pt x 210.83443pt.
  [8 <./Images/CESAGAN.jpg> <./Images/PCGRL.jpg>]
-<Images/PCGMLTaxonomy.jpg, id=747, 789.70032pt x 771.63281pt>
+<Images/PCGMLTaxonomy.jpg, id=757, 789.70032pt x 771.63281pt>
 File: Images/PCGMLTaxonomy.jpg Graphic file (type jpg)
 <use Images/PCGMLTaxonomy.jpg>
 Package pdftex.def Info: Images/PCGMLTaxonomy.jpg  used on input line 101.
 (pdftex.def)             Requested size: 359.61545pt x 351.38783pt.
  [9 <./Images/PCGMLTaxonomy.jpg>]
-<Images/AlgorithmSelection.png, id=760, 1594.45688pt x 495.35063pt>
+<Images/AlgorithmSelection.png, id=770, 1594.45688pt x 495.35063pt>
 File: Images/AlgorithmSelection.png Graphic file (type png)
 <use Images/AlgorithmSelection.png>
 Package pdftex.def Info: Images/AlgorithmSelection.png  used on input line 121.
 (pdftex.def)             Requested size: 426.78671pt x 132.59001pt.
-<Images/HousePlans.jpg, id=767, 1053.9375pt x 948.54375pt>
+<Images/HousePlans.jpg, id=777, 1053.9375pt x 948.54375pt>
 File: Images/HousePlans.jpg Graphic file (type jpg)
 <use Images/HousePlans.jpg>
 Package pdftex.def Info: Images/HousePlans.jpg  used on input line 133.
 (pdftex.def)             Requested size: 234.26315pt x 210.83682pt.
  [10 <./Images/AlgorithmSelection.png>]
-<Images/PythonToProlog.png, id=778, 1690.81688pt x 657.2053pt>
+<Images/PythonToProlog.png, id=788, 1690.81688pt x 657.2053pt>
 File: Images/PythonToProlog.png Graphic file (type png)
 <use Images/PythonToProlog.png>
 Package pdftex.def Info: Images/PythonToProlog.png  used on input line 140.
 (pdftex.def)             Requested size: 426.77954pt x 165.88536pt.
-<Images/ASPDungeons.png, id=783, 1403.99532pt x 432.11438pt>
+<Images/ASPDungeons.png, id=793, 1403.99532pt x 432.11438pt>
 File: Images/ASPDungeons.png Graphic file (type png)
 <use Images/ASPDungeons.png>
 Package pdftex.def Info: Images/ASPDungeons.png  used on input line 149.
 (pdftex.def)             Requested size: 426.7933pt x 131.35622pt.
  [11 <./Images/HousePlans.jpg> <./Images/PythonToProlog.png>]
-<Images/GraphDungeon1.png, id=793, 630.355pt x 581.17125pt>
+<Images/GraphDungeon1.png, id=803, 630.355pt x 581.17125pt>
 File: Images/GraphDungeon1.png Graphic file (type png)
 <use Images/GraphDungeon1.png>
 Package pdftex.def Info: Images/GraphDungeon1.png  used on input line 161.
 (pdftex.def)             Requested size: 202.72765pt x 186.90973pt.
-<Images/GraphDungeon2.png, id=794, 480.79625pt x 435.6275pt>
+<Images/GraphDungeon2.png, id=804, 480.79625pt x 435.6275pt>
 File: Images/GraphDungeon2.png Graphic file (type png)
 <use Images/GraphDungeon2.png>
 Package pdftex.def Info: Images/GraphDungeon2.png  used on input line 166.
 (pdftex.def)             Requested size: 202.7327pt x 183.68683pt.
-<Images/GVGAILevels.png, id=799, 1094.0875pt x 389.455pt>
+<Images/GVGAILevels.png, id=809, 1094.0875pt x 389.455pt>
 File: Images/GVGAILevels.png Graphic file (type png)
 <use Images/GVGAILevels.png>
 Package pdftex.def Info: Images/GVGAILevels.png  used on input line 175.
 (pdftex.def)             Requested size: 426.79257pt x 151.92249pt.
  [12 <./Images/ASPDungeons.png> <./Images/GraphDungeon1.png> <./Images/GraphDungeon2.png>]
-<Images/PlottingSolverComparison.png, id=813, 1354.3097pt x 780.66656pt>
+<Images/PlottingSolverComparison.png, id=823, 1354.3097pt x 780.66656pt>
 File: Images/PlottingSolverComparison.png Graphic file (type png)
 <use Images/PlottingSolverComparison.png>
 Package pdftex.def Info: Images/PlottingSolverComparison.png  used on input line 185.
 (pdftex.def)             Requested size: 365.75116pt x 210.83043pt.
  [13 <./Images/GVGAILevels.png> <./Images/PlottingSolverComparison.png>]
-<Images/BadNorth.jpg, id=826, 1505.625pt x 847.165pt>
+<Images/BadNorth.jpg, id=836, 1505.625pt x 847.165pt>
 File: Images/BadNorth.jpg Graphic file (type jpg)
 <use Images/BadNorth.jpg>
 Package pdftex.def Info: Images/BadNorth.jpg  used on input line 199.
 (pdftex.def)             Requested size: 374.70526pt x 210.83415pt.
-<Images/ModelSynthesis1.jpg, id=832, 278.03876pt x 365.365pt>
+<Images/ModelSynthesis1.jpg, id=842, 278.03876pt x 365.365pt>
 File: Images/ModelSynthesis1.jpg Graphic file (type jpg)
 <use Images/ModelSynthesis1.jpg>
 Package pdftex.def Info: Images/ModelSynthesis1.jpg  used on input line 211.
 (pdftex.def)             Requested size: 187.18864pt x 245.98076pt.
-<Images/ModelSynthesis2.jpg, id=833, 294.09875pt x 479.7925pt>
+<Images/ModelSynthesis2.jpg, id=843, 294.09875pt x 479.7925pt>
 File: Images/ModelSynthesis2.jpg Graphic file (type jpg)
 <use Images/ModelSynthesis2.jpg>
 Package pdftex.def Info: Images/ModelSynthesis2.jpg  used on input line 216.
 (pdftex.def)             Requested size: 150.77818pt x 245.97943pt.
  [14 <./Images/BadNorth.jpg>]
-<Images/OverlappingWFC.jpg, id=844, 2072.74374pt x 2784.4025pt>
+<Images/OverlappingWFC.jpg, id=854, 2072.74374pt x 2784.4025pt>
 File: Images/OverlappingWFC.jpg Graphic file (type jpg)
 <use Images/OverlappingWFC.jpg>
 Package pdftex.def Info: Images/OverlappingWFC.jpg  used on input line 227.
 (pdftex.def)             Requested size: 261.55928pt x 351.3634pt.
  [15 <./Images/ModelSynthesis1.jpg> <./Images/ModelSynthesis2.jpg>] [16 <./Images/OverlappingWFC.jpg>]
-<Images/CavesOfQudWFC1.jpg, id=867, 2079.77pt x 974.64125pt>
+<Images/CavesOfQudWFC1.jpg, id=877, 2079.77pt x 974.64125pt>
 File: Images/CavesOfQudWFC1.jpg Graphic file (type jpg)
 <use Images/CavesOfQudWFC1.jpg>
 Package pdftex.def Info: Images/CavesOfQudWFC1.jpg  used on input line 255.
 (pdftex.def)             Requested size: 202.72122pt x 95.00111pt.
-<Images/CavesOfQudWFC2.jpg, id=868, 2568.59625pt x 1203.49625pt>
+<Images/CavesOfQudWFC2.jpg, id=878, 2568.59625pt x 1203.49625pt>
 File: Images/CavesOfQudWFC2.jpg Graphic file (type jpg)
 <use Images/CavesOfQudWFC2.jpg>
 Package pdftex.def Info: Images/CavesOfQudWFC2.jpg  used on input line 260.
 (pdftex.def)             Requested size: 202.70915pt x 94.97783pt.
-<Images/WFCMaximumConstraint1.jpg, id=873, 665.48625pt x 666.49pt>
+<Images/WFCMaximumConstraint1.jpg, id=883, 665.48625pt x 666.49pt>
 File: Images/WFCMaximumConstraint1.jpg Graphic file (type jpg)
 <use Images/WFCMaximumConstraint1.jpg>
 Package pdftex.def Info: Images/WFCMaximumConstraint1.jpg  used on input line 274.
 (pdftex.def)             Requested size: 202.72421pt x 203.02998pt.
-<Images/WFCMaximumConstraint2.jpg, id=874, 678.535pt x 666.49pt>
+<Images/WFCMaximumConstraint2.jpg, id=884, 678.535pt x 666.49pt>
 File: Images/WFCMaximumConstraint2.jpg Graphic file (type jpg)
 <use Images/WFCMaximumConstraint2.jpg>
 Package pdftex.def Info: Images/WFCMaximumConstraint2.jpg  used on input line 279.
 (pdftex.def)             Requested size: 202.72342pt x 199.12479pt.
-<Images/WFCMinimumConstraint1.jpg, id=878, 693.59125pt x 694.595pt>
+<Images/WFCMinimumConstraint1.jpg, id=888, 693.59125pt x 694.595pt>
 File: Images/WFCMinimumConstraint1.jpg Graphic file (type jpg)
 <use Images/WFCMinimumConstraint1.jpg>
 Package pdftex.def Info: Images/WFCMinimumConstraint1.jpg  used on input line 291.
 (pdftex.def)             Requested size: 202.7238pt x 203.01718pt.
-<Images/WFCMinimumConstraint2.jpg, id=879, 703.62875pt x 683.55376pt>
+<Images/WFCMinimumConstraint2.jpg, id=889, 703.62875pt x 683.55376pt>
 File: Images/WFCMinimumConstraint2.jpg Graphic file (type jpg)
 <use Images/WFCMinimumConstraint2.jpg>
 Package pdftex.def Info: Images/WFCMinimumConstraint2.jpg  used on input line 296.
 (pdftex.def)             Requested size: 202.72652pt x 196.9426pt.
  [17 <./Images/CavesOfQudWFC1.jpg> <./Images/CavesOfQudWFC2.jpg> <./Images/WFCMaximumConstraint1.jpg> <./Images/WFCMaximumConstraint2.jpg>]
-<Images/WFCDistanceConstraint1.jpg, id=894, 639.38875pt x 633.36626pt>
+<Images/WFCDistanceConstraint1.jpg, id=904, 639.38875pt x 633.36626pt>
 File: Images/WFCDistanceConstraint1.jpg Graphic file (type jpg)
 <use Images/WFCDistanceConstraint1.jpg>
 Package pdftex.def Info: Images/WFCDistanceConstraint1.jpg  used on input line 308.
 (pdftex.def)             Requested size: 202.72562pt x 200.81612pt.
-<Images/WFCDistanceConstraint2.jpg, id=895, 642.4pt x 633.36626pt>
+<Images/WFCDistanceConstraint2.jpg, id=905, 642.4pt x 633.36626pt>
 File: Images/WFCDistanceConstraint2.jpg Graphic file (type jpg)
 <use Images/WFCDistanceConstraint2.jpg>
 Package pdftex.def Info: Images/WFCDistanceConstraint2.jpg  used on input line 313.
 (pdftex.def)             Requested size: 202.72955pt x 199.87868pt.
  [18 <./Images/WFCMinimumConstraint1.jpg> <./Images/WFCMinimumConstraint2.jpg> <./Images/WFCDistanceConstraint1.jpg> <./Images/WFCDistanceConstraint2.jpg>]
-<Images/WFCMultiLayer1.jpg, id=907, 700.6175pt x 681.54625pt>
+<Images/WFCMultiLayer1.jpg, id=917, 700.6175pt x 681.54625pt>
 File: Images/WFCMultiLayer1.jpg Graphic file (type jpg)
 <use Images/WFCMultiLayer1.jpg>
 Package pdftex.def Info: Images/WFCMultiLayer1.jpg  used on input line 325.
 (pdftex.def)             Requested size: 202.72487pt x 197.20656pt.
-<Images/WFCMultiLayer2.jpg, id=908, 683.55376pt x 681.54625pt>
+<Images/WFCMultiLayer2.jpg, id=918, 683.55376pt x 681.54625pt>
 File: Images/WFCMultiLayer2.jpg Graphic file (type jpg)
 <use Images/WFCMultiLayer2.jpg>
 Package pdftex.def Info: Images/WFCMultiLayer2.jpg  used on input line 330.
 (pdftex.def)             Requested size: 202.72092pt x 202.12555pt.
-<Images/CavesOfQudWFC3.jpg, id=916, 947.54pt x 741.77126pt>
+<Images/CavesOfQudWFC3.jpg, id=926, 947.54pt x 741.77126pt>
 File: Images/CavesOfQudWFC3.jpg Graphic file (type jpg)
 <use Images/CavesOfQudWFC3.jpg>
 Package pdftex.def Info: Images/CavesOfQudWFC3.jpg  used on input line 349.
 (pdftex.def)             Requested size: 202.7195pt x 158.69673pt.
-<Images/CavesOfQudWFC4.png, id=917, 943.525pt x 749.80125pt>
+<Images/CavesOfQudWFC4.png, id=927, 943.525pt x 749.80125pt>
 File: Images/CavesOfQudWFC4.png Graphic file (type png)
 <use Images/CavesOfQudWFC4.png>
 Package pdftex.def Info: Images/CavesOfQudWFC4.png  used on input line 354.
 (pdftex.def)             Requested size: 202.72433pt x 161.10115pt.
  [19 <./Images/WFCMultiLayer1.jpg> <./Images/WFCMultiLayer2.jpg>]
-<Images/BacktrackingPerformance.png, id=932, 1155.56718pt x 712.91344pt>
+<Images/BacktrackingPerformance.png, id=942, 1155.56718pt x 712.91344pt>
 File: Images/BacktrackingPerformance.png Graphic file (type png)
 <use Images/BacktrackingPerformance.png>
 Package pdftex.def Info: Images/BacktrackingPerformance.png  used on input line 368.
 (pdftex.def)             Requested size: 341.73573pt x 210.82979pt.
  [20 <./Images/CavesOfQudWFC3.jpg> <./Images/CavesOfQudWFC4.png (PNG copy)>]
-<Images/NestedWFC.jpg, id=945, 1678.01906pt x 712.16063pt>
+<Images/NestedWFC.jpg, id=955, 1678.01906pt x 712.16063pt>
 File: Images/NestedWFC.jpg Graphic file (type jpg)
 <use Images/NestedWFC.jpg>
 Package pdftex.def Info: Images/NestedWFC.jpg  used on input line 377.
 (pdftex.def)             Requested size: 426.7754pt x 181.12585pt.
-<Images/InfiniteWFC.jpg, id=948, 1726.95187pt x 755.07094pt>
+<Images/InfiniteWFC.jpg, id=958, 1726.95187pt x 755.07094pt>
 File: Images/InfiniteWFC.jpg Graphic file (type jpg)
 <use Images/InfiniteWFC.jpg>
 Package pdftex.def Info: Images/InfiniteWFC.jpg  used on input line 384.
 (pdftex.def)             Requested size: 426.7829pt x 186.60124pt.
  [21 <./Images/BacktrackingPerformance.png> <./Images/NestedWFC.jpg>]
-<Images/NavigationMeshNodePlacement.png, id=960, 638.385pt x 313.17pt>
+<Images/NavigationMeshNodePlacement.png, id=970, 638.385pt x 313.17pt>
 File: Images/NavigationMeshNodePlacement.png Graphic file (type png)
 <use Images/NavigationMeshNodePlacement.png>
 Package pdftex.def Info: Images/NavigationMeshNodePlacement.png  used on input line 398.
 (pdftex.def)             Requested size: 426.79033pt x 209.36884pt.
  [22 <./Images/InfiniteWFC.jpg>]
-<Images/GrowingGridShape.png, id=971, 440.64626pt x 441.65pt>
+<Images/GrowingGridShape.png, id=981, 440.64626pt x 441.65pt>
 File: Images/GrowingGridShape.png Graphic file (type png)
 <use Images/GrowingGridShape.png>
 Package pdftex.def Info: Images/GrowingGridShape.png  used on input line 410.
 (pdftex.def)             Requested size: 202.72662pt x 203.18842pt.
-<Images/GrowingGridWFC.png, id=972, 839.135pt x 548.0475pt>
+<Images/GrowingGridWFC.png, id=982, 839.135pt x 548.0475pt>
 File: Images/GrowingGridWFC.png Graphic file (type png)
 <use Images/GrowingGridWFC.png>
 Package pdftex.def Info: Images/GrowingGridWFC.png  used on input line 415.
 (pdftex.def)             Requested size: 202.72813pt x 132.40378pt.
  [23 <./Images/NavigationMeshNodePlacement.png (PNG copy)> <./Images/GrowingGridShape.png> <./Images/GrowingGridWFC.png>]
-<Images/SymmetryDictionary.png, id=988, 1218.05063pt x 683.55376pt>
+<Images/SymmetryDictionary.png, id=998, 1218.05063pt x 683.55376pt>
 File: Images/SymmetryDictionary.png Graphic file (type png)
 <use Images/SymmetryDictionary.png>
 Package pdftex.def Info: Images/SymmetryDictionary.png  used on input line 424.
@@ -1346,17 +1346,17 @@ Chapter 6.
 
  (./Main Sections/08Implementation.tex
 Chapter 7.
-<Images/CubeTile.png, id=1101, 150.5625pt x 150.5625pt>
+<Images/CubeTile.png, id=1111, 150.5625pt x 150.5625pt>
 File: Images/CubeTile.png Graphic file (type png)
 <use Images/CubeTile.png>
 Package pdftex.def Info: Images/CubeTile.png  used on input line 27.
 (pdftex.def)             Requested size: 70.28421pt x 70.28421pt.
-<Images/CornerTile.png, id=1102, 150.5625pt x 150.5625pt>
+<Images/CornerTile.png, id=1112, 150.5625pt x 150.5625pt>
 File: Images/CornerTile.png Graphic file (type png)
 <use Images/CornerTile.png>
 Package pdftex.def Info: Images/CornerTile.png  used on input line 32.
 (pdftex.def)             Requested size: 70.28421pt x 70.28421pt.
-<Images/WallTile.png, id=1103, 150.5625pt x 150.5625pt>
+<Images/WallTile.png, id=1113, 150.5625pt x 150.5625pt>
 File: Images/WallTile.png Graphic file (type png)
 <use Images/WallTile.png>
 Package pdftex.def Info: Images/WallTile.png  used on input line 37.
@@ -1429,7 +1429,7 @@ File: Images/CubeTile.png Graphic file (type png)
 <use Images/CubeTile.png>
 Package pdftex.def Info: Images/CubeTile.png  used on input line 149.
 (pdftex.def)             Requested size: 45.61249pt x 45.61249pt.
-<Images/EmptyTile.png, id=1127, 150.5625pt x 150.5625pt>
+<Images/EmptyTile.png, id=1137, 150.5625pt x 150.5625pt>
 File: Images/EmptyTile.png Graphic file (type png)
 <use Images/EmptyTile.png>
 Package pdftex.def Info: Images/EmptyTile.png  used on input line 149.
@@ -1454,69 +1454,331 @@ File: Images/WallTile.png Graphic file (type png)
 <use Images/WallTile.png>
 Package pdftex.def Info: Images/WallTile.png  used on input line 171.
 (pdftex.def)             Requested size: 45.61249pt x 45.61249pt.
- [38] [39 <./Images/EmptyTile.png>] [40] [41]) [42]
+ [38]
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 200.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 200.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 200.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 200.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 200.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 222.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 222.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 222.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 222.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 222.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 244.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 244.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 244.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 244.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 244.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 266.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 266.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 266.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 266.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 266.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 289.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 289.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CornerTile.png Graphic file (type png)
+<use Images/CornerTile.png>
+Package pdftex.def Info: Images/CornerTile.png  used on input line 289.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 289.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 289.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 307.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 307.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CornerTile.png Graphic file (type png)
+<use Images/CornerTile.png>
+Package pdftex.def Info: Images/CornerTile.png  used on input line 307.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 307.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 307.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 327.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 327.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CornerTile.png Graphic file (type png)
+<use Images/CornerTile.png>
+Package pdftex.def Info: Images/CornerTile.png  used on input line 327.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 327.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 327.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 347.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 347.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CornerTile.png Graphic file (type png)
+<use Images/CornerTile.png>
+Package pdftex.def Info: Images/CornerTile.png  used on input line 347.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 347.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 347.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+ [39 <./Images/EmptyTile.png>]
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 368.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 368.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CornerTile.png Graphic file (type png)
+<use Images/CornerTile.png>
+Package pdftex.def Info: Images/CornerTile.png  used on input line 368.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 368.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 368.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+
+Underfull \hbox (badness 2781) in paragraph at lines 368--368
+\T1/cmr/m/n/10 cit Vari-ant 0 Be-fore
+ []
+
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 384.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 384.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CornerTile.png Graphic file (type png)
+<use Images/CornerTile.png>
+Package pdftex.def Info: Images/CornerTile.png  used on input line 384.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 384.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 384.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+
+Underfull \hbox (badness 2781) in paragraph at lines 384--384
+\T1/cmr/m/n/10 cit Vari-ant 1 Be-fore
+ []
+
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 400.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 400.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CornerTile.png Graphic file (type png)
+<use Images/CornerTile.png>
+Package pdftex.def Info: Images/CornerTile.png  used on input line 400.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 400.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 400.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+
+Underfull \hbox (badness 2781) in paragraph at lines 400--400
+\T1/cmr/m/n/10 cit Vari-ant 2 Be-fore
+ []
+
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 416.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 416.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CornerTile.png Graphic file (type png)
+<use Images/CornerTile.png>
+Package pdftex.def Info: Images/CornerTile.png  used on input line 416.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/WallTile.png Graphic file (type png)
+<use Images/WallTile.png>
+Package pdftex.def Info: Images/WallTile.png  used on input line 416.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+File: Images/CubeTile.png Graphic file (type png)
+<use Images/CubeTile.png>
+Package pdftex.def Info: Images/CubeTile.png  used on input line 416.
+(pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
+
+Underfull \hbox (badness 2781) in paragraph at lines 416--416
+\T1/cmr/m/n/10 cit Vari-ant 3 Be-fore
+ []
+
+[40] [41] [42]) [43]
 \openout2 = `"Main Sections/09Evaluation.aux"'.
 
  (./Main Sections/09Evaluation.tex
 Chapter 8.
-[43
+[44
 
 
 
 
-]) [44] [45]
+]) [45] [46]
 \openout2 = `"Main Sections/10Conclusion.aux"'.
 
  (./Main Sections/10Conclusion.tex
 Chapter 9.
-) [46
+) [47
 
 
 
 
-] [47
+] [48
 
 
 
-] [48]
+] [49]
 Overfull \hbox (5.65617pt too wide) in paragraph at lines 36--36
 []\T1/cmr/m/it/12 Data Min-ing and Con-straint Pro-gram-ming: Found-a-tions of a Cross-Disciplinary
  []
 
-[49] [50] [51]
+[50] [51] [52]
 \openout2 = `"Main Sections/11Appendix.aux"'.
 
  (./Main Sections/11Appendix.tex
 Appendix A.
-[52
+[53
 
 
 ]
 Appendix B.
-[53
-
-]
-Appendix C.
 [54
 
 ]
-Appendix D.
+Appendix C.
 [55
 
-] [56]
+]
+Appendix D.
+[56
+
+] [57]
 Overfull \hbox (3.41115pt too wide) in paragraph at lines 145--146
 []\T1/cmr/m/n/12 Should prob-ably also re-place the buzz with some-thing that doesn't
  []
 
-[57]
+[58]
 Appendix E.
-[58
+[59
 
-] [59]
+] [60]
 Appendix F.
-[60
+[61
 
-]) [61] (./main.aux (./Main Sections/02Introduction.aux) (./Main Sections/03LiteratureReview.aux) (./Main Sections/04RequirementsSpecification.aux) (./Main Sections/05SoftwareEngineeringProcess.aux) (./Main Sections/06Ethics.aux) (./Main Sections/07Design.aux) (./Main Sections/08Implementation.aux) (./Main Sections/09Evaluation.aux) (./Main Sections/10Conclusion.aux) (./Main Sections/11Appendix.aux))
+]) [62] (./main.aux (./Main Sections/02Introduction.aux) (./Main Sections/03LiteratureReview.aux) (./Main Sections/04RequirementsSpecification.aux) (./Main Sections/05SoftwareEngineeringProcess.aux) (./Main Sections/06Ethics.aux) (./Main Sections/07Design.aux) (./Main Sections/08Implementation.aux) (./Main Sections/09Evaluation.aux) (./Main Sections/10Conclusion.aux) (./Main Sections/11Appendix.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
@@ -1528,18 +1790,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35567 strings out of 474103
- 681566 string characters out of 5740405
+ 35610 strings out of 474103
+ 682587 string characters out of 5740405
  1965496 words of memory out of 5000000
- 56993 multiletter control sequences out of 15000+600000
+ 57020 multiletter control sequences out of 15000+600000
  573190 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,12n,96p,1962b,2531s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><h:/Program Files/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (69 pages, 16540263 bytes).
+Output written on main.pdf (70 pages, 16543798 bytes).
 PDF statistics:
- 1527 PDF objects out of 1728 (max. 8388607)
- 1313 compressed objects within 14 object streams
- 338 named destinations out of 1000 (max. 500000)
+ 1559 PDF objects out of 1728 (max. 8388607)
+ 1344 compressed objects within 14 object streams
+ 354 named destinations out of 1000 (max. 500000)
  887 words of extra memory for PDF output out of 10000 (max. 10000000)
 

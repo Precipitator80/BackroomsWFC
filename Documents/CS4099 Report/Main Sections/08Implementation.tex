@@ -169,21 +169,254 @@ Second, a non-symmetric copy is created for each tile. Non-symmetric tiles may h
         \end{minipage}
         \label{fig:cubeSymmetryConversion2}
     }
-    \caption{A symmetric cube tile converted to a non-symmetric tile}
+    \caption{A symmetric cube tile converted to a non-symmetric tile. For simplicity, the cube is only shown with a wall as its possible neighbour.}
     \label{fig:cubeSymmetryConversion}
 \end{figure}
 
-Third, an array for each possible tile rotation is created (cardinalities 0, 1, 2 and 3). This array is attached to the original tile to set explicit neighbours later. The instantiated tile is used as the base rotation (cardinality 0) and referenced in the array. For cube tiles, the base rotation tile can be referenced for each rotation instead of having to create additional copies.
+Third, an array for each possible tile rotation is created (cardinalities 0, 1, 2 and 3). This array is attached to the original tile to set explicit neighbours later. The instantiated tile is used as the base rotation (cardinality 0) and referenced in the array. For cube tiles, the base rotation tile can be referenced for each rotation instead of having to create additional copies. The filled in array for cube tiles is shown in Figure \ref{fig:cubeRotationsArray}.
 
-% Show the rotations array at the start with a corner tile. Show the rest as to be created with dashed lines. Also show the rotations array for the cube tile and how it is just the same in each slot.
+% Show the rotations array for the cube tile and how it is just the same in each slot.
+\begin{figure}[H]
+    \subfigure[Cube Tile Explicit Variant 0]{
+        \begin{minipage}[b]{0.22\linewidth}
+            \centering
+            \rotatebox[origin=c]{-180}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
 
-For non-cube tiles, variants for the remaining cardinalities (1, 2 and 3) must be created. Each new variant copies the previous one. This allows a loop to be used that always performs 90 degree steps. First, the tile is rotated by 90 degrees. Then, neighbour data and rotation arrays are swapped. This sets back neighbours as left neighours, left neighbours as front neighbours and so on. Finally, the cardinality values of all neighbours are incremented by 1 to mark the 90 degree rotation.
+            \rotatebox[origin=c]{-90}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+            \rotatebox[origin=c]{-270}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
 
-% Show cardinality 0 corner rotated to cardinality 1 corner. Use ``...'' for the remaining cardinalities.
+            \rotatebox[origin=c]{-0}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+        \end{minipage}
+        \label{fig:cubeRotationsArray0}
+    }
+    \hfill
+    \subfigure[Cube Tile Explicit Variant 1]{
+        \begin{minipage}[b]{0.22\linewidth}
+            \centering
+            \rotatebox[origin=c]{-180}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
 
-Finally, once all the explicit variants have been generated, the neighbours of each tile can be set to the explicit variants. To do this, the array assigned to each tile containing all the explicit variants is used. For each neighbour of the explicit tile, the reference to the non-explicit neighbour is replaced by the explicit neighbour with the correct orientation.
+            \rotatebox[origin=c]{-90}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+            \rotatebox[origin=c]{-270}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+
+            \rotatebox[origin=c]{-0}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+        \end{minipage}
+        \label{fig:cubeRotationsArray1}
+    }
+    \hfill
+    \subfigure[Cube Tile Explicit Variant 2]{
+        \begin{minipage}[b]{0.22\linewidth}
+            \centering
+            \rotatebox[origin=c]{-180}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+
+            \rotatebox[origin=c]{-90}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+            \rotatebox[origin=c]{-270}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+
+            \rotatebox[origin=c]{-0}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+        \end{minipage}
+        \label{fig:cubeRotationsArray2}
+    }
+    \hfill
+    \subfigure[Cube Tile Explicit Variant 3]{
+        \begin{minipage}[b]{0.22\linewidth}
+            \centering
+            \rotatebox[origin=c]{-180}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+
+            \rotatebox[origin=c]{-90}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+            \rotatebox[origin=c]{-270}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+
+            \rotatebox[origin=c]{-0}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+        \end{minipage}
+        \label{fig:cubeRotationsArray3}
+    }
+    \caption{The array of explicit variants for the cube tile with neighbours shown. Due to the tile's symmetry, no extra work is needed to calculate variants for cardinalities 1, 2 and 3.}
+    \label{fig:cubeRotationsArray}
+\end{figure}
+
+For non-cube tiles, variants for the remaining cardinalities (1, 2 and 3) must be created. Each new variant copies the previous one. This allows a loop to be used that always performs 90 degree steps. First, the tile is rotated by 90 degrees. Then, neighbour data and rotation arrays are swapped. This sets back neighbours as left neighours, left neighbours as front neighbours and so on. Finally, the cardinality values of all neighbours are incremented by 1 to mark the 90 degree rotation. The filled in array for corner tiles is shown in Figure \ref{fig:cornerRotationsArray}.
+
+% Show the rotations array for the corner tile. Show cardinality 0 corner rotated to cardinality 1 corner etc.
+\begin{figure}[H]
+    \subfigure[Corner Tile Explicit Variant 0]{
+        \begin{minipage}[b]{0.22\linewidth}
+            \centering
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+
+            \rotatebox[origin=c]{-270}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+        \end{minipage}
+        \label{fig:cornerRotationsArray0}
+    }
+    \hfill
+    \subfigure[Corner Tile Explicit Variant 1]{
+        \begin{minipage}[b]{0.22\linewidth}
+            \centering
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            \rotatebox[origin=c]{-90}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+            }
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+
+            \rotatebox[origin=c]{-90}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+        \end{minipage}
+        \label{fig:cornerRotationsArray1}
+    }
+    \hfill
+    \subfigure[Corner Tile Explicit Variant 2]{
+        \begin{minipage}[b]{0.22\linewidth}
+            \centering
+            \rotatebox[origin=c]{-90}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+
+            \rotatebox[origin=c]{-180}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+            \rotatebox[origin=c]{-180}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+            }
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+        \end{minipage}
+        \label{fig:cornerRotationsArray2}
+    }
+    \hfill
+    \subfigure[Corner Tile Explicit Variant 3]{
+        \begin{minipage}[b]{0.22\linewidth}
+            \centering
+            \rotatebox[origin=c]{-270}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+            \rotatebox[origin=c]{-270}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+            }
+            \rotatebox[origin=c]{-180}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            }
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+        \end{minipage}
+        \label{fig:cornerRotationsArray3}
+    }
+    \caption{The array of explicit variants for the corner tile with neighbours shown.}
+    \label{fig:cornerRotationsArray}
+\end{figure}
+
+These explicit variants do not yet have tile rotation implicitly encoded in their neighbour data. The original tile neighbours in the tile array must be replaced with their explicit variants matching the rotations in the rotations array. To do this, the array assigned to each tile containing all the explicit variants is used once all explicit variants have been created. For each neighbour of the explicit tile, the reference to the non-explicit neighbour is replaced by the explicit neighbour with the correct orientation. As example, the explicit corner tile variants are shown with the original cube and wall neighbours in Figure \ref{fig:explicitNeighbourUpdate}. The references are changed to explicit cube and wall neighbours to match Figure \ref{fig:cornerRotationsArray}.
 
 % Diagram of this process. Show the original tile and each variant in a line. Then show how the neighbours of one of these is replaced with the explicit variants.
+\begin{figure}[H]
+    \subfigure[Corner Tile Explicit Variant 0 Before Neighbour Update]{
+        \begin{minipage}[b]{0.22\linewidth}
+            \centering
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+        \end{minipage}
+        \label{fig:explicitNeighbourUpdate0}
+    }
+    \hfill
+    \subfigure[Corner Tile Explicit Variant 1 Before Neighbour Update]{
+        \begin{minipage}[b]{0.22\linewidth}
+            \centering
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            \rotatebox[origin=c]{-90}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+            }
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+        \end{minipage}
+        \label{fig:explicitNeighbourUpdate1}
+    }
+    \hfill
+    \subfigure[Corner Tile Explicit Variant 2 Before Neighbour Update]{
+        \begin{minipage}[b]{0.22\linewidth}
+            \centering
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+            \rotatebox[origin=c]{-180}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+            }
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+        \end{minipage}
+        \label{fig:explicitNeighbourUpdate2}
+    }
+    \hfill
+    \subfigure[Corner Tile Explicit Variant 3 Before Neighbour Update]{
+        \begin{minipage}[b]{0.22\linewidth}
+            \centering
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+            \rotatebox[origin=c]{-270}{
+                \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CornerTile.png}
+            }
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/WallTile.png}
+
+            \includegraphics[width=0.2375\textwidth, height=0.1\textheight, keepaspectratio]{Images/CubeTile.png}
+        \end{minipage}
+        \label{fig:explicitNeighbourUpdate3}
+    }
+    \caption{The explicit corner tile variants before updating neighbours to their explicit forms}
+    \label{fig:explicitNeighbourUpdate}
+\end{figure}
 
 % // Initialise the explicit tile set if it has not already been done.
 % // Ensure that the empty tile is in the tile set.
