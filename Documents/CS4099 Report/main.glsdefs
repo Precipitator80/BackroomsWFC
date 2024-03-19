@@ -1,0 +1,140 @@
+\glsdefs@newdocentry{wfc}%
+{%
+name={\acronymfont {\glsentryshort {wfc}}},%
+sort={WFC},%
+type={acronym},%
+first={WFC},%
+firstplural={WFCs},%
+text={WFC},%
+plural={WFCs},%
+description={Wave Function Collapse},%
+descriptionplural={Wave Function Collapse},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Wave Function Collapse},%
+longplural={Wave Function Collapses},%
+short={WFC},%
+shortplural={WFCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{imib}%
+{%
+name={\acronymfont {\glsentryshort {imib}}},%
+sort={IMIB},%
+type={acronym},%
+first={IMIB},%
+firstplural={IMIBs},%
+text={IMIB},%
+plural={IMIBs},%
+description={Infinite Modifying In Blocks},%
+descriptionplural={Infinite Modifying In Blocks},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Infinite Modifying In Blocks},%
+longplural={Infinite Modifying In Blockss},%
+short={IMIB},%
+shortplural={IMIBs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{mac3}%
+{%
+name={\acronymfont {\glsentryshort {mac3}}},%
+sort={MAC3},%
+type={acronym},%
+first={MAC3},%
+firstplural={MAC3s},%
+text={MAC3},%
+plural={MAC3s},%
+description={Maintaining Arc Consistency 3},%
+descriptionplural={Maintaining Arc Consistency 3},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Maintaining Arc Consistency 3},%
+longplural={Maintaining Arc Consistency 3s},%
+short={MAC3},%
+shortplural={MAC3s},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ac3}%
+{%
+name={\acronymfont {\glsentryshort {ac3}}},%
+sort={AC3},%
+type={acronym},%
+first={AC3},%
+firstplural={AC3s},%
+text={AC3},%
+plural={AC3s},%
+description={Arc Consistency 3},%
+descriptionplural={Arc Consistency 3},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Arc Consistency 3},%
+longplural={Arc Consistency 3s},%
+short={AC3},%
+shortplural={AC3s},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{rng}%
+{%
+name={\acronymfont {\glsentryshort {rng}}},%
+sort={RNG},%
+type={acronym},%
+first={RNG},%
+firstplural={RNGs},%
+text={RNG},%
+plural={RNGs},%
+description={Random Number Generator},%
+descriptionplural={Random Number Generator},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Random Number Generator},%
+longplural={Random Number Generators},%
+short={RNG},%
+shortplural={RNGs},%
+counter={page},%
+parent={},%
+%
+}%
+

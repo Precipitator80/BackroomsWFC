@@ -4,7 +4,7 @@
 % Specific Sections: Goal of each part. Purpose or context within larger whole. How each part works step by step. (STAR?)
 \section{Cells}
 \subsection{Cell Class}\label{sec:cellClass}
-The cell class contains integer coordinates, a set of possible tile options and a tile prefab game object. These variables allow the cell to be used in a grid for level generation. The set of tile options is initialised with the entire fully-explicit tile set. As WFC is run on a grid including the cell, tiles that become invalid options are removed. Once the cell has been collapsed, the assigned tile is instantiated. Additionally a reference to the instantiated tile is preserved in the tile prefab field.
+The cell class contains integer coordinates, a set of possible tile options and a tile prefab game object. These variables allow the cell to be used in a grid for level generation. The set of tile options is initialised with the entire fully-explicit tile set. As \acrshort{wfc} is run on a grid including the cell, tiles that become invalid options are removed. Once the cell has been collapsed, the assigned tile is instantiated. Additionally a reference to the instantiated tile is preserved in the tile prefab field.
 
 % Diagram of a Cell, showing its list of possible tile choices.
 \begin{figure}[H]
@@ -44,7 +44,7 @@ One additional property to note is that the cell class does not inherit from Uni
 Objects that do inherit from MonoBehaviour cannot use constructors safely and must instead use Unity's Start or Awake functions. However, the Start and Awake functions cannot easily be passed initialisation data. The cost of not inheriting from MonoBehaviour is that any such instances cannot be attached to any objects spawned in the world.
 
 \subsection{CellArc Class}
-The cell arc class is used to represent arcs in the grid. Each arc contains references to two cells. The constructor is used to ensure that the arc is valid. This is done by comparing the x and y coordinates of the cells when creating the arc. An exception is thrown when the cells are not adjacent. Cells being adjacent is specific to the context of WFC. In Sudoku, for example, a pair of constrained cells need not be directly adjacent.
+The cell arc class is used to represent arcs in the grid. Each arc contains references to two cells. The constructor is used to ensure that the arc is valid. This is done by comparing the x and y coordinates of the cells when creating the arc. An exception is thrown when the cells are not adjacent. Cells being adjacent is specific to the context of \acrshort{wfc}. In Sudoku, for example, a pair of constrained cells need not be directly adjacent.
 
 % Show two cells and their arc.
 
@@ -445,18 +445,18 @@ To collapse a tile into a cell, the tile's model is instantiated. Then, the mode
 % Instantiate, place, add collider, reference and set active.
 
 \section{Chunks}
-Chunks are defined by their own chunk coordinates, which are converted from world coordinates using the chunk size as a divisor. From this, each of the chunk's four layers can be defined. Layer one is aligned with the chunk's world coordinates, while layer two is offset by half a chunk in the x direction. Layer three is similarly offset by half a chunk in the y direction, while layer four is offset both in the x and y directions. Each layer is given its own layer spawner instance, which runs WFC on the portion of the chunk defined by the layer.
+Chunks are defined by their own chunk coordinates, which are converted from world coordinates using the chunk size as a divisor. From this, each of the chunk's four layers can be defined. Layer one is aligned with the chunk's world coordinates, while layer two is offset by half a chunk in the x direction. Layer three is similarly offset by half a chunk in the y direction, while layer four is offset both in the x and y directions. Each layer is given its own layer spawner instance, which runs \acrshort{wfc} on the portion of the chunk defined by the layer.
 
 % Chunk diagram with layer shown.
 
-Each chunk has its own Random Number Generator (RNG), which is used by the layer spawners when making tile choices. The seed for the RNG is defined deterministically through the chunk's coordinates. The global level generation seed is added to allow generation of multiple levels while keeping determinism. This deterministic use of RNGs when spawning chunks is what allows the level generation manager to spawn chunks identically, even when unloading and loading a chunk again.
+Each chunk has its own \acrfull{rng}, which is used by the layer spawners when making tile choices. The seed for the \acrshort{rng} is defined deterministically through the chunk's coordinates. The global level generation seed is added to allow generation of multiple levels while keeping determinism. This deterministic use of \acrshort{rng}s when spawning chunks is what allows the level generation manager to spawn chunks identically, even when unloading and loading a chunk again.
 
 \section{Level Generation Manager}
 \subsection{Prerequisites}
 To start generation, the level designer must have defined a tile set for the generator to use. This must contain an empty tile and be convertible into an explicit tile set as detailed in Section \ref{sec:tileSymmetry}.
 
 \subsection{Solver (Layer Spawners)}
-The MAC3 solver code is held in the layer spawner class. This matches the idea of layers and chunks modifying the world in an infinite set of blocks. To allow accurate placement of tiles in the world, a starting cell coordinate must be passed when initialising the layer spawner. Furthermore, a reference to the layer's parent chunk is kept in order to utilise its random number generator.
+The \acrshort{mac3} solver code is held in the layer spawner class. This matches the idea of layers and chunks modifying the world in an infinite set of blocks. To allow accurate placement of tiles in the world, a starting cell coordinate must be passed when initialising the layer spawner. Furthermore, a reference to the layer's parent chunk is kept in order to utilise its \acrshort{rng}.
 
 \subsection{Grid Initialisation}
 Before starting generation of a layer, the grid of cells composing it must be initialised. Additionally, a list of cells left to assign is initialised to simplify cell choices when solving. Padding on the layer size is used to include any previously collapsed cells. Added cells that have not been collapsed are treated as empty tiles. This padding means that non-padded cells take into account full adjacency information. If the layer were not padded, then border cells would not have arc consistency with cells outside of the layer as these arcs would not be checked by the solver. The non-padding cells in the centre of the grid are refreshed by restoring each cell's tile options set to include all possible tiles. This allows each each layer to re-generate its cells. In effect, this connects singular, overlapping layers into an infinite, continuous grid.% WHY Are non-collapsed cells treated as empty tiles? DOES THIS HELP STITCHING? EXPERIMENT AGAIN AND WRITE DOWN REASONING.
@@ -467,20 +467,20 @@ Before starting generation of a layer, the grid of cells composing it must be in
 Were every cell stored in a global grid, then it would be trivially easy to get previously collapsed cells. This is unfeasible due to the requirement of letting the player navigate an infinite world. As such, once cells are collapsed, the grid used by the solver is discarded. Instead, the cell reference class described in Section \ref{sec:cellReferenceClass} is used to preserve a reference to the cell. Each tile has its own collider that can be used to obtain the cell reference as described in Section \ref{sec:collapsingCells}.% DISCUSS ALTERNATIVE IN EVALUATION. MAYBE A "SEMI-GLOBAL" GRID THAT CONTAINS ALL THE CURRENTLY COLLAPSED CELLS AND SHIFTS AS THE PLAYER MOVES.
 
 \subsection{Setting up MAC3}
-With the layer's grid fully initialised, the main stage of the solver begins. First, a stack of state changes is initialised. This tracks changes to cells after each assignment by pushing a new state change to the stack. Second, global arc consistency must be enforced. To do this, AC3 is run with the starting queue consisting of all arcs in the grid.
+With the layer's grid fully initialised, the main stage of the solver begins. First, a stack of state changes is initialised. This tracks changes to cells after each assignment by pushing a new state change to the stack. Second, global arc consistency must be enforced. To do this, \acrshort{ac3} is run with the starting queue consisting of all arcs in the grid.
 
 \subsection{MAC3 Recursion}
-Once global arc consistency has been enforced, the first iteration of the recursive MAC3 algorithm is called. Pseudocode of this is given below. How each step works and its purpose is explained in more detail in subsections following the pseudocode.
+Once global arc consistency has been enforced, the first iteration of the recursive \acrshort{mac3} algorithm is called. Pseudocode of this is given below. How each step works and its purpose is explained in more detail in subsections following the pseudocode.
 
 \begin{enumerate}
     \item If all cells have been assigned, return.
     \item Choose a cell and tile to assign as in Section \ref{sec:variableAndValueChoice}.
     \item Enter a new state and assign the tile to the cell, pruning other tiles from its tile options set.
-    \item If the cell's tile options set changed, run AC3.
-    \item Recurse if AC3 was not run or there was no domain wipeout during AC3.
+    \item If the cell's tile options set changed, run \acrshort{ac3}.
+    \item Recurse if \acrshort{ac3} was not run or there was no domain wipeout during \acrshort{ac3}.
     \item If all cells have been assigned, return.
     \item We are now in the case that a domain wipeout must have occurred. Revert the state.
-    \item If the cell we tried to assign still has other options left, remove / `unassign' the tile we tried from the options, run AC3 and recurse again.
+    \item If the cell we tried to assign still has other options left, remove / `unassign' the tile we tried from the options, run \acrshort{ac3} and recurse again.
     \item If all cells have been assigned, return.
     \item It is now the case that all possible tile values for a cell have led to a domain wipeout. This means that an earlier choice must be to blame. Restore the tile we tried both to assign and unassign and return.
 \end{enumerate}
@@ -493,14 +493,14 @@ To track state changes, each layer spawner holds a stack of state changes. After
 To revert a state, the domain changes dictionary is iterated through, with each cell having any removed tiles restored to its domain. Furthermore, the cell that was assigned in the state change is re-added to the list of cells left to assign.
 
 \subsubsection{Assigning and Unassigning a Tile to a Cell}
-Assigning a tile to a cell involves pruning all tiles except the one being assigned. These tiles are removed from the tile options set. Furthermore, each domain change is recorded in the current state changes. Finally, the assigned cell is removed from the list of cells left to assign. After this, AC3 can be run to maintain arc consistency.
+Assigning a tile to a cell involves pruning all tiles except the one being assigned. These tiles are removed from the tile options set. Furthermore, each domain change is recorded in the current state changes. Finally, the assigned cell is removed from the list of cells left to assign. After this, \acrshort{ac3} can be run to maintain arc consistency.
 
 % Image of assignment.
 
 Unassigning a tile to a cell first requires the state to be reverted. After this, the opposite choice is taken. This is done by pruning only the tile choice that was previously assigned. This demonstrates the binary branching nature of the implementation. Rather than exploring all possible tile values in one level of search, each tile value is either assigned or unassigned.
 
 \subsubsection{Visualising Recursion}
-The recursive MAC3 method can be visualised as consisting of three parts as in Figure \ref{fig:mac3Recursion}.
+The recursive \acrshort{mac3} method can be visualised as consisting of three parts as in Figure \ref{fig:mac3Recursion}.
 
 \begin{figure}[H]
     \begin{framed}
@@ -510,7 +510,7 @@ The recursive MAC3 method can be visualised as consisting of three parts as in F
             \item Both assignments having failed.
         \end{enumerate}
     \end{framed}
-    \caption{The three parts of the recursive MAC3 method}
+    \caption{The three parts of the recursive \acrshort{mac3} method}
     \label{fig:mac3Recursion}
 \end{figure}
 

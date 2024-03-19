@@ -45,11 +45,11 @@ Embark on an infinite journey through the enigmatic depths of the Backrooms. Tak
 \begin{itemize}
     \item Create a design outline document.
     \item Try to adapt one of the WFC implementations to 3D.
-    \begin{itemize}
-        \item \url{https://github.com/GarnetKane99/WaveFunctionCollapse}
-        \item Up, down, right, left, front, back neighbours.
-        \item Each prefab in the neighbours array should have a weighting too. Use an entropy calculation.
-    \end{itemize}
+          \begin{itemize}
+              \item \url{https://github.com/GarnetKane99/WaveFunctionCollapse}
+              \item Up, down, right, left, front, back neighbours.
+              \item Each prefab in the neighbours array should have a weighting too. Use an entropy calculation.
+          \end{itemize}
     \item Get a simple, one-room playable demo.
 \end{itemize}
 
@@ -104,49 +104,49 @@ Embark on an infinite journey through the enigmatic depths of the Backrooms. Tak
 \noindent Week 2 - 24.01.2024
 \begin{itemize}
     \item Main Goals:
-    \begin{itemize}
-        \item Continue working towards chunk generation.
-        \begin{itemize}
-            \item Let chunks that are separately generated overlap information.
-            \begin{itemize}
-                \item Chunks have trouble generating. Maybe the overlap method is not fully correct. Think about overlap size and simply getting information vs delete some part.
-                \item Infinite modifying in blocks with good chunk sizes might help without backtracking.
-            \end{itemize}
-            \item Allow backtracking for chunks.
-        \end{itemize}
-        \item Script goal to let player win.
-        \begin{itemize}
-            \item Detect when the player touches the goal.
-            \item Show a message and go back to the menu / teleport the player somewhere else.
-        \end{itemize}
-    \end{itemize}
+          \begin{itemize}
+              \item Continue working towards chunk generation.
+                    \begin{itemize}
+                        \item Let chunks that are separately generated overlap information.
+                              \begin{itemize}
+                                  \item Chunks have trouble generating. Maybe the overlap method is not fully correct. Think about overlap size and simply getting information vs delete some part.
+                                  \item Infinite modifying in blocks with good chunk sizes might help without backtracking.
+                              \end{itemize}
+                        \item Allow backtracking for chunks.
+                    \end{itemize}
+              \item Script goal to let player win.
+                    \begin{itemize}
+                        \item Detect when the player touches the goal.
+                        \item Show a message and go back to the menu / teleport the player somewhere else.
+                    \end{itemize}
+          \end{itemize}
     \item Extra:
-    \begin{itemize}
-        \item Add in a mini sub-region to test (i.e freezer).
-        \item Think about making a variant for empty vs empty light.
-        \item Graphics improvements:
-        \begin{itemize}
-            \item Fog / render distance if needed later.
-            \begin{itemize}
-                \item Adjusted fog colour.
-                \item Should anything else be adjusted? For now, no render distance cust. needed.
-            \end{itemize}
-            \item Make vhs effect screen space rather than plane.
-            \begin{itemize}
-                \item Seems to be difficult to overlay onto the render texture without more cameras.
-            \end{itemize}
-            \item Skybox lighting for ambient light.
-            \item Balance light settings and bloom a bit more.
-        \end{itemize}
-        \item Audio improvements:
-        \begin{itemize}
-            \item Script the lights to have random offset.
-            \begin{itemize}
-                \item Should probably also replace the buzz with something that doesn’t tick.
-            \end{itemize}
-            \item Add VHS SFX to the player.
-        \end{itemize}
-    \end{itemize}
+          \begin{itemize}
+              \item Add in a mini sub-region to test (i.e freezer).
+              \item Think about making a variant for empty vs empty light.
+              \item Graphics improvements:
+                    \begin{itemize}
+                        \item Fog / render distance if needed later.
+                              \begin{itemize}
+                                  \item Adjusted fog colour.
+                                  \item Should anything else be adjusted? For now, no render distance cust. needed.
+                              \end{itemize}
+                        \item Make vhs effect screen space rather than plane.
+                              \begin{itemize}
+                                  \item Seems to be difficult to overlay onto the render texture without more cameras.
+                              \end{itemize}
+                        \item Skybox lighting for ambient light.
+                        \item Balance light settings and bloom a bit more.
+                    \end{itemize}
+              \item Audio improvements:
+                    \begin{itemize}
+                        \item Script the lights to have random offset.
+                              \begin{itemize}
+                                  \item Should probably also replace the buzz with something that doesn’t tick.
+                              \end{itemize}
+                        \item Add VHS SFX to the player.
+                    \end{itemize}
+          \end{itemize}
 \end{itemize}
 
 \noindent Week 3 - 31.01.2024
@@ -166,9 +166,9 @@ Embark on an infinite journey through the enigmatic depths of the Backrooms. Tak
 \begin{itemize}
     \item Focussing more on other projects at the moment.
     \item Tried to do parallelisation, but it wasn’t simple. Focus on other things first.
-    \begin{itemize}
-        \item Generate the level as the player moves about.
-    \end{itemize}
+          \begin{itemize}
+              \item Generate the level as the player moves about.
+          \end{itemize}
     \item Continue report writing when able.
 \end{itemize}
 
@@ -197,30 +197,30 @@ Embark on an infinite journey through the enigmatic depths of the Backrooms. Tak
 \section*{Modules / Blocks}
 \begin{itemize}
     \item Each a 1x1 tile, Empyrion style block with adjacency constraints and weighting (how?) for each.
-    \begin{itemize}
-        \item Full
-        \begin{itemize}
-            \item Floor (full with carpet on top)
-            \item Ceiling (full with ceiling on bottom)
-            \item Could do all three in one block type? Or maybe use texture variations somehow.
-        \end{itemize}
-        \item Wall (half block)
-        \begin{itemize}
-            \item Crouch hole (rotated wall)
-        \end{itemize}
-        \item Corner (half)
-        \item Corner (quarter)
-        \item Thin Wall (quarter)
-        \item Corner pillar (half)
-        \item Corner pillar (quarter)
-        \item Ceiling tiles
-        \begin{itemize}
-            \item A single tile consisting of multiple tiles (2x2?). Above empty, give each sub-tile a chance of of being emissive.
-        \end{itemize}
-        \item Empty
-        \item Centre pillar
-        \item Miscellaneous half block variants that fit other normal blocks for variety.
-    \end{itemize}
+          \begin{itemize}
+              \item Full
+                    \begin{itemize}
+                        \item Floor (full with carpet on top)
+                        \item Ceiling (full with ceiling on bottom)
+                        \item Could do all three in one block type? Or maybe use texture variations somehow.
+                    \end{itemize}
+              \item Wall (half block)
+                    \begin{itemize}
+                        \item Crouch hole (rotated wall)
+                    \end{itemize}
+              \item Corner (half)
+              \item Corner (quarter)
+              \item Thin Wall (quarter)
+              \item Corner pillar (half)
+              \item Corner pillar (quarter)
+              \item Ceiling tiles
+                    \begin{itemize}
+                        \item A single tile consisting of multiple tiles (2x2?). Above empty, give each sub-tile a chance of of being emissive.
+                    \end{itemize}
+              \item Empty
+              \item Centre pillar
+              \item Miscellaneous half block variants that fit other normal blocks for variety.
+          \end{itemize}
 \end{itemize}
 
 \section*{Regions / Structure}
@@ -228,13 +228,13 @@ Embark on an infinite journey through the enigmatic depths of the Backrooms. Tak
     \item Make a ``door'' tile that is a floor tile with adjacencies that connect several sublevels.
     \item Is there a better way of doing this that maintains modularity?
     \item How might room structures be made while maintaining modularity?
-    \begin{itemize}
-        \item Not needed for some areas of the backrooms (i.e. starting area) as they are not well structured.
-    \end{itemize}
+          \begin{itemize}
+              \item Not needed for some areas of the backrooms (i.e. starting area) as they are not well structured.
+          \end{itemize}
     \item Use a density noise map that defines how empty or full an area of the map is. Helps give natural variety.
-    \begin{itemize}
-        \item Can also apply noise to lights and grunge for textures.
-    \end{itemize}
+          \begin{itemize}
+              \item Can also apply noise to lights and grunge for textures.
+          \end{itemize}
 \end{itemize}
 
 \section*{Goal}
@@ -245,54 +245,54 @@ Embark on an infinite journey through the enigmatic depths of the Backrooms. Tak
 \chapter{Holiday and Semester Two Task List}\label{sec:tasks}
 \begin{itemize}
     \item Algorithm
-    \begin{itemize}
-        \item Make the algorithm visual (intermediate steps)
-        \item Give control of generation to the player via keyboard when debugging.
-        \item Infinite modifying in blocks
-        \begin{itemize}
-            \item Think about how this will affect modularity. Will implementing this mean changes to the base algorithm will be harder to make? Or will this just always work on top? It will probably work separately.
-        \end{itemize}
-        \item Sub-WFC
-        \item Generate block variants for symmetries from the initial block.
-    \end{itemize}
+          \begin{itemize}
+              \item Make the algorithm visual (intermediate steps)
+              \item Give control of generation to the player via keyboard when debugging.
+              \item Infinite modifying in blocks
+                    \begin{itemize}
+                        \item Think about how this will affect modularity. Will implementing this mean changes to the base algorithm will be harder to make? Or will this just always work on top? It will probably work separately.
+                    \end{itemize}
+              \item Sub-WFC
+              \item Generate block variants for symmetries from the initial block.
+          \end{itemize}
     \item Audio
-    \begin{itemize}
-        \item Get ambience sounds
-        \item Footstep sounds
-        \item Audio filter
-    \end{itemize}
+          \begin{itemize}
+              \item Get ambience sounds
+              \item Footstep sounds
+              \item Audio filter
+          \end{itemize}
     \item Game
-    \begin{itemize}
-        \item Objectives
-        \begin{itemize}
-            \item Spawn items for objectives
-            \item Spawn key locations among random generation
-        \end{itemize}
-        \item Set up player in Unity to start in the middle of the maze
-        \item Make a menu screen to start the game.
-    \end{itemize}
+          \begin{itemize}
+              \item Objectives
+                    \begin{itemize}
+                        \item Spawn items for objectives
+                        \item Spawn key locations among random generation
+                    \end{itemize}
+              \item Set up player in Unity to start in the middle of the maze
+              \item Make a menu screen to start the game.
+          \end{itemize}
     \item Graphics
-    \begin{itemize}
-        \item Textures for each block
-        \begin{itemize}
-            \item Got a low res wallpaper texture and simple colour for rims. Should help performance.
-            \item In the future, use AI art for some textures? (Just a possibility)
-        \end{itemize}
-        \item Filters for the camera
-        \begin{itemize}
-            \item First round of basic effects. Could probably be enhanced in quality later.
-        \end{itemize}
-        \item Graphics for floor and lights.
-        \begin{itemize}
-            \item Have a flat texture for the whole map? Or break it into block chunks too? Performance?
-            \item Get proper lighting in that is also performant.
-        \end{itemize}
-    \end{itemize}
+          \begin{itemize}
+              \item Textures for each block
+                    \begin{itemize}
+                        \item Got a low res wallpaper texture and simple colour for rims. Should help performance.
+                        \item In the future, use AI art for some textures? (Just a possibility)
+                    \end{itemize}
+              \item Filters for the camera
+                    \begin{itemize}
+                        \item First round of basic effects. Could probably be enhanced in quality later.
+                    \end{itemize}
+              \item Graphics for floor and lights.
+                    \begin{itemize}
+                        \item Have a flat texture for the whole map? Or break it into block chunks too? Performance?
+                        \item Get proper lighting in that is also performant.
+                    \end{itemize}
+          \end{itemize}
     \item Report
-    \begin{itemize}
-        \item Break into sections.
-        \begin{itemize}
-            \item Game design, algorithms, discuss different options and things tried, audio and graphics...
-        \end{itemize}
-    \end{itemize}
+          \begin{itemize}
+              \item Break into sections.
+                    \begin{itemize}
+                        \item Game design, algorithms, discuss different options and things tried, audio and graphics...
+                    \end{itemize}
+          \end{itemize}
 \end{itemize}

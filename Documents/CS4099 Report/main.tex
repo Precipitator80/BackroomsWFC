@@ -1,5 +1,5 @@
 \documentclass[a4paper, 12pt]{report}
-
+%%%%% DOCUMENT INFORMATION
 % Setting up author or address string variables in LaTeX - Michael Daum - https://stackoverflow.com/questions/2336007/setting-up-author-or-address-string-variables-in-latex - Accessed 20.10.2023
 \newcommand{\Author}{Benjamin Mathias Sonnet}
 \newcommand{\Title}{Procedural Content Generation in Video Games}
@@ -14,11 +14,24 @@
 \author{\Author}
 
 \input{Template/Setup}
+
+%%%%% ACRONYMS
+\makeglossaries
+\newacronym{wfc}{WFC}{Wave Function Collapse}
+\newacronym{imib}{IMIB}{Infinite Modifying In Blocks}
+\newacronym{mac3}{MAC3}{Maintaining Arc Consistency 3}
+\newacronym{ac3}{AC3}{Arc Consistency 3}
+\newacronym{rng}{RNG}{Random Number Generator}
+\newacronym{pcg}{PCG}{Procedural Content Generation}
+
 \begin{document}
 \pagenumbering{roman}
 \input{Template/Cover}
 \input{Main Sections/01Frontmatter}
 \tableofcontents
+\printacronyms
+%\printglossary[type=\acronymtype]
+%\printglossary
 \listoffigures
 \listoftables
 \newpage\pagenumbering{arabic}
@@ -43,7 +56,7 @@
 
 Tilly's Tips / Discussion:
 6000 to 15000 words
- 
+
 Abstract
 Declaration
 Acknowledgements
@@ -56,12 +69,12 @@ Software engineering process
 Design and implementation
 Testing
 Evaluation/Discussion
- 
+
 Deadline - 22 March
 
 Abstract -200-300 words
-Declaration / 
-Acknowledgements / 
+Declaration /
+Acknowledgements /
 Introduction - 1000 words
 -- Player guide
 Literature review - 1500 words

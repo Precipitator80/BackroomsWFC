@@ -8,12 +8,12 @@
 \usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
 \usepackage[pdftex,
-            pdfauthor={\Author},
-            pdftitle={\Title},
-            pdfsubject={\Subject},
-            pdfkeywords={\Keywords},
-            colorlinks=true,
-            allcolors=blue]{hyperref}
+    pdfauthor={\Author},
+    pdftitle={\Title},
+    pdfsubject={\Subject},
+    pdfkeywords={\Keywords},
+    colorlinks=true,
+    allcolors=blue]{hyperref}
 % ------------------------------ %
 % Various useful packages
 \usepackage{amsmath}
@@ -35,7 +35,7 @@
 \usepackage{enumitem} % Better list customisation
 
 % Frames for enumerate and itemize.
-\usepackage{framed} 
+\usepackage{framed}
 % ------------------------------ %
 % Subfigures
 \usepackage{subfigure}
@@ -60,6 +60,12 @@
 %\draw[->] (rightsquare.south) .. controls +(down:7mm) and +(right:7mm) .. (lowercircle.east);
 %\end{tikzpicture}
 % ------------------------------ %
+% Acronyms / Glossaries
+\usepackage[acronym]{glossaries}
+\renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}}
+% VS Code - LaTeX Workshop usage of glossaries package - Shady Puck - https://tex.stackexchange.com/questions/536519/vs-code-latex-workshop-usage-of-glossaries-package - Accessed 19.03.2024
+% How do I remove color from abbreviations? - Tim Hilt - https://tex.stackexchange.com/questions/532272/how-do-i-remove-color-from-abbreviations - Accessed 19.03.2024
+% ------------------------------ %
 % Allow urls to break more cleanly in the bibliography.
 \setcounter{biburllcpenalty}{100}
 \setcounter{biburlucpenalty}{100}
@@ -80,21 +86,21 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.95}
 
 \lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
+    backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
     keywordstyle=\color{magenta},
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
     basicstyle=\ttfamily\scriptsize, % Font size (i.e. \scriptsize or \footnotesize)
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,
     tabsize=2,
     aboveskip=20pt,
 }
@@ -140,10 +146,10 @@
 % Other References:
 % set a maximum width and height for an image - Yiannis Lazarides - https://tex.stackexchange.com/questions/47245/set-a-maximum-width-and-height-for-an-image - Accessed 16.04.2023
 %\begin{figure}[H]
-        %\centering
-        %\includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{ImagePath}
-        %\caption{captionText}
-        %\label{fig:figureName}
+%\centering
+%\includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{ImagePath}
+%\caption{captionText}
+%\label{fig:figureName}
 %\end{figure}
 % ------------------------------ %
 % Scrap code
