@@ -42,35 +42,16 @@ This dissertation draws an explicit connection between \acrshort{wfc} and the \a
 % An implementation of an extension of WFC that scales world generation infinitely.
 % An interface integrated into the Unity game engine for designers to use WFC on their own tilesets.
 % A game that utilises the presented techniques.
-The simple tiled \acrshort{wfc} implementation is extended using the \acrfull{imib} algorithm, which addresses the challenge of extending \acrshort{wfc} to an infinite space. Furthermore, an interface integrated into the Unity game engine for designers to use \acrshort{wfc} on their own tilesets is included. A simple game themed after \textit{the Backrooms} was created in order to act as an example.
+The simple tiled \acrshort{wfc} implementation is extended using the \acrfull{imib} algorithm, which addresses the challenge of extending \acrshort{wfc} to an infinite space. Furthermore, an interface integrated into the Unity game engine for designers to use \acrshort{wfc} on their own tilesets is included. A simple game themed after \textit{the Backrooms} was created in order to act as an example (Figure \ref{fig:backroomsInGame}).
 
-% IMIB FIGURE
+% In-game screenshot
 \begin{figure}[H]
     \centering
-    \subfigure[After layer 1 has been generated]{
-        \includegraphics[width=0.475\textwidth, height=0.35\textheight, keepaspectratio]{Images/IMIB3.png}
-        \label{fig:imib3}
-    }
-    \hfill
-    \subfigure[Preparing layer 2 with overlap into layer 1]{
-        \includegraphics[width=0.475\textwidth, height=0.35\textheight, keepaspectratio]{Images/IMIB4.png}
-        \label{fig:imib4}
-    }
-
-    \vspace{\baselineskip} % add some vertical space between the rows
-
-    \subfigure[After layers 1 and 2 have been generated]{
-        \includegraphics[width=0.475\textwidth, height=0.35\textheight, keepaspectratio]{Images/IMIB5.png}
-        \label{fig:imib5}
-    }
-    \hfill
-    \subfigure[After all layers have been generated]{
-        \includegraphics[width=0.475\textwidth, height=0.35\textheight, keepaspectratio]{Images/IMIB9.png}
-        \label{fig:imib9}
-    }
-    \caption{A glimpse into the \acrshort{imib} pipeline. Each layer defines a small part of each chunk to run \acrshort{wfc} in. By clearing and running four overlapping layers, a full grid is generated. \cite{Infinite_Modifying_In_Blocks}}
-    \label{fig:imib}
+    \includegraphics[width=\textwidth, height=0.4\textheight, keepaspectratio]{Images/Backrooms.png}
+    \caption{A screenshot from the game}
+    \label{fig:backroomsInGame}
 \end{figure}
+
 
 %%%%% OLD INTRODUCTION
 % Introduction to the project. Giving background on the areas covered (matching literature review).

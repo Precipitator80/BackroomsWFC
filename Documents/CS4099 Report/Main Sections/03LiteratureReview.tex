@@ -388,7 +388,35 @@ Nested \acrshort{wfc} (N-WFC) \cite{Nested_WFC} is one technique that aims to im
     \label{fig:infiniteWFC}
 \end{figure}
 
-Another technique, \acrlong{imib} \cite{Infinite_Modifying_In_Blocks}, applies \acrshort{wfc} multiple times in small chunks. Keeping the chunks small keeps the performance of generation high, while running \acrshort{wfc} in four layers per chunk ensures that constraints are satisfied between adjacent chunks. The layering also addresses the limitation of conflicts that Nested \acrshort{wfc} struggles with. As each chunk is made up of four \acrshort{wfc} layers, failed layers can usually be ignored rather than having to be regenerated. However, this comes with computational overhead from running \acrshort{wfc} four times per chunk. An overview of the method was shown in Figure \ref{fig:imib}, with detailed discussion in Section \ref{sec:IMIB}.
+Another technique, \acrlong{imib} \cite{Infinite_Modifying_In_Blocks}, applies \acrshort{wfc} multiple times in small chunks. Keeping the chunks small keeps the performance of generation high, while running \acrshort{wfc} in four layers per chunk ensures that constraints are satisfied between adjacent chunks. The layering also addresses the limitation of conflicts that Nested \acrshort{wfc} struggles with. As each chunk is made up of four \acrshort{wfc} layers, failed layers can usually be ignored rather than having to be regenerated. However, this comes with computational overhead from running \acrshort{wfc} four times per chunk. An overview of the method is shown in Figure \ref{fig:imib}, with detailed discussion in Section \ref{sec:IMIB}.
+
+% IMIB FIGURE
+\begin{figure}[H]
+    \centering
+    \subfigure[After layer 1 has been generated]{
+        \includegraphics[width=0.475\textwidth, height=0.35\textheight, keepaspectratio]{Images/IMIB3.png}
+        \label{fig:imib3}
+    }
+    \hfill
+    \subfigure[Preparing layer 2 with overlap into layer 1]{
+        \includegraphics[width=0.475\textwidth, height=0.35\textheight, keepaspectratio]{Images/IMIB4.png}
+        \label{fig:imib4}
+    }
+
+    \vspace{\baselineskip} % add some vertical space between the rows
+
+    \subfigure[After layers 1 and 2 have been generated]{
+        \includegraphics[width=0.475\textwidth, height=0.35\textheight, keepaspectratio]{Images/IMIB5.png}
+        \label{fig:imib5}
+    }
+    \hfill
+    \subfigure[After all layers have been generated]{
+        \includegraphics[width=0.475\textwidth, height=0.35\textheight, keepaspectratio]{Images/IMIB9.png}
+        \label{fig:imib9}
+    }
+    \caption{A glimpse into the \acrshort{imib} pipeline. Each layer defines a small part of each chunk to run \acrshort{wfc} in. By clearing and running four overlapping layers, a full grid is generated. \cite{Infinite_Modifying_In_Blocks}}
+    \label{fig:imib}
+\end{figure}
 
 \subsubsection{Other Challenges}
 Environments of a certain style, especially those trying to create a realistic feel, may struggle from \acrshort{wfc}'s use of a grid structure for its output. However, if this regular grid is transformed into an irregular quadrilateral grid, more complex shapes can be used. H. Kim et al. achieve this by using a graph-based data structure, which can be integrated with a navigation mesh in 3D as shown in Figure \ref{fig:navigationMeshNodePlacement} \cite{WFC_Graph-based}. However, this solution is limited due to a lack of control over solution order.

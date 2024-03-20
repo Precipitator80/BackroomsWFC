@@ -257,9 +257,29 @@ The lowest entropy method can be viewed as choosing the most constrained cell at
 %\end{figure}
 
 \subsubsection{Weighted Random Tile Selection}
-Once a cell has been chosen, the tile choice is done by summing all tile weights and then choosing a random number within that range. This gives higher weight tiles a higher chance to be selected. If the tile choice did not include any randomness, then unplayable levels such as a completely empty level could be generated. This highlights the challenge in applying a simple constraint solver to level generation in a game. A level that satisfies all constraints for the solver does not necessarily translate to a good level. Some additional constraints could be added in, such as requiring a specific block in generated chunks. However, other constraints such as requiring a certain percentage of a specific block type in the entire level are harder to enforce effectively and efficiently. Such constraints can be encourage implicitly in generation, through features such as the weighted random tile selection. With this, output is not guaranteed to satisfy block percentages, but instead strongly biased towards creating outputs that roughly match these constraints.% Maybe this should be moved to evaluation or somewhere else?
+Once a cell has been chosen, the tile choice is done by summing all tile weights and then choosing a random number within that range. This gives higher weight tiles a higher chance to be selected. If the tile choice did not include any randomness, then unplayable levels such as a completely empty level could be generated. This highlights the challenge in applying a simple constraint solver to level generation in a game. A level that satisfies all constraints for the solver does not necessarily translate to a good level. Some additional constraints could be added in, such as requiring a specific block in generated chunks. However, other constraints such as requiring a certain percentage of a specific block type in the entire level are harder to enforce effectively and efficiently. Such constraints can be encourage implicitly in generation, through features such as the weighted random tile selection. With this, output is not guaranteed to satisfy block percentages, but instead strongly biased towards creating outputs that roughly match these constraints. Figure \ref{fig:weights} shows how different tile weight configurations can create vastly different levels. Careful tweaking of weights is required to create an appealing level. Having too dense of a level can create inaccessible areas as in Figure \ref{fig:weights3}.
+% Should parts of the above be moved to evaluation or somewhere else?
 
-% Show two screenshots of how varying weights produces different levels.
+% Show screenshots of how varying weights produces different levels.
+\begin{figure}[H]
+    \centering
+    \subfigure[Increased weights for empty tiles creates a sparser level]{
+        \includegraphics[width=0.95\textwidth, height=0.3\textheight, keepaspectratio]{Images/WeightsSparse.jpg}
+        \label{fig:weights1}
+    }
+
+    \subfigure[A balance of weights for all tiles creates a level with some sparse and some dense areas]{
+        \includegraphics[width=0.95\textwidth, height=0.3\textheight, keepaspectratio]{Images/WeightsNormal.jpg}
+        \label{fig:weights2}
+    }
+
+    \subfigure[Increasing weights for solid tiles creates a denser level, with increasing chance of unreachable areas]{
+        \includegraphics[width=0.95\textwidth, height=0.3\textheight, keepaspectratio]{Images/WeightsDense.jpg}
+        \label{fig:weights3}
+    }
+    \caption{Examples of levels with three different tile weight configurations}
+    \label{fig:weights}
+\end{figure}
 
 \subsection{Infinite Modifying in Blocks}
 \label{sec:IMIB}
@@ -281,9 +301,15 @@ Once each chunk has generated its first layer, the second layer is generated. Th
 
 \section{Graphics}
 \subsection{Models and Textures}
-The models with texturing for each tile were made in the software Blender using a YouTube video as a guide \cite{backroomsGraphics}. The tiles have distinct shapes, but share common wallpaper \cite{sketchfab_texture}, ceiling tile \cite{ceiling_texture} and carpet textures \cite{carpet_texture}. These textures are mapped so that they appear continuous when tiles are placed next to each other.
+The models with texturing for each tile were made in the software Blender using a YouTube video as a guide \cite{backroomsGraphics}. The tiles have distinct shapes, but share common wallpaper \cite{sketchfab_texture}, ceiling tile \cite{ceiling_texture} and carpet textures \cite{carpet_texture}. These textures are mapped so that they appear continuous when tiles are placed next to each other. Each of the models used is shown in Figure \ref{fig:blenderTileSet}. From left to right, the models include a cube, corner, corner pillar, wall, centre pillar and empty tile.
 
 % Image of tiles in Blender. Write text to define each.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/Tileset.jpg}
+    \caption{The model tile set in Blender}
+    \label{fig:blenderTileSet}
+\end{figure}
 
 \subsection{Visual Effects}
 Unity's Universal Render Pipeline was used to give additional control over rendering and visual effects. To simulate the appearance of a video recorded onto a VHS tape, a range of camera effects were used. These are listed in Figure \ref{fig:cameraEffects}.
