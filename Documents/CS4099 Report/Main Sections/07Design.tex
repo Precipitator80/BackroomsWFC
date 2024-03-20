@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\section{JUSTIFY DECISIONS!!!!!!!!!!}
 \section{Game Design}
 \subsection{Premise}
-The premise of the game was inspired by the fictional concept of `the Backrooms'. These encompass an endless collection of `levels', each a potentially infinite space with a unique theme centred around invoking a feeling of liminality. This was deemed a suitable theme to use for a game exploring novel \acrlong{pcg} techniques. The first level of the Backrooms, `Level Zero', resembles an empty office-like space. Yellow wallpaper, light brown carpet and bright fluorescent lights combine to give it an unsettling monotone appearance and soundscape.
+The premise of the game was inspired by the fictional concept of \textit{the Backrooms}. These encompass an endless collection of `levels', each a potentially infinite space with a unique theme centred around invoking a feeling of liminality. This was deemed a suitable theme to use for a game exploring novel \acrlong{pcg} techniques. The first level of \textit{the Backrooms}, `Level Zero', resembles an empty office-like space. Yellow wallpaper, light brown carpet and bright fluorescent lights combine to give it an unsettling monotone appearance and soundscape.
 
 % Side-by-side Image of the backrooms with image in-game
 
@@ -12,8 +12,8 @@ The premise of the game was inspired by the fictional concept of `the Backrooms'
 \subsubsection{Player Controller}
 The player controller was taken from an online tutorial \cite{FPS_controller_YouTube, FPS_controller_GitHub}. Additionally, the ability to pick up and drop items was added. This allows the player to solve puzzles throughout the world.
 
-\subsubsection{Puzzles}
-The player must explore the backrooms in search of items spawned randomly with the level geometry.
+%\subsubsection{Puzzles}
+%The player must explore the Backrooms in search of items spawned randomly with the level geometry.
 
 % REMEMBER: COLLECT ITEMS TO REPAIR SOMETHING!
 % Goal walls are locked doors. Adjacent to them are fuse boxes?
@@ -28,7 +28,7 @@ The player must explore the backrooms in search of items spawned randomly with t
 
 \section{Level Generation}
 \subsection{Contextualising the Wave Function Collapse Algorithm}
-The \acrfull{wfc} algorithm can be viewed as an extension on the ideas presented by the \acrfull{mac3} algorithm. What is referred to as a grid of cells with tile choices in \acrlong{wfc} is analogous to a graph of variables / nodes with a domain of possible values. Constraints between variables can then be viewed as edges in an undirected graph as in Figure \ref{fig:undirectedGraph}.
+The \acrfull{wfc} algorithm can be viewed as an extension on the ideas presented by the \acrfull{mac3} algorithm. What is referred to as a grid of cells with tile choices in \acrlong{wfc} is analogous to a graph of variables / nodes with a domain of possible values. Constraints between variables can then be viewed as edges in an undirected graph (Figure \ref{fig:undirectedGraph}).
 
 % Diagram of a directed graph
 
@@ -116,7 +116,7 @@ The \acrfull{wfc} algorithm can be viewed as an extension on the ideas presented
 \end{figure}
 
 \subsection{Arcs}
-An edge in an undirected graph can alternatively be viewed as two opposite edges in a directed graph as in Figure \ref{fig:directedGraph}. Arcs apply this concept to constraints, with each arc representing one of the two edges making up a constraint in the directed graph. For an arc to be locally arc consistent, all the values in the first variable's domain must be supported by at least one value in the second variable's domain.
+An edge in an undirected graph can alternatively be viewed as two opposite edges in a directed graph (Figure \ref{fig:directedGraph}). Arcs apply this concept to constraints, with each arc representing one of the two edges making up a constraint in the directed graph. For an arc to be locally arc consistent, all the values in the first variable's domain must be supported by at least one value in the second variable's domain.
 
 For example, suppose the use of an extremely simple tile set with only cubes and empty tiles, where any tile choice is possible at the start. Furthermore, say that cubes can only have other cubes as neighbours and that empty tiles only have empty tiles as neighbours. This corresponds to Figure \ref{fig:arcsStart}.
 
@@ -163,7 +163,7 @@ Then, assume that node A is set to be a cube, removing the empty tile from its d
 The \acrfull{ac3} algorithm enforces arc consistency in the grid of cells. The algorithm is given a queue of arcs to enforce arc consistency across. Each arc is checked for support and unsupported domain values pruned. If any domain changes occur, then all arcs targeting the primary variable of the current arc are re-added to the queue. This is required as the domain change may have resulted in support for arcs to this variable being lost.
 
 % Diagram showing arc revision
-Back to the example, assigning Cube to A will trigger arc revision with all the arcs incident on A. In this case, this initialises the queue with arc <B,A>. Checking the arc as in Figure \ref{fig:arcRevision} shows that B's Empty value is no longer supported by A.
+Back to the example, assigning Cube to A will trigger arc revision with all the arcs incident on A. In this case, this initialises the queue with arc <B,A>. Checking the arc shows that B's Empty value is no longer supported by A (Figure \ref{fig:arcRevision}).
 
 \begin{figure}[H]
     \begin{framed}
@@ -200,7 +200,7 @@ Performing this single revision leaves the graph in the state as shown in Figure
     \label{fig:arcsRevised1}
 \end{figure}
 
-Revision of <C,B> proceeds similarly to revision of <B,A> as in Figure \ref{fig:arcRevision}. Similarly, C's domain change from revision of <C,B> does not require re-checking of arc <B,C>. After this, the queue of arcs to revise is empty and as such the consistency before assignment has been maintained. The state after revision is shown in Figure \ref{fig:arcsRevised2}.
+Revision of <C,B> proceeds similarly to revision of <B,A> (Figure \ref{fig:arcRevision}). Similarly, C's domain change from revision of <C,B> does not require re-checking of arc <B,C>. After this, the queue of arcs to revise is empty and as such the consistency before assignment has been maintained. The state after revision is shown in Figure \ref{fig:arcsRevised2}.
 
 \begin{figure}[H]
     \centering
@@ -224,7 +224,7 @@ Revision of <C,B> proceeds similarly to revision of <B,A> as in Figure \ref{fig:
 An additional property to note is that each node now only has one value in its domain. Given that each arc is consistent, this means that this is a valid solution to the original problem where each node could either be a cube or empty tile. In the context of \acrshort{wfc}, this means that all cells have been collapsed with a valid tile choice and thus that a valid map has been generated.
 
 \subsection{MAC3}
-\acrfull{mac3} uses \acrfull{ac3} to create a full constraint solving algorithm. To begin, \acrshort{ac3} is run with all arcs to ensure global arc consistency at the start. Then, a variable and value are chosen in an attempt to find a solution. This choice is like that done in the example shown previously in Figure \ref{fig:arcsAssigned}. Arc consistency is then maintained by running \acrshort{ac3} with the all the arcs targeting the variable that had a value assigned as in Figure \ref{fig:arcRevision}. This ensures that these arcs maintain local arc consistency. As global arc consistency was enforced at the start, maintaining local arc consistency after each assignment is enough to also maintain global arc consistency. If any variable assignments lead to a domain wipeout (an empty domain) when enforcing arc consistency, then backtracking can be performed and another value chosen. Once each variable only has one value left and all arcs are consistent, a solution has been found. If not stopped by a timeout, \acrshort{mac3} will continue running until a solution has been found or all choices have been attempted, meaning that there is no solution.
+\acrfull{mac3} uses \acrfull{ac3} to create a full constraint solving algorithm. To begin, \acrshort{ac3} is run with all arcs to ensure global arc consistency at the start. Then, a variable and value are chosen in an attempt to find a solution. This choice is like that done in the example shown previously in Figure \ref{fig:arcsAssigned}. Arc consistency is then maintained by running \acrshort{ac3} with the all the arcs targeting the variable that had a value assigned (Figure \ref{fig:arcRevision}). This ensures that these arcs maintain local arc consistency. As global arc consistency was enforced at the start, maintaining local arc consistency after each assignment is enough to also maintain global arc consistency. If any variable assignments lead to a domain wipeout (an empty domain) when enforcing arc consistency, then backtracking can be performed and another value chosen. Once each variable only has one value left and all arcs are consistent, a solution has been found. If not stopped by a timeout, \acrshort{mac3} will continue running until a solution has been found or all choices have been attempted, meaning that there is no solution.
 
 Sudoku can serve as an example to make the constraint solving process clearer. Someone solving Sudoku might pencil in the possible number for each cell to help make guesses and fill the grid.
 

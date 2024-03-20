@@ -2,7 +2,8 @@
 %%%%% DOCUMENT INFORMATION
 % Setting up author or address string variables in LaTeX - Michael Daum - https://stackoverflow.com/questions/2336007/setting-up-author-or-address-string-variables-in-latex - Accessed 20.10.2023
 \newcommand{\Author}{Benjamin Mathias Sonnet}
-\newcommand{\Title}{Procedural Content Generation in Video Games}
+%\newcommand{\Title}{Procedural Content Generation in Video Games}
+\newcommand{\Title}{Wave Function Collapse as a Constraint Solver for Game Level Generation}
 \newcommand{\Subject}{Applying Constraint Programming to Procedural Content Generation in Video Games}
 \newcommand{\Keywords}{Video Games, Procedural Content Generation, Wave Function Collapse, Constraint Programming}
 \newcommand{\Subtitle}{CS4099 Major Software Project}
@@ -29,7 +30,9 @@
 \input{Template/Cover}
 \input{Main Sections/01Frontmatter}
 \tableofcontents
+\renewcommand*{\glstextformat}[1]{\textcolor{blue}{#1}}
 \printacronyms
+\renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}}
 %\printglossary[type=\acronymtype]
 %\printglossary
 \listoffigures

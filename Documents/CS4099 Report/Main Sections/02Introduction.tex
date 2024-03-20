@@ -1,24 +1,14 @@
-\chapter{Introduction}
+\chapter{Introduction} % ADAPT SOME OF THE OLD INTRODUCTION INTO LATER SECTIONS, esp IMIB DESIGN.
 %%%%% NEW INTRODUCTION
 % Introduce the topic. WFC is a popular PCG technique.
-\acrfull{wfc} is a \acrfull{pcg} technique that has found significant use in video games \cite{Gumin_Wave_Function_Collapse_2016}. \acrshort{wfc} can be described as a family of algorithms that enable generation of large game worlds from limited input through the application of constraint programming principles \cite{WFC_ConstraintSolving_and_ML}.
+\acrfull{wfc} \cite{Gumin_Wave_Function_Collapse_2016} is a \acrfull{pcg} technique that has found significant use in video games. One such example is \textit{Townscaper} (Figure \ref{fig:townscaper}) \cite{townscaper}. \acrshort{wfc} can be described as a family of algorithms that enable generation of large game worlds from limited input through the application of constraint programming principles \cite{WFC_ConstraintSolving_and_ML}.
 
 % TOWNSCAPER FIGURE
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/Townscaper.png}
-    \caption{Townscaper uses \acrshort{wfc} with player input to develop worlds \cite{townscaper}}
+    \caption{\textit{Townscaper} uses \acrshort{wfc} with player input to develop worlds \cite{townscaper}}
     \label{fig:townscaper}
-\end{figure}
-
-This dissertation applies the simple tiled implementation of \acrshort{wfc}. In simple tiled \acrshort{wfc}, a tile set with adjacency information is used by a constraint solver. This solver attempts to fill a grid of cells with tiles, taking into account their constraints. In the rest of this dissertation, this simple tiled implementation of \acrshort{wfc} is simply referred to as the \acrshort{wfc} algorithm.
-
-% SIMPLE TILED WFC FIGURE
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/circuit-1.png}
-    \caption{Use of simple tiled \acrshort{wfc} to generate a circuit board graphic \cite{Gumin_Wave_Function_Collapse_2016}}
-    \label{fig:WFCcircuit}
 \end{figure}
 
 % WFC has some issues: Lack of global constraints, overfitting and performance / scaling.
@@ -36,13 +26,23 @@ This dissertation applies the simple tiled implementation of \acrshort{wfc}. In 
 These issues are rarely addressed directly in implementations. Instead, they are worked around in an ad hoc, game-specific way that fails to exploit constraint programming techniques.
 
 % This work draws an explicit connection between WFC and MAC3 and then presents an implementation in those terms.
-Presentation of \acrshort{wfc} online often fails to acknowledge underlying constraint solving principles used by \acrshort{wfc}. Instead, alternative wording is used, which can make forming a deep understanding of the topic challenging. This dissertation draws an explicit connection between \acrshort{wfc} and the \acrfull{mac3} algorithm, presenting an implementation in those terms.
+Presentation of \acrshort{wfc} online often fails to acknowledge underlying constraint solving principles used by \acrshort{wfc}. Instead, alternative wording is used, which can make forming a deep understanding of the topic challenging.
+
+This dissertation draws an explicit connection between \acrshort{wfc} and the \acrfull{mac3} algorithm, presenting a simple tiled implementation of \acrshort{wfc} in those terms. In simple tiled \acrshort{wfc}, a tile set with adjacency information is used by a constraint solver. This solver attempts to fill a grid of cells with tiles, taking into account their constraints. In the rest of this dissertation, this simple tiled implementation of \acrshort{wfc} is simply referred to as the \acrshort{wfc} algorithm.
+
+% SIMPLE TILED WFC FIGURE
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.3\textheight, keepaspectratio]{Images/circuit-1.png}
+    \caption{Use of simple tiled \acrshort{wfc} to generate a circuit board graphic \cite{Gumin_Wave_Function_Collapse_2016}}
+    \label{fig:WFCcircuit}
+\end{figure}
 
 % It also presents:
 % An implementation of an extension of WFC that scales world generation infinitely.
 % An interface integrated into the Unity game engine for designers to use WFC on their own tilesets.
 % A game that utilises the presented techniques.
-This dissertation's \acrshort{wfc} implementation is extended using the \acrfull{imib} algorithm, which addresses the challenge of extending \acrshort{wfc} to an infinite space. Furthermore, an interface integrated into the Unity game engine for designers to use \acrshort{wfc} on their own tilesets is included and a simple game created as example.
+The simple tiled \acrshort{wfc} implementation is extended using the \acrfull{imib} algorithm, which addresses the challenge of extending \acrshort{wfc} to an infinite space. Furthermore, an interface integrated into the Unity game engine for designers to use \acrshort{wfc} on their own tilesets is included. A simple game themed after \textit{the Backrooms} was created in order to act as an example.
 
 % IMIB FIGURE
 \begin{figure}[H]

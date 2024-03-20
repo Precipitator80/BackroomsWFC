@@ -91,7 +91,7 @@ Each spawned tile has a cardinality of either 0, 1, 2 or 3. These cardinalities 
     \label{fig:cornerCardinalities}
 \end{figure}
 
-Cardinality information is used to determine which combination of two tiles and their rotations fit together. For example, a single wall tile constituting part of a longer wall will require any adjacent wall tiles to be of the same cardinality as in Figure \ref{fig:wallExample1}. When specifying the neighbours of a tile, the level designer must also set the cardinality of each neighbour.
+Cardinality information is used to determine which combination of two tiles and their rotations fit together. For example, a single wall tile constituting part of a longer wall will require any adjacent wall tiles to be of the same cardinality (Figure \ref{fig:wallExample1}). When specifying the neighbours of a tile, the level designer must also set the cardinality of each neighbour.
 
 % Also show wall tiles fitting together. 0,0,0 walls fit and 3,0,1 walls don't.
 \begin{figure}[H]
@@ -500,7 +500,7 @@ Assigning a tile to a cell involves pruning all tiles except the one being assig
 Unassigning a tile to a cell first requires the state to be reverted. After this, the opposite choice is taken. This is done by pruning only the tile choice that was previously assigned. This demonstrates the binary branching nature of the implementation. Rather than exploring all possible tile values in one level of search, each tile value is either assigned or unassigned.
 
 \subsubsection{Visualising Recursion}
-The recursive \acrshort{mac3} method can be visualised as consisting of three parts as in Figure \ref{fig:mac3Recursion}.
+The recursive \acrshort{mac3} method can be visualised as consisting of three parts as shown in Figure \ref{fig:mac3Recursion}.
 
 \begin{figure}[H]
     \begin{framed}
