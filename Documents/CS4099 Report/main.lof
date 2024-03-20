@@ -43,18 +43,19 @@
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Revising arc <B,A>}}{31}{figure.caption.55}%
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Revising <B,A> results in <C,B> becoming inconsistent}}{31}{figure.caption.56}%
 \contentsline {figure}{\numberline {6.6}{\ignorespaces The graph after \acrshort {ac3} has been carried out}}{31}{figure.caption.57}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Camera Effects}}{34}{figure.caption.60}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces A cell with cube, corner and wall tiles as options}}{36}{figure.caption.60}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces The corner tile with all possible rotations (counted clockwise)}}{37}{figure.caption.61}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Comparison of valid wall placement to invalid wall placement if adjacent walls must have matching cardinality}}{38}{figure.caption.62}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces A symmetric cube tile converted to a non-symmetric tile. For simplicity, the cube is only shown with a wall as its possible neighbour.}}{39}{figure.caption.63}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces The array of explicit variants for the cube tile with neighbours shown. Due to the tile's symmetry, no extra work is needed to calculate variants for cardinalities 1, 2 and 3.}}{39}{figure.caption.64}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces The array of explicit variants for the corner tile with neighbours shown.}}{40}{figure.caption.65}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces The explicit corner tile variants before updating neighbours to their explicit forms}}{40}{figure.caption.66}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces The three parts of the recursive \acrshort {mac3} method}}{43}{figure.caption.70}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces A cell with cube, corner and wall tiles as options}}{37}{figure.caption.61}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces The corner tile with all possible rotations (counted clockwise)}}{38}{figure.caption.62}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Comparison of valid wall placement to invalid wall placement if adjacent walls must have matching cardinality}}{39}{figure.caption.63}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces A symmetric cube tile converted to a non-symmetric tile. For simplicity, the cube is only shown with a wall as its possible neighbour.}}{40}{figure.caption.64}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces The array of explicit variants for the cube tile with neighbours shown. Due to the tile's symmetry, no extra work is needed to calculate variants for cardinalities 1, 2 and 3.}}{40}{figure.caption.65}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces The array of explicit variants for the corner tile with neighbours shown.}}{41}{figure.caption.66}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces The explicit corner tile variants before updating neighbours to their explicit forms}}{41}{figure.caption.67}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces The three parts of the recursive \acrshort {mac3} method}}{44}{figure.caption.71}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Key areas of further development}}{47}{figure.caption.77}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Key areas of further development}}{48}{figure.caption.78}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'h:/UnityProjects/BackroomsWFC/Documents/CS4099 Report/main.blg'
-[212] biber-MSWIN64:340> INFO - === 
-[270] Biber.pm:419> INFO - Reading 'h:/UnityProjects/BackroomsWFC/Documents/CS4099 Report/main.bcf'
-[497] Biber.pm:979> INFO - Found 56 citekeys in bib section 0
-[525] Biber.pm:4419> INFO - Processing section 0
-[547] Biber.pm:4610> INFO - Looking for bibtex file 'ref.bib' for section 0
-[622] bibtex.pm:1713> INFO - LaTeX decoding ...
-[748] bibtex.pm:1519> INFO - Found BibTeX data source 'ref.bib'
-[1589] UCollate.pm:68> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1589] UCollate.pm:68> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1589] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-UK'
-[1589] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-UK'
-[1664] bbl.pm:660> INFO - Writing 'h:/UnityProjects/BackroomsWFC/Documents/CS4099 Report/main.bbl' with encoding 'UTF-8'
-[1720] bbl.pm:763> INFO - Output to h:/UnityProjects/BackroomsWFC/Documents/CS4099 Report/main.bbl
+[349] biber-MSWIN64:340> INFO - === 
+[477] Biber.pm:419> INFO - Reading 'h:/UnityProjects/BackroomsWFC/Documents/CS4099 Report/main.bcf'
+[775] Biber.pm:979> INFO - Found 56 citekeys in bib section 0
+[810] Biber.pm:4419> INFO - Processing section 0
+[862] Biber.pm:4610> INFO - Looking for bibtex file 'ref.bib' for section 0
+[946] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1120] bibtex.pm:1519> INFO - Found BibTeX data source 'ref.bib'
+[2042] UCollate.pm:68> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2042] UCollate.pm:68> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2042] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-UK'
+[2043] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-UK'
+[2180] bbl.pm:660> INFO - Writing 'h:/UnityProjects/BackroomsWFC/Documents/CS4099 Report/main.bbl' with encoding 'UTF-8'
+[2245] bbl.pm:763> INFO - Output to h:/UnityProjects/BackroomsWFC/Documents/CS4099 Report/main.bbl

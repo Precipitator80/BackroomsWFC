@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.19)  19 MAR 2024 18:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.19)  20 MAR 2024 10:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1211,12 +1211,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  (Main Sections/02Introduction.tex
 Chapter 1.
-<Images/Townscaper.png, id=762, 1003.75pt x 565.11125pt>
+<Images/Townscaper.png, id=758, 1003.75pt x 565.11125pt>
 File: Images/Townscaper.png Graphic file (type png)
 <use Images/Townscaper.png>
 Package pdftex.def Info: Images/Townscaper.png  used on input line 9.
 (pdftex.def)             Requested size: 374.47551pt x 210.82971pt.
-<Images/circuit-1.png, id=771, 624.83438pt x 316.18124pt>
+<Images/circuit-1.png, id=767, 624.83438pt x 316.18124pt>
 File: Images/circuit-1.png Graphic file (type png)
 <use Images/circuit-1.png>
 Package pdftex.def Info: Images/circuit-1.png  used on input line 19.
@@ -1225,28 +1225,28 @@ Package pdftex.def Info: Images/circuit-1.png  used on input line 19.
 
 
  <./Images/Townscaper.png>]
-<Images/escher_sample-768x445.jpg, id=781, 770.88pt x 446.66875pt>
+<Images/escher_sample-768x445.jpg, id=777, 770.88pt x 446.66875pt>
 File: Images/escher_sample-768x445.jpg Graphic file (type jpg)
 <use Images/escher_sample-768x445.jpg>
 Package pdftex.def Info: Images/escher_sample-768x445.jpg  used on input line 30.
 (pdftex.def)             Requested size: 363.87808pt x 210.8408pt.
  [2 <./Images/circuit-1.png> <./Images/escher_sample-768x445.jpg>]
-<Images/IMIB3.png, id=797, 1027.84pt x 770.88pt>
+<Images/IMIB3.png, id=793, 1027.84pt x 770.88pt>
 File: Images/IMIB3.png Graphic file (type png)
 <use Images/IMIB3.png>
 Package pdftex.def Info: Images/IMIB3.png  used on input line 53.
 (pdftex.def)             Requested size: 202.72563pt x 152.04422pt.
-<Images/IMIB4.png, id=798, 1027.84pt x 770.88pt>
+<Images/IMIB4.png, id=794, 1027.84pt x 770.88pt>
 File: Images/IMIB4.png Graphic file (type png)
 <use Images/IMIB4.png>
 Package pdftex.def Info: Images/IMIB4.png  used on input line 58.
 (pdftex.def)             Requested size: 202.72563pt x 152.04422pt.
-<Images/IMIB5.png, id=799, 1027.84pt x 770.88pt>
+<Images/IMIB5.png, id=795, 1027.84pt x 770.88pt>
 File: Images/IMIB5.png Graphic file (type png)
 <use Images/IMIB5.png>
 Package pdftex.def Info: Images/IMIB5.png  used on input line 65.
 (pdftex.def)             Requested size: 202.72563pt x 152.04422pt.
-<Images/IMIB9.png, id=800, 1027.84pt x 770.88pt>
+<Images/IMIB9.png, id=796, 1027.84pt x 770.88pt>
 File: Images/IMIB9.png Graphic file (type png)
 <use Images/IMIB9.png>
 Package pdftex.def Info: Images/IMIB9.png  used on input line 70.
@@ -1256,7 +1256,7 @@ Package pdftex.def Info: Images/IMIB9.png  used on input line 70.
 
  (Main Sections/03LiteratureReview.tex
 Chapter 2.
-<Images/Minecraft.jpg, id=835, 2569.6pt x 1382.16376pt>
+<Images/Minecraft.jpg, id=831, 2569.6pt x 1382.16376pt>
 File: Images/Minecraft.jpg Graphic file (type jpg)
 <use Images/Minecraft.jpg>
 Package pdftex.def Info: Images/Minecraft.jpg  used on input line 46.
@@ -1267,205 +1267,205 @@ Package pdftex.def Info: Images/Minecraft.jpg  used on input line 46.
 
 
 ]
-<Images/Magic3D.jpg, id=852, 990.70125pt x 905.63344pt>
+<Images/Magic3D.jpg, id=848, 990.70125pt x 905.63344pt>
 File: Images/Magic3D.jpg Graphic file (type jpg)
 <use Images/Magic3D.jpg>
 Package pdftex.def Info: Images/Magic3D.jpg  used on input line 56.
 (pdftex.def)             Requested size: 384.39163pt x 351.38535pt.
  [5 <./Images/Minecraft.jpg>]
-<Images/StableDiffusion.jpg, id=864, 4111.36pt x 2055.68pt>
+<Images/StableDiffusion.jpg, id=860, 4111.36pt x 2055.68pt>
 File: Images/StableDiffusion.jpg Graphic file (type jpg)
 <use Images/StableDiffusion.jpg>
 Package pdftex.def Info: Images/StableDiffusion.jpg  used on input line 65.
 (pdftex.def)             Requested size: 421.6367pt x 210.81834pt.
  [6 <./Images/Magic3D.jpg>]
-<Images/VGDL.jpg, id=877, 2097.8375pt x 1215.54124pt>
+<Images/VGDL.jpg, id=873, 2097.8375pt x 1215.54124pt>
 File: Images/VGDL.jpg Graphic file (type jpg)
 <use Images/VGDL.jpg>
 Package pdftex.def Info: Images/VGDL.jpg  used on input line 74.
 (pdftex.def)             Requested size: 363.862pt x 210.83104pt.
-<Images/CESAGAN.jpg, id=882, 1586.17593pt x 542.77782pt>
+<Images/CESAGAN.jpg, id=878, 1586.17593pt x 542.77782pt>
 File: Images/CESAGAN.jpg Graphic file (type jpg)
 <use Images/CESAGAN.jpg>
 Package pdftex.def Info: Images/CESAGAN.jpg  used on input line 83.
 (pdftex.def)             Requested size: 426.77264pt x 146.03847pt.
  [7 <./Images/StableDiffusion.jpg> <./Images/VGDL.jpg>]
-<Images/PCGRL.jpg, id=895, 1365.60187pt x 801.74532pt>
+<Images/PCGRL.jpg, id=891, 1365.60187pt x 801.74532pt>
 File: Images/PCGRL.jpg Graphic file (type jpg)
 <use Images/PCGRL.jpg>
 Package pdftex.def Info: Images/PCGRL.jpg  used on input line 92.
 (pdftex.def)             Requested size: 359.1114pt x 210.83443pt.
  [8 <./Images/CESAGAN.jpg> <./Images/PCGRL.jpg>]
-<Images/PCGMLTaxonomy.jpg, id=910, 789.70032pt x 771.63281pt>
+<Images/PCGMLTaxonomy.jpg, id=906, 789.70032pt x 771.63281pt>
 File: Images/PCGMLTaxonomy.jpg Graphic file (type jpg)
 <use Images/PCGMLTaxonomy.jpg>
 Package pdftex.def Info: Images/PCGMLTaxonomy.jpg  used on input line 101.
 (pdftex.def)             Requested size: 359.61545pt x 351.38783pt.
  [9 <./Images/PCGMLTaxonomy.jpg>]
-<Images/AlgorithmSelection.png, id=926, 1594.45688pt x 495.35063pt>
+<Images/AlgorithmSelection.png, id=922, 1594.45688pt x 495.35063pt>
 File: Images/AlgorithmSelection.png Graphic file (type png)
 <use Images/AlgorithmSelection.png>
 Package pdftex.def Info: Images/AlgorithmSelection.png  used on input line 127.
 (pdftex.def)             Requested size: 426.78671pt x 132.59001pt.
  [10 <./Images/AlgorithmSelection.png>]
-<Images/HousePlans.jpg, id=943, 1053.9375pt x 948.54375pt>
+<Images/HousePlans.jpg, id=939, 1053.9375pt x 948.54375pt>
 File: Images/HousePlans.jpg Graphic file (type jpg)
 <use Images/HousePlans.jpg>
 Package pdftex.def Info: Images/HousePlans.jpg  used on input line 139.
 (pdftex.def)             Requested size: 234.26315pt x 210.83682pt.
-<Images/PythonToProlog.png, id=946, 1690.81688pt x 657.2053pt>
+<Images/PythonToProlog.png, id=942, 1690.81688pt x 657.2053pt>
 File: Images/PythonToProlog.png Graphic file (type png)
 <use Images/PythonToProlog.png>
 Package pdftex.def Info: Images/PythonToProlog.png  used on input line 146.
 (pdftex.def)             Requested size: 426.77954pt x 165.88536pt.
-<Images/ASPDungeons.png, id=951, 1403.99532pt x 432.11438pt>
+<Images/ASPDungeons.png, id=947, 1403.99532pt x 432.11438pt>
 File: Images/ASPDungeons.png Graphic file (type png)
 <use Images/ASPDungeons.png>
 Package pdftex.def Info: Images/ASPDungeons.png  used on input line 155.
 (pdftex.def)             Requested size: 426.7933pt x 131.35622pt.
  [11 <./Images/HousePlans.jpg> <./Images/PythonToProlog.png>]
-<Images/GraphDungeon1.png, id=960, 630.355pt x 581.17125pt>
+<Images/GraphDungeon1.png, id=956, 630.355pt x 581.17125pt>
 File: Images/GraphDungeon1.png Graphic file (type png)
 <use Images/GraphDungeon1.png>
 Package pdftex.def Info: Images/GraphDungeon1.png  used on input line 167.
 (pdftex.def)             Requested size: 202.72765pt x 186.90973pt.
-<Images/GraphDungeon2.png, id=961, 480.79625pt x 435.6275pt>
+<Images/GraphDungeon2.png, id=957, 480.79625pt x 435.6275pt>
 File: Images/GraphDungeon2.png Graphic file (type png)
 <use Images/GraphDungeon2.png>
 Package pdftex.def Info: Images/GraphDungeon2.png  used on input line 172.
 (pdftex.def)             Requested size: 202.7327pt x 183.68683pt.
-<Images/GVGAILevels.png, id=966, 1094.0875pt x 389.455pt>
+<Images/GVGAILevels.png, id=962, 1094.0875pt x 389.455pt>
 File: Images/GVGAILevels.png Graphic file (type png)
 <use Images/GVGAILevels.png>
 Package pdftex.def Info: Images/GVGAILevels.png  used on input line 181.
 (pdftex.def)             Requested size: 426.79257pt x 151.92249pt.
  [12 <./Images/ASPDungeons.png> <./Images/GraphDungeon1.png> <./Images/GraphDungeon2.png>]
-<Images/PlottingSolverComparison.png, id=980, 1354.3097pt x 780.66656pt>
+<Images/PlottingSolverComparison.png, id=976, 1354.3097pt x 780.66656pt>
 File: Images/PlottingSolverComparison.png Graphic file (type png)
 <use Images/PlottingSolverComparison.png>
 Package pdftex.def Info: Images/PlottingSolverComparison.png  used on input line 191.
 (pdftex.def)             Requested size: 365.75116pt x 210.83043pt.
  [13 <./Images/GVGAILevels.png> <./Images/PlottingSolverComparison.png>]
-<Images/BadNorth.jpg, id=995, 1505.625pt x 847.165pt>
+<Images/BadNorth.jpg, id=991, 1505.625pt x 847.165pt>
 File: Images/BadNorth.jpg Graphic file (type jpg)
 <use Images/BadNorth.jpg>
 Package pdftex.def Info: Images/BadNorth.jpg  used on input line 205.
 (pdftex.def)             Requested size: 374.70526pt x 210.83415pt.
-<Images/ModelSynthesis1.jpg, id=1004, 278.03876pt x 365.365pt>
+<Images/ModelSynthesis1.jpg, id=1000, 278.03876pt x 365.365pt>
 File: Images/ModelSynthesis1.jpg Graphic file (type jpg)
 <use Images/ModelSynthesis1.jpg>
 Package pdftex.def Info: Images/ModelSynthesis1.jpg  used on input line 217.
 (pdftex.def)             Requested size: 187.18864pt x 245.98076pt.
-<Images/ModelSynthesis2.jpg, id=1005, 294.09875pt x 479.7925pt>
+<Images/ModelSynthesis2.jpg, id=1001, 294.09875pt x 479.7925pt>
 File: Images/ModelSynthesis2.jpg Graphic file (type jpg)
 <use Images/ModelSynthesis2.jpg>
 Package pdftex.def Info: Images/ModelSynthesis2.jpg  used on input line 222.
 (pdftex.def)             Requested size: 150.77818pt x 245.97943pt.
  [14 <./Images/BadNorth.jpg>]
-<Images/OverlappingWFC.jpg, id=1019, 2072.74374pt x 2784.4025pt>
+<Images/OverlappingWFC.jpg, id=1015, 2072.74374pt x 2784.4025pt>
 File: Images/OverlappingWFC.jpg Graphic file (type jpg)
 <use Images/OverlappingWFC.jpg>
 Package pdftex.def Info: Images/OverlappingWFC.jpg  used on input line 233.
 (pdftex.def)             Requested size: 261.55928pt x 351.3634pt.
  [15 <./Images/ModelSynthesis1.jpg> <./Images/ModelSynthesis2.jpg>] [16 <./Images/OverlappingWFC.jpg>]
-<Images/CavesOfQudWFC1.jpg, id=1050, 2079.77pt x 974.64125pt>
+<Images/CavesOfQudWFC1.jpg, id=1046, 2079.77pt x 974.64125pt>
 File: Images/CavesOfQudWFC1.jpg Graphic file (type jpg)
 <use Images/CavesOfQudWFC1.jpg>
 Package pdftex.def Info: Images/CavesOfQudWFC1.jpg  used on input line 261.
 (pdftex.def)             Requested size: 202.72122pt x 95.00111pt.
-<Images/CavesOfQudWFC2.jpg, id=1052, 2568.59625pt x 1203.49625pt>
+<Images/CavesOfQudWFC2.jpg, id=1048, 2568.59625pt x 1203.49625pt>
 File: Images/CavesOfQudWFC2.jpg Graphic file (type jpg)
 <use Images/CavesOfQudWFC2.jpg>
 Package pdftex.def Info: Images/CavesOfQudWFC2.jpg  used on input line 266.
 (pdftex.def)             Requested size: 202.70915pt x 94.97783pt.
-<Images/WFCMaximumConstraint1.jpg, id=1058, 665.48625pt x 666.49pt>
+<Images/WFCMaximumConstraint1.jpg, id=1054, 665.48625pt x 666.49pt>
 File: Images/WFCMaximumConstraint1.jpg Graphic file (type jpg)
 <use Images/WFCMaximumConstraint1.jpg>
 Package pdftex.def Info: Images/WFCMaximumConstraint1.jpg  used on input line 282.
 (pdftex.def)             Requested size: 202.72421pt x 203.02998pt.
-<Images/WFCMaximumConstraint2.jpg, id=1059, 678.535pt x 666.49pt>
+<Images/WFCMaximumConstraint2.jpg, id=1055, 678.535pt x 666.49pt>
 File: Images/WFCMaximumConstraint2.jpg Graphic file (type jpg)
 <use Images/WFCMaximumConstraint2.jpg>
 Package pdftex.def Info: Images/WFCMaximumConstraint2.jpg  used on input line 287.
 (pdftex.def)             Requested size: 202.72342pt x 199.12479pt.
-<Images/WFCMinimumConstraint1.jpg, id=1063, 693.59125pt x 694.595pt>
+<Images/WFCMinimumConstraint1.jpg, id=1059, 693.59125pt x 694.595pt>
 File: Images/WFCMinimumConstraint1.jpg Graphic file (type jpg)
 <use Images/WFCMinimumConstraint1.jpg>
 Package pdftex.def Info: Images/WFCMinimumConstraint1.jpg  used on input line 299.
 (pdftex.def)             Requested size: 202.7238pt x 203.01718pt.
-<Images/WFCMinimumConstraint2.jpg, id=1064, 703.62875pt x 683.55376pt>
+<Images/WFCMinimumConstraint2.jpg, id=1060, 703.62875pt x 683.55376pt>
 File: Images/WFCMinimumConstraint2.jpg Graphic file (type jpg)
 <use Images/WFCMinimumConstraint2.jpg>
 Package pdftex.def Info: Images/WFCMinimumConstraint2.jpg  used on input line 304.
 (pdftex.def)             Requested size: 202.72652pt x 196.9426pt.
  [17 <./Images/CavesOfQudWFC1.jpg> <./Images/CavesOfQudWFC2.jpg> <./Images/WFCMaximumConstraint1.jpg> <./Images/WFCMaximumConstraint2.jpg>]
-<Images/WFCDistanceConstraint1.jpg, id=1077, 639.38875pt x 633.36626pt>
+<Images/WFCDistanceConstraint1.jpg, id=1073, 639.38875pt x 633.36626pt>
 File: Images/WFCDistanceConstraint1.jpg Graphic file (type jpg)
 <use Images/WFCDistanceConstraint1.jpg>
 Package pdftex.def Info: Images/WFCDistanceConstraint1.jpg  used on input line 316.
 (pdftex.def)             Requested size: 202.72562pt x 200.81612pt.
-<Images/WFCDistanceConstraint2.jpg, id=1078, 642.4pt x 633.36626pt>
+<Images/WFCDistanceConstraint2.jpg, id=1074, 642.4pt x 633.36626pt>
 File: Images/WFCDistanceConstraint2.jpg Graphic file (type jpg)
 <use Images/WFCDistanceConstraint2.jpg>
 Package pdftex.def Info: Images/WFCDistanceConstraint2.jpg  used on input line 321.
 (pdftex.def)             Requested size: 202.72955pt x 199.87868pt.
  [18 <./Images/WFCMinimumConstraint1.jpg> <./Images/WFCMinimumConstraint2.jpg> <./Images/WFCDistanceConstraint1.jpg> <./Images/WFCDistanceConstraint2.jpg>]
-<Images/WFCMultiLayer1.jpg, id=1090, 700.6175pt x 681.54625pt>
+<Images/WFCMultiLayer1.jpg, id=1086, 700.6175pt x 681.54625pt>
 File: Images/WFCMultiLayer1.jpg Graphic file (type jpg)
 <use Images/WFCMultiLayer1.jpg>
 Package pdftex.def Info: Images/WFCMultiLayer1.jpg  used on input line 333.
 (pdftex.def)             Requested size: 202.72487pt x 197.20656pt.
-<Images/WFCMultiLayer2.jpg, id=1091, 683.55376pt x 681.54625pt>
+<Images/WFCMultiLayer2.jpg, id=1087, 683.55376pt x 681.54625pt>
 File: Images/WFCMultiLayer2.jpg Graphic file (type jpg)
 <use Images/WFCMultiLayer2.jpg>
 Package pdftex.def Info: Images/WFCMultiLayer2.jpg  used on input line 338.
 (pdftex.def)             Requested size: 202.72092pt x 202.12555pt.
-<Images/CavesOfQudWFC3.jpg, id=1103, 947.54pt x 741.77126pt>
+<Images/CavesOfQudWFC3.jpg, id=1099, 947.54pt x 741.77126pt>
 File: Images/CavesOfQudWFC3.jpg Graphic file (type jpg)
 <use Images/CavesOfQudWFC3.jpg>
 Package pdftex.def Info: Images/CavesOfQudWFC3.jpg  used on input line 357.
 (pdftex.def)             Requested size: 202.7195pt x 158.69673pt.
-<Images/CavesOfQudWFC4.png, id=1105, 943.525pt x 749.80125pt>
+<Images/CavesOfQudWFC4.png, id=1101, 943.525pt x 749.80125pt>
 File: Images/CavesOfQudWFC4.png Graphic file (type png)
 <use Images/CavesOfQudWFC4.png>
 Package pdftex.def Info: Images/CavesOfQudWFC4.png  used on input line 362.
 (pdftex.def)             Requested size: 202.72433pt x 161.10115pt.
  [19 <./Images/WFCMultiLayer1.jpg> <./Images/WFCMultiLayer2.jpg>]
-<Images/BacktrackingPerformance.png, id=1122, 1155.56718pt x 712.91344pt>
+<Images/BacktrackingPerformance.png, id=1118, 1155.56718pt x 712.91344pt>
 File: Images/BacktrackingPerformance.png Graphic file (type png)
 <use Images/BacktrackingPerformance.png>
 Package pdftex.def Info: Images/BacktrackingPerformance.png  used on input line 376.
 (pdftex.def)             Requested size: 341.73573pt x 210.82979pt.
  [20 <./Images/CavesOfQudWFC3.jpg> <./Images/CavesOfQudWFC4.png (PNG copy)>]
-<Images/NestedWFC.jpg, id=1139, 1678.01906pt x 712.16063pt>
+<Images/NestedWFC.jpg, id=1135, 1678.01906pt x 712.16063pt>
 File: Images/NestedWFC.jpg Graphic file (type jpg)
 <use Images/NestedWFC.jpg>
 Package pdftex.def Info: Images/NestedWFC.jpg  used on input line 385.
 (pdftex.def)             Requested size: 426.7754pt x 181.12585pt.
-<Images/InfiniteWFC.jpg, id=1142, 1726.95187pt x 755.07094pt>
+<Images/InfiniteWFC.jpg, id=1138, 1726.95187pt x 755.07094pt>
 File: Images/InfiniteWFC.jpg Graphic file (type jpg)
 <use Images/InfiniteWFC.jpg>
 Package pdftex.def Info: Images/InfiniteWFC.jpg  used on input line 392.
 (pdftex.def)             Requested size: 426.7829pt x 186.60124pt.
  [21 <./Images/BacktrackingPerformance.png> <./Images/NestedWFC.jpg>]
-<Images/NavigationMeshNodePlacement.png, id=1161, 638.385pt x 313.17pt>
+<Images/NavigationMeshNodePlacement.png, id=1157, 638.385pt x 313.17pt>
 File: Images/NavigationMeshNodePlacement.png Graphic file (type png)
 <use Images/NavigationMeshNodePlacement.png>
 Package pdftex.def Info: Images/NavigationMeshNodePlacement.png  used on input line 406.
 (pdftex.def)             Requested size: 426.79033pt x 209.36884pt.
  [22 <./Images/InfiniteWFC.jpg>]
-<Images/GrowingGridShape.png, id=1176, 440.64626pt x 441.65pt>
+<Images/GrowingGridShape.png, id=1172, 440.64626pt x 441.65pt>
 File: Images/GrowingGridShape.png Graphic file (type png)
 <use Images/GrowingGridShape.png>
 Package pdftex.def Info: Images/GrowingGridShape.png  used on input line 418.
 (pdftex.def)             Requested size: 202.72662pt x 203.18842pt.
-<Images/GrowingGridWFC.png, id=1177, 839.135pt x 548.0475pt>
+<Images/GrowingGridWFC.png, id=1173, 839.135pt x 548.0475pt>
 File: Images/GrowingGridWFC.png Graphic file (type png)
 <use Images/GrowingGridWFC.png>
 Package pdftex.def Info: Images/GrowingGridWFC.png  used on input line 423.
 (pdftex.def)             Requested size: 202.72813pt x 132.40378pt.
  [23 <./Images/NavigationMeshNodePlacement.png (PNG copy)> <./Images/GrowingGridShape.png> <./Images/GrowingGridWFC.png>]
-<Images/SymmetryDictionary.png, id=1198, 1218.05063pt x 683.55376pt>
+<Images/SymmetryDictionary.png, id=1194, 1218.05063pt x 683.55376pt>
 File: Images/SymmetryDictionary.png Graphic file (type png)
 <use Images/SymmetryDictionary.png>
 Package pdftex.def Info: Images/SymmetryDictionary.png  used on input line 432.
@@ -1514,27 +1514,27 @@ Chapter 6.
 
 
 
-] [30] [31] [32] [33] [34]) [35]
+] [30] [31] [32] [33] [34] [35]) [36]
 \openout2 = `"Main Sections/08Implementation.aux"'.
 
  (Main Sections/08Implementation.tex
 Chapter 7.
-<Images/CubeTile.png, id=1340, 150.5625pt x 150.5625pt>
+<Images/CubeTile.png, id=1341, 150.5625pt x 150.5625pt>
 File: Images/CubeTile.png Graphic file (type png)
 <use Images/CubeTile.png>
 Package pdftex.def Info: Images/CubeTile.png  used on input line 27.
 (pdftex.def)             Requested size: 70.28421pt x 70.28421pt.
-<Images/CornerTile.png, id=1341, 150.5625pt x 150.5625pt>
+<Images/CornerTile.png, id=1342, 150.5625pt x 150.5625pt>
 File: Images/CornerTile.png Graphic file (type png)
 <use Images/CornerTile.png>
 Package pdftex.def Info: Images/CornerTile.png  used on input line 32.
 (pdftex.def)             Requested size: 70.28421pt x 70.28421pt.
-<Images/WallTile.png, id=1342, 150.5625pt x 150.5625pt>
+<Images/WallTile.png, id=1343, 150.5625pt x 150.5625pt>
 File: Images/WallTile.png Graphic file (type png)
 <use Images/WallTile.png>
 Package pdftex.def Info: Images/WallTile.png  used on input line 37.
 (pdftex.def)             Requested size: 70.28421pt x 70.28421pt.
-[36
+[37
 
 
 
@@ -1593,7 +1593,7 @@ File: Images/WallTile.png Graphic file (type png)
 <use Images/WallTile.png>
 Package pdftex.def Info: Images/WallTile.png  used on input line 123.
 (pdftex.def)             Requested size: 70.28421pt x 70.28421pt.
-[37]
+[38]
 File: Images/WallTile.png Graphic file (type png)
 <use Images/WallTile.png>
 Package pdftex.def Info: Images/WallTile.png  used on input line 149.
@@ -1602,7 +1602,7 @@ File: Images/CubeTile.png Graphic file (type png)
 <use Images/CubeTile.png>
 Package pdftex.def Info: Images/CubeTile.png  used on input line 149.
 (pdftex.def)             Requested size: 45.61249pt x 45.61249pt.
-<Images/EmptyTile.png, id=1365, 150.5625pt x 150.5625pt>
+<Images/EmptyTile.png, id=1366, 150.5625pt x 150.5625pt>
 File: Images/EmptyTile.png Graphic file (type png)
 <use Images/EmptyTile.png>
 Package pdftex.def Info: Images/EmptyTile.png  used on input line 149.
@@ -1627,7 +1627,7 @@ File: Images/WallTile.png Graphic file (type png)
 <use Images/WallTile.png>
 Package pdftex.def Info: Images/WallTile.png  used on input line 171.
 (pdftex.def)             Requested size: 45.61249pt x 45.61249pt.
- [38]
+ [39]
 File: Images/WallTile.png Graphic file (type png)
 <use Images/WallTile.png>
 Package pdftex.def Info: Images/WallTile.png  used on input line 200.
@@ -1788,7 +1788,7 @@ File: Images/CubeTile.png Graphic file (type png)
 <use Images/CubeTile.png>
 Package pdftex.def Info: Images/CubeTile.png  used on input line 347.
 (pdftex.def)             Requested size: 22.29851pt x 22.29851pt.
- [39 <./Images/EmptyTile.png>]
+ [40 <./Images/EmptyTile.png>]
 File: Images/CubeTile.png Graphic file (type png)
 <use Images/CubeTile.png>
 Package pdftex.def Info: Images/CubeTile.png  used on input line 368.
@@ -1889,91 +1889,91 @@ Underfull \hbox (badness 2781) in paragraph at lines 416--416
 \T1/cmr/m/n/10 cit Vari-ant 3 Be-fore
  []
 
-[40] [41] [42]) [43]
+[41] [42] [43]) [44]
 \openout2 = `"Main Sections/09Evaluation.aux"'.
 
  (Main Sections/09Evaluation.tex
 Chapter 8.
-[44
+[45
 
 
 
 
-]) [45] [46]
+]) [46] [47]
 \openout2 = `"Main Sections/10Conclusion.aux"'.
 
  (Main Sections/10Conclusion.tex
 Chapter 9.
-) [47
+) [48
 
 
 
 
-] [48
+] [49
 
 
 
-] [49]
+] [50]
 Overfull \hbox (5.65617pt too wide) in paragraph at lines 49--49
 []\T1/cmr/m/it/12 Data Min-ing and Con-straint Pro-gram-ming: Found-a-tions of a Cross-Disciplinary
  []
 
-[50] [51] [52]
+[51] [52] [53]
 \openout2 = `"Main Sections/11Appendix.aux"'.
 
  (Main Sections/11Appendix.tex
 Appendix A.
-[53
+[54
 
 
 ]
 Appendix B.
-[54
-
-]
-Appendix C.
 [55
 
 ]
-Appendix D.
+Appendix C.
 [56
 
-] [57]
+]
+Appendix D.
+[57
+
+] [58]
 Overfull \hbox (3.41115pt too wide) in paragraph at lines 145--146
 []\T1/cmr/m/n/12 Should prob-ably also re-place the buzz with some-thing that doesn't
  []
 
-[58]
+[59]
 Appendix E.
-[59
+[60
 
-] [60]
+] [61]
 Appendix F.
-[61
+[62
 
-]) [62] (main.aux (Main Sections/02Introduction.aux) (Main Sections/03LiteratureReview.aux) (Main Sections/04RequirementsSpecification.aux) (Main Sections/05SoftwareEngineeringProcess.aux) (Main Sections/06Ethics.aux) (Main Sections/07Design.aux) (Main Sections/08Implementation.aux) (Main Sections/09Evaluation.aux) (Main Sections/10Conclusion.aux) (Main Sections/11Appendix.aux))
+]) [63] (main.aux (Main Sections/02Introduction.aux) (Main Sections/03LiteratureReview.aux) (Main Sections/04RequirementsSpecification.aux) (Main Sections/05SoftwareEngineeringProcess.aux) (Main Sections/06Ethics.aux) (Main Sections/07Design.aux) (Main Sections/08Implementation.aux) (Main Sections/09Evaluation.aux) (Main Sections/10Conclusion.aux) (Main Sections/11Appendix.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 251F2271877C7CA811379670C873B27B;11484.
+(rerunfilecheck)             Checksum: 0152C93F2B539D932A2998EE31F50743;11484.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42006 strings out of 474485
- 815173 string characters out of 5742318
+ 42009 strings out of 474485
+ 815216 string characters out of 5742318
  1965542 words of memory out of 5000000
- 63193 multiletter control sequences out of 15000+600000
+ 63194 multiletter control sequences out of 15000+600000
  573190 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,96p,2458b,2620s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Benjamin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\Benjamin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Benjamin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\Benjamin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Benjamin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Benjamin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Benjamin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Benjamin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Benjamin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Benjamin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\Benjamin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk><C:/Users/Benjamin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Benjamin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Benjamin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Benjamin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (71 pages, 16713102 bytes).
+Output written on main.pdf (72 pages, 16714955 bytes).
 PDF statistics:
- 2342 PDF objects out of 2487 (max. 8388607)
- 364 named destinations out of 1000 (max. 500000)
+ 2344 PDF objects out of 2487 (max. 8388607)
+ 366 named destinations out of 1000 (max. 500000)
  887 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -245,8 +245,8 @@
       \strng{authorbibnamehash}{46c2caad2d1433d5a224bdbf82de6ffb}
       \strng{authornamehash}{46c2caad2d1433d5a224bdbf82de6ffb}
       \strng{authorfullhash}{46c2caad2d1433d5a224bdbf82de6ffb}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{9}
@@ -280,8 +280,8 @@
       \strng{authornamehash}{6f9f5309cb73fdd910932005e06e03a5}
       \strng{authorfullhash}{6f9f5309cb73fdd910932005e06e03a5}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Games}
@@ -309,8 +309,8 @@
       \strng{authorbibnamehash}{c1e8f36c537b67931de8cac36326fc96}
       \strng{authornamehash}{c1e8f36c537b67931de8cac36326fc96}
       \strng{authorfullhash}{c1e8f36c537b67931de8cac36326fc96}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Model Synthesis}
@@ -342,8 +342,8 @@
       \strng{authorbibnamehash}{286eb1355114f63f5ea725ef0a2d6d5d}
       \strng{authornamehash}{286eb1355114f63f5ea725ef0a2d6d5d}
       \strng{authorfullhash}{286eb1355114f63f5ea725ef0a2d6d5d}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Engadget}
@@ -378,8 +378,8 @@
       \strng{authorbibnamehash}{7f0e9c3928f46bbf1aedc3c0033d301f}
       \strng{authornamehash}{7f0e9c3928f46bbf1aedc3c0033d301f}
       \strng{authorfullhash}{7f0e9c3928f46bbf1aedc3c0033d301f}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Kotaku}
@@ -411,8 +411,8 @@
       \strng{authorbibnamehash}{7a389cfc828479f90d171205f8f48d75}
       \strng{authornamehash}{7a389cfc828479f90d171205f8f48d75}
       \strng{authorfullhash}{7a389cfc828479f90d171205f8f48d75}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Game Developer}
@@ -447,8 +447,8 @@
       \strng{authorbibnamehash}{52d7f11475a90a69cacc19d527ac93e2}
       \strng{authornamehash}{52d7f11475a90a69cacc19d527ac93e2}
       \strng{authorfullhash}{52d7f11475a90a69cacc19d527ac93e2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Eurogamer.net}
@@ -493,8 +493,8 @@
       \strng{authorbibnamehash}{f94d337436520f5209d3360e69b11bc0}
       \strng{authornamehash}{f94d337436520f5209d3360e69b11bc0}
       \strng{authorfullhash}{f94d337436520f5209d3360e69b11bc0}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Procedural Content Generation in Games: A Textbook and an Overview of Current Research}
@@ -525,8 +525,8 @@
       \strng{authorbibnamehash}{e3416675e3a20772d0b78f45f4ce995d}
       \strng{authornamehash}{e3416675e3a20772d0b78f45f4ce995d}
       \strng{authorfullhash}{e3416675e3a20772d0b78f45f4ce995d}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Minecraft Caves and Cliffs Snapshot Twitter Post}
@@ -585,8 +585,8 @@
       \strng{authorbibnamehash}{13fd878e851afeadcbe2e4032744dcee}
       \strng{authornamehash}{2dc6c0f9252df6a0e4f98d396ee95e60}
       \strng{authorfullhash}{98d44bda2d2a959d34ce202bbbdb84c0}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{cs.AI}
@@ -656,8 +656,8 @@
       \strng{authorbibnamehash}{1d0259b6cb0820d0e3d367756160a9cb}
       \strng{authornamehash}{b8dd6189552aeeda8472209b34b4dac0}
       \strng{authorfullhash}{38d0920f3162b05f37e01372b4917ce1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{cs.CV}
@@ -698,8 +698,8 @@
       \strng{authorbibnamehash}{7a2b97a3a77e2313463f78e4161758b3}
       \strng{authornamehash}{7a2b97a3a77e2313463f78e4161758b3}
       \strng{authorfullhash}{7a2b97a3a77e2313463f78e4161758b3}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Self-driving cars rely on software which needs to be thoroughly tested. Testing self-driving car software in real traffic is not only expensive but also dangerous, and has already caused fatalities. Virtual tests, in which self-driving car software is tested in computer simulations, offer a more efficient and safer alternative compared to naturalistic field operational tests. However, creating suitable test scenarios is laborious and difficult. In this paper we combine procedural content generation, a technique commonly employed in modern video games, and search-based testing, a testing technique proven to be effective in many domains, in order to automatically create challenging virtual scenarios for testing self-driving car soft- ware. Our AsFault prototype implements this approach to generate virtual roads for testing lane keeping, one of the defining features of autonomous driving. Evaluation on two different self-driving car software systems demonstrates that AsFault can generate effective virtual road networks that succeed in revealing software failures, which manifest as cars departing their lane. Compared to random testing AsFault was not only more efficient, but also caused up to twice as many lane departures.}
@@ -733,8 +733,8 @@
       \strng{authorbibnamehash}{230efc1db61425699ee20089c8e55c13}
       \strng{authornamehash}{230efc1db61425699ee20089c8e55c13}
       \strng{authorfullhash}{230efc1db61425699ee20089c8e55c13}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Stable Diffusion Generative Models}
@@ -761,8 +761,8 @@
       \strng{authorbibnamehash}{0523b13262b12c215d8009938f5c14f1}
       \strng{authornamehash}{0523b13262b12c215d8009938f5c14f1}
       \strng{authorfullhash}{0523b13262b12c215d8009938f5c14f1}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{ChatGPT}
@@ -789,8 +789,8 @@
       \strng{authorbibnamehash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
       \strng{authornamehash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
       \strng{authorfullhash}{d3b7c913cd04ebfec0e9ec32cb6fd58c}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{GitHub Copilot}
@@ -844,8 +844,8 @@
       \strng{authorbibnamehash}{4a53915dbc9f6139f3e297df79be26cd}
       \strng{authornamehash}{d571de3568ac55431f20d4ecc2d15dd4}
       \strng{authorfullhash}{4a53915dbc9f6139f3e297df79be26cd}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Procedural content generation in video games has a long history. Existing procedural content generation methods, such as search-based, solver-based, rule-based and grammar-based methods have been applied to various content types such as levels, maps, character models, and textures. A research field centered on content generation in games has existed for more than a decade. More recently, deep learning has powered a remarkable range of inventions in content production, which are applicable to games. While some cutting-edge deep learning methods are applied on their own, others are applied in combination with more traditional methods, or in an interactive setting. This article surveys the various deep learning methods that have been applied to generate game content directly or indirectly, discusses deep learning methods that could be used for content generation purposes but are rarely used today, and envisages some limitations and potential future directions of deep learning for procedural content generation.}
@@ -907,8 +907,8 @@
       \strng{authorbibnamehash}{85e6737ebf0b023acbd5f2e7f6ddf1f6}
       \strng{authornamehash}{c4f86dc33841d3a9967967e15c97922a}
       \strng{authorfullhash}{85e6737ebf0b023acbd5f2e7f6ddf1f6}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Games}
@@ -946,8 +946,8 @@
       \strng{authorbibnamehash}{5cb37a58a8ded9dafbe596683b4a0275}
       \strng{authornamehash}{5cb37a58a8ded9dafbe596683b4a0275}
       \strng{authorfullhash}{5cb37a58a8ded9dafbe596683b4a0275}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2015 7th Computer Science and Electronic Engineering Conference (CEEC)}
@@ -998,8 +998,8 @@
       \strng{authorbibnamehash}{913d8488d31d0f6b8e677728867c505e}
       \strng{authornamehash}{a2fff08dc766e451dedf8e690a0e6c1b}
       \strng{authorfullhash}{913d8488d31d0f6b8e677728867c505e}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2020 IEEE Conference on Games (CoG)}
@@ -1040,8 +1040,8 @@
       \strng{authorbibnamehash}{ff020027ac0762da6abd909bbc870363}
       \strng{authornamehash}{2c7174d6a982aa581b979fcb192361f4}
       \strng{authorfullhash}{ff020027ac0762da6abd909bbc870363}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment}
@@ -1111,8 +1111,8 @@
       \strng{authorbibnamehash}{980472e054c4b0a4d53d1c00a3e68019}
       \strng{authornamehash}{b3864d8699c0d563ca74509abcb362dd}
       \strng{authorfullhash}{6e2076797d39e4d4274a6633911e3284}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Games}
@@ -1152,8 +1152,8 @@
       \strng{authornamehash}{6f9f5309cb73fdd910932005e06e03a5}
       \strng{authorfullhash}{6f9f5309cb73fdd910932005e06e03a5}
       \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Maxim Gumin's WaveFunctionCollapse (WFC) algorithm is an example-driven image generation algorithm emerging from the craft practice of procedural content generation. In WFC, new images are generated in the style of given examples by ensuring every local window of the output occurs somewhere in the input. Operationally, WFC implements a non-backtracking, greedy search method. This paper examines WFC as an instance of constraint solving methods. We trace WFC's explosive influence on the technical artist community, explain its operation in terms of ideas from the constraint solving literature, and probe its strengths by means of a surrogate implementation using answer set programming.}
@@ -1217,8 +1217,8 @@
       \strng{authorbibnamehash}{6dff069aef886d923e234f7c6b13995e}
       \strng{authornamehash}{7ee30bdcffa4c4243f5d5c7b2b0c65b9}
       \strng{authorfullhash}{2a46b8ee95a28b0f09b3addbcd9e5d02}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{CSPLib Problems Library}
@@ -1267,8 +1267,8 @@
       \strng{authorbibnamehash}{fcb7c0baf81e63326b8bc8537f692433}
       \strng{authornamehash}{d81c8606ee1406ff627deda844ac0229}
       \strng{authorfullhash}{fcb7c0baf81e63326b8bc8537f692433}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
@@ -1318,8 +1318,8 @@
       \strng{authorbibnamehash}{8532b54025241ad8f4450944a5557367}
       \strng{authornamehash}{6d7e60b55f8d4e04c7cea133a13683ed}
       \strng{authorfullhash}{8532b54025241ad8f4450944a5557367}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Constraint Programming (CP) is a powerful technique for solving large-scale combinatorial problems. Solving a problem proceeds in two distinct phases: modelling and solving. Effective modelling has a huge impact on the performance of the solving process. Even with the advance of modern automated modelling tools, search spaces involved can be so vast that problems can still be difficult to solve. To further constrain the model, a more aggressive step that can be taken is the addition of streamliner constraints, which are not guaranteed to be sound but are designed to focus effort on a highly restricted but promising portion of the search space. Previously, producing effective streamlined models was a manual, difficult and time-consuming task. This paper presents a completely automated process to the generation, search and selection of streamliner portfolios to produce a substantial reduction in search effort across a diverse range of problems. The results demonstrate a marked improvement in performance for both Chuffed, a CP solver with clause learning, and lingeling, a modern SAT solver.}
@@ -1351,8 +1351,8 @@
       \list{publisher}{1}{%
         {Springer International Publishing}%
       }
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labeltitlesource}{title}
       \field{isbn}{9783319501369}
       \field{series}{Lecture Notes in Computer Science}
@@ -1419,8 +1419,8 @@
       \strng{editorbibnamehash}{6e6577085f2cd61dec80252ebe6e4171}
       \strng{editornamehash}{6e6577085f2cd61dec80252ebe6e4171}
       \strng{editorfullhash}{6e6577085f2cd61dec80252ebe6e4171}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Constraint solvers are complex pieces of software and are notoriously difficult to debug. In large part this is due to the difficulty of pinpointing the source of an error in the vast searches these solvers perform, since the effect of an error may only come to light long after the error is made. In addition, an error does not necessarily lead to the wrong result, further complicating the debugging process. A major source of errors in a constraint solver is the complex constraint propagation algorithms that provide the inference that controls and directs the search. In this paper we show that metamorphic testing is a principled way to test constraint solvers by comparing two different implementations of the same constraint. Specifically, specialised propagators for the constraint are tested against the general purpose table constraint propagator. We report on metamorphic testing of the constraint solver Minion. We demonstrate that the metamorphic testing method is very effective for finding artificial bugs introduced by random code mutation.}
@@ -1470,8 +1470,8 @@
       \strng{authorbibnamehash}{4aa98dd244f0699a91e7f785e830112f}
       \strng{authornamehash}{57d2c12a017d98d6fdf0dbfdf45cbf1d}
       \strng{authorfullhash}{4aa98dd244f0699a91e7f785e830112f}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{{Autonomous robots can be employed in exploring unknown environments and performing many tasks, such as, e.g. detecting areas of interest, collecting target objects, etc. Deep reinforcement learning (RL) is often used to train this kind of robot. However, concerning the artificial environments aimed at testing the robot, there is a lack of available data sets and a long time is needed to create them from scratch. A good data set is in fact usually produced with high effort in terms of cost and human work to satisfy the constraints imposed by the expected results. In the first part of this paper, we focus on the specification of the properties of the solutions needed to build a data set, making the case of environment exploration. In the proposed approach, rather than using imperative programming, we explore the possibility of generating data sets using constraint programming in Prolog. In this phase, geometric predicates describe a virtual environment according to inter-space requirements. The second part of the paper is focused on testing the generated data set in an AI gym via space search techniques. We developed a Neuro-Symbolic agent built from the following: (i) A deep Q-learning component implemented in Python, able to address via RL a search problem in the virtual space; the agent has the goal to explore a generated virtual environment to seek for a target, improving its performance through a RL process. (ii) A symbolic component able to re-address the search when the Q-learning component gets stuck in a part of the virtual environment; these components stimulate the agent to move to and explore other parts of the environment. Wide experimentation has been performed, with promising results, and is reported, to demonstrate the effectiveness of the approach.}}
@@ -1540,8 +1540,8 @@
       \strng{editorbibnamehash}{1a711dab4262e3bd7f295cd504fdf074}
       \strng{editornamehash}{1a711dab4262e3bd7f295cd504fdf074}
       \strng{editorfullhash}{1a711dab4262e3bd7f295cd504fdf074}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{Keywords: constraint programming, video games, modelization, procedural generation}
@@ -1599,8 +1599,8 @@
       \strng{authorbibnamehash}{0daf0c22a477d086361007a4fa4c92e1}
       \strng{authornamehash}{dead78cd96f30f283549d0e12d1cd0fa}
       \strng{authorfullhash}{0daf0c22a477d086361007a4fa4c92e1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper presents a framework and an initial study in general video game level generation, the problem of generating levels for not only a single game but for any game within a specified range. While existing level generators are tailored to a particular game, this new challenge requires generators to take into account the constraints and affordances of games that might not even have been designed when the generator was constructed. The framework presented here builds on the General Video Game AI framework (GVG-AI) and the Video Game Description Language (VGDL), in order to reap synergies from research activities connected to the General Video Game Playing Competition. The framework will also form the basis for a new track of this competition. In addition to the framework, the paper presents three general level generators and an empirical comparison of their qualities.}
@@ -1662,8 +1662,8 @@
       \strng{editorbibnamehash}{06801325150e7eb386e08c097fbbe0da}
       \strng{editornamehash}{06801325150e7eb386e08c097fbbe0da}
       \strng{editorfullhash}{06801325150e7eb386e08c097fbbe0da}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{Keywords: AI Planning, Modelling, Constraint Programming}
@@ -1705,8 +1705,8 @@
       \strng{authorbibnamehash}{25404ed48a52c7c18bad5018e3c29298}
       \strng{authornamehash}{25404ed48a52c7c18bad5018e3c29298}
       \strng{authorfullhash}{25404ed48a52c7c18bad5018e3c29298}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Visualization and Computer Graphics}
@@ -1750,8 +1750,8 @@
       \strng{authorbibnamehash}{df15e2dec2851b6298d15960e4aeb2ec}
       \strng{authornamehash}{df15e2dec2851b6298d15960e4aeb2ec}
       \strng{authorfullhash}{df15e2dec2851b6298d15960e4aeb2ec}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Wave Function Collapse (WFC) is a non-backtracking, greedy search algorithm that is commonly known for its ability to take an example image and generate similar images. Since its inception, technical artists have explored the algorithm's extensibility and usability through various implementations spanning from 3D world generation to poetry creation. However, there has been no integration of design constraints into the generative process. In this paper, we explore WFC as a constraint satisfaction solver to integrate design principles and practices by modifying components within the algorithm. First, we extend the local constraint reasoning by incorporating non-local constraints as well as upper and lower bounds. Next, we further manipulate the generative space by introducing weight recalculation and dependencies. Lastly, we evaluate our design-focused variant of WFC against the original implementation to examine the associated costs in computational time and memory usage. In summary, this paper describes a technical implementation of integrating design constraints into WFC and analyzes the computational trade-offs.}
@@ -1785,8 +1785,8 @@
       \strng{authorbibnamehash}{e62e1b0923b947c62d85adcc29240841}
       \strng{authornamehash}{e62e1b0923b947c62d85adcc29240841}
       \strng{authorfullhash}{e62e1b0923b947c62d85adcc29240841}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Math for Game Developers: Tile-Based Map Generation Using WaveFunctionCollapse in Caves of Qud}
@@ -1825,8 +1825,8 @@
       \strng{authorbibnamehash}{595da9cee23f46315145a007dad4bbe9}
       \strng{authornamehash}{595da9cee23f46315145a007dad4bbe9}
       \strng{authorfullhash}{595da9cee23f46315145a007dad4bbe9}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-3-030-65735-2}

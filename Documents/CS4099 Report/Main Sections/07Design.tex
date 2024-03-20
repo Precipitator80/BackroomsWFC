@@ -285,13 +285,30 @@ The models with texturing for each tile were made in the software Blender using 
 
 % Image of tiles in Blender. Write text to define each.
 
-\subsection{Camera Effects}
-To simulate the appearance of a video recorded onto a VHS tape, a range of camera effects were used. These are listed below.
+\subsection{Visual Effects}
+Unity's Universal Render Pipeline was used to give additional control over rendering and visual effects. To simulate the appearance of a video recorded onto a VHS tape, a range of camera effects were used. These are listed in Figure \ref{fig:cameraEffects}.
 
-% LIST USING ITEMISE
+\begin{figure}[H]
+    \begin{framed}
+        \begin{itemize}
+            \item Depth of Field: Blurs objects that are very close to the camera, simulating depth.
+            \item Bloom: Increases the effect of light on the scene, emulating high sensitivity.
+            \item Motion Blur: Simulates unclear image capture from moving the camera.
+            \item Tonemapping (ACES): Maps colour tones differently to give a filmic effect, making the image appear more realistic.
+            \item Lens Distortion: Shifts projection around the centre of the image to simulate capture through a lens.
+            \item Film Grain: Adds noise to the image to simulate similar noise real cameras can capture.
+            \item Chromatic Aberration: Disperses red, green and blue colours at the edge of the screen to simulate the same effect lenses can exhibit in real life.
+            \item Panini Projection: Shifts projection to better render perspective views in wide angle scenes. Acts as additional distortion to make the image appear more organic.
+            \item Color Adjustments: Reduces exposure to make tones more neutral. Also adds a colour filter to shift colours slightly more towards monochrome yellow to fit the level theme.
+            \item Fog: Obscures distant objects to hide the border of currently generated chunks.
+        \end{itemize}
+    \end{framed}
+    \caption{Camera Effects}
+    \label{fig:cameraEffects}
+\end{figure}
 
 \subsection{Lighting Model}
-A deferred lighting model was used to light the level \cite{lighting_models}. Unity's default lighting relies heavily on baked lighting to provide for high quality lighting. Baking lighting describes pre-calculating lighting before runtime. Textures can  then be illuminated cheaply at runtime using this baking data to help give levels a realistic look.
+A deferred lighting model was used to light the level \cite{lighting_models}. Unity's default lighting relies heavily on baked lighting to provide for high quality lighting. Baking lighting describes pre-calculating lighting before runtime. Textures can then be illuminated cheaply at runtime using this baking data to help give levels a realistic look.
 
 % Example of baked lighting
 
