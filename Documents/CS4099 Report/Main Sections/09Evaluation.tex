@@ -1,5 +1,6 @@
 \chapter{Evaluation}
 % Evaluate the success of your program against what you were asked to do.
+The goal of the project was initially to extend upon an existing implementation of \acrshort{wfc}. As this was unsuccessful, the algorithm had to be implemented from scratch. Implementing \acrlong{wfc} and extending it with \acrlong{imib} presented a huge technical challenge. Ultimately, this detracted from work on the game itself as the focus of the dissertation changed. This was reflected in a change of dissertation title from `Procedural Content Generation in Video Games' to `Wave Function Collapse as a Constraint Solver for Game Level Generation'. The objectives set at the start of the project also suffered from this.
 
 % Reflect DIRECTLY on the points listed in the requirements specification. Make subsections or itemize for each point and comment on the extent of its completion.
 \section{Against Requirements Specification}
@@ -8,7 +9,7 @@
 The final project includes a very basic game in which the player can explore an infinite world generated through procedural level generation. The game is themed after \textit{the Backrooms}, a fictional concept detailing an infinite expanse of `levels'. The first of these levels, `Level Zero', is included in the game.
 
 \subsubsection{Use novel PCG methods such as Wave Function Collapse}
-\acrlong{wfc} was studied thoroughly throughout the project. \acrshort{wfc} was contextualised within theory of constraint programming and a simple-tiled implementation created using the \acrshort{mac3} algorithm with lowest entropy cell and weighted random tile selection.
+\acrlong{wfc} was studied thoroughly throughout the project. \acrshort{wfc} was contextualised within theory of constraint programming and a simple-tiled implementation created using the \acrshort{mac3} algorithm with lowest entropy cell and weighted random tile selection. Alternative selection strategies are included in the code.
 
 \subsubsection{Extend on at least one PCG method}
 Standard \acrlong{wfc} is finite in grid size and has increasing complexity with larger grid sizes. \acrshort{wfc} was extended upon through the addition of the \acrlong{imib} algorithm. This helped generate output consistently, where standard \acrshort{wfc} might require extensive backtracking in certain cases. Furthermore, it allowed \acrshort{wfc} to be applied to generate an infinite world by generating many small, finite chunks as the player moves around in the world.
@@ -21,7 +22,7 @@ A small set of models were created to serve as tiles for \acrshort{wfc}. These m
 No attempts were made to introduce AI opponents to the game.
 
 \subsubsection{Allow customisation of level generation and other gameplay elements via an in-game menu}
-The final game allows the user to set the seed of the level generator and includes an option to spawn with all the required items to solve puzzles more quickly.
+The final game does not include any in-game menu, but the generation interface allows the level designer to set the seed of the level generator, adjust weights, tiles and chunk properties.
 
 \section{Designer-facing Components}
 \subsection{Editor Interface and Code Quality}
@@ -32,7 +33,7 @@ The level generation code includes exceptions that can tell the level designer w
 
 \section{Player-facing Components}
 \subsection{Gameplay}
-Players are able to explore an infinite map and solve simple puzzles to escape. While this may be interesting for a while, the experience has a significant issue with homogeneity. The low variety of models used means that the geometry of the level does not form many interesting structures. The lack of multiple levels also limits the amount of enjoyment players may get out of the game.
+Players are able to explore an infinite map. While this may be interesting for a while, the experience has a significant issue with homogeneity. The low variety of models used means that the geometry of the level does not form many interesting structures. The lack of multiple levels also limits the amount of enjoyment players may get out of the game. One idea during development was to add puzzles and give each level its own sub-areas with different tile designs.
 
 \subsection{Performance}
-While the procedural level generation is functional, it suffers from a lack of optimisations that would make it more suitable to application for a video game. For example, chunk loading could be multi-threaded. However, implementation of this is difficult due to poor support by Unity. Furthermore, the use of Unity coroutines could be explored to let chunk loading take place across multiple frames. This would avoid lag spikes, which can be very off-putting to players.
+While the procedural level generation is functional, it suffers from a lack of optimisations that would make it more suitable to application for a video game. For example, chunk loading could be multi-threaded. However, implementation of this is difficult due to poor support by Unity. Furthermore, the use of Unity coroutines could be explored to let chunk loading take place across multiple frames. This would avoid lag spikes, which can be very off-putting to players. Another potential optimisation might be alternative chunk management. Carrying data from existing chunks to new chunks to be loaded directly could significantly improve performance over the current indirect method. Having a data structure that efficiently manages this would be key to making such an optimisation work.

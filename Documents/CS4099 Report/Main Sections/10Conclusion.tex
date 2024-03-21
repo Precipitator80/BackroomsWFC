@@ -1,22 +1,39 @@
 \chapter{Conclusion}
 % Summarise what you achieved, what you found difficult, and what you would like to do given more time.
+% Restate the Research Problem/Objective
+% Summary of Findings:
+% Discussion of Implications
+% Reflection on Methodology
+% Addressing Research Questions/Goals
+% Recommendations for Future Research
+% Practical Implications and Applications
+% Conclusion Statement
+% Closing Remarks
+% Summary
+
+\acrfull{wfc} is limited by a lack of global constraints, poor performance and restriction to a finite grid. Furthermore, presentation of \acrshort{wfc} online often fails to acknowledge underlying constraint solving principles used by \acrshort{wfc}. This dissertation examined how these issues can be addressed and contextualised \acrshort{wfc} within theory of constraint programming.
+A simple-tiled implementation of \acrshort{wfc} using the \acrfull{mac3} algorithm was presented. and extended to generate infinite worlds using \acrfull{imib}. Weighted tile selection gives the level designer global control over the percentage of each tile in the output level. These concepts are demonstrated in a game themed after the popular fictional concept of \textit{the Backrooms}. These additions to \acrshort{wfc} show that the lack of global constraints and restriction to a finite grid can be addressed. The included game and generation interface illustrate the potential application of \acrshort{wfc} with these additions to video games.
+However, loading infinite worlds in real-time presents additional performance challenges and further global constraints are needed to improve control further. The solver could be optimised through the addition of multi-threading and lazy loading across frames. Furthermore, code could be reworked to more efficiently carry generation data across layers. The ease of use of the generation interface in the Unity Editor could be improved by making it simpler to specify a tile set for generation in the Unity Editor. The game could be further developed through the addition of more models and levels.
+In summary, this dissertation contextualised \acrshort{wfc} within theory of constraint programming and addressed \acrshort{wfc}'s limitations through \acrshort{imib} and weighted tile selection, extending generation to an infinite space and applying this in a game themed after \textit{the Backrooms}.
+
+% OLD CONCLUSION
 % Summarise what you achieved
-The final project includes a simple game and designer tool for creating infinite worlds using \acrlong{wfc}.
+%The final project includes a simple game and designer tool for creating infinite worlds using \acrlong{wfc}.
 
 % What you found difficult
-Implementing \acrlong{wfc} and extending it with \acrlong{imib} presented a huge technical challenge. Ultimately, this detracted from work on the game itself.
+%Implementing \acrlong{wfc} and extending it with \acrlong{imib} presented a huge technical challenge. Ultimately, this detracted from work on the game itself. % Move to general evaluation with discussion about title change.
 
 % What you would like to do given more time
-Key areas of further development are identified in Figure \ref{fig:futureGoals}.
+%Key areas of further development are identified in Figure \ref{fig:futureGoals}.
 
-\begin{figure}[H]
-    \begin{framed}
-        \begin{itemize}
-            \item Solver optimisation: Add multi-threading and lazy loading across frames to avoid lag spikes. Also, rework code to more efficiently carry generation data across layers.
-            \item Ease of use for designers: Make it simpler to specify a tile set for generation in the Unity Editor.
-            \item Added variety to game: Add more models to the existing level and add additional levels.
-        \end{itemize}
-    \end{framed}
-    \caption{Key areas of further development}
-    \label{fig:futureGoals}
-\end{figure}
+%\begin{figure}[H]
+%\begin{framed}
+%\begin{itemize}
+%\item Solver optimisation: Add multi-threading and lazy loading across frames to avoid lag spikes. Also, rework code to more efficiently carry generation data across layers.
+%\item Ease of use for designers: Make it simpler to specify a tile set for generation in the Unity Editor.
+%\item Added variety to game: Add more models to the existing level and add additional levels.
+%\end{itemize}
+%\end{framed}
+%\caption{Key areas of further development}
+%\label{fig:futureGoals}
+%\end{figure}

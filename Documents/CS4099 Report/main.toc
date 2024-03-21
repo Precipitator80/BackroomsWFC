@@ -74,7 +74,7 @@
 \contentsline {subsubsection}{Create a game that uses procedural level generation}{51}{section*.81}%
 \contentsline {subsubsection}{Use novel PCG methods such as Wave Function Collapse}{51}{section*.82}%
 \contentsline {subsubsection}{Extend on at least one PCG method}{51}{section*.83}%
-\contentsline {subsubsection}{Use assets to give the game a full set of graphics and audio}{51}{section*.84}%
+\contentsline {subsubsection}{Use assets to give the game a full set of graphics and audio}{52}{section*.84}%
 \contentsline {subsection}{\numberline {8.1.2}Secondary Objectives}{52}{subsection.8.1.2}%
 \contentsline {subsubsection}{Make levels navigable by AI opponents}{52}{section*.85}%
 \contentsline {subsubsection}{Allow customisation of level generation and other gameplay elements via an in-game menu}{52}{section*.86}%
@@ -83,15 +83,14 @@
 \contentsline {subsection}{\numberline {8.2.2}Ease of Use}{52}{subsection.8.2.2}%
 \contentsline {section}{\numberline {8.3}Player-facing Components}{52}{section.8.3}%
 \contentsline {subsection}{\numberline {8.3.1}Gameplay}{52}{subsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.2}Performance}{52}{subsection.8.3.2}%
+\contentsline {subsection}{\numberline {8.3.2}Performance}{53}{subsection.8.3.2}%
 \contentsline {chapter}{\numberline {9}Conclusion}{54}{chapter.9}%
 \contentsline {chapter}{\numberline {A}Testing Summary}{61}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Player Guide}{62}{appendix.B}%
-\contentsline {subsubsection}{Premise}{62}{section*.89}%
-\contentsline {subsubsection}{Controls}{62}{section*.90}%
-\contentsline {chapter}{\numberline {C}User Manual}{63}{appendix.C}%
-\contentsline {chapter}{\numberline {D}Meeting Notes}{64}{appendix.D}%
-\contentsline {section}{\numberline {D.1}Semester One Meeting Notes}{64}{section.D.1}%
-\contentsline {section}{\numberline {D.2}Semester Two Meeting Notes}{65}{section.D.2}%
-\contentsline {chapter}{\numberline {E}Design Document}{67}{appendix.E}%
-\contentsline {chapter}{\numberline {F}Holiday and Semester Two Task List}{69}{appendix.F}%
+\contentsline {subsubsection}{Premise}{62}{section*.88}%
+\contentsline {subsubsection}{Controls}{62}{section*.89}%
+\contentsline {chapter}{\numberline {C}Meeting Notes}{63}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Semester One Meeting Notes}{63}{section.C.1}%
+\contentsline {section}{\numberline {C.2}Semester Two Meeting Notes}{64}{section.C.2}%
+\contentsline {chapter}{\numberline {D}Design Document}{66}{appendix.D}%
+\contentsline {chapter}{\numberline {E}Holiday and Semester Two Task List}{68}{appendix.E}%
