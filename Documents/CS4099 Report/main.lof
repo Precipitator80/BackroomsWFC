@@ -38,27 +38,35 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces A \(3\times 3\) cell grid as an undirected and directed graph}}{30}{figure.caption.52}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Example starting state, in which all arcs are consistent}}{30}{figure.caption.53}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces After assigning Cube to A, <B,A> is no longer consistent}}{30}{figure.caption.54}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Revising arc <B,A>}}{31}{figure.caption.55}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Revising <B,A> results in <C,B> becoming inconsistent}}{31}{figure.caption.56}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces The graph after \acrshort {ac3} has been carried out}}{31}{figure.caption.57}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Examples of levels with three different tile weight configurations}}{34}{figure.caption.60}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces The model tile set in Blender}}{35}{figure.caption.61}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Camera Effects}}{36}{figure.caption.62}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces A \(3\times 3\) cell grid as an undirected and directed graph}}{29}{figure.caption.51}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Example starting state, in which all arcs are consistent}}{30}{figure.caption.52}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces After assigning Cube to A, <B,A> is no longer consistent}}{30}{figure.caption.53}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Revising arc <B,A>}}{30}{figure.caption.54}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Revising <B,A> results in <C,B> becoming inconsistent}}{31}{figure.caption.55}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces The graph after \acrshort {ac3} has been carried out}}{31}{figure.caption.56}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Examples of levels with three different cell selection techniques}}{33}{figure.caption.58}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Ascending tile selection has a high chance to generate unplayable levels such as this empty level}}{34}{figure.caption.60}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Examples of levels with four different tile weight configurations}}{35}{figure.caption.61}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces \acrshort {imib} uses a grid of overlapping chunks consisting of overlapping layers}}{36}{figure.caption.62}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Clearing and generating layer 1 as part of \acrshort {imib}}}{36}{figure.caption.63}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Each \acrshort {imib} layer is generated in turn to compose a full result}}{37}{figure.caption.64}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Running \acrshort {imib} with \textit {the Backrooms} tile set}}{38}{figure.caption.65}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces The chunks to unload and load in an infinite world can be mapped directly from their relative position to the player}}{38}{figure.caption.66}%
+\contentsline {figure}{\numberline {6.15}{\ignorespaces The model tile set in Blender}}{40}{figure.caption.67}%
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Camera Effects}}{41}{figure.caption.68}%
+\contentsline {figure}{\numberline {6.17}{\ignorespaces A comparison of forward and deferred lighting. Forward lighting fails to light the scene properly, showing distinct lines on tiles.}}{42}{figure.caption.69}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces A cell with cube, corner and wall tiles as options}}{38}{figure.caption.63}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces The corner tile with all possible rotations (counted clockwise)}}{39}{figure.caption.64}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Comparison of valid wall placement to invalid wall placement if adjacent walls must have matching cardinality}}{40}{figure.caption.65}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces A symmetric cube tile converted to a non-symmetric tile. For simplicity, the cube is only shown with a wall as its possible neighbour.}}{41}{figure.caption.66}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces The array of explicit variants for the cube tile with neighbours shown. Due to the tile's symmetry, no extra work is needed to calculate variants for cardinalities 1, 2 and 3.}}{41}{figure.caption.67}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces The array of explicit variants for the corner tile with neighbours shown.}}{42}{figure.caption.68}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces The explicit corner tile variants before updating neighbours to their explicit forms}}{42}{figure.caption.69}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces The three parts of the recursive \acrshort {mac3} method}}{45}{figure.caption.73}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces A cell with cube, corner and wall tiles as options}}{43}{figure.caption.70}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces The corner tile with all possible rotations (counted clockwise)}}{44}{figure.caption.71}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Comparison of valid wall placement to invalid wall placement if adjacent walls must have matching cardinality}}{45}{figure.caption.72}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces A symmetric cube tile converted to a non-symmetric tile. For simplicity, the cube is only shown with a wall as its possible neighbour.}}{46}{figure.caption.73}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces The array of explicit variants for the cube tile with neighbours shown. Due to the tile's symmetry, no extra work is needed to calculate variants for cardinalities 1, 2 and 3.}}{46}{figure.caption.74}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces The array of explicit variants for the corner tile with neighbours shown.}}{47}{figure.caption.75}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces The explicit corner tile variants before updating neighbours to their explicit forms}}{47}{figure.caption.76}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces The three parts of the recursive \acrshort {mac3} method}}{50}{figure.caption.80}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Key areas of further development}}{49}{figure.caption.80}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Key areas of further development}}{54}{figure.caption.87}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

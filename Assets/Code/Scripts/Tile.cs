@@ -210,13 +210,17 @@ namespace PrecipitatorWFC
             collider.size = rotatedSize;
             collider.isTrigger = true;
 
+            // Workaround to spawn floors under tiles. Running Unity's Start or Awake methods do not seem to work.
             FloorSpawner floorSpawner = cell.tilePrefab.GetComponent<FloorSpawner>();
             if (floorSpawner != null)
             {
-                Debug.Log("Spawned floor at collapse " + floorSpawner.transform.position);
+                if (LevelGenerationManager.Instance.debugMode)
+                {
+                    Debug.Log("Spawned floor at collapse " + floorSpawner.transform.position);
+                }
                 floorSpawner.SpawnFloor();
             }
-            else
+            else if (LevelGenerationManager.Instance.debugMode)
             {
                 Debug.Log("Floor spawner is null for tile " + cell.tilePrefab);
             }

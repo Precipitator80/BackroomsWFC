@@ -19,6 +19,35 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{Gumin_Wave_Function_Collapse_2016}{software}{}
+      \name{author}{1}{}{%
+        {{hash=46c2caad2d1433d5a224bdbf82de6ffb}{%
+           family={Gumin},
+           familyi={G\bibinitperiod},
+           given={Maxim},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{46c2caad2d1433d5a224bdbf82de6ffb}
+      \strng{fullhash}{46c2caad2d1433d5a224bdbf82de6ffb}
+      \strng{bibnamehash}{46c2caad2d1433d5a224bdbf82de6ffb}
+      \strng{authorbibnamehash}{46c2caad2d1433d5a224bdbf82de6ffb}
+      \strng{authornamehash}{46c2caad2d1433d5a224bdbf82de6ffb}
+      \strng{authorfullhash}{46c2caad2d1433d5a224bdbf82de6ffb}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{title}{{Wave Function Collapse Algorithm}}
+      \field{version}{1.0}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://github.com/mxgmn/WaveFunctionCollapse
+      \endverb
+      \verb{url}
+      \verb https://github.com/mxgmn/WaveFunctionCollapse
+      \endverb
+    \endentry
     \entry{townscaper}{misc}{}
       \name{author}{1}{}{%
         {{hash=9f88c0caae3dafcfec16c796f5affd7a}{%
@@ -34,8 +63,8 @@
       \strng{authornamehash}{9f88c0caae3dafcfec16c796f5affd7a}
       \strng{authorfullhash}{9f88c0caae3dafcfec16c796f5affd7a}
       \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Townscaper}
@@ -67,8 +96,8 @@
       \strng{authornamehash}{9f88c0caae3dafcfec16c796f5affd7a}
       \strng{authorfullhash}{9f88c0caae3dafcfec16c796f5affd7a}
       \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Bad North}
@@ -97,8 +126,8 @@
       \strng{authorbibnamehash}{6a4c711badbc9af8e580a8f818c46543}
       \strng{authornamehash}{6a4c711badbc9af8e580a8f818c46543}
       \strng{authorfullhash}{6a4c711badbc9af8e580a8f818c46543}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Caves of Qud}
@@ -128,8 +157,8 @@
       \strng{authorbibnamehash}{66c16fe2d62fcf2ee3bbe383db35a898}
       \strng{authornamehash}{66c16fe2d62fcf2ee3bbe383db35a898}
       \strng{authorfullhash}{66c16fe2d62fcf2ee3bbe383db35a898}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Oisín: Wave Function Collapse for poetry}
@@ -204,62 +233,6 @@
       \verb https://github.com/bbaltaxe/wfc-piano-roll
       \endverb
     \endentry
-    \entry{Infinite_Modifying_In_Blocks}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=2091c76f726f21a61b6d2f8b885cc39d}{%
-           family={Boris},
-           familyi={B\bibinitperiod}}}%
-      }
-      \strng{namehash}{2091c76f726f21a61b6d2f8b885cc39d}
-      \strng{fullhash}{2091c76f726f21a61b6d2f8b885cc39d}
-      \strng{bibnamehash}{2091c76f726f21a61b6d2f8b885cc39d}
-      \strng{authorbibnamehash}{2091c76f726f21a61b6d2f8b885cc39d}
-      \strng{authornamehash}{2091c76f726f21a61b6d2f8b885cc39d}
-      \strng{authorfullhash}{2091c76f726f21a61b6d2f8b885cc39d}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{BorisTheBrave.Com}
-      \field{month}{6}
-      \field{title}{Infinite modifying in blocks}
-      \field{year}{2022}
-      \verb{urlraw}
-      \verb https://www.boristhebrave.com/2021/11/08/infinite-modifying-in-blocks/
-      \endverb
-      \verb{url}
-      \verb https://www.boristhebrave.com/2021/11/08/infinite-modifying-in-blocks/
-      \endverb
-    \endentry
-    \entry{Gumin_Wave_Function_Collapse_2016}{software}{}
-      \name{author}{1}{}{%
-        {{hash=46c2caad2d1433d5a224bdbf82de6ffb}{%
-           family={Gumin},
-           familyi={G\bibinitperiod},
-           given={Maxim},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{46c2caad2d1433d5a224bdbf82de6ffb}
-      \strng{fullhash}{46c2caad2d1433d5a224bdbf82de6ffb}
-      \strng{bibnamehash}{46c2caad2d1433d5a224bdbf82de6ffb}
-      \strng{authorbibnamehash}{46c2caad2d1433d5a224bdbf82de6ffb}
-      \strng{authornamehash}{46c2caad2d1433d5a224bdbf82de6ffb}
-      \strng{authorfullhash}{46c2caad2d1433d5a224bdbf82de6ffb}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{9}
-      \field{title}{{Wave Function Collapse Algorithm}}
-      \field{version}{1.0}
-      \field{year}{2016}
-      \verb{urlraw}
-      \verb https://github.com/mxgmn/WaveFunctionCollapse
-      \endverb
-      \verb{url}
-      \verb https://github.com/mxgmn/WaveFunctionCollapse
-      \endverb
-    \endentry
     \entry{WFC_ConstraintSolving_and_ML}{article}{}
       \name{author}{2}{}{%
         {{hash=40164fe78eb5370b5d7502de2836f402}{%
@@ -280,8 +253,8 @@
       \strng{authornamehash}{6f9f5309cb73fdd910932005e06e03a5}
       \strng{authorfullhash}{6f9f5309cb73fdd910932005e06e03a5}
       \field{extraname}{1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Games}
@@ -323,6 +296,33 @@
       \endverb
       \verb{url}
       \verb https://gamma-web.iacs.umd.edu/papers/documents/dissertations/merrell09.pdf
+      \endverb
+    \endentry
+    \entry{Infinite_Modifying_In_Blocks}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2091c76f726f21a61b6d2f8b885cc39d}{%
+           family={Boris},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{2091c76f726f21a61b6d2f8b885cc39d}
+      \strng{fullhash}{2091c76f726f21a61b6d2f8b885cc39d}
+      \strng{bibnamehash}{2091c76f726f21a61b6d2f8b885cc39d}
+      \strng{authorbibnamehash}{2091c76f726f21a61b6d2f8b885cc39d}
+      \strng{authornamehash}{2091c76f726f21a61b6d2f8b885cc39d}
+      \strng{authorfullhash}{2091c76f726f21a61b6d2f8b885cc39d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{BorisTheBrave.Com}
+      \field{month}{6}
+      \field{title}{Infinite modifying in blocks}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://www.boristhebrave.com/2021/11/08/infinite-modifying-in-blocks/
+      \endverb
+      \verb{url}
+      \verb https://www.boristhebrave.com/2021/11/08/infinite-modifying-in-blocks/
       \endverb
     \endentry
     \entry{minecraft}{misc}{}
@@ -411,8 +411,8 @@
       \strng{authorbibnamehash}{7a389cfc828479f90d171205f8f48d75}
       \strng{authornamehash}{7a389cfc828479f90d171205f8f48d75}
       \strng{authorfullhash}{7a389cfc828479f90d171205f8f48d75}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Game Developer}
@@ -733,8 +733,8 @@
       \strng{authorbibnamehash}{230efc1db61425699ee20089c8e55c13}
       \strng{authornamehash}{230efc1db61425699ee20089c8e55c13}
       \strng{authorfullhash}{230efc1db61425699ee20089c8e55c13}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Stable Diffusion Generative Models}
@@ -1470,8 +1470,8 @@
       \strng{authorbibnamehash}{4aa98dd244f0699a91e7f785e830112f}
       \strng{authornamehash}{57d2c12a017d98d6fdf0dbfdf45cbf1d}
       \strng{authorfullhash}{4aa98dd244f0699a91e7f785e830112f}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{{Autonomous robots can be employed in exploring unknown environments and performing many tasks, such as, e.g. detecting areas of interest, collecting target objects, etc. Deep reinforcement learning (RL) is often used to train this kind of robot. However, concerning the artificial environments aimed at testing the robot, there is a lack of available data sets and a long time is needed to create them from scratch. A good data set is in fact usually produced with high effort in terms of cost and human work to satisfy the constraints imposed by the expected results. In the first part of this paper, we focus on the specification of the properties of the solutions needed to build a data set, making the case of environment exploration. In the proposed approach, rather than using imperative programming, we explore the possibility of generating data sets using constraint programming in Prolog. In this phase, geometric predicates describe a virtual environment according to inter-space requirements. The second part of the paper is focused on testing the generated data set in an AI gym via space search techniques. We developed a Neuro-Symbolic agent built from the following: (i) A deep Q-learning component implemented in Python, able to address via RL a search problem in the virtual space; the agent has the goal to explore a generated virtual environment to seek for a target, improving its performance through a RL process. (ii) A symbolic component able to re-address the search when the Q-learning component gets stuck in a part of the virtual environment; these components stimulate the agent to move to and explore other parts of the environment. Wide experimentation has been performed, with promising results, and is reported, to demonstrate the effectiveness of the approach.}}
@@ -2252,6 +2252,146 @@
       \verb https://www.texturecan.com/details/148/
       \endverb
     \endentry
+    \entry{vhsGraphicsGuide}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=48c8c798c7061a7d7c3f3af7109ee97a}{%
+           family={{Carrots In The Sky}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{48c8c798c7061a7d7c3f3af7109ee97a}
+      \strng{fullhash}{48c8c798c7061a7d7c3f3af7109ee97a}
+      \strng{bibnamehash}{48c8c798c7061a7d7c3f3af7109ee97a}
+      \strng{authorbibnamehash}{48c8c798c7061a7d7c3f3af7109ee97a}
+      \strng{authornamehash}{48c8c798c7061a7d7c3f3af7109ee97a}
+      \strng{authorfullhash}{48c8c798c7061a7d7c3f3af7109ee97a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{How to make realistic VHS style graphics really fast for your game}
+      \field{urlday}{20}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://youtu.be/BK_NnKr4r04
+      \endverb
+      \verb{url}
+      \verb https://youtu.be/BK_NnKr4r04
+      \endverb
+    \endentry
+    \entry{letterboxer_github}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=7bd7647378b8672d98ff2d8f71d999ff}{%
+           family={{rabidgremlin}},
+           familyi={r\bibinitperiod}}}%
+      }
+      \strng{namehash}{7bd7647378b8672d98ff2d8f71d999ff}
+      \strng{fullhash}{7bd7647378b8672d98ff2d8f71d999ff}
+      \strng{bibnamehash}{7bd7647378b8672d98ff2d8f71d999ff}
+      \strng{authorbibnamehash}{7bd7647378b8672d98ff2d8f71d999ff}
+      \strng{authornamehash}{7bd7647378b8672d98ff2d8f71d999ff}
+      \strng{authorfullhash}{7bd7647378b8672d98ff2d8f71d999ff}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{LetterBoxer} Repository}
+      \field{urlday}{15}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/rabidgremlin/LetterBoxer/
+      \endverb
+      \verb{url}
+      \verb https://github.com/rabidgremlin/LetterBoxer/
+      \endverb
+    \endentry
+    \entry{actionvfx_lens_dirt}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c71de38a31a31ac12b7929c91ad8540}{%
+           family={{ActionVFX}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c71de38a31a31ac12b7929c91ad8540}
+      \strng{fullhash}{9c71de38a31a31ac12b7929c91ad8540}
+      \strng{bibnamehash}{9c71de38a31a31ac12b7929c91ad8540}
+      \strng{authorbibnamehash}{9c71de38a31a31ac12b7929c91ad8540}
+      \strng{authornamehash}{9c71de38a31a31ac12b7929c91ad8540}
+      \strng{authorfullhash}{9c71de38a31a31ac12b7929c91ad8540}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Lens Dirt Overlays}
+      \field{urlday}{18}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.actionvfx.com/collections/free-lens-dirt-overlays
+      \endverb
+      \verb{url}
+      \verb https://www.actionvfx.com/collections/free-lens-dirt-overlays
+      \endverb
+    \endentry
+    \entry{enchanted_media}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d00da5d94bd6dc3c2d0bbc4d33cd5ee5}{%
+           family={{Enchanted Media}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{d00da5d94bd6dc3c2d0bbc4d33cd5ee5}
+      \strng{fullhash}{d00da5d94bd6dc3c2d0bbc4d33cd5ee5}
+      \strng{bibnamehash}{d00da5d94bd6dc3c2d0bbc4d33cd5ee5}
+      \strng{authorbibnamehash}{d00da5d94bd6dc3c2d0bbc4d33cd5ee5}
+      \strng{authornamehash}{d00da5d94bd6dc3c2d0bbc4d33cd5ee5}
+      \strng{authorfullhash}{d00da5d94bd6dc3c2d0bbc4d33cd5ee5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{VHS Effect Overlay Video}
+      \field{urlday}{20}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.enchanted.media/downloads/free-vhs-effect-overlay-video/
+      \endverb
+      \verb{url}
+      \verb https://www.enchanted.media/downloads/free-vhs-effect-overlay-video/
+      \endverb
+    \endentry
+    \entry{youtube_video3}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e03e300b83096b816a0eef68094c649f}{%
+           family={{Haro Games}},
+           familyi={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{e03e300b83096b816a0eef68094c649f}
+      \strng{fullhash}{e03e300b83096b816a0eef68094c649f}
+      \strng{bibnamehash}{e03e300b83096b816a0eef68094c649f}
+      \strng{authorbibnamehash}{e03e300b83096b816a0eef68094c649f}
+      \strng{authornamehash}{e03e300b83096b816a0eef68094c649f}
+      \strng{authorfullhash}{e03e300b83096b816a0eef68094c649f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{VHS Retro Effect - Unity Tutorial}
+      \field{urlday}{20}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://youtu.be/CHUS0udL9Nk
+      \endverb
+      \verb{url}
+      \verb https://youtu.be/CHUS0udL9Nk
+      \endverb
+    \endentry
     \entry{lighting_models}{misc}{}
       \name{author}{1}{}{%
         {{hash=82dd98f1d663acc318e6a8ec4ab69b7a}{%
@@ -2278,6 +2418,64 @@
       \endverb
       \verb{url}
       \verb https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@17.0/manual/Forward-And-Deferred-Rendering.html
+      \endverb
+    \endentry
+    \entry{fluorescent_sound}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=477a538575bdd2b95fb53eb8fa428740}{%
+           family={Bezouska},
+           familyi={B\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{477a538575bdd2b95fb53eb8fa428740}
+      \strng{fullhash}{477a538575bdd2b95fb53eb8fa428740}
+      \strng{bibnamehash}{477a538575bdd2b95fb53eb8fa428740}
+      \strng{authorbibnamehash}{477a538575bdd2b95fb53eb8fa428740}
+      \strng{authornamehash}{477a538575bdd2b95fb53eb8fa428740}
+      \strng{authorfullhash}{477a538575bdd2b95fb53eb8fa428740}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Factory Fluorescent light buzz}
+      \field{urlday}{20}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://freesound.org/people/janbezouska/sounds/537769/
+      \endverb
+      \verb{url}
+      \verb https://freesound.org/people/janbezouska/sounds/537769/
+      \endverb
+    \endentry
+    \entry{vhs_sound}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=66d6e3fe71c9e21fd088c60ab7063a98}{%
+           family={{flacfile}},
+           familyi={f\bibinitperiod}}}%
+      }
+      \strng{namehash}{66d6e3fe71c9e21fd088c60ab7063a98}
+      \strng{fullhash}{66d6e3fe71c9e21fd088c60ab7063a98}
+      \strng{bibnamehash}{66d6e3fe71c9e21fd088c60ab7063a98}
+      \strng{authorbibnamehash}{66d6e3fe71c9e21fd088c60ab7063a98}
+      \strng{authornamehash}{66d6e3fe71c9e21fd088c60ab7063a98}
+      \strng{authorfullhash}{66d6e3fe71c9e21fd088c60ab7063a98}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{VHS hum sound}
+      \field{urlday}{20}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://freesound.org/people/flacfile/sounds/596531/
+      \endverb
+      \verb{url}
+      \verb https://freesound.org/people/flacfile/sounds/596531/
       \endverb
     \endentry
   \enddatalist

@@ -43,10 +43,13 @@ namespace PrecipitatorWFC
         {
             if (generatedLevel)
             {
-                Debug.Log("Updating chunks");
+                if (debugMode)
+                {
+                    Debug.Log("Updating chunks");
+                }
                 UpdateChunks();
             }
-            else
+            else if (debugMode)
             {
                 Debug.Log("Level has not been spawned");
             }
@@ -312,7 +315,10 @@ namespace PrecipitatorWFC
             Vector3Int playerChunkCoordinates = WorldPosToChunkCoordinates(player.transform.position);
             int playerX = playerChunkCoordinates.x;
             int playerY = playerChunkCoordinates.z;
-            Debug.Log("Player is at (" + playerX + "," + playerY + ")");
+            if (debugMode)
+            {
+                Debug.Log("Player is at (" + playerX + "," + playerY + ")");
+            }
 
             // Check each chunk's position to determine whether updating is required.
             for (int i = chunks.Count - 1; i >= 0; i--)
@@ -326,12 +332,15 @@ namespace PrecipitatorWFC
                 // If the chunk is out of bounds, unloading and generate a new chunk on the opposite side of the player.
                 if (outOfBoundsX || outOfBoundsY)
                 {
-                    Debug.Log("Chunk is out of bounds: " + chunks[i]);
+                    if (debugMode)
+                    {
+                        Debug.Log("Chunk is out of bounds: " + chunks[i]);
+                    }
                     // Calculate the coordinates of the new chunk to load in place of this chunk.
                     int newChunkX = playerX;
                     if (outOfBoundsX)
                     {
-                        newChunkX += xDifference - 1 * Math.Sign(xDifference);
+                        newChunkX += xDifference - Math.Sign(xDifference);
                     }
                     else
                     {
@@ -341,7 +350,7 @@ namespace PrecipitatorWFC
                     int newChunkY = playerY;
                     if (outOfBoundsY)
                     {
-                        newChunkY += yDifference - 1 * Math.Sign(yDifference);
+                        newChunkY += yDifference - Math.Sign(yDifference);
                     }
                     else
                     {
@@ -397,7 +406,10 @@ namespace PrecipitatorWFC
         {
             foreach (Chunk chunk in chunks)
             {
-                Debug.Log("Spawning chunk: " + chunk);
+                if (debugMode)
+                {
+                    Debug.Log("Spawning chunk: " + chunk);
+                }
                 chunk.SpawnLayer(1);
             }
             foreach (Chunk chunk in chunks)
