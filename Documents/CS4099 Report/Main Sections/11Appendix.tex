@@ -3,6 +3,8 @@
 % Describe how you tested your program. Include any ways you made sure that your program is complete and works correctly.
 A debug mode flag is included with the level generation manager. This prints information on the solver during initialisation and runtime. Debug mode was heavily used during development to ensure each part of the solver works correctly. Debug mode is suited for testing extremely small levels. For bigger levels, the debug statements printed to console result in an extremely significant increase to generation time.
 
+While unit testing would potentially be useful for small parts of the solver, such as individual arc revisions and runs of \acrshort{ac3}, testing the system as a whole is more challenging. The same issue of ensuring output is playable faces any sort of unit test of \acrshort{wfc}. In the context of video games, the qualitative elements of what makes an output level enjoyable are similarly difficult to test. Furthermore, the cell and tile selection strategies used in the implementation use \acrshort{rng}s to form output, complicating testing further.
+
 \chapter{Player Guide}
 \subsubsection{Premise}
 % Explore an infinite, procedurally generated interpretation of the Backrooms! Try to find a way out, traversing a liminal space
