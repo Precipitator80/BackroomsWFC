@@ -3,7 +3,7 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces \textit {Townscaper} uses \acrshort {wfc} with player input to develop worlds \blx@tocontentsinit {0}\cite {townscaper}}}{1}{figure.caption.9}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces A complex Escheresque tile set that relies on modifying in blocks \blx@tocontentsinit {0}\cite {model_synthesis_diss}}}{2}{figure.caption.10}%
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Use of simple tiled \acrshort {wfc} to generate a circuit board graphic \blx@tocontentsinit {0}\cite {Gumin_Wave_Function_Collapse_2016}}}{2}{figure.caption.11}%
-\contentsline {figure}{\numberline {1.4}{\ignorespaces A screenshot from the game}}{3}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces A screenshot from the game included in the disseration}}{3}{figure.caption.12}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces \textit {Minecraft} lets the player explore an infinite, procedural world \blx@tocontentsinit {0}\cite {minecraft_screenshot}}}{5}{figure.caption.13}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Magic3D performs text-to-3D synthesis \blx@tocontentsinit {0}\cite {Magic3D}}}{5}{figure.caption.14}%
@@ -50,7 +50,7 @@
 \contentsline {figure}{\numberline {6.10}{\ignorespaces \acrshort {imib} uses a grid of overlapping chunks consisting of overlapping layers}}{36}{figure.caption.62}%
 \contentsline {figure}{\numberline {6.11}{\ignorespaces Clearing and generating layer 1 as part of \acrshort {imib}}}{36}{figure.caption.63}%
 \contentsline {figure}{\numberline {6.12}{\ignorespaces Each \acrshort {imib} layer is generated in turn to compose a full result}}{37}{figure.caption.64}%
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Running \acrshort {imib} with \textit {the Backrooms} tile set}}{38}{figure.caption.65}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Running \acrshort {imib} with \textit {The Backrooms} tile set}}{38}{figure.caption.65}%
 \contentsline {figure}{\numberline {6.14}{\ignorespaces The chunks to unload and load in an infinite world can be mapped directly from their relative position to the player}}{38}{figure.caption.66}%
 \contentsline {figure}{\numberline {6.15}{\ignorespaces The model tile set in Blender}}{40}{figure.caption.67}%
 \contentsline {figure}{\numberline {6.16}{\ignorespaces Camera Effects}}{41}{figure.caption.68}%
